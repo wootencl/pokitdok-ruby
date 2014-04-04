@@ -15,8 +15,21 @@ ENV["COVERAGE"] && SimpleCov.start do
   add_filter "/.rvm/"
 end
 require 'rubygems'
-require 'test/spec'
+require 'bundler'
+begin
+  Bundler.setup(:default, :development)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `bundle install` to install missing gems"
+  exit e.status_code
+end
+require 'minitest/unit'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'pokitdok-ruby'
+require 'pokitdok'
+
+class MiniTest::Unit::TestCase
+end
+
+MiniTest::Unit.autorun
