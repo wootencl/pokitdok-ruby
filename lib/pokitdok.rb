@@ -15,7 +15,6 @@ class PokitDok
     @client_secret = client_secret
 
     @token = OAuth2::Client.new(@client_id, @client_secret, site: api_url)
-    
   end
 
   def api_url

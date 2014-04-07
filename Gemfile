@@ -16,4 +16,5 @@ group :development do
 	gem 'guard', '~> 2.6.0'
 	gem 'guard-minitest', '~> 2.2.0'
 	gem 'terminal-notifier-guard'
+	gem 'guard-rubocop', '~> 1.0.2'
 end
