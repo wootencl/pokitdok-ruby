@@ -1,7 +1,7 @@
 require 'simplecov'
 
 module SimpleCov
-  class Configuration
+  module Configuration
     def clean_filters
       @filters = []
     end
@@ -10,14 +10,14 @@ end
 
 SimpleCov.configure do
   clean_filters
-  load_adapter 'test_frameworks'
+  load_profile 'test_frameworks'
 end
 
 ENV['COVERAGE'] && SimpleCov.start do
   add_filter '/.rvm/'
 end
-require 'rubygems'
 
+require 'rubygems'
 require 'bundler'
 begin
   Bundler.setup(:default, :development)
