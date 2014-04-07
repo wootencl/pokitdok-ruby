@@ -5,31 +5,29 @@ CLIENT_SECRET = 'djksfhsdjfh'
 POKITDOK_TEST_URL = 'http://localhost:5002/api'
 
 describe PokitDok do
-  before do
-    PokitDok.any_instance.stubs(:api_url).returns(POKITDOK_TEST_URL)
-  end
-
   describe 'Basic functionality' do
-    it 'should instantiate with a client id and client secret' do
-      @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-      refute_nil(@pokitdok, 'New PokitDok was nil.')
+    it 'should point at the correct PokitDok API URL' do
+      @pd = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+      @pd.api_url.must_equal 'https://www.pokitdok.com/api'
     end
   end
 
-  describe 'Authentication functions' do
-    it 'should authenticate on a new connection' do
+  describe 'Authenticated functions' do
+    before do
+      PokitDok.any_instance.stubs(:api_url).returns(POKITDOK_TEST_URL)
       @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+    end
+
+    it 'should instantiate with a client id and client secret' do
+      refute_nil(@pokitdok, 'New PokitDok was nil.')
+    end
+
+    it 'should authenticate on a new connection' do
       refute_empty @pokitdok.token
     end
 
     it 'should refresh the connection if it expires' do
       flunk 'Not implemented'
-    end
-  end
-
-  describe 'Endpoint functions' do
-    before do
-      @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
     end
 
     describe 'Activities endpoint' do

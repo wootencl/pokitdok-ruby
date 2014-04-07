@@ -30,7 +30,7 @@ end
 
 require 'minitest/autorun'
 require 'minitest/unit'
-require "minitest/reporters"
+require 'minitest/reporters'
 Minitest::Reporters.use!
 require 'mocha/mini_test'
 

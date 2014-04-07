@@ -4,8 +4,8 @@ require 'oauth2'
 
 # PokitDok API client implementation for Ruby.
 class PokitDok
-  POKITDOK_API_URL = "https://platform.pokitdok.com/api"
-  
+  POKITDOK_API_URL = 'https://platform.pokitdok.com/api'
+
   attr_reader :token
 
   def initialize(client_id, client_secret)
