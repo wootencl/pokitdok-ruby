@@ -1,6 +1,7 @@
 require 'simplecov'
 
 module SimpleCov
+  # Setup SimpleCov.
   module Configuration
     def clean_filters
       @filters = []

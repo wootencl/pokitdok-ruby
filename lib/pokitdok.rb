@@ -3,6 +3,7 @@ require 'bundler/setup'
 
 require 'oauth2'
 
+# PokitDok API client implementation for Ruby.
 class PokitDok
   attr_reader :access_token
 
