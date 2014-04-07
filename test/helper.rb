@@ -30,6 +30,8 @@ end
 
 require 'minitest/autorun'
 require 'minitest/unit'
+require "minitest/reporters"
+Minitest::Reporters.use!
 require 'mocha/mini_test'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))

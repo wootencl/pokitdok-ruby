@@ -9,4 +9,6 @@ group :development do
 	gem 'rubocop', '~> 0.20.1'
 	gem 'rdoc', '~> 3.12'
 	gem 'jeweler', '~> 2.0.1'
+	gem 'ansi', '~> 1.4.3'
+	gem 'minitest-reporters', '~> 1.0.2'
 end

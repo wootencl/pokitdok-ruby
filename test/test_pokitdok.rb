@@ -19,7 +19,7 @@ describe PokitDok do
   describe 'Authentication functions' do
     it 'should authenticate on a new connection' do
       @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-      refute_empty @pokitdok.access_token
+      refute_empty @pokitdok.token
     end
 
     it 'should refresh the connection if it expires' do

@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.3.6)
+    ansi (1.4.3)
     ast (1.1.0)
     atomic (1.1.16)
     builder (3.2.2)
@@ -36,6 +37,11 @@ GEM
     metaclass (0.0.4)
     mini_portile (0.5.3)
     minitest (5.3.2)
+    minitest-reporters (1.0.2)
+      ansi
+      builder
+      minitest (>= 5.0)
+      powerbar
     mocha (1.0.0)
       metaclass (~> 0.0.1)
     multi_json (1.9.2)
@@ -52,6 +58,9 @@ GEM
     parser (2.1.7)
       ast (~> 1.1)
       slop (~> 3.4, >= 3.4.5)
+    powerbar (1.0.11)
+      ansi (~> 1.4.0)
+      hashie (>= 1.1.0)
     powerpack (0.0.9)
     rack (1.5.2)
     rainbow (2.0.0)
@@ -78,9 +87,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ansi (~> 1.4.3)
   bundler (~> 1.0)
   jeweler (~> 2.0.1)
   minitest (~> 5.3.2)
+  minitest-reporters (~> 1.0.2)
   mocha (~> 1.0.0)
   oauth2 (~> 0.9.3)
   rdoc (~> 3.12)

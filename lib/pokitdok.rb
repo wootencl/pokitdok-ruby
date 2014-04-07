@@ -1,21 +1,21 @@
 require 'rubygems'
 require 'bundler/setup'
-
 require 'oauth2'
 
 # PokitDok API client implementation for Ruby.
 class PokitDok
-  attr_reader :access_token
+  POKITDOK_API_URL = "https://platform.pokitdok.com/api"
+  
+  attr_reader :token
 
   def initialize(client_id, client_secret)
     @client_id = client_id
     @client_secret = client_secret
 
-    @access_token = OAuth2::Client.new(@client_id, @client_secret,
-                                       site: api_url)
+    @token = OAuth2::Client.new(@client_id, @client_secret, site: api_url)
   end
 
   def api_url
-    'https://platform.pokitdok.com/api'
+    POKITDOK_API_URL
   end
 end
