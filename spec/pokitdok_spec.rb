@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-require 'helper'
+require 'spec_helper'
 
 CLIENT_ID = 'dklfjdklsf'
 CLIENT_SECRET = 'djksfhsdjfh'
@@ -10,7 +10,7 @@ describe PokitDok do
   describe 'Basic functionality' do
     it 'should point at the correct PokitDok API URL' do
       @pd = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-      @pd.api_url.must_equal 'https://www.pokitdok.com/api'
+      @pd.api_url.must_equal 'https://platform.pokitdok.com/api2'
     end
   end
 

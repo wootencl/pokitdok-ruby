@@ -11,4 +11,9 @@ group :development do
 	gem 'jeweler', '~> 2.0.1'
 	gem 'ansi', '~> 1.4.3'
 	gem 'minitest-reporters', '~> 1.0.2'
+	gem 'vcr', '~> 2.9.0'
+	gem 'webmock', '~> 1.17.4'
+	gem 'guard', '~> 2.6.0'
+	gem 'guard-minitest', '~> 2.2.0'
+	gem 'terminal-notifier-guard'
 end

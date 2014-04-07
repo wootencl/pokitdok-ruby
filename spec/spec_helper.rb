@@ -33,7 +33,7 @@ end
 require 'minitest/autorun'
 require 'minitest/unit'
 require 'minitest/reporters'
-Minitest::Reporters.use!
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 require 'mocha/mini_test'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
