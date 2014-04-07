@@ -1,10 +1,25 @@
-require "minitest/autorun"
-require "pokitdok"
+require "helper"
 
-describe Pokitdok do
+CLIENT_ID = "dklfjdklsf"
+CLIENT_SECRET = "djksfhsdjfh"
+POKITDOK_TEST_URL = "http://localhost:5002/api"
+
+describe PokitDok do
+    before do
+        PokitDok.any_instance.stubs(:pokitdok_url).returns(POKITDOK_TEST_URL)
+    end
+
+    describe "Basic functionality" do
+        it "should instantiate with a client id and client secret" do
+            @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+            refute_nil(@pokitdok, "New PokitDok was nil.")
+        end
+    end
+
     describe "Authentication functions" do
         it "should authenticate on a new connection" do
-            flunk "Not implemented"
+            @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+            refute_empty @pokitdok.access_token
         end
 
         it "should refresh the connection if it expires" do
@@ -13,6 +28,10 @@ describe Pokitdok do
     end
 
     describe "Endpoint functions" do
+        before do
+            @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+        end
+
         describe "Activities endpoint" do
             it "should expose the activities endpoint" do
                 flunk "Not implemented"

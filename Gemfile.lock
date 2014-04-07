@@ -32,8 +32,11 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    metaclass (0.0.4)
     mini_portile (0.5.3)
-    minitest (4.7.5)
+    minitest (5.3.2)
+    mocha (1.0.0)
+      metaclass (~> 0.0.1)
     multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -63,7 +66,8 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0)
   jeweler (~> 2.0.1)
-  minitest
+  minitest (~> 5.3.2)
+  mocha (~> 1.0.0)
   oauth2 (~> 0.9.3)
   rdoc (~> 3.12)
   simplecov
