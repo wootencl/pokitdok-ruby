@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'helper'
 
 CLIENT_ID = 'dklfjdklsf'
