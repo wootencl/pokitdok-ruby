@@ -10,7 +10,7 @@ describe PokitDok do
   describe 'Basic functionality' do
     it 'should point at the correct PokitDok API URL' do
       @pd = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-      @pd.api_url.must_equal 'https://platform.pokitdok.com/api2'
+      @pd.api_url.must_equal 'https://platform.pokitdok.com/api'
     end
   end
 
@@ -25,7 +25,7 @@ describe PokitDok do
     end
 
     it 'should authenticate on a new connection' do
-      refute_empty @pokitdok.token
+      refute_nil @pokitdok.token
     end
 
     it 'should refresh the connection if it expires' do
@@ -34,7 +34,9 @@ describe PokitDok do
 
     describe 'Activities endpoint' do
       it 'should expose the activities endpoint' do
-        flunk 'Not implemented'
+        @activities = @pokitdok.activities
+        refute_nil @pokitdok.activities
+        @pokitdok.activities.size.must_equal 5
       end
     end
 
