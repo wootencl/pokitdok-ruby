@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = 'http://github.com/riney/pokitdok-ruby'
   gem.license = 'MIT'
   gem.summary = %Q{Gem for easy access to the PokitDok Platform APIs}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{Gem for easy access to the PokitDok Platform APIs.}
   gem.email = 'john.riney@pokitdok.com'
   gem.authors = ['John Riney']
   # dependencies defined in Gemfile
