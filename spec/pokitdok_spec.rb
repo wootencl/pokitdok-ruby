@@ -9,8 +9,10 @@ POKITDOK_TEST_URL = 'http://localhost:5002/api/v3'
 describe PokitDok do
   describe 'Basic functionality' do
     it 'should point at the correct PokitDok API URL' do
-      @pd = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-      @pd.api_url.must_equal 'https://platform.pokitdok.com/api/v3'
+      VCR.use_cassette('basic') do
+        @pd = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+        @pd.api_url.must_equal 'https://platform.pokitdok.com/api/v3'
+      end
     end
   end
 
@@ -55,10 +57,12 @@ describe PokitDok do
                              member_name: 'JOHN DOE',
                              member_birth_date: '05/21/1975',
                              service_types: ['Health Benefit Plan Coverage'] }
-                             
-        @eligibility = @pokitdok.eligibility(eligibility_data)
-        refute_nil @eligibility
-        refute_nil @eligibility['data']
+
+        VCR.use_cassette('eligibility') do
+          @eligibility = @pokitdok.eligibility(eligibility_data)
+          refute_nil @eligibility
+          refute_nil @eligibility['data']
+        end
       end
     end
 

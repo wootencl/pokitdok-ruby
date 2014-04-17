@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5002/api/v3/eligibility/
+    body:
+      encoding: UTF-8
+      string: '{"payer_id":"MOCKPAYER","member_id":"W34237875729","provider_id":"1467560003","provider_name":"AYA-AY","provider_first_name":"JEROME","provider_type":"1","member_name":"JOHN
+        DOE","member_birth_date":"05/21/1975","service_types":["Health Benefit Plan
+        Coverage"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer WIxEw6HOW1H3PTEGuqTiDjcMlR8m7y6kqEloD0di
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '6937'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Thu, 17 Apr 2014 21:36:56 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 7, "rate_limit_reset": 1397772034, "processing_time":
+        67, "rate_limit_cap": 8434, "credits_remaining": 8930, "credits_billed": 1},
+        "data": {"provider_id": "1467560003", "client_id": "jSoRZy4iLIIxj23vWb5x",
+        "payer_name": "MOCK PAYER INC", "correlation_id": "eff44038-3b5b-41cb-b7e2-b19e583100ef",
+        "member_first_name": "JOHN", "member_name": "JOHN DOE", "valid_request": true,
+        "update_dt": "Thu Apr 17 21:36:56 2014", "subscriber": {"first_name": "JOHN",
+        "last_name": "DOE", "address": {"city": "SPARTANBURG", "line": "123 MAIN ST",
+        "postal_code": "29307", "state": "SC"}, "member_id": "W34237875729", "birth_date":
+        "Wed May 21 00:00:00 1975"}, "dependent": {"address": {}}, "insert_dt": "Thu
+        Apr 17 21:36:56 2014", "provider_name": "JEROME AYA-AY", "provider_first_name":
+        "JEROME", "trading_partner_id": "MOCKPAYER", "provider_type": "1", "_type":
+        "Eligibility", "deleted": false, "payer_id": "MOCKPAYER", "coverage": {"service_type_codes":
+        ["98"], "service_types": ["Professional (Physician) Visit - Office"], "group_number":
+        "088818801000013", "out_of_pocket": [{"messages": [], "in_plan_network": "Y",
+        "coverage_level_code": "IND", "coverage_level": "Individual", "benefit_amount":
+        {"currency": "USD", "amount": "3000"}}, {"messages": [], "in_plan_network":
+        "Y", "coverage_level_code": "IND", "time_period": "Remaining", "coverage_level":
+        "Individual", "benefit_amount": {"currency": "USD", "amount": "2983.57"}},
+        {"messages": [], "in_plan_network": "Y", "coverage_level_code": "FAM", "coverage_level":
+        "Family", "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"messages":
+        [], "in_plan_network": "Y", "coverage_level_code": "FAM", "time_period": "Remaining",
+        "coverage_level": "Family", "benefit_amount": {"currency": "USD", "amount":
+        "5956.09"}}, {"messages": [], "in_plan_network": "N", "coverage_level_code":
+        "IND", "coverage_level": "Individual", "benefit_amount": {"currency": "USD",
+        "amount": "12500"}}, {"messages": [], "in_plan_network": "N", "coverage_level_code":
+        "IND", "time_period": "Remaining", "coverage_level": "Individual", "benefit_amount":
+        {"currency": "USD", "amount": "12483.57"}}, {"messages": [], "in_plan_network":
+        "N", "coverage_level_code": "FAM", "coverage_level": "Family", "benefit_amount":
+        {"currency": "USD", "amount": "25000"}}, {"messages": [{"message": "Unlimited
+        Lifetime Benefits"}], "in_plan_network": "N", "coverage_level_code": "FAM",
+        "time_period": "Remaining", "coverage_level": "Family", "benefit_amount":
+        {"currency": "USD", "amount": "24956.09"}}], "level": "Employee and Spouse",
+        "copay": [{"service_type_codes": ["98"], "service_types": ["Professional (Physician)
+        Visit - Office"], "messages": [{"message": "PRIMARY OFFICE"}], "in_plan_network":
+        "Y", "coverage_level_code": "ESP", "coverage_level": "Employee and Spouse"},
+        {"service_type_codes": ["98"], "service_types": ["Professional (Physician)
+        Visit - Office"], "messages": [{"message": "GYN OFFICE VS"}, {"message": "GYN
+        VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC VISIT"}, {"message":
+        "PRIME CARE VST"}, {"message": "Plan Requires PreCert"}, {"message": "Commercial"},
+        {"message": "Plan includes NAP"}, {"message": "Pre-Existing may apply"}],
+        "in_plan_network": "W", "coverage_level_code": "ESP", "coverage_level": "Employee
+        and Spouse"}], "deductibles": [{"messages": [{"message": "INT MED AND RX,GYN
+        OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME
+        CARE VST"}], "in_plan_network": "Y", "eligibility_date": "Tue Jan  1 00:00:00
+        2013", "coverage_level_code": "FAM", "time_period": "Calendar Year", "coverage_level":
+        "Family", "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"messages":
+        [{"message": "INT MED AND RX"}], "in_plan_network": "Y", "coverage_level_code":
+        "FAM", "time_period": "Remaining", "coverage_level": "Family", "benefit_amount":
+        {"currency": "USD", "amount": "5956.09"}}, {"messages": [{"message": "INT
+        MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY
+        OFFICE,PRIME CARE VST"}], "in_plan_network": "Y", "eligibility_date": "Tue
+        Jan  1 00:00:00 2013", "coverage_level_code": "IND", "time_period": "Calendar
+        Year", "coverage_level": "Individual", "benefit_amount": {"currency": "USD",
+        "amount": "3000"}}, {"messages": [{"message": "INT MED AND RX"}], "in_plan_network":
+        "Y", "coverage_level_code": "IND", "time_period": "Remaining", "coverage_level":
+        "Individual", "benefit_amount": {"currency": "USD", "amount": "2983.57"}},
+        {"messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
+        VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "N", "eligibility_date":
+        "Tue Jan  1 00:00:00 2013", "coverage_level_code": "FAM", "time_period": "Calendar
+        Year", "coverage_level": "Family", "benefit_amount": {"currency": "USD", "amount":
+        "12000"}}, {"messages": [{"message": "INT MED AND RX"}], "in_plan_network":
+        "N", "coverage_level_code": "FAM", "time_period": "Remaining", "coverage_level":
+        "Family", "benefit_amount": {"currency": "USD", "amount": "11956.09"}}, {"messages":
+        [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC
+        OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "N", "eligibility_date":
+        "Tue Jan  1 00:00:00 2013", "coverage_level_code": "IND", "time_period": "Calendar
+        Year", "coverage_level": "Individual", "benefit_amount": {"currency": "USD",
+        "amount": "6000"}}, {"messages": [{"message": "INT MED AND RX"}], "in_plan_network":
+        "N", "coverage_level_code": "IND", "time_period": "Remaining", "coverage_level":
+        "Individual", "benefit_amount": {"currency": "USD", "amount": "5983.57"}}],
+        "plan_begin_date": "Fri Feb 15 00:00:00 2013", "eligibility_begin_date": "Wed
+        Feb  1 00:00:00 2012", "coinsurance": [{"service_type_codes": ["98"], "service_types":
+        ["Professional (Physician) Visit - Office"], "benefit_percent": 0.0, "messages":
+        [{"message": "GYN OFFICE VS"}, {"message": "GYN VISIT"}, {"message": "SPEC
+        OFFICE"}, {"message": "SPEC VISIT"}, {"message": "PRIMARY OFFICE"}, {"message":
+        "PRIME CARE VST"}], "in_plan_network": "Y", "coverage_level_code": "ESP",
+        "coverage_level": "Employee and Spouse"}, {"service_type_codes": ["98"], "service_types":
+        ["Professional (Physician) Visit - Office"], "benefit_percent": 0.5, "messages":
+        [{"message": "GYN OFFICE VS,COINS APPLIES TO OUT OF POCKET"}, {"message":
+        "GYN VISIT,COINS APPLIES TO OUT OF POCKET"}, {"message": "SPEC OFFICE,COINS
+        APPLIES TO OUT OF POCKET"}, {"message": "SPEC VISIT,COINS APPLIES TO OUT OF
+        POCKET"}, {"message": "PRIME CARE VST,COINS APPLIES TO OUT OF POCKET"}], "in_plan_network":
+        "N", "coverage_level_code": "ESP", "coverage_level": "Employee and Spouse"}],
+        "plan_number": "0888188", "service_date": "Sat Aug 10 00:00:00 2013"}, "member_last_name":
+        "DOE", "service_types": ["Professional (Physician) Visit - Office"], "member_birth_date":
+        "Wed May 21 00:00:00 1975", "member_id": "W34237875729", "_id": "5350497856c02c070eeb8f1c"}}'
+    http_version: 
+  recorded_at: Thu, 17 Apr 2014 21:36:56 GMT
+recorded_with: VCR 2.9.0
