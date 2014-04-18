@@ -49,6 +49,7 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = 'pokitdok-ruby #{version}'
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.main = 'README.md'
 end
 
 require 'rubocop/rake_task'

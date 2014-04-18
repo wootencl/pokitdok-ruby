@@ -7,7 +7,7 @@ group :development do
 	gem 'mocha', '~> 1.0'
 	gem 'simplecov', '~> 0.8'
 	gem 'rubocop', '~> 0.20'
-	gem 'rdoc', '~> 3.12'
+	gem 'rdoc', '~> 4.1'
 	gem 'jeweler', '~> 2.0'
 	gem 'ansi', '~> 1.4'
 	gem 'minitest-reporters', '~> 1.0'
@@ -17,4 +17,5 @@ group :development do
 	gem 'guard-minitest', '~> 2.2'
 	gem 'terminal-notifier-guard', '~> 1.5'
 	gem 'guard-rubocop', '~> 1.0'
+	gem 'rdoc-generator-fivefish', '~> 0.1'
 end
