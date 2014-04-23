@@ -2,9 +2,14 @@
 
 require 'spec_helper'
 
-CLIENT_ID = 'jSoRZy4iLIIxj23vWb5x'
-CLIENT_SECRET = '6eZuizJqfz0ffhY9Gh8mrPvpjyd7D25mrqgq8XrC'
+CLIENT_ID = 'umGGEcetubysDyPohc3h'
+CLIENT_SECRET = 'MlOFhf4XwDrNVL7vyjxTSjUNlKUO7jLgkjh7JDCS'
 POKITDOK_TEST_URL = 'http://localhost:5002/api/v3'
+
+def check_meta_and_data(result)
+  refute_empty result['meta']
+  refute_empty result['data']
+end
 
 describe PokitDok do
   describe 'Basic functionality' do
@@ -35,18 +40,45 @@ describe PokitDok do
     end
 
     describe 'Activities endpoint' do
+      it 'should return a meta hash and a data hash' do
+        check_meta_and_data @pokitdok.activities
+      end
+
       it 'should expose the activities endpoint' do
-        skip 'Not implemented'
+        @activities = @pokitdok.activities['data']
+        refute_empty @activities
       end
     end
 
     describe 'Cash Prices endpoint' do
-      it 'should expose the cash prices endpoint' do
-        skip 'Not implemented'
+      it 'is unimplemented' do
+        proc { @pokitdok.cash_prices }.must_raise(NotImplementedError)
+      end
+    end
+
+    describe 'Claims endpoint' do
+      it 'is unimplemented' do
+        proc { @pokitdok.claims }.must_raise(NotImplementedError)
+      end
+    end
+
+    describe 'Claims Status endpoint' do
+      it 'is unimplemented' do
+        proc { @pokitdok.claims_status }.must_raise(NotImplementedError)
+      end
+    end
+
+    describe 'Deductible endpoint' do
+      it 'is unimplemented' do
+        proc { @pokitdok.deductible }.must_raise(NotImplementedError)
       end
     end
 
     describe 'Eligibility endpoint' do
+      it 'should return a meta hash and a data hash' do
+        check_meta_and_data @pokitdok.eligibility
+      end
+
       it 'should expose the eligibility endpoint' do
         eligibility_data = { payer_id: 'MOCKPAYER',
                              member_id: 'W34237875729',
@@ -59,34 +91,80 @@ describe PokitDok do
                              service_types: ['Health Benefit Plan Coverage'] }
 
         VCR.use_cassette('eligibility') do
-          @eligibility = @pokitdok.eligibility(eligibility_data)
+          @eligibility = @pokitdok.eligibility(eligibility_data)['data']
+
           refute_nil @eligibility
-          refute_nil @eligibility['data']
+          assert_nil @eligibility['errors']
         end
       end
     end
 
     describe 'Enrollment endpoint' do
+      it 'should return a meta hash and a data hash' do
+        check_meta_and_data @pokitdok.enrollment
+      end
+
       it 'should expose the enrollment endpoint' do
-        skip 'Not implemented'
+        query = JSON.parse(IO.read('spec/fixtures/enrollment.json'))
+
+        @enrollment = @pokitdok.enrollment(query)['data']
+        @enrollment['units_of_work'].must_equal 1
+        assert_nil @enrollment['errors']
       end
     end
 
     describe 'Files endpoint' do
+      it 'should return a meta hash and a data hash' do
+        check_meta_and_data @pokitdok.files
+      end
+
       it 'should expose the files endpoint' do
-        skip 'Not implemented'
+        query = {}
+
+        @response = @pokitdok.files(query)
+        print @response
+        refute_nil @response
       end
     end
 
     describe 'Insurance Prices endpoint' do
+      it 'should return a meta hash and a data hash' do
+        check_meta_and_data @pokitdok.insurance_prices
+      end
+
       it 'should expose the insurance prices endpoint' do
-        skip 'Not implemented'
+        query = { zip_code: '54321', cpt_code: '12345' }
+
+        @prices = @pokitdok.insurance_prices(query)['data']
+        refute_empty @prices
       end
     end
 
     describe 'Payers endpoint' do
+      it 'should return a meta hash and a data hash' do
+        check_meta_and_data @pokitdok.payers
+      end
+
       it 'should expose the payers endpoint' do
-        skip 'Not implemented'
+        query = { state: 'CA' }
+
+        @payers = @pokitdok.payers(query)['data']
+        refute_nil @payers
+        @payers.size.must_equal 20
+      end
+    end
+
+    describe 'Providers endpoint' do
+      it 'should return a meta hash and a data hash' do
+        check_meta_and_data @pokitdok.providers
+      end
+
+      it 'should expose the providers endpoint' do
+        query = { state: 'CA' }
+
+        @providers = @pokitdok.providers(query)['data']
+        refute_nil @providers
+        @providers.size.must_equal 20
       end
     end
   end

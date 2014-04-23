@@ -6,7 +6,7 @@ require 'oauth2'
 
 # PokitDok API client implementation for Ruby.
 class PokitDok
-  POKITDOK_URL_BASE = 'https://platform.pokitdok.com' # :nodoc:
+  POKITDOK_URL_BASE = 'http://localhost:5002' # :nodoc:
 
   attr_reader :client # :nodoc:
   attr_reader :token  # :nodoc:
@@ -30,7 +30,6 @@ class PokitDok
     POKITDOK_URL_BASE + '/api/v3'
   end
 
-  ##
   # Refreshes the client token associated with this PokitDok connection
   #
   # FIXME: automatic refresh on expiration
@@ -47,8 +46,36 @@ class PokitDok
 
   # Invokes the cash prices endpoint, with an optional Hash of parameters.
   def cash_prices(params = {})
-    response = @token.get('prices/cash', params: params)
+    fail NotImplementedError, "The PokitDok API does not currently support
+      this endpoint."
+  end
+
+  # Invokes the claims endpoint, with an optional Hash of parameters.
+  def claims(params = {})
+    response = @token.post('claims/', body: params.to_json) do |request|
+      request.headers['Content-Type'] = 'application/json'
+    end
     JSON.parse(response.body)
+
+    fail NotImplementedError, "The PokitDok API does not currently support
+      this endpoint."
+  end
+
+  # Invokes the claims status endpoint, with an optional Hash of parameters.
+  def claims_status(params = {})
+    response = @token.post('claims/status/', body: params.to_json) do |request|
+      request.headers['Content-Type'] = 'application/json'
+    end
+    JSON.parse(response.body)
+
+    fail NotImplementedError, "The PokitDok API does not currently support
+      this endpoint."
+  end
+
+  # Invokes the deductible endpoint, with an optional Hash of parameters.
+  def deductible(params = {})
+    fail NotImplementedError, 'The PokitDok API does not currently support
+      this endpoint.'
   end
 
   # Invokes the eligibility endpoint, with an optional Hash of parameters.
@@ -69,7 +96,10 @@ class PokitDok
 
   # Invokes the files endpoint, with an optional Hash of parameters.
   def files(params = {})
-    response = @token.files('files', params: params)
+    response = @token.post('files/', body: params.to_json) do |request|
+      request.headers['Content-Type'] = 'application/json'
+    end
+
     JSON.parse(response.body)
   end
 
@@ -81,7 +111,15 @@ class PokitDok
 
   # Invokes the payers endpoint, with an optional Hash of parameters.
   def payers(params = {})
-    response = @token.get('/payers', params: params)
+    response = @token.get('payers', params: params)
+    JSON.parse(response.body)
+  end
+
+  # Invokes the providers endpoint, with an optional Hash of parameters.
+  def providers(params = {})
+    response = @token.get('providers') do |request|
+      request.params = params
+    end
     JSON.parse(response.body)
   end
 end
