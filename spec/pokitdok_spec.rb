@@ -57,14 +57,18 @@ describe PokitDok do
     end
 
     describe 'Claims endpoint' do
-      it 'is unimplemented' do
-        proc { @pokitdok.claims }.must_raise(NotImplementedError)
+      it 'should expose the claims endpoint' do
+        query = JSON.parse(IO.read('spec/fixtures/claim.json'))
+        @claim = @pokitdok.claims(query)['data']
+        refute_empty @claim
+        @claim['units_of_work'].must_equal 1
+        assert_nil @claim['errors']
       end
     end
 
     describe 'Claims Status endpoint' do
       it 'is unimplemented' do
-        proc { @pokitdok.claims_status }.must_raise(NotImplementedError)
+        proc { @pokitdok.claim_status }.must_raise(NotImplementedError)
       end
     end
 

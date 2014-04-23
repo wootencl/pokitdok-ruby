@@ -6,7 +6,7 @@ require 'oauth2'
 
 # PokitDok API client implementation for Ruby.
 class PokitDok
-  POKITDOK_URL_BASE = 'http://localhost:5002' # :nodoc:
+  POKITDOK_URL_BASE = 'https://platform.pokitdok.com' # :nodoc:
 
   attr_reader :client # :nodoc:
   attr_reader :token  # :nodoc:
@@ -56,20 +56,12 @@ class PokitDok
       request.headers['Content-Type'] = 'application/json'
     end
     JSON.parse(response.body)
-
-    fail NotImplementedError, "The PokitDok API does not currently support
-      this endpoint."
   end
 
   # Invokes the claims status endpoint, with an optional Hash of parameters.
-  def claims_status(params = {})
-    response = @token.post('claims/status/', body: params.to_json) do |request|
-      request.headers['Content-Type'] = 'application/json'
-    end
-    JSON.parse(response.body)
-
-    fail NotImplementedError, "The PokitDok API does not currently support
-      this endpoint."
+  def claim_status(params = {})
+    fail NotImplementedError, 'The PokitDok API does not currently support
+      this endpoint.'
   end
 
   # Invokes the deductible endpoint, with an optional Hash of parameters.
