@@ -146,9 +146,7 @@ describe PokitDok do
       end
 
       it 'should expose the payers endpoint' do
-        query = { state: 'CA' }
-
-        @payers = @pokitdok.payers(query)['data']
+        @payers = @pokitdok.payers(state: 'CA')['data']
         refute_nil @payers
         @payers.size.must_equal 20
       end
@@ -156,7 +154,7 @@ describe PokitDok do
 
     describe 'Providers endpoint' do
       it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.providers
+        check_meta_and_data @pokitdok.providers(state: 'CA')
       end
 
       it 'should expose the providers endpoint' do
