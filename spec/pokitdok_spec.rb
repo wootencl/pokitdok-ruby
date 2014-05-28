@@ -15,7 +15,7 @@ describe PokitDok do
   describe 'Basic functionality' do
     it 'should point at the correct PokitDok API URL' do
       VCR.use_cassette('basic') do
-        @pd = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+        @pd = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
         @pd.api_url.must_equal 'https://platform.pokitdok.com/api/v3'
       end
     end
@@ -23,8 +23,8 @@ describe PokitDok do
 
   describe 'Authenticated functions' do
     before do
-      PokitDok.any_instance.stubs(:api_url).returns(POKITDOK_TEST_URL)
-      @pokitdok = PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+      PokitDok::PokitDok.any_instance.stubs(:api_url).returns(POKITDOK_TEST_URL)
+      @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
     end
 
     it 'should instantiate with a client id and client secret' do

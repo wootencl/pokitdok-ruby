@@ -3,10 +3,8 @@ pokitdok-ruby
 
 PokitDok Platform API Client for Ruby
 
-This initial release, exclusively for Iora, provides access to the Eligibility endpoint. Future releases will add additional endpoints.
-
 ## Installation
-    gem install --local pokitdok-ruby-0.1.0.gem
+    gem install --local pokitdok-ruby-0.2.1.gem
 
 ## Resources
 * [Read the PokitDok API docs][apidocs]
@@ -21,7 +19,7 @@ This initial release, exclusively for Iora, provides access to the Eligibility e
 ```ruby
 2.1.1 :001 > require 'pokitdok'
 true
-2.1.1 :002 > pd = PokitDok.new(your_client_id, your_client_secret)
+2.1.1 :002 > pd = PokitDok::PokitDok.new(your_client_id, your_client_secret)
 #<PokitDok:0x007fd59126d3b0 ...
 2.1.1 :003 > params = { payer_id: "MOCKPAYER", member_id: "W34237875729", provider_id: "1467560003", provider_name: "AYA-AY", provider_first_name: "JEROME", provider_type: "1", member_name: "JOHN DOE", member_birth_date: "05/21/1975", service_types: ["Health Benefit Plan Coverage"] }
 {
