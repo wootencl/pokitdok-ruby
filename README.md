@@ -21,7 +21,15 @@ PokitDok Platform API Client for Ruby
 true
 2.1.1 :002 > pd = PokitDok::PokitDok.new(your_client_id, your_client_secret)
 #<PokitDok:0x007fd59126d3b0 ...
-2.1.1 :003 > params = { payer_id: "MOCKPAYER", member_id: "W34237875729", provider_id: "1467560003", provider_name: "AYA-AY", provider_first_name: "JEROME", provider_type: "1", member_name: "JOHN DOE", member_birth_date: "05/21/1975", service_types: ["Health Benefit Plan Coverage"] }
+2.1.1 :003 > params = { payer_id: "MOCKPAYER",
+                        member_id: "W34237875729",
+                        provider_id: "1467560003",
+                        provider_name: "AYA-AY",
+                        provider_first_name: "JEROME",
+                        provider_type: "1",
+                        member_name: "JOHN DOE",
+                        member_birth_date: "05/21/1975",
+                        service_types: ["Health Benefit Plan Coverage"] }
 {
                :payer_id => "MOCKPAYER",
               :member_id => "W34237875729",
