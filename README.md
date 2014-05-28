@@ -19,7 +19,7 @@ PokitDok Platform API Client for Ruby
 ```ruby
 2.1.1 :001 > require 'pokitdok'
 true
-2.1.1 :002 > pd = PokitDok::PokitDok.new(your_client_id, your_client_secret)
+2.1.1 :002 > pd = PokitDok::PokitDok.new("your_client_id", "your_client_secret")
 #<PokitDok:0x007fd59126d3b0 ...
 2.1.1 :003 > params = { payer_id: "MOCKPAYER",
                         member_id: "W34237875729",
