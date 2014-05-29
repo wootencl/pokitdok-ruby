@@ -3,9 +3,6 @@ pokitdok-ruby
 
 PokitDok Platform API Client for Ruby
 
-## Installation
-    gem install --local pokitdok-ruby-0.2.1.gem
-
 ## Resources
 * [Read the PokitDok API docs][apidocs]
 * [View Source on GitHub][code]
@@ -15,13 +12,29 @@ PokitDok Platform API Client for Ruby
 [code]: https://github.com/PokitDokInc/pokitdok-ruby
 [issues]: https://github.com/PokitDokInc/pokitdok-ruby/issues
 
-## Usage Example
+## Installation
+    gem install --local pokitdok-ruby-0.2.1.gem
+
+## Quick Start
 ```ruby
-2.1.1 :001 > require 'pokitdok'
-true
-2.1.1 :002 > pd = PokitDok::PokitDok.new("your_client_id", "your_client_secret")
-#<PokitDok:0x007fd59126d3b0 ...
-2.1.1 :003 > params = { payer_id: "MOCKPAYER",
+require 'pokitdok'
+pd = PokitDok::PokitDok.new("your_client_id", "your_client_secret")
+
+# Retrieve provider information by NPI
+pd.providers(npi: '1467560003')
+
+# Search providers by name (individuals)
+pd.providers(first_name: 'JEROME', last_name: 'AYA-AY')
+
+# Search providers by name (organizations)
+pd.providers(name: 'Qliance')
+
+# Search providers by location and/or specialty
+pd.providers(zipcode: '29307', radius: '10mi')
+pd.providers(zipcode: '29307', radius: '10mi', specialty: 'RHEUMATOLOGY')
+
+# Eligibility
+params = { payer_id: "MOCKPAYER",
                         member_id: "W34237875729",
                         provider_id: "1467560003",
                         provider_name: "AYA-AY",
@@ -30,48 +43,17 @@ true
                         member_name: "JOHN DOE",
                         member_birth_date: "05/21/1975",
                         service_types: ["Health Benefit Plan Coverage"] }
-{
-               :payer_id => "MOCKPAYER",
-              :member_id => "W34237875729",
-            :provider_id => "1467560003",
-          :provider_name => "AYA-AY",
-    :provider_first_name => "JEROME",
-          :provider_type => "1",
-            :member_name => "JOHN DOE",
-      :member_birth_date => "05/21/1975",
-          :service_types => [
-        [0] "Health Benefit Plan Coverage"
-    ]
-}
-2.1.1 :004 > pd.eligibility(params)
-{
-    "meta" => {
-        "rate_limit_amount" => 3,
-         "rate_limit_reset" => 1397773751,
-                "test_mode" => true,
-          "processing_time" => 220,
-           "rate_limit_cap" => 1000,
-        "credits_remaining" => -2,
-           "credits_billed" => 1
-    },
-    "data" => {
-                "provider_id" => "1467560003",
-                  "client_id" => "9sKnBkx5MkRG3qWk3ZBj",
-                 "payer_name" => "MOCK PAYER INC",
-             "correlation_id" => "752a1f85-e950-4a2a-bae4-138d1f6f65da",
-          "member_first_name" => "JOHN",
-                "member_name" => "JOHN DOE",
-              "valid_request" => true,
-                  "update_dt" => "Thu Apr 17 21:46:13 2014",
-                 "subscriber" => {
-            "first_name" => "JOHN",
-             "last_name" => "DOE",
-               "address" => {
-                       "city" => "SPARTANBURG",
-                       "line" => "123 MAIN ST",
-                "postal_code" => "29307",
-                      "state" => "SC"
-                      	...
+
+pd.eligibility(params)
+
+# Check on a specific activity
+pd.activities(activity_id: '5362b5a064da150ef6f2526c')
+
+# Check on a batch of activities
+pd.activities(parent_id: '537cd4b240b35755f5128d5c')
+
+# Retrieve an index of activities
+pd.activities               
 ```
 
 ## Supported Ruby Versions

@@ -23,7 +23,8 @@ describe PokitDok do
 
   describe 'Authenticated functions' do
     before do
-      PokitDok::PokitDok.any_instance.stubs(:api_url).returns(POKITDOK_TEST_URL)
+      PokitDok::PokitDok.any_instance.stubs(:api_url)
+        .returns(POKITDOK_TEST_URL)
       @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
     end
 

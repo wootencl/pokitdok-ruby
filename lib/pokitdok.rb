@@ -4,15 +4,16 @@ require 'rubygems'
 require 'bundler/setup'
 require 'oauth2'
 
-# PokitDok API client implementation for Ruby.
 module PokitDok
+  # PokitDok API client implementation for Ruby.
   class PokitDok
     POKITDOK_URL_BASE = 'https://platform.pokitdok.com' # :nodoc:
 
     attr_reader :client # :nodoc:
     attr_reader :token  # :nodoc:
 
-    # Connect to the PokitDok API with the specified Client ID and Client Secret.
+    # Connect to the PokitDok API with the specified Client ID and Client
+    # Secret.
     #
     # +client_id+     your client ID, provided by PokitDok
     #
@@ -31,6 +32,11 @@ module PokitDok
       POKITDOK_URL_BASE + '/api/v3'
     end
 
+    # returns a standard set of headers to be passed along with all requests
+    def headers
+      { 'User-Agent' => "pokitdok-ruby 0.2.1 #{RUBY_DESCRIPTION}" }
+    end
+
     # Refreshes the client token associated with this PokitDok connection
     #
     # FIXME: automatic refresh on expiration
@@ -41,7 +47,9 @@ module PokitDok
 
     # Invokes the activities endpoint, with an optional Hash of parameters.
     def activities(params = {})
-      response = @token.get('activities', params: params)
+      response = @token.get('activities',
+                            headers: headers,
+                            params: params)
       JSON.parse(response.body)
     end
 
@@ -53,7 +61,9 @@ module PokitDok
 
     # Invokes the claims endpoint, with an optional Hash of parameters.
     def claims(params = {})
-      response = @token.post('claims/', body: params.to_json) do |request|
+      response = @token.post('claims/',
+                             headers: headers,
+                             body: params.to_json) do |request|
         request.headers['Content-Type'] = 'application/json'
       end
       JSON.parse(response.body)
@@ -73,7 +83,9 @@ module PokitDok
 
     # Invokes the eligibility endpoint, with an optional Hash of parameters.
     def eligibility(params = {})
-      response = @token.post('eligibility/', body: params.to_json) do |request|
+      response = @token.post('eligibility/',
+                             headers: headers,
+                             body: params.to_json) do |request|
         request.headers['Content-Type'] = 'application/json'
       end
       JSON.parse(response.body)
@@ -81,7 +93,9 @@ module PokitDok
 
     # Invokes the enrollment endpoint, with an optional Hash of parameters.
     def enrollment(params = {})
-      response = @token.post('enrollment/', body: params.to_json) do |request|
+      response = @token.post('enrollment/',
+                             headers: headers,
+                             body: params.to_json) do |request|
         request.headers['Content-Type'] = 'application/json'
       end
       JSON.parse(response.body)
@@ -89,22 +103,27 @@ module PokitDok
 
     # Invokes the files endpoint, with an optional Hash of parameters.
     def files(params = {})
-      response = @token.post('files/', body: params.to_json) do |request|
+      response = @token.post('files/',
+                             headers: headers,
+                             body: params.to_json) do |request|
         request.headers['Content-Type'] = 'application/json'
       end
 
       JSON.parse(response.body)
     end
 
-    # Invokes the insurance prices endpoint, with an optional Hash of parameters.
+    # Invokes the insurance prices endpoint, with an optional Hash of
+    # parameters.
     def insurance_prices(params = {})
-      response = @token.get('prices/insurance', params: params)
+      response = @token.get('prices/insurance',
+                            headers: headers,
+                            params: params)
       JSON.parse(response.body)
     end
 
     # Invokes the payers endpoint, with an optional Hash of parameters.
     def payers(params = {})
-      response = @token.get('payers', params: params)
+      response = @token.get('payers', headers: headers, params: params)
       JSON.parse(response.body)
     end
 
