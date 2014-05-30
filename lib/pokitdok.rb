@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'bundler/setup'
+require 'json'
 require 'oauth2'
 
 module PokitDok

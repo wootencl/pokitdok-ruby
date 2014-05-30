@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'oauth2', '~> 0.9'
+gem 'oauth2', '~> 0.9', require: 'oauth2'
 
 group :development do
 	gem 'bundler', '~> 1.0'

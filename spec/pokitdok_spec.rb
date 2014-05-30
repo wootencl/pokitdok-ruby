@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-CLIENT_ID = 'umGGEcetubysDyPohc3h'
-CLIENT_SECRET = 'MlOFhf4XwDrNVL7vyjxTSjUNlKUO7jLgkjh7JDCS'
+CLIENT_ID = 'QEVgdZCITH9xq9K0Xydn'
+CLIENT_SECRET = '5hdUHfK9bMLYaEYWl8OI5o2WynLO1wox0fmvx8si'
 POKITDOK_TEST_URL = 'http://localhost:5002/api/v3'
 
 def check_meta_and_data(result)
@@ -12,15 +12,6 @@ def check_meta_and_data(result)
 end
 
 describe PokitDok do
-  describe 'Basic functionality' do
-    it 'should point at the correct PokitDok API URL' do
-      VCR.use_cassette('basic') do
-        @pd = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-        @pd.api_url.must_equal 'https://platform.pokitdok.com/api/v3'
-      end
-    end
-  end
-
   describe 'Authenticated functions' do
     before do
       PokitDok::PokitDok.any_instance.stubs(:api_url)
@@ -153,7 +144,7 @@ describe PokitDok do
       it 'should expose the payers endpoint' do
         @payers = @pokitdok.payers(state: 'CA')['data']
         refute_nil @payers
-        @payers.size.must_equal 20
+        @payers.size.must_equal 36
       end
     end
 
