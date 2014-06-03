@@ -13,15 +13,13 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = 'pokitdok-ruby'
   gem.homepage = 'http://github.com/riney/pokitdok-ruby'
   gem.license = 'MIT'
-  gem.summary = %Q{Gem for easy access to the PokitDok Platform APIs}
-  gem.description = %Q{Gem for easy access to the PokitDok Platform APIs.}
+  gem.summary = %Q(Gem for easy access to the PokitDok Platform APIs)
+  gem.description = %Q(Gem for easy access to the PokitDok Platform APIs.)
   gem.email = 'john.riney@pokitdok.com'
   gem.authors = ['John Riney']
-  # dependencies defined in Gemfile
 end
 
 Jeweler::RubygemsDotOrgTasks.new
@@ -39,7 +37,7 @@ task :simplecov do
   Rake::Task['spec'].execute
 end
 
-task :default => :test
+task default: :spec
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
@@ -54,8 +52,8 @@ end
 
 require 'rubocop/rake_task'
 desc 'Run RuboCop on the lib and test directory'
-Rubocop::RakeTask.new(:rubocop) do |task|
-  task.patterns = ['lib/**/*.rb', 'test/**/*.rb']
-  task.formatters = ['offenses', 'progress']
+RuboCop::RakeTask.new(:rubocop) do |task|
+  task.patterns = %w( 'lib/**/*.rb' 'test/**/*.rb' )
+  task.formatters = %w( 'offenses' 'progress' )
   task.fail_on_error = false
 end

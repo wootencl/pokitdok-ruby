@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 gem 'oauth2', '~> 0.9', require: 'oauth2'
+gem 'httmultiparty', '~> 0.3'
 
 group :development do
 	gem 'bundler', '~> 1.0'

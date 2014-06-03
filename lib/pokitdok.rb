@@ -1,9 +1,17 @@
-# encoding: UTF-8
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2014, All Rights Reserved, PokitDok, Inc.
+# https://www.pokitdok.com
+#
+# Please see the LICENSE.txt file for more information.
+# All other rights reserved.
+#
 
 require 'rubygems'
 require 'bundler/setup'
 require 'json'
 require 'oauth2'
+require 'httmultiparty'
 
 module PokitDok
   # PokitDok API client implementation for Ruby.
@@ -19,6 +27,7 @@ module PokitDok
     # +client_id+     your client ID, provided by PokitDok
     #
     # +client_secret+ your client secret, provided by PokitDok
+    #
     def initialize(client_id, client_secret)
       @client_id = client_id
       @client_secret = client_secret
@@ -102,13 +111,20 @@ module PokitDok
       JSON.parse(response.body)
     end
 
-    # Invokes the files endpoint, with an optional Hash of parameters.
-    def files(params = {})
-      response = @token.post('files/',
-                             headers: headers,
-                             body: params.to_json) do |request|
-        request.headers['Content-Type'] = 'application/json'
-      end
+    # Uploads an EDI file to the files endpoint.
+    #
+    # +trading_partner_id+ the trading partner to transmit to
+    #
+    # +filename+ the path to the file to transmit
+    #
+    def files(trading_partner_id, filename)
+      response = HTTMultiParty.post(api_url + '/files/',
+                      query: {
+                        access_token: @token.token,
+                        file: File.new(filename),
+                        trading_partner_id: trading_partner_id
+                      }
+      )
 
       JSON.parse(response.body)
     end

@@ -111,15 +111,15 @@ describe PokitDok do
 
     describe 'Files endpoint' do
       it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.files
+        check_meta_and_data = 
+          @pokitdok.files('MOCKPAYER', 'spec/fixtures/sample.270')
       end
 
       it 'should expose the files endpoint' do
-        query = {}
-
-        @response = @pokitdok.files(query)
-        print @response
+        @response = @pokitdok.files('MOCKPAYER',
+                                    'spec/fixtures/sample.270')
         refute_nil @response
+        # TODO: should get back an activity id
       end
     end
 
