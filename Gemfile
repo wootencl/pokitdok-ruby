@@ -18,5 +18,4 @@ group :development do
 	gem 'guard-minitest', '~> 2.2'
 	gem 'terminal-notifier-guard', '~> 1.5'
 	gem 'guard-rubocop', '~> 1.0'
-	gem 'rdoc-generator-fivefish', '~> 0.1'
 end

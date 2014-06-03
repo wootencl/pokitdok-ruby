@@ -40,8 +40,6 @@ GEM
       rubocop (~> 0.20)
     hashie (3.0.0)
     highline (1.6.21)
-    inversion (0.12.3)
-      loggability (~> 0.4)
     jeweler (2.0.1)
       builder
       bundler (>= 1.0)
@@ -57,7 +55,6 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    loggability (0.11.0)
     lumberjack (1.0.6)
     metaclass (0.0.4)
     method_source (0.8.2)
@@ -97,11 +94,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
-    rdoc-generator-fivefish (0.1.0)
-      inversion (~> 0.12)
-      loggability (~> 0.6)
-      rdoc (~> 4.0)
-      yajl-ruby (~> 1.1)
     rubocop (0.23.0)
       json (>= 1.7.7, < 2)
       parser (~> 2.1.9)
@@ -124,7 +116,6 @@ GEM
     webmock (1.18.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-    yajl-ruby (1.2.0)
 
 PLATFORMS
   ruby
@@ -142,7 +133,6 @@ DEPENDENCIES
   multipart-post (~> 2.0)
   oauth2 (~> 0.9)
   rdoc (~> 4.1)
-  rdoc-generator-fivefish (~> 0.1)
   rubocop (~> 0.20)
   simplecov (~> 0.8)
   terminal-notifier-guard (~> 1.5)
