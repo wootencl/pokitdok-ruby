@@ -31,6 +31,9 @@ Rake::TestTask.new(:spec) do |spec|
   spec.verbose = true
 end
 
+require 'coveralls'
+Coveralls.wear!
+
 desc 'Code coverage detail'
 task :simplecov do
   ENV['COVERAGE'] = 'true'
