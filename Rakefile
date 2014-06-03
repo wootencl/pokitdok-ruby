@@ -41,10 +41,10 @@ task default: :spec
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ''
+  @version = File.exist?('VERSION') ? File.read('VERSION') : ''
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = 'pokitdok-ruby #{version}'
+  rdoc.title = 'pokitdok-ruby #{@version}'
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
   rdoc.main = 'README.md'

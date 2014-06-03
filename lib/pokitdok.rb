@@ -9,9 +9,10 @@
 
 require 'rubygems'
 require 'bundler/setup'
+require 'base64'
 require 'json'
 require 'oauth2'
-require 'httmultiparty'
+require 'net/http/post/multipart'
 
 module PokitDok
   # PokitDok API client implementation for Ruby.
@@ -42,9 +43,13 @@ module PokitDok
       POKITDOK_URL_BASE + '/api/v3'
     end
 
+    def user_agent
+      "pokitdok-ruby 0.2.1 #{RUBY_DESCRIPTION}"
+    end
+
     # returns a standard set of headers to be passed along with all requests
     def headers
-      { 'User-Agent' => "pokitdok-ruby 0.2.1 #{RUBY_DESCRIPTION}" }
+      { 'User-Agent' => user_agent }
     end
 
     # Refreshes the client token associated with this PokitDok connection
@@ -64,7 +69,7 @@ module PokitDok
     end
 
     # Invokes the cash prices endpoint, with an optional Hash of parameters.
-    def cash_prices(params = {})
+    def cash_prices(_params = {})
       fail NotImplementedError, "The PokitDok API does not currently support
         this endpoint."
     end
@@ -80,13 +85,13 @@ module PokitDok
     end
 
     # Invokes the claims status endpoint, with an optional Hash of parameters.
-    def claim_status(params = {})
+    def claim_status(_params = {})
       fail NotImplementedError, 'The PokitDok API does not currently support
         this endpoint.'
     end
 
     # Invokes the deductible endpoint, with an optional Hash of parameters.
-    def deductible(params = {})
+    def deductible(_params = {})
       fail NotImplementedError, 'The PokitDok API does not currently support
         this endpoint.'
     end
@@ -112,21 +117,28 @@ module PokitDok
     end
 
     # Uploads an EDI file to the files endpoint.
+    # Uses the multipart-post gem, since oauth2 doesn't support multipart.
     #
     # +trading_partner_id+ the trading partner to transmit to
     #
     # +filename+ the path to the file to transmit
     #
     def files(trading_partner_id, filename)
-      response = HTTMultiParty.post(api_url + '/files/',
-                      query: {
-                        access_token: @token.token,
-                        file: File.new(filename),
-                        trading_partner_id: trading_partner_id
-                      }
-      )
+      url = URI.parse(api_url + '/files/')
 
-      JSON.parse(response.body)
+      File.open(filename) do |f|
+        req = Net::HTTP::Post::Multipart.new url.path,
+          'file' => UploadIO.new(f, 'application/EDI-X12', filename),
+          'trading_partner_id' => trading_partner_id
+        req['Authorization'] = "Bearer #{@token.token}"
+        req['User-Agent'] = user_agent
+
+        @response = Net::HTTP.start(url.host, url.port) do |http|
+          http.request(req)
+        end
+      end
+
+      JSON.parse(@response.body)
     end
 
     # Invokes the insurance prices endpoint, with an optional Hash of

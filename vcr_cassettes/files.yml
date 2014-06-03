@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5002/api/v3/files/
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost\r\nContent-Disposition: form-data; name=\"file\";
+        filename=\"sample.270\"\r\nContent-Length: 2930\r\nContent-Type: application/EDI-X12\r\nContent-Transfer-Encoding:
+        binary\r\n\r\nISA*00*          *00*          *30*SENDER         *30*RECEIVER
+        \      *140305*1953*^*00501*000000905*0*T*:~\nGS*HS*SENDER_ID*RECEIVER_ID*20140305*1953*CONTROL_ID*X*005010X279A1~\nST*270*0001*005010X279A1~\nBHT*0022*13*813785794*20140305*1953~\nHL*1**20*1~\nNM1*PR*2*MOCKPAYER*****PI*MOCKPAYER~\nHL*2*1*21*1~\nNM1*1P*2*Wuckert
+        Inc*****XX*581603684~\nHL*3*2*22*0~\nTRN*1*181399807*9324422845~\nNM1*IL*1*Tromp*Jerod****MI*545943979~\nDMG*D8*19960507~\nDTP*291*D8*20140305~\nEQ*30~\nHL*4*2*22*0~\nTRN*1*611822238*9324422845~\nNM1*IL*1*Walker*Hassan****MI*773415451~\nDMG*D8*19960613~\nDTP*291*D8*20140305~\nEQ*30~\nHL*5*2*22*0~\nTRN*1*530994264*9324422845~\nNM1*IL*1*Johns*Cathrine****MI*505837362~\nDMG*D8*19881001~\nDTP*291*D8*20140305~\nEQ*30~\nHL*6*2*22*0~\nTRN*1*145769779*9324422845~\nNM1*IL*1*Durgan*Stephon****MI*204791243~\nDMG*D8*19830509~\nDTP*291*D8*20140305~\nEQ*30~\nHL*7*2*22*0~\nTRN*1*853276515*9324422845~\nNM1*IL*1*Erdman*Bartholome****MI*994176438~\nDMG*D8*19930513~\nDTP*291*D8*20140305~\nEQ*30~\nHL*8*2*22*0~\nTRN*1*392506326*9324422845~\nNM1*IL*1*Padberg*Kaci****MI*331914222~\nDMG*D8*19920730~\nDTP*291*D8*20140305~\nEQ*30~\nHL*9*2*22*0~\nTRN*1*669106647*9324422845~\nNM1*IL*1*Donnelly*Kyleigh****MI*461763996~\nDMG*D8*19890712~\nDTP*291*D8*20140305~\nEQ*30~\nHL*10*2*22*0~\nTRN*1*915888295*9324422845~\nNM1*IL*1*Monahan*Jimmie****MI*315531994~\nDMG*D8*19950414~\nDTP*291*D8*20140305~\nEQ*30~\nHL*11*2*22*0~\nTRN*1*924598474*9324422845~\nNM1*IL*1*Bednar*Markus****MI*674957204~\nDMG*D8*19780109~\nDTP*291*D8*20140305~\nEQ*30~\nHL*12*2*22*0~\nTRN*1*218563674*9324422845~\nNM1*IL*1*McCullough*Leland****MI*789318226~\nDMG*D8*19800202~\nDTP*291*D8*20140305~\nEQ*30~\nHL*13*2*22*0~\nTRN*1*764225581*9324422845~\nNM1*IL*1*Macejkovic*Norwood****MI*605486216~\nDMG*D8*19890726~\nDTP*291*D8*20140305~\nEQ*30~\nHL*14*2*22*0~\nTRN*1*843675248*9324422845~\nNM1*IL*1*Ortiz*Keyon****MI*178470414~\nDMG*D8*19920126~\nDTP*291*D8*20140305~\nEQ*30~\nHL*15*2*22*0~\nTRN*1*575530276*9324422845~\nNM1*IL*1*Doyle*Olin****MI*727454392~\nDMG*D8*19890922~\nDTP*291*D8*20140305~\nEQ*30~\nHL*16*2*22*0~\nTRN*1*583253119*9324422845~\nNM1*IL*1*Doyle*Greg****MI*302952193~\nDMG*D8*19890228~\nDTP*291*D8*20140305~\nEQ*30~\nHL*17*2*22*0~\nTRN*1*494693024*9324422845~\nNM1*IL*1*Brekke*Nathanial****MI*228065686~\nDMG*D8*19910131~\nDTP*291*D8*20140305~\nEQ*30~\nHL*18*2*22*0~\nTRN*1*654387679*9324422845~\nNM1*IL*1*Herzog*Jayme****MI*653618078~\nDMG*D8*19871017~\nDTP*291*D8*20140305~\nEQ*30~\nHL*19*2*22*0~\nTRN*1*864981376*9324422845~\nNM1*IL*1*Ebert*Heaven****MI*548879156~\nDMG*D8*19930416~\nDTP*291*D8*20140305~\nEQ*30~\nHL*20*2*22*0~\nTRN*1*618055454*9324422845~\nNM1*IL*1*Cummerata*Hector****MI*688306042~\nDMG*D8*19780613~\nDTP*291*D8*20140305~\nEQ*30~\nHL*21*2*22*0~\nTRN*1*608414882*9324422845~\nNM1*IL*1*Kerluke*Enola****MI*687416329~\nDMG*D8*19960902~\nDTP*291*D8*20140305~\nEQ*30~\nHL*22*2*22*0~\nTRN*1*568364627*9324422845~\nNM1*IL*1*Wehner*Alyce****MI*728313788~\nDMG*D8*19701130~\nDTP*291*D8*20140305~\nEQ*30~\nSE*127*0001~\nGE*1*CONTROL_ID~\nIEA*1*000000905~\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"trading_partner_id\"\r\n\r\nMOCKPAYER\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - pokitdok-ruby 0.2.1 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '3266'
+      Authorization:
+      - Bearer BR8J2PXhCIVnkwWLRsESQWSI198fztONOGc6Evlf
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '683'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Tue, 03 Jun 2014 20:32:29 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 39, "rate_limit_reset": 1401829297,
+        "processing_time": 458, "rate_limit_cap": 8434, "credits_remaining": -21,
+        "credits_billed": 1}, "data": {"units_of_work": 1, "name": "batch file", "remaining_transitions":
+        ["process", "complete"], "state": {"name": "queued", "title": "In queue waiting
+        to start"}, "trading_partner_id": "MOCKPAYER", "id": "538e30dd56c02c5ec9749555",
+        "transition_path": ["store", "queue", "process", "complete"], "history": [{"record_dt":
+        "2014-06-03T20:32:29.447696", "name": "init", "title": "Initializing"}, {"record_dt":
+        "2014-06-03T20:32:29.449003", "name": "stored", "title": "Batch transactions
+        stored for later processing"}]}}'
+    http_version: 
+  recorded_at: Tue, 03 Jun 2014 20:32:29 GMT
+recorded_with: VCR 2.9.2

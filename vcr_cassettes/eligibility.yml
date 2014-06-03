@@ -5,14 +5,14 @@ http_interactions:
     uri: http://localhost:5002/api/v3/eligibility/
     body:
       encoding: UTF-8
-      string: '{"payer_id":"MOCKPAYER","member_id":"W34237875729","provider_id":"1467560003","provider_name":"AYA-AY","provider_first_name":"JEROME","provider_type":"1","member_name":"JOHN
-        DOE","member_birth_date":"05/21/1975","service_types":["Health Benefit Plan
+      string: '{"trading_partner_id":"MOCKPAYER","member_id":"W34237875729","provider_id":"1467560003","provider_name":"AYA-AY","provider_first_name":"JEROME","provider_type":"Person","member_name":"JOHN
+        DOE","member_birth_date":"05-21-1975","service_types":["Health Benefit Plan
         Coverage"]}'
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - pokitdok-ruby 0.2.1 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
       Authorization:
-      - Bearer WIxEw6HOW1H3PTEGuqTiDjcMlR8m7y6kqEloD0di
+      - Bearer BR8J2PXhCIVnkwWLRsESQWSI198fztONOGc6Evlf
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '6937'
+      - '7041'
       Mimetype:
       - application/json
       Charset:
@@ -35,22 +35,22 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Thu, 17 Apr 2014 21:36:56 GMT
+      - Tue, 03 Jun 2014 20:30:50 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 7, "rate_limit_reset": 1397772034, "processing_time":
-        67, "rate_limit_cap": 8434, "credits_remaining": 8930, "credits_billed": 1},
-        "data": {"provider_id": "1467560003", "client_id": "jSoRZy4iLIIxj23vWb5x",
-        "payer_name": "MOCK PAYER INC", "correlation_id": "eff44038-3b5b-41cb-b7e2-b19e583100ef",
+      string: '{"meta": {"rate_limit_amount": 33, "rate_limit_reset": 1401829297,
+        "processing_time": 350, "rate_limit_cap": 8434, "credits_remaining": 9975,
+        "credits_billed": 1}, "data": {"provider_id": "1467560003", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "payer_name": "MOCK PAYER INC", "correlation_id": "e05cfdf6-e23e-4a7e-83e2-a275c1e81f95",
         "member_first_name": "JOHN", "member_name": "JOHN DOE", "valid_request": true,
-        "update_dt": "Thu Apr 17 21:36:56 2014", "subscriber": {"first_name": "JOHN",
+        "update_dt": "Tue Jun  3 20:30:50 2014", "subscriber": {"first_name": "JOHN",
         "last_name": "DOE", "address": {"city": "SPARTANBURG", "line": "123 MAIN ST",
         "postal_code": "29307", "state": "SC"}, "member_id": "W34237875729", "birth_date":
-        "Wed May 21 00:00:00 1975"}, "dependent": {"address": {}}, "insert_dt": "Thu
-        Apr 17 21:36:56 2014", "provider_name": "JEROME AYA-AY", "provider_first_name":
-        "JEROME", "trading_partner_id": "MOCKPAYER", "provider_type": "1", "_type":
-        "Eligibility", "deleted": false, "payer_id": "MOCKPAYER", "coverage": {"service_type_codes":
-        ["98"], "service_types": ["Professional (Physician) Visit - Office"], "group_number":
+        "Wed May 21 00:00:00 1975"}, "dependent": {"address": {}}, "version": "3.0.0",
+        "provider_name": "JEROME AYA-AY", "provider_first_name": "JEROME", "trading_partner_id":
+        "MOCKPAYER", "provider_type": "Person", "_type": "Eligibility", "deleted":
+        false, "payer_id": "MOCKPAYER", "coverage": {"service_type_codes": ["98"],
+        "service_types": ["Professional (Physician) Visit - Office"], "group_number":
         "088818801000013", "out_of_pocket": [{"messages": [], "in_plan_network": "Y",
         "coverage_level_code": "IND", "coverage_level": "Individual", "benefit_amount":
         {"currency": "USD", "amount": "3000"}}, {"messages": [], "in_plan_network":
@@ -121,9 +121,11 @@ http_interactions:
         APPLIES TO OUT OF POCKET"}, {"message": "SPEC VISIT,COINS APPLIES TO OUT OF
         POCKET"}, {"message": "PRIME CARE VST,COINS APPLIES TO OUT OF POCKET"}], "in_plan_network":
         "N", "coverage_level_code": "ESP", "coverage_level": "Employee and Spouse"}],
-        "plan_number": "0888188", "service_date": "Sat Aug 10 00:00:00 2013"}, "member_last_name":
-        "DOE", "service_types": ["Professional (Physician) Visit - Office"], "member_birth_date":
-        "Wed May 21 00:00:00 1975", "member_id": "W34237875729", "_id": "5350497856c02c070eeb8f1c"}}'
+        "group_description": "MOCK INDIVIDUAL ADVANTAGE PLAN", "plan_number": "0888188",
+        "service_date": "Sat Aug 10 00:00:00 2013"}, "member_last_name": "DOE", "service_types":
+        ["Professional (Physician) Visit - Office"], "insert_dt": "Tue Jun  3 20:30:50
+        2014", "major_version": "3", "member_birth_date": "Wed May 21 00:00:00 1975",
+        "member_id": "W34237875729", "_id": "538e307a56c02c5ec9749550"}}'
     http_version: 
-  recorded_at: Thu, 17 Apr 2014 21:36:56 GMT
-recorded_with: VCR 2.9.0
+  recorded_at: Tue, 03 Jun 2014 20:30:50 GMT
+recorded_with: VCR 2.9.2

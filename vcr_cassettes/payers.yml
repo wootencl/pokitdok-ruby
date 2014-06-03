@@ -1,0 +1,163 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5002/api/v3/payers?state=CA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.2.1 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      Authorization:
+      - Bearer BR8J2PXhCIVnkwWLRsESQWSI198fztONOGc6Evlf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '297'
+      Location:
+      - http://localhost:5002/api/v3/payers/?state=CA
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Tue, 03 Jun 2014 20:30:50 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <title>Redirecting...</title>
+        <h1>Redirecting...</h1>
+        <p>You should be redirected automatically to target URL: <a href="http://localhost:5002/api/v3/payers/?state=CA">http://localhost:5002/api/v3/payers/?state=CA</a>.  If not click the link.
+    http_version: 
+  recorded_at: Tue, 03 Jun 2014 20:30:50 GMT
+- request:
+    method: get
+    uri: http://localhost:5002/api/v3/payers/?state=CA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.2.1 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      Authorization:
+      - Bearer BR8J2PXhCIVnkwWLRsESQWSI198fztONOGc6Evlf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '6858'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Tue, 03 Jun 2014 20:30:50 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"processing_time": 15}, "data": [{"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of Colorado BLUE CROSS
+        BLUE SHIELD CO", "payer_key": "bccoc", "production_status": false, "payer_id":
+        "BCCOC"}, {"supported_transactions": ["270", "276"], "payer_name": "Blue Cross
+        Blue Shield of Kentucky BCBS OF KY", "payer_key": "bckyc", "production_status":
+        false, "payer_id": "BCKYC"}, {"supported_transactions": ["270"], "payer_name":
+        "Blue Cross Blue Shield of Pennsylvania - Highmark BLUE CROSS BLUE SHIELD
+        PA", "payer_key": "highmark_penn", "production_status": false, "payer_id":
+        "440"}, {"supported_transactions": ["270", "276"], "payer_name": "Blue Cross
+        Blue Shield of Nebraska BLUE CROSS BLUE SHIELD OF NEBRASKA", "payer_key":
+        "bcbsne", "production_status": false, "payer_id": "BCNEC"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "ANTHEM BLUE CROSS", "payer_key": "bcca", "production_status":
+        false, "payer_id": "39"}, {"supported_transactions": ["270", "276"], "payer_name":
+        "MVP Health Plan of NY MVP HEALTH CARE NY", "payer_key": "MVP", "production_status":
+        false, "payer_id": "432"}, {"supported_transactions": ["270", "276"], "payer_name":
+        "Blue Cross Blue Shield of Wisconsin (Anthem) BLUE CROSS BLUE SHIELD WI",
+        "payer_key": "bcwic", "production_status": false, "payer_id": "BCWIC"}, {"supported_transactions":
+        ["270"], "payer_name": "Blue Cross Blue Shield of Iowa BLUE CROSS BLUE SHEILD
+        IA", "payer_key": "bciac", "production_status": false, "payer_id": "BCIAC"},
+        {"supported_transactions": ["270", "276"], "payer_name": "CIGNA CIGNA ", "payer_key":
+        "CIGNA", "production_status": false, "payer_id": "1"}, {"supported_transactions":
+        ["834", "835", "837", "270", "271", "276", "277", "278"], "payer_name": "Mock
+        Payer with eligibility inquiry rejection", "payer_key": "MOCKPAYER_PARSE_ERROR",
+        "production_status": false, "payer_id": "MOCKPAYER_PARSE_ERROR"}, {"supported_transactions":
+        ["834", "835", "837", "270", "271", "276", "277", "278"], "payer_name": "Mock
+        Payer with Implementation Acknowledgement", "payer_key": "MOCKPAYER_ACK",
+        "production_status": false, "payer_id": "MOCKPAYER_ACK"}, {"supported_transactions":
+        ["837"], "payer_name": "Independence Blue Cross INDEPENDENCE BLUE CROSS",
+        "payer_key": "bcibc", "production_status": false, "payer_id": "BCIBC"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of Nevada BLUE CROSS
+        BLUE SHIELD NV", "payer_key": "bcnvc", "production_status": false, "payer_id":
+        "BCNVC"}, {"supported_transactions": ["834", "835", "837", "270", "271", "276",
+        "277", "278"], "payer_name": "Mock Payer for Communication Error Testing",
+        "payer_key": "MOCKPAYER_COMMERROR", "production_status": false, "payer_id":
+        "MOCKPAYER_COMMERROR"}, {"supported_transactions": ["834", "835", "837", "270",
+        "271", "276", "277", "278"], "payer_name": "Mock Payer with eligibility inquiry
+        rejection", "payer_key": "MOCKPAYER_REJECTION", "production_status": false,
+        "payer_id": "MOCKPAYER_REJECTION"}, {"supported_transactions": ["270", "276"],
+        "payer_name": "Blue Cross Blue Shield of Maine BLUE CROSS BLUE SHIELD ME",
+        "payer_key": "bcmec", "production_status": false, "payer_id": "BCMEC"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of Connecticut BLUE
+        CROSS BLUE SHIELD CT", "payer_key": "bcctc", "production_status": false, "payer_id":
+        "BCCTC"}, {"supported_transactions": ["270"], "payer_name": "Blue Cross Blue
+        Shield of Louisiana BLUE CROSS BLUE SHIELD LA", "payer_key": "bcbsla", "production_status":
+        false, "payer_id": "83"}, {"supported_transactions": ["270", "276"], "payer_name":
+        "Blue Cross Blue Shield of Kansas City BCBS KS CITY", "payer_key": "bcbskc",
+        "production_status": false, "payer_id": "BCKCC"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Aetna AETNA", "payer_key": "AETNA", "production_status":
+        false, "payer_id": "2"}, {"supported_transactions": ["270"], "payer_name":
+        "Blue Cross Blue Shield of North Carolina BCBS NC", "payer_key": "BCBSNC",
+        "production_status": false, "payer_id": "BCNCC"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Oxford Health Plans OXFORD HEALTH PLANS", "payer_key":
+        "OXFORD", "production_status": false, "payer_id": "16"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of New Hampshire BLUE
+        CROSS BLUE SHIELD NH", "payer_key": "bcnhc", "production_status": false, "payer_id":
+        "BCNHC"}, {"supported_transactions": ["834", "835", "837", "270", "271", "276",
+        "277", "278"], "payer_name": "Mock Payer for Testing", "payer_key": "MOCKPAYER",
+        "production_status": false, "payer_id": "MOCKPAYER"}, {"supported_transactions":
+        ["270", "276", "834", "837"], "payer_name": "PREMERA", "payer_key": "PREMERA",
+        "production_status": false, "payer_id": "PREMERA"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of Georgia BCBS OF GEORGIA",
+        "payer_key": "bcbsga", "production_status": false, "payer_id": "151"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of Virginia BLUE CROSS
+        BLUE SHIELD VA", "payer_key": "bcvac", "production_status": false, "payer_id":
+        "BCVAC"}, {"supported_transactions": ["270", "276"], "payer_name": "Blue Cross
+        Blue Shield of Indiana BLUE CROSS BLUE SHIELD INDIANA", "payer_key": "bcinc",
+        "production_status": false, "payer_id": "BCINC"}, {"supported_transactions":
+        ["270"], "payer_name": "Blue Shield of California BLUE SHIELD OF CALIFORNIA",
+        "payer_key": "BSCA", "production_status": false, "payer_id": "00361"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of Kansas BCBS KANSAS",
+        "payer_key": "bcbsks", "production_status": false, "payer_id": "BCKSC"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "UnitedHealthcare UNITED HEALTH CARE", "payer_key":
+        "UNITED", "production_status": false, "payer_id": "112"}, {"supported_transactions":
+        ["270", "276"], "payer_name": "Blue Cross Blue Shield of Ohio BLUE CROSS BLUE
+        SHIELD OH", "payer_key": "bcohc", "production_status": false, "payer_id":
+        "BCOHC"}, {"supported_transactions": ["270", "276"], "payer_name": "EMPIRE
+        HEALTH CHOICE ASSURANCE, INC", "payer_key": "bcbsny", "production_status":
+        false, "payer_id": "44"}, {"supported_transactions": ["270", "276"], "payer_name":
+        "FIDELIS CARE NEW YORK", "payer_key": "FIDELIS", "production_status": false,
+        "payer_id": "11315"}, {"supported_transactions": ["270", "276"], "payer_name":
+        "Blue Cross Blue Shield of Missouri BLUE CROSS BLUE SHIELD MO", "payer_key":
+        "bcmoc", "production_status": false, "payer_id": "BCMOC"}, {"supported_transactions":
+        ["834", "835", "837", "270", "271", "276", "277", "278"], "payer_name": "Mock
+        Payer with Random I/O wait for Testing", "payer_key": "MOCKPAYER_RANDOM_WAIT",
+        "production_status": false, "payer_id": "MOCKPAYER_RANDOM_WAIT"}]}'
+    http_version: 
+  recorded_at: Tue, 03 Jun 2014 20:30:50 GMT
+recorded_with: VCR 2.9.2

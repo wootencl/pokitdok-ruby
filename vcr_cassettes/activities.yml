@@ -1,0 +1,512 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5002/api/v3/activities
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.2.1 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      Authorization:
+      - Bearer BR8J2PXhCIVnkwWLRsESQWSI198fztONOGc6Evlf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '287'
+      Location:
+      - http://localhost:5002/api/v3/activities/
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Tue, 03 Jun 2014 20:30:50 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <title>Redirecting...</title>
+        <h1>Redirecting...</h1>
+        <p>You should be redirected automatically to target URL: <a href="http://localhost:5002/api/v3/activities/">http://localhost:5002/api/v3/activities/</a>.  If not click the link.
+    http_version: 
+  recorded_at: Tue, 03 Jun 2014 20:30:50 GMT
+- request:
+    method: get
+    uri: http://localhost:5002/api/v3/activities/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.2.1 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      Authorization:
+      - Bearer BR8J2PXhCIVnkwWLRsESQWSI198fztONOGc6Evlf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '35320'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Tue, 03 Jun 2014 20:30:50 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"processing_time": 7, "rate_limit_amount": 34, "rate_limit_reset":
+        1401829297, "next": "http://localhost:5002/api/v3/activities/?offset=20",
+        "rate_limit_cap": 8434}, "data": [{"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "claims", "parameters": {"state": "CA"}, "update_dt": "Fri May 16
+        21:02:17 2014", "remaining_transitions": [], "major_version": "3", "state":
+        {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "d7c1f0cf-a2d8-4fbe-ab94-879e4bed2a42", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e05c056c02c40598300e5", "insert_dt":
+        "Thu May 15 17:45:31 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:28:32 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:28:33 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "providers", "parameters": {"member_name": "Junior Spencer", "service_types":
+        ["Health Benefit Plan Coverage"], "client_id": "4nhMZTpLxBxmiocveVb5", "update_dt":
+        "Tue Jun  3 16:07:20 2014", "deleted": false, "payer_name": "Mock Payer for
+        Testing", "major_version": "3", "provider_id": "314087243", "payer_id": null,
+        "control_number": "000000001", "correlation_id": "3fb9a7b3-d83b-48d6-bc3e-50c87c5d10d4",
+        "version": "3.0.0", "member_first_name": "Junior", "trading_partner_id": "MOCKPAYER",
+        "member_id": "762008086", "member_last_name": "Spencer", "provider_name":
+        "Heathcote, Fahey and McCullough", "member_birth_date": "Sat Jan  6 00:00:00
+        1990", "insert_dt": "Tue Jun  3 16:07:20 2014", "provider_type": "Non-Person
+        Entity"}, "update_dt": "Thu May 15 12:10:40 2014", "remaining_transitions":
+        ["wait", "receive", "process", "complete"], "major_version": "3", "state":
+        {"name": "failed", "title": "Failed"}, "deleted": false, "correlation_id":
+        "3fb9a7b3-d83b-48d6-bc3e-50c87c5d10d4", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "MOCKPAYER", "_id": "538df2b856c02c36fb6c2f05", "insert_dt":
+        "Fri May  9 19:20:45 2014", "transition_path": ["generate", "transmit", "wait",
+        "receive", "process", "complete"], "history": [{"record_dt": "Tue Jun  3 16:07:20
+        2014", "name": "init", "title": "Initializing"}, {"record_dt": "Tue Jun  3
+        16:07:20 2014", "name": "generating", "title": "Generating X12 transactions"}]},
+        {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "providers",
+        "parameters": {"claim": {"dates": [{"date_value": "Tue Apr 15 00:00:00 2014",
+        "date_qualifier": "Onset of Symptom or Illness"}], "facility_code_value":
+        "11", "claim_total_amount": {"currency": "USD", "amount": "40.0"}, "health_care_codes":
+        [{"health_care_code_1": "BK:0340", "health_care_code_2": "BF:V7389"}], "assignment_code":
+        "Assigned", "information_release_code": "Informed Consent", "facility_code_qualifier":
+        "B", "benefit_assignment_code": "Yes", "claim_frequency_code": "1", "provider_signature_on_file":
+        "Y", "service_lines": [{"medical_service_unit": "Unit", "medical_service_quantity":
+        "1.0", "medical_procedure_identifier": "HC:99213", "dates": [{"date_value":
+        "Wed Apr 16 00:00:00 2014", "date_qualifier": "Service Date"}], "medical_diagnosis_code":
+        "1", "medical_charge_amount": {"currency": "USD", "amount": "40.0"}}], "ref":
+        [{"id_type": "Claim Number", "id_code": "1234567890"}], "patient_control_number":
+        "26462967"}, "transaction_purpose_code": "Original", "payer": {"id_code":
+        "HPHC", "entity_identifier": "Payer", "id_type": "Payor Identification", "last_org_name":
+        "HARVARD PILGRIM HEALTH CARE", "entity_type": "Non-Person"}, "update_dt":
+        "Tue Jun  3 17:28:32 2014", "deleted": false, "major_version": "3", "transaction_type":
+        "Reporting", "subscriber": {"city": "BURLINGTON", "first_name": "TED", "entity_identifier":
+        "Subscriber", "last_org_name": "SMITH", "entity_type": "Person", "group_number":
+        "12312-A", "gender_code": "Male", "id_code": "HP123456700", "relationship_code":
+        "Self", "is_patient": true, "state": "MA", "payer_responsibility": "Primary",
+        "id_type": "Member ID", "birth_date": "Sat May  1 00:00:00 1943", "postal_code":
+        "01803", "claim_filing_code": "Health Maintenance Organization", "address_line_1":
+        "123 MAIN ST"}, "correlation_id": "11e00a63-959d-4686-be9c-3438a97797de",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "receiver": {"id_code": "HPHC", "entity_identifier": "Receiver",
+        "id_type": "ETIN", "last_org_name": "HPHC", "entity_type": "Non-Person"},
+        "submitter": {"id_code": "123456789", "entity_identifier": "Submitter", "id_type":
+        "ETIN", "last_org_name": "ACME, INC.", "entity_type": "Non-Person"}, "billing_provider":
+        {"city": "BURLINGTON", "entity_identifier": "Billing Provider", "last_org_name":
+        "KATIE BRADFORD", "entity_type": "Non-Person", "provider_id_type": "Provider
+        Taxonomy Code", "id_code": "1730240128", "state": "MA", "provider_id_code":
+        "133V00000X", "postal_code": "018033744", "id_type": "NPI", "provider_code":
+        "Billing", "ref": [{"id_type": "Employee Identification Number", "id_code":
+        "587654321"}], "address_line_1": "418 FARMS DR"}, "insert_dt": "Tue Jun  3
+        17:28:32 2014", "app_transaction_id": "00000000001"}, "update_dt": "Tue May
+        27 20:19:02 2014", "remaining_transitions": ["generate", "transmit", "wait",
+        "receive", "process", "complete"], "major_version": "3", "state": {"name":
+        "pending", "title": "Pending Batch Transmission to Trading Partner"}, "deleted":
+        false, "correlation_id": "11e00a63-959d-4686-be9c-3438a97797de", "version":
+        "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id": "MOCKPAYER",
+        "_id": "538e05c056c02c40598300e3", "insert_dt": "Wed May  7 12:39:31 2014",
+        "transition_path": ["batch", "generate", "transmit", "wait", "receive", "process",
+        "complete"], "history": [{"record_dt": "Tue Jun  3 17:28:32 2014", "name":
+        "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "providers", "parameters": {"state": "CA"}, "update_dt": "Tue Jun  3
+        15:51:28 2014", "remaining_transitions": [], "major_version": "3", "state":
+        {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "26774f6c-3c84-4b04-8849-916d4ce72fa8", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e05c156c02c40598300e6", "insert_dt":
+        "Mon Jun  2 09:34:34 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:28:33 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:28:33 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "cash_prices", "parameters": {"state": "CA"}, "update_dt": "Mon May
+        12 22:29:01 2014", "remaining_transitions": [], "major_version": "3", "state":
+        {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "96573196-0ad6-4b13-a335-e867b705a1b9", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e06a456c02c40598300e8", "insert_dt":
+        "Wed May  7 15:15:56 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:32:20 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:32:20 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "enrollment", "parameters": {"state": "CA"}, "update_dt": "Tue Jun  3
+        10:34:38 2014", "remaining_transitions": [], "major_version": "3", "state":
+        {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "94016599-45c8-45e9-976b-5e20173191c2", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e07f456c02c40598300eb", "insert_dt":
+        "Wed May 21 02:19:33 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:37:56 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:37:56 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "providers", "parameters": {"state": "CA"}, "update_dt": "Sat May
+        31 18:00:15 2014", "remaining_transitions": [], "major_version": "3", "state":
+        {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "8e6c7310-79a4-4993-aafe-40b66b5dfd28", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e07f856c02c40598300f0", "insert_dt":
+        "Mon May 26 12:01:32 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:38:00 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:38:00 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "providers", "parameters": {"reference_number": "12456", "version":
+        "3.0.0", "payer": {"tax_id": "654456654"}, "update_dt": "Wed Mar 26 22:18:47
+        2014", "deleted": false, "major_version": "3", "subscriber": {"maintenance_type":
+        "Addition", "first_name": "JOHN", "last_name": "DOE", "benefits": [{"maintenance_type":
+        "Addition", "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996",
+        "benefit_type": "Health", "coordination_of_benefits": [{"status": "Unknown",
+        "group_or_policy_number": "890111", "payer_responsibility": "Primary"}]},
+        {"maintenance_type": "Addition", "late_enrollment": false, "begin_date": "Sat
+        Jun  1 00:00:00 1996", "benefit_type": "Dental"}, {"maintenance_type": "Addition",
+        "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996", "benefit_type":
+        "Vision"}], "relationship": "Self", "contacts": [{"communication_type2": "Work
+        Phone Number", "primary_communication_type": "Home Phone Number", "communication_number2":
+        "7172341240", "primary_communication_number": "7172343334"}], "benefit_status":
+        "Active", "gender": "Male", "employment_status": "Full-time", "subscriber_number":
+        "123456789", "group_or_policy_number": "123456001", "maintenance_reason":
+        "Active", "handicapped": false, "eligibility_begin_date": "Thu May 23 00:00:00
+        1996", "ssn": "123456789", "address": {"city": "CAMP HILL", "line2": "APT
+        3G", "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line":
+        "100 MARKET ST"}, "member_id": "123456789", "birth_date": "Fri Aug 16 00:00:00
+        1940", "middle_name": "P", "substance_abuse": false, "tobacco_use": false},
+        "correlation_id": "b702f678-856d-45eb-a366-1f4a65542295", "insert_dt": "Wed
+        Mar 26 22:18:47 2014", "client_id": "4nhMZTpLxBxmiocveVb5", "purpose": "Original",
+        "trading_partner_id": "MOCKPAYER", "action": "Change", "dependents": [], "sponsor":
+        {"tax_id": "999888777"}}, "update_dt": "Tue Jun  3 13:59:30 2014", "remaining_transitions":
+        ["generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "major_version": "3", "state": {"name": "pending", "title": "Pending Batch
+        Transmission to Trading Partner"}, "deleted": false, "correlation_id": "b702f678-856d-45eb-a366-1f4a65542295",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "_id": "538e05c056c02c40598300e4", "insert_dt": "Sun May 11 00:42:01
+        2014", "transition_path": ["batch", "generate", "store", "transmit", "wait",
+        "receive", "process", "complete"], "history": [{"record_dt": "Tue Jun  3 17:28:32
+        2014", "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type":
+        "PlatformActivityModel", "name": "cash_prices", "parameters": {"claim": {"dates":
+        [{"date_value": "Tue Apr 15 00:00:00 2014", "date_qualifier": "Onset of Symptom
+        or Illness"}], "facility_code_value": "11", "claim_total_amount": {"currency":
+        "USD", "amount": "40.0"}, "health_care_codes": [{"health_care_code_1": "BK:0340",
+        "health_care_code_2": "BF:V7389"}], "assignment_code": "Assigned", "information_release_code":
+        "Informed Consent", "facility_code_qualifier": "B", "benefit_assignment_code":
+        "Yes", "claim_frequency_code": "1", "provider_signature_on_file": "Y", "service_lines":
+        [{"medical_service_unit": "Unit", "medical_service_quantity": "1.0", "medical_procedure_identifier":
+        "HC:99213", "dates": [{"date_value": "Wed Apr 16 00:00:00 2014", "date_qualifier":
+        "Service Date"}], "medical_diagnosis_code": "1", "medical_charge_amount":
+        {"currency": "USD", "amount": "40.0"}}], "ref": [{"id_type": "Claim Number",
+        "id_code": "1234567890"}], "patient_control_number": "26462967"}, "transaction_purpose_code":
+        "Original", "payer": {"id_code": "HPHC", "entity_identifier": "Payer", "id_type":
+        "Payor Identification", "last_org_name": "HARVARD PILGRIM HEALTH CARE", "entity_type":
+        "Non-Person"}, "update_dt": "Tue Jun  3 17:32:20 2014", "deleted": false,
+        "major_version": "3", "transaction_type": "Reporting", "subscriber": {"city":
+        "BURLINGTON", "first_name": "TED", "entity_identifier": "Subscriber", "last_org_name":
+        "SMITH", "entity_type": "Person", "group_number": "12312-A", "gender_code":
+        "Male", "id_code": "HP123456700", "relationship_code": "Self", "is_patient":
+        true, "state": "MA", "payer_responsibility": "Primary", "id_type": "Member
+        ID", "birth_date": "Sat May  1 00:00:00 1943", "postal_code": "01803", "claim_filing_code":
+        "Health Maintenance Organization", "address_line_1": "123 MAIN ST"}, "correlation_id":
+        "5bc2dd05-b492-40f8-987e-95b4d03654e8", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "MOCKPAYER", "receiver": {"id_code": "HPHC", "entity_identifier":
+        "Receiver", "id_type": "ETIN", "last_org_name": "HPHC", "entity_type": "Non-Person"},
+        "submitter": {"id_code": "123456789", "entity_identifier": "Submitter", "id_type":
+        "ETIN", "last_org_name": "ACME, INC.", "entity_type": "Non-Person"}, "billing_provider":
+        {"city": "BURLINGTON", "entity_identifier": "Billing Provider", "last_org_name":
+        "KATIE BRADFORD", "entity_type": "Non-Person", "provider_id_type": "Provider
+        Taxonomy Code", "id_code": "1730240128", "state": "MA", "provider_id_code":
+        "133V00000X", "postal_code": "018033744", "id_type": "NPI", "provider_code":
+        "Billing", "ref": [{"id_type": "Employee Identification Number", "id_code":
+        "587654321"}], "address_line_1": "418 FARMS DR"}, "insert_dt": "Tue Jun  3
+        17:32:20 2014", "app_transaction_id": "00000000001"}, "update_dt": "Fri May
+        16 06:08:01 2014", "remaining_transitions": ["generate", "transmit", "wait",
+        "receive", "process", "complete"], "major_version": "3", "state": {"name":
+        "pending", "title": "Pending Batch Transmission to Trading Partner"}, "deleted":
+        false, "correlation_id": "5bc2dd05-b492-40f8-987e-95b4d03654e8", "version":
+        "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id": "MOCKPAYER",
+        "_id": "538e06a456c02c40598300e7", "insert_dt": "Mon May 12 19:00:00 2014",
+        "transition_path": ["batch", "generate", "transmit", "wait", "receive", "process",
+        "complete"], "history": [{"record_dt": "Tue Jun  3 17:32:20 2014", "name":
+        "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "cash_prices", "parameters": {"reference_number": "12456", "version":
+        "3.0.0", "payer": {"tax_id": "654456654"}, "update_dt": "Wed Mar 26 22:18:47
+        2014", "deleted": false, "major_version": "3", "subscriber": {"maintenance_type":
+        "Addition", "first_name": "JOHN", "last_name": "DOE", "benefits": [{"maintenance_type":
+        "Addition", "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996",
+        "benefit_type": "Health", "coordination_of_benefits": [{"status": "Unknown",
+        "group_or_policy_number": "890111", "payer_responsibility": "Primary"}]},
+        {"maintenance_type": "Addition", "late_enrollment": false, "begin_date": "Sat
+        Jun  1 00:00:00 1996", "benefit_type": "Dental"}, {"maintenance_type": "Addition",
+        "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996", "benefit_type":
+        "Vision"}], "relationship": "Self", "contacts": [{"communication_type2": "Work
+        Phone Number", "primary_communication_type": "Home Phone Number", "communication_number2":
+        "7172341240", "primary_communication_number": "7172343334"}], "benefit_status":
+        "Active", "gender": "Male", "employment_status": "Full-time", "subscriber_number":
+        "123456789", "group_or_policy_number": "123456001", "maintenance_reason":
+        "Active", "handicapped": false, "eligibility_begin_date": "Thu May 23 00:00:00
+        1996", "ssn": "123456789", "address": {"city": "CAMP HILL", "line2": "APT
+        3G", "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line":
+        "100 MARKET ST"}, "member_id": "123456789", "birth_date": "Fri Aug 16 00:00:00
+        1940", "middle_name": "P", "substance_abuse": false, "tobacco_use": false},
+        "correlation_id": "173b4754-4f00-4be6-a564-b999c13d0fac", "insert_dt": "Wed
+        Mar 26 22:18:47 2014", "client_id": "4nhMZTpLxBxmiocveVb5", "purpose": "Original",
+        "trading_partner_id": "MOCKPAYER", "action": "Change", "dependents": [], "sponsor":
+        {"tax_id": "999888777"}}, "update_dt": "Mon Jun  2 23:03:33 2014", "remaining_transitions":
+        ["generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "major_version": "3", "state": {"name": "pending", "title": "Pending Batch
+        Transmission to Trading Partner"}, "deleted": false, "correlation_id": "173b4754-4f00-4be6-a564-b999c13d0fac",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "_id": "538e06a456c02c40598300ea", "insert_dt": "Fri May 30 17:56:11
+        2014", "transition_path": ["batch", "generate", "store", "transmit", "wait",
+        "receive", "process", "complete"], "history": [{"record_dt": "Tue Jun  3 17:32:20
+        2014", "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type":
+        "PlatformActivityModel", "name": "cash_prices", "parameters": {"claim": {"dates":
+        [{"date_value": "Tue Apr 15 00:00:00 2014", "date_qualifier": "Onset of Symptom
+        or Illness"}], "facility_code_value": "11", "claim_total_amount": {"currency":
+        "USD", "amount": "40.0"}, "health_care_codes": [{"health_care_code_1": "BK:0340",
+        "health_care_code_2": "BF:V7389"}], "assignment_code": "Assigned", "information_release_code":
+        "Informed Consent", "facility_code_qualifier": "B", "benefit_assignment_code":
+        "Yes", "claim_frequency_code": "1", "provider_signature_on_file": "Y", "service_lines":
+        [{"medical_service_unit": "Unit", "medical_service_quantity": "1.0", "medical_procedure_identifier":
+        "HC:99213", "dates": [{"date_value": "Wed Apr 16 00:00:00 2014", "date_qualifier":
+        "Service Date"}], "medical_diagnosis_code": "1", "medical_charge_amount":
+        {"currency": "USD", "amount": "40.0"}}], "ref": [{"id_type": "Claim Number",
+        "id_code": "1234567890"}], "patient_control_number": "26462967"}, "transaction_purpose_code":
+        "Original", "payer": {"id_code": "HPHC", "entity_identifier": "Payer", "id_type":
+        "Payor Identification", "last_org_name": "HARVARD PILGRIM HEALTH CARE", "entity_type":
+        "Non-Person"}, "update_dt": "Tue Jun  3 17:37:56 2014", "deleted": false,
+        "major_version": "3", "transaction_type": "Reporting", "subscriber": {"city":
+        "BURLINGTON", "first_name": "TED", "entity_identifier": "Subscriber", "last_org_name":
+        "SMITH", "entity_type": "Person", "group_number": "12312-A", "gender_code":
+        "Male", "id_code": "HP123456700", "relationship_code": "Self", "is_patient":
+        true, "state": "MA", "payer_responsibility": "Primary", "id_type": "Member
+        ID", "birth_date": "Sat May  1 00:00:00 1943", "postal_code": "01803", "claim_filing_code":
+        "Health Maintenance Organization", "address_line_1": "123 MAIN ST"}, "correlation_id":
+        "3c935fdd-8a44-4b77-951b-0c8cbef5556f", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "MOCKPAYER", "receiver": {"id_code": "HPHC", "entity_identifier":
+        "Receiver", "id_type": "ETIN", "last_org_name": "HPHC", "entity_type": "Non-Person"},
+        "submitter": {"id_code": "123456789", "entity_identifier": "Submitter", "id_type":
+        "ETIN", "last_org_name": "ACME, INC.", "entity_type": "Non-Person"}, "billing_provider":
+        {"city": "BURLINGTON", "entity_identifier": "Billing Provider", "last_org_name":
+        "KATIE BRADFORD", "entity_type": "Non-Person", "provider_id_type": "Provider
+        Taxonomy Code", "id_code": "1730240128", "state": "MA", "provider_id_code":
+        "133V00000X", "postal_code": "018033744", "id_type": "NPI", "provider_code":
+        "Billing", "ref": [{"id_type": "Employee Identification Number", "id_code":
+        "587654321"}], "address_line_1": "418 FARMS DR"}, "insert_dt": "Tue Jun  3
+        17:37:56 2014", "app_transaction_id": "00000000001"}, "update_dt": "Sat May
+        17 00:31:18 2014", "remaining_transitions": ["generate", "transmit", "wait",
+        "receive", "process", "complete"], "major_version": "3", "state": {"name":
+        "pending", "title": "Pending Batch Transmission to Trading Partner"}, "deleted":
+        false, "correlation_id": "3c935fdd-8a44-4b77-951b-0c8cbef5556f", "version":
+        "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id": "MOCKPAYER",
+        "_id": "538e07f456c02c40598300ed", "insert_dt": "Sat May 10 03:48:31 2014",
+        "transition_path": ["batch", "generate", "transmit", "wait", "receive", "process",
+        "complete"], "history": [{"record_dt": "Tue Jun  3 17:37:56 2014", "name":
+        "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "claims_status", "parameters": {"state": "CA"}, "update_dt": "Mon
+        May 26 03:54:09 2014", "remaining_transitions": [], "major_version": "3",
+        "state": {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "7d017bd2-9035-45ad-b0e4-ef922e891493", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e07f856c02c40598300f1", "insert_dt":
+        "Wed May 14 03:07:24 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:38:00 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:38:00 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "claims_status", "parameters": {"state": "CA"}, "update_dt": "Sun
+        Jun  1 21:41:27 2014", "remaining_transitions": [], "major_version": "3",
+        "state": {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "42dc3010-3256-439f-8cf3-51e3313d1a31", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e083c56c02c40598300f3", "insert_dt":
+        "Sat May 31 23:12:37 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:39:08 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:39:08 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "deductible", "parameters": {"state": "CA"}, "update_dt": "Tue Jun  3
+        12:47:22 2014", "remaining_transitions": [], "major_version": "3", "state":
+        {"name": "completed", "title": "Completed"}, "deleted": false, "correlation_id":
+        "9de62f4c-aad1-4dc7-a957-a4b5792347ae", "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5",
+        "trading_partner_id": "PokitDok", "_id": "538e083c56c02c40598300f4", "insert_dt":
+        "Sat May 31 19:42:05 2014", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "Tue Jun  3 17:39:08 2014", "name": "init", "title": "Initializing"},
+        {"record_dt": "Tue Jun  3 17:39:08 2014", "name": "processing", "title": "Processing
+        X12 transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "eligibility", "parameters": {"reference_number": "12456", "version":
+        "3.0.0", "payer": {"tax_id": "654456654"}, "update_dt": "Wed Mar 26 22:18:47
+        2014", "deleted": false, "major_version": "3", "subscriber": {"maintenance_type":
+        "Addition", "first_name": "JOHN", "last_name": "DOE", "benefits": [{"maintenance_type":
+        "Addition", "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996",
+        "benefit_type": "Health", "coordination_of_benefits": [{"status": "Unknown",
+        "group_or_policy_number": "890111", "payer_responsibility": "Primary"}]},
+        {"maintenance_type": "Addition", "late_enrollment": false, "begin_date": "Sat
+        Jun  1 00:00:00 1996", "benefit_type": "Dental"}, {"maintenance_type": "Addition",
+        "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996", "benefit_type":
+        "Vision"}], "relationship": "Self", "contacts": [{"communication_type2": "Work
+        Phone Number", "primary_communication_type": "Home Phone Number", "communication_number2":
+        "7172341240", "primary_communication_number": "7172343334"}], "benefit_status":
+        "Active", "gender": "Male", "employment_status": "Full-time", "subscriber_number":
+        "123456789", "group_or_policy_number": "123456001", "maintenance_reason":
+        "Active", "handicapped": false, "eligibility_begin_date": "Thu May 23 00:00:00
+        1996", "ssn": "123456789", "address": {"city": "CAMP HILL", "line2": "APT
+        3G", "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line":
+        "100 MARKET ST"}, "member_id": "123456789", "birth_date": "Fri Aug 16 00:00:00
+        1940", "middle_name": "P", "substance_abuse": false, "tobacco_use": false},
+        "correlation_id": "caa09ecd-5d90-4760-8557-58bad4e0eb4a", "insert_dt": "Wed
+        Mar 26 22:18:47 2014", "client_id": "4nhMZTpLxBxmiocveVb5", "purpose": "Original",
+        "trading_partner_id": "MOCKPAYER", "action": "Change", "dependents": [], "sponsor":
+        {"tax_id": "999888777"}}, "update_dt": "Sat May 10 23:28:08 2014", "remaining_transitions":
+        ["generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "major_version": "3", "state": {"name": "pending", "title": "Pending Batch
+        Transmission to Trading Partner"}, "deleted": false, "correlation_id": "caa09ecd-5d90-4760-8557-58bad4e0eb4a",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "_id": "538e07f456c02c40598300ee", "insert_dt": "Fri May  9 04:33:39
+        2014", "transition_path": ["batch", "generate", "store", "transmit", "wait",
+        "receive", "process", "complete"], "history": [{"record_dt": "Tue Jun  3 17:37:56
+        2014", "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type":
+        "PlatformActivityModel", "name": "claims_status", "parameters": {"reference_number":
+        "12456", "version": "3.0.0", "payer": {"tax_id": "654456654"}, "update_dt":
+        "Wed Mar 26 22:18:47 2014", "deleted": false, "major_version": "3", "subscriber":
+        {"maintenance_type": "Addition", "first_name": "JOHN", "last_name": "DOE",
+        "benefits": [{"maintenance_type": "Addition", "late_enrollment": false, "begin_date":
+        "Sat Jun  1 00:00:00 1996", "benefit_type": "Health", "coordination_of_benefits":
+        [{"status": "Unknown", "group_or_policy_number": "890111", "payer_responsibility":
+        "Primary"}]}, {"maintenance_type": "Addition", "late_enrollment": false, "begin_date":
+        "Sat Jun  1 00:00:00 1996", "benefit_type": "Dental"}, {"maintenance_type":
+        "Addition", "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996",
+        "benefit_type": "Vision"}], "relationship": "Self", "contacts": [{"communication_type2":
+        "Work Phone Number", "primary_communication_type": "Home Phone Number", "communication_number2":
+        "7172341240", "primary_communication_number": "7172343334"}], "benefit_status":
+        "Active", "gender": "Male", "employment_status": "Full-time", "subscriber_number":
+        "123456789", "group_or_policy_number": "123456001", "maintenance_reason":
+        "Active", "handicapped": false, "eligibility_begin_date": "Thu May 23 00:00:00
+        1996", "ssn": "123456789", "address": {"city": "CAMP HILL", "line2": "APT
+        3G", "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line":
+        "100 MARKET ST"}, "member_id": "123456789", "birth_date": "Fri Aug 16 00:00:00
+        1940", "middle_name": "P", "substance_abuse": false, "tobacco_use": false},
+        "correlation_id": "59c395e7-f1b3-45a5-a91d-c0d43b5a73b5", "insert_dt": "Wed
+        Mar 26 22:18:47 2014", "client_id": "4nhMZTpLxBxmiocveVb5", "purpose": "Original",
+        "trading_partner_id": "MOCKPAYER", "action": "Change", "dependents": [], "sponsor":
+        {"tax_id": "999888777"}}, "update_dt": "Sun Jun  1 18:18:42 2014", "remaining_transitions":
+        ["generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "major_version": "3", "state": {"name": "pending", "title": "Pending Batch
+        Transmission to Trading Partner"}, "deleted": false, "correlation_id": "59c395e7-f1b3-45a5-a91d-c0d43b5a73b5",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "_id": "538e07f756c02c40598300ef", "insert_dt": "Sun Jun  1 09:24:53
+        2014", "transition_path": ["batch", "generate", "store", "transmit", "wait",
+        "receive", "process", "complete"], "history": [{"record_dt": "Tue Jun  3 17:37:59
+        2014", "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type":
+        "PlatformActivityModel", "name": "enrollment", "parameters": {"reference_number":
+        "12456", "version": "3.0.0", "payer": {"tax_id": "654456654"}, "update_dt":
+        "Wed Mar 26 22:18:47 2014", "deleted": false, "major_version": "3", "subscriber":
+        {"maintenance_type": "Addition", "first_name": "JOHN", "last_name": "DOE",
+        "benefits": [{"maintenance_type": "Addition", "late_enrollment": false, "begin_date":
+        "Sat Jun  1 00:00:00 1996", "benefit_type": "Health", "coordination_of_benefits":
+        [{"status": "Unknown", "group_or_policy_number": "890111", "payer_responsibility":
+        "Primary"}]}, {"maintenance_type": "Addition", "late_enrollment": false, "begin_date":
+        "Sat Jun  1 00:00:00 1996", "benefit_type": "Dental"}, {"maintenance_type":
+        "Addition", "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996",
+        "benefit_type": "Vision"}], "relationship": "Self", "contacts": [{"communication_type2":
+        "Work Phone Number", "primary_communication_type": "Home Phone Number", "communication_number2":
+        "7172341240", "primary_communication_number": "7172343334"}], "benefit_status":
+        "Active", "gender": "Male", "employment_status": "Full-time", "subscriber_number":
+        "123456789", "group_or_policy_number": "123456001", "maintenance_reason":
+        "Active", "handicapped": false, "eligibility_begin_date": "Thu May 23 00:00:00
+        1996", "ssn": "123456789", "address": {"city": "CAMP HILL", "line2": "APT
+        3G", "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line":
+        "100 MARKET ST"}, "member_id": "123456789", "birth_date": "Fri Aug 16 00:00:00
+        1940", "middle_name": "P", "substance_abuse": false, "tobacco_use": false},
+        "correlation_id": "c58f5d4a-e521-41c7-b0d6-591248ecaceb", "insert_dt": "Wed
+        Mar 26 22:18:47 2014", "client_id": "4nhMZTpLxBxmiocveVb5", "purpose": "Original",
+        "trading_partner_id": "MOCKPAYER", "action": "Change", "dependents": [], "sponsor":
+        {"tax_id": "999888777"}}, "update_dt": "Fri May 23 15:06:48 2014", "remaining_transitions":
+        ["generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "major_version": "3", "state": {"name": "pending", "title": "Pending Batch
+        Transmission to Trading Partner"}, "deleted": false, "correlation_id": "c58f5d4a-e521-41c7-b0d6-591248ecaceb",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "_id": "538e083c56c02c40598300f2", "insert_dt": "Sun May 11 07:01:10
+        2014", "transition_path": ["batch", "generate", "store", "transmit", "wait",
+        "receive", "process", "complete"], "history": [{"record_dt": "Tue Jun  3 17:39:08
+        2014", "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "_type":
+        "PlatformActivityModel", "name": "providers", "parameters": {"state": "CA"},
+        "update_dt": "Thu May 22 15:55:05 2014", "remaining_transitions": [], "major_version":
+        "3", "state": {"name": "completed", "title": "Completed"}, "deleted": false,
+        "correlation_id": "aeb8a6c5-149d-4c0e-bf9e-79583926845a", "version": "3.0.0",
+        "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id": "PokitDok", "_id":
+        "538e084656c02c40598300f6", "insert_dt": "Wed May  7 04:44:37 2014", "transition_path":
+        ["process", "complete"], "history": [{"record_dt": "Tue Jun  3 17:39:18 2014",
+        "name": "init", "title": "Initializing"}, {"record_dt": "Tue Jun  3 17:39:18
+        2014", "name": "processing", "title": "Processing X12 transactions"}]}, {"units_of_work":
+        1, "_type": "PlatformActivityModel", "name": "claims", "parameters": {"state":
+        "CA"}, "update_dt": "Sun Jun  1 18:50:36 2014", "remaining_transitions": [],
+        "major_version": "3", "state": {"name": "completed", "title": "Completed"},
+        "deleted": false, "correlation_id": "864244bc-7061-4198-a62d-a00116a87fff",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "PokitDok", "_id": "538e084656c02c40598300f7", "insert_dt": "Thu May 15 09:26:40
+        2014", "transition_path": ["process", "complete"], "history": [{"record_dt":
+        "Tue Jun  3 17:39:18 2014", "name": "init", "title": "Initializing"}, {"record_dt":
+        "Tue Jun  3 17:39:18 2014", "name": "processing", "title": "Processing X12
+        transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel", "name":
+        "eligibility", "parameters": {"reference_number": "12456", "version": "3.0.0",
+        "payer": {"tax_id": "654456654"}, "update_dt": "Wed Mar 26 22:18:47 2014",
+        "deleted": false, "major_version": "3", "subscriber": {"maintenance_type":
+        "Addition", "first_name": "JOHN", "last_name": "DOE", "benefits": [{"maintenance_type":
+        "Addition", "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996",
+        "benefit_type": "Health", "coordination_of_benefits": [{"status": "Unknown",
+        "group_or_policy_number": "890111", "payer_responsibility": "Primary"}]},
+        {"maintenance_type": "Addition", "late_enrollment": false, "begin_date": "Sat
+        Jun  1 00:00:00 1996", "benefit_type": "Dental"}, {"maintenance_type": "Addition",
+        "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996", "benefit_type":
+        "Vision"}], "relationship": "Self", "contacts": [{"communication_type2": "Work
+        Phone Number", "primary_communication_type": "Home Phone Number", "communication_number2":
+        "7172341240", "primary_communication_number": "7172343334"}], "benefit_status":
+        "Active", "gender": "Male", "employment_status": "Full-time", "subscriber_number":
+        "123456789", "group_or_policy_number": "123456001", "maintenance_reason":
+        "Active", "handicapped": false, "eligibility_begin_date": "Thu May 23 00:00:00
+        1996", "ssn": "123456789", "address": {"city": "CAMP HILL", "line2": "APT
+        3G", "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line":
+        "100 MARKET ST"}, "member_id": "123456789", "birth_date": "Fri Aug 16 00:00:00
+        1940", "middle_name": "P", "substance_abuse": false, "tobacco_use": false},
+        "correlation_id": "041a39be-c149-4e0c-94e1-ae57fc76a7fe", "insert_dt": "Wed
+        Mar 26 22:18:47 2014", "client_id": "4nhMZTpLxBxmiocveVb5", "purpose": "Original",
+        "trading_partner_id": "MOCKPAYER", "action": "Change", "dependents": [], "sponsor":
+        {"tax_id": "999888777"}}, "update_dt": "Sun Jun  1 09:23:18 2014", "remaining_transitions":
+        ["generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "major_version": "3", "state": {"name": "pending", "title": "Pending Batch
+        Transmission to Trading Partner"}, "deleted": false, "correlation_id": "041a39be-c149-4e0c-94e1-ae57fc76a7fe",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "_id": "538e084656c02c40598300f5", "insert_dt": "Wed May  7 12:57:09
+        2014", "transition_path": ["batch", "generate", "store", "transmit", "wait",
+        "receive", "process", "complete"], "history": [{"record_dt": "Tue Jun  3 17:39:18
+        2014", "name": "init", "title": "Initializing"}]}]}'
+    http_version: 
+  recorded_at: Tue, 03 Jun 2014 20:30:50 GMT
+recorded_with: VCR 2.9.2

@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5002/api/v3/claims/
+    body:
+      encoding: UTF-8
+      string: '{"app_transaction_id":"00000000001","billing_provider":{"address_line_1":"418
+        FARMS DR","city":"BURLINGTON","entity_identifier":"Billing Provider","entity_type":"Non-Person","id_code":"1730240128","id_type":"NPI","last_org_name":"KATIE
+        BRADFORD","postal_code":"018033744","provider_code":"Billing","provider_id_code":"133V00000X","provider_id_type":"Provider
+        Taxonomy Code","ref":[{"id_code":"587654321","id_type":"Employee Identification
+        Number"}],"state":"MA"},"claim":{"assignment_code":"Assigned","benefit_assignment_code":"Yes","claim_frequency_code":"1","claim_total_amount":{"amount":"40.0","currency":"USD"},"dates":[{"date_qualifier":"Onset
+        of Symptom or Illness","date_value":"04/15/2014"}],"facility_code_qualifier":"B","facility_code_value":"11","health_care_codes":[{"health_care_code_1":"BK:0340","health_care_code_2":"BF:V7389"}],"information_release_code":"Informed
+        Consent","patient_control_number":"26462967","provider_signature_on_file":"Y","ref":[{"id_code":"1234567890","id_type":"Claim
+        Number"}],"service_lines":[{"dates":[{"date_qualifier":"Service Date","date_value":"04/16/2014"}],"medical_charge_amount":{"amount":"40.0","currency":"USD"},"medical_diagnosis_code":"1","medical_procedure_identifier":"HC:99213","medical_service_quantity":"1.0","medical_service_unit":"Unit"}]},"payer":{"entity_identifier":"Payer","entity_type":"Non-Person","id_code":"HPHC","id_type":"Payor
+        Identification","last_org_name":"HARVARD PILGRIM HEALTH CARE"},"receiver":{"entity_identifier":"Receiver","entity_type":"Non-Person","id_code":"HPHC","id_type":"ETIN","last_org_name":"HPHC"},"submitter":{"entity_identifier":"Submitter","entity_type":"Non-Person","id_code":"123456789","id_type":"ETIN","last_org_name":"ACME,
+        INC."},"subscriber":{"address_line_1":"123 MAIN ST","birth_date":"Sat May  1
+        00:00:00 1943","city":"BURLINGTON","claim_filing_code":"Health Maintenance
+        Organization","entity_identifier":"Subscriber","entity_type":"Person","first_name":"TED","gender_code":"Male","group_number":"12312-A","id_code":"HP123456700","id_type":"Member
+        ID","is_patient":true,"last_org_name":"SMITH","payer_responsibility":"Primary","postal_code":"01803","relationship_code":"Self","state":"MA"},"trading_partner_id":"MOCKPAYER","transaction_purpose_code":"Original","transaction_type":"Reporting"}'
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.2.1 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      Authorization:
+      - Bearer BR8J2PXhCIVnkwWLRsESQWSI198fztONOGc6Evlf
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '3664'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Tue, 03 Jun 2014 20:30:49 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 28, "rate_limit_reset": 1401829297,
+        "processing_time": 9, "rate_limit_cap": 8434, "credits_remaining": 9983, "credits_billed":
+        1}, "data": {"units_of_work": 1, "_type": "PlatformActivityModel", "name":
+        "claims", "parameters": {"claim": {"dates": [{"date_value": "Tue Apr 15 00:00:00
+        2014", "date_qualifier": "Onset of Symptom or Illness"}], "facility_code_value":
+        "11", "claim_total_amount": {"currency": "USD", "amount": "40.0"}, "health_care_codes":
+        [{"health_care_code_1": "BK:0340", "health_care_code_2": "BF:V7389"}], "assignment_code":
+        "Assigned", "information_release_code": "Informed Consent", "facility_code_qualifier":
+        "B", "benefit_assignment_code": "Yes", "claim_frequency_code": "1", "provider_signature_on_file":
+        "Y", "service_lines": [{"medical_service_unit": "Unit", "medical_service_quantity":
+        "1.0", "medical_procedure_identifier": "HC:99213", "dates": [{"date_value":
+        "Wed Apr 16 00:00:00 2014", "date_qualifier": "Service Date"}], "medical_diagnosis_code":
+        "1", "medical_charge_amount": {"currency": "USD", "amount": "40.0"}}], "ref":
+        [{"id_type": "Claim Number", "id_code": "1234567890"}], "patient_control_number":
+        "26462967"}, "major_version": "3", "transaction_purpose_code": "Original",
+        "payer": {"id_code": "HPHC", "entity_identifier": "Payer", "id_type": "Payor
+        Identification", "last_org_name": "HARVARD PILGRIM HEALTH CARE", "entity_type":
+        "Non-Person"}, "update_dt": "Tue Jun  3 20:30:49 2014", "deleted": false,
+        "version": "3.0.0", "transaction_type": "Reporting", "subscriber": {"city":
+        "BURLINGTON", "first_name": "TED", "entity_identifier": "Subscriber", "last_org_name":
+        "SMITH", "entity_type": "Person", "group_number": "12312-A", "gender_code":
+        "Male", "id_code": "HP123456700", "relationship_code": "Self", "is_patient":
+        true, "state": "MA", "payer_responsibility": "Primary", "id_type": "Member
+        ID", "birth_date": "Sat May  1 00:00:00 1943", "postal_code": "01803", "claim_filing_code":
+        "Health Maintenance Organization", "address_line_1": "123 MAIN ST"}, "correlation_id":
+        "7c397f0b-4cd2-4455-8c90-b7cef091e92a", "insert_dt": "Tue Jun  3 20:30:49
+        2014", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id": "MOCKPAYER",
+        "receiver": {"id_code": "HPHC", "entity_identifier": "Receiver", "id_type":
+        "ETIN", "last_org_name": "HPHC", "entity_type": "Non-Person"}, "submitter":
+        {"id_code": "123456789", "entity_identifier": "Submitter", "id_type": "ETIN",
+        "last_org_name": "ACME, INC.", "entity_type": "Non-Person"}, "billing_provider":
+        {"city": "BURLINGTON", "entity_identifier": "Billing Provider", "last_org_name":
+        "KATIE BRADFORD", "entity_type": "Non-Person", "provider_id_type": "Provider
+        Taxonomy Code", "id_code": "1730240128", "state": "MA", "provider_id_code":
+        "133V00000X", "postal_code": "018033744", "id_type": "NPI", "provider_code":
+        "Billing", "ref": [{"id_type": "Employee Identification Number", "id_code":
+        "587654321"}], "address_line_1": "418 FARMS DR"}, "app_transaction_id": "00000000001"},
+        "update_dt": "Tue Jun  3 20:30:49 2014", "remaining_transitions": ["generate",
+        "transmit", "wait", "receive", "process", "complete"], "major_version": "3",
+        "state": {"name": "pending", "title": "Pending Batch Transmission to Trading
+        Partner"}, "deleted": false, "correlation_id": "7c397f0b-4cd2-4455-8c90-b7cef091e92a",
+        "version": "3.0.0", "client_id": "4nhMZTpLxBxmiocveVb5", "trading_partner_id":
+        "MOCKPAYER", "_id": "538e307956c02c5ec974954b", "insert_dt": "Tue Jun  3 20:30:49
+        2014", "transition_path": ["batch", "generate", "transmit", "wait", "receive",
+        "process", "complete"], "history": [{"record_dt": "Tue Jun  3 20:30:49 2014",
+        "name": "init", "title": "Initializing"}]}}'
+    http_version: 
+  recorded_at: Tue, 03 Jun 2014 20:30:49 GMT
+recorded_with: VCR 2.9.2

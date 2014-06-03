@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-CLIENT_ID = 'QEVgdZCITH9xq9K0Xydn'
-CLIENT_SECRET = '5hdUHfK9bMLYaEYWl8OI5o2WynLO1wox0fmvx8si'
+CLIENT_ID = '4nhMZTpLxBxmiocveVb5'
+CLIENT_SECRET = 'HUIpG9fFf9Qku9mh0lO50SPSDiju3D9Cjx17oeCN'
 POKITDOK_TEST_URL = 'http://localhost:5002/api/v3'
 
 def check_meta_and_data(result)
@@ -16,7 +16,9 @@ describe PokitDok do
     before do
       PokitDok::PokitDok.any_instance.stubs(:api_url)
         .returns(POKITDOK_TEST_URL)
-      @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+      VCR.use_cassette 'auth' do
+        @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+      end
     end
 
     it 'should instantiate with a client id and client secret' do
@@ -32,13 +34,13 @@ describe PokitDok do
     end
 
     describe 'Activities endpoint' do
-      it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.activities
-      end
-
       it 'should expose the activities endpoint' do
-        @activities = @pokitdok.activities['data']
-        refute_empty @activities
+        VCR.use_cassette 'activities' do
+          @activities = @pokitdok.activities
+        end
+
+        check_meta_and_data @activities
+        refute_empty @activities['data']
       end
     end
 
@@ -51,9 +53,13 @@ describe PokitDok do
     describe 'Claims endpoint' do
       it 'should expose the claims endpoint' do
         query = JSON.parse(IO.read('spec/fixtures/claim.json'))
-        @claim = @pokitdok.claims(query)['data']
-        refute_empty @claim
-        @claim['units_of_work'].must_equal 1
+        VCR.use_cassette 'claims' do
+          @claim = @pokitdok.claims(query)
+        end
+
+        check_meta_and_data @claim
+        refute_empty @claim['data']
+        @claim['data']['units_of_work'].must_equal 1
         assert_nil @claim['errors']
       end
     end
@@ -71,94 +77,91 @@ describe PokitDok do
     end
 
     describe 'Eligibility endpoint' do
-      it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.eligibility
-      end
-
       it 'should expose the eligibility endpoint' do
-        eligibility_data = { payer_id: 'MOCKPAYER',
-                             member_id: 'W34237875729',
-                             provider_id: '1467560003',
-                             provider_name: 'AYA-AY',
-                             provider_first_name: 'JEROME',
-                             provider_type: '1',
-                             member_name: 'JOHN DOE',
-                             member_birth_date: '05/21/1975',
-                             service_types: ['Health Benefit Plan Coverage'] }
+        @eligibility_query = {
+          trading_partner_id: 'MOCKPAYER',
+          member_id: 'W34237875729',
+          provider_id: '1467560003',
+          provider_name: 'AYA-AY',
+          provider_first_name: 'JEROME',
+          provider_type: 'Person',
+          member_name: 'JOHN DOE',
+          member_birth_date: '05-21-1975',
+          service_types: ['Health Benefit Plan Coverage']
+        }
 
-        VCR.use_cassette('eligibility') do
-          @eligibility = @pokitdok.eligibility(eligibility_data)['data']
-
-          refute_nil @eligibility
-          assert_nil @eligibility['errors']
+        VCR.use_cassette 'eligibility' do
+          @eligibility = @pokitdok.eligibility(@eligibility_query)
         end
+
+        check_meta_and_data @eligibility
+        refute_nil @eligibility['data']
+        assert_nil @eligibility['data']['errors']
       end
     end
 
     describe 'Enrollment endpoint' do
-      it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.enrollment
-      end
-
       it 'should expose the enrollment endpoint' do
         query = JSON.parse(IO.read('spec/fixtures/enrollment.json'))
 
-        @enrollment = @pokitdok.enrollment(query)['data']
-        @enrollment['units_of_work'].must_equal 1
-        assert_nil @enrollment['errors']
+        VCR.use_cassette 'enrollment' do
+          @enrollment = @pokitdok.enrollment(query)
+        end
+
+        check_meta_and_data @enrollment
+        @enrollment['data']['units_of_work'].must_equal 1
+        assert_nil @enrollment['data']['errors']
       end
     end
 
     describe 'Files endpoint' do
-      it 'should return a meta hash and a data hash' do
-        check_meta_and_data = 
-          @pokitdok.files('MOCKPAYER', 'spec/fixtures/sample.270')
-      end
-
       it 'should expose the files endpoint' do
-        @response = @pokitdok.files('MOCKPAYER',
-                                    'spec/fixtures/sample.270')
+        VCR.use_cassette 'files' do
+          @response = @pokitdok.files('MOCKPAYER',
+                                      'spec/fixtures/sample.270')
+        end
+
+        check_meta_and_data @response
         refute_nil @response
         # TODO: should get back an activity id
       end
     end
 
     describe 'Insurance Prices endpoint' do
-      it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.insurance_prices
-      end
-
       it 'should expose the insurance prices endpoint' do
-        query = { zip_code: '54321', cpt_code: '12345' }
+        VCR.use_cassette 'insurance_prices' do
+          @prices = @pokitdok.insurance_prices(zip_code: '54321',
+                                               cpt_code: '12345')
+        end
 
-        @prices = @pokitdok.insurance_prices(query)['data']
-        refute_empty @prices
+        check_meta_and_data @prices
+        refute_empty @prices['data']
       end
     end
 
     describe 'Payers endpoint' do
-      it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.payers
-      end
-
       it 'should expose the payers endpoint' do
-        @payers = @pokitdok.payers(state: 'CA')['data']
-        refute_nil @payers
-        @payers.size.must_equal 36
+        VCR.use_cassette 'payers' do
+          @payers = @pokitdok.payers(state: 'CA')
+        end
+
+        check_meta_and_data @payers
+        refute_nil @payers['data']
+        @payers['data'].size.must_equal 36
       end
     end
 
     describe 'Providers endpoint' do
-      it 'should return a meta hash and a data hash' do
-        check_meta_and_data @pokitdok.providers(state: 'CA')
-      end
-
       it 'should expose the providers endpoint' do
         query = { state: 'CA' }
 
-        @providers = @pokitdok.providers(query)['data']
-        refute_nil @providers
-        @providers.size.must_equal 20
+        VCR.use_cassette 'providers' do
+          @providers = @pokitdok.providers(query)
+        end
+
+        check_meta_and_data @providers
+        refute_nil @providers['data']
+        @providers['data'].size.must_equal 20
       end
     end
   end
