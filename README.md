@@ -12,8 +12,8 @@ PokitDok Platform API Client for Ruby
 * [Report Issues on GitHub][issues]
 
 [apidocs]: https://platform.pokitdok.com/dashboard#/documentation
-[code]: https://github.com/PokitDokInc/pokitdok-ruby
-[issues]: https://github.com/PokitDokInc/pokitdok-ruby/issues
+[code]: https://github.com/PokitDok/pokitdok-ruby
+[issues]: https://github.com/PokitDok/pokitdok-ruby/issues
 
 ## Installation
     gem install pokitdok-ruby
