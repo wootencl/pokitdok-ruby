@@ -37,15 +37,15 @@ pd.providers(zipcode: '29307', radius: '10mi')
 pd.providers(zipcode: '29307', radius: '10mi', specialty: 'RHEUMATOLOGY')
 
 # Eligibility
-params = { payer_id: "MOCKPAYER",
-                        member_id: "W34237875729",
-                        provider_id: "1467560003",
-                        provider_name: "AYA-AY",
-                        provider_first_name: "JEROME",
-                        provider_type: "1",
-                        member_name: "JOHN DOE",
-                        member_birth_date: "05/21/1975",
-                        service_types: ["Health Benefit Plan Coverage"] }
+params = {	payer_id: "MOCKPAYER",
+	        member_id: "W34237875729",
+	        provider_id: "1467560003",
+	        provider_name: "AYA-AY",
+	        provider_first_name: "JEROME",
+	        provider_type: "1",
+	        member_name: "JOHN DOE",
+	        member_birth_date: "05/21/1975",
+	        service_types: ["Health Benefit Plan Coverage"] }
 
 pd.eligibility(params)
 
