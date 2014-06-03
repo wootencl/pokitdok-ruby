@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/pokitdok/pokitdok-ruby.svg?branch=master)](https://travis-ci.org/pokitdok/pokitdok-ruby)
+[![Gem Version](https://badge.fury.io/rb/pokitdok-ruby.svg)](http://badge.fury.io/rb/pokitdok-ruby)
 
 pokitdok-ruby
 =============
