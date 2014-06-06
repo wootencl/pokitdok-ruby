@@ -21,6 +21,8 @@ module PokitDok
 
     attr_reader :client # :nodoc:
     attr_reader :token  # :nodoc:
+    attr_reader :api_url
+    attr_reader :version
 
     # Connect to the PokitDok API with the specified Client ID and Client
     # Secret.
@@ -29,22 +31,24 @@ module PokitDok
     #
     # +client_secret+ your client secret, provided by PokitDok
     #
-    def initialize(client_id, client_secret)
+    def initialize(client_id, client_secret, version='v4')
       @client_id = client_id
       @client_secret = client_secret
+      @version = version
+
+      @api_url = "#{url_base}/api/#{version}"
 
       @client = OAuth2::Client.new(@client_id, @client_secret,
-                                   site: api_url, token_url: '/oauth2/token')
+                                   site: @api_url, token_url: '/oauth2/token')
       refresh_token
     end
 
-    # Returns the URL used to communicate with the PokitDok API.
-    def api_url
-      POKITDOK_URL_BASE + '/api/v3'
+    def url_base
+      POKITDOK_URL_BASE
     end
 
     def user_agent
-      "pokitdok-ruby 0.2.1 #{RUBY_DESCRIPTION}"
+      "pokitdok-ruby 0.4 #{RUBY_DESCRIPTION}"
     end
 
     # returns a standard set of headers to be passed along with all requests
@@ -62,16 +66,18 @@ module PokitDok
 
     # Invokes the activities endpoint, with an optional Hash of parameters.
     def activities(params = {})
-      response = @token.get('activities',
+      response = @token.get('activities/',
                             headers: headers,
                             params: params)
       JSON.parse(response.body)
     end
 
     # Invokes the cash prices endpoint, with an optional Hash of parameters.
-    def cash_prices(_params = {})
-      fail NotImplementedError, "The PokitDok API does not currently support
-        this endpoint."
+    def cash_prices(params = {})
+      response = @token.get('price/cash/',
+                             headers: headers,
+                             params: params)
+      JSON.parse(response.body)
     end
 
     # Invokes the claims endpoint, with an optional Hash of parameters.
@@ -82,18 +88,6 @@ module PokitDok
         request.headers['Content-Type'] = 'application/json'
       end
       JSON.parse(response.body)
-    end
-
-    # Invokes the claims status endpoint, with an optional Hash of parameters.
-    def claim_status(_params = {})
-      fail NotImplementedError, 'The PokitDok API does not currently support
-        this endpoint.'
-    end
-
-    # Invokes the deductible endpoint, with an optional Hash of parameters.
-    def deductible(_params = {})
-      fail NotImplementedError, 'The PokitDok API does not currently support
-        this endpoint.'
     end
 
     # Invokes the eligibility endpoint, with an optional Hash of parameters.
@@ -124,7 +118,7 @@ module PokitDok
     # +filename+ the path to the file to transmit
     #
     def files(trading_partner_id, filename)
-      url = URI.parse(api_url + '/files/')
+      url = URI.parse(@api_url + '/files/')
 
       File.open(filename) do |f|
         req = Net::HTTP::Post::Multipart.new url.path,
@@ -139,15 +133,6 @@ module PokitDok
       end
 
       JSON.parse(@response.body)
-    end
-
-    # Invokes the insurance prices endpoint, with an optional Hash of
-    # parameters.
-    def insurance_prices(params = {})
-      response = @token.get('prices/insurance',
-                            headers: headers,
-                            params: params)
-      JSON.parse(response.body)
     end
 
     # Invokes the payers endpoint, with an optional Hash of parameters.

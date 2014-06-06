@@ -4,7 +4,7 @@ require 'spec_helper'
 
 CLIENT_ID = '4nhMZTpLxBxmiocveVb5'
 CLIENT_SECRET = 'HUIpG9fFf9Qku9mh0lO50SPSDiju3D9Cjx17oeCN'
-POKITDOK_TEST_URL = 'http://localhost:5002/api/v3'
+POKITDOK_TEST_URL = 'http://localhost:5002'
 
 def check_meta_and_data(result)
   refute_empty result['meta']
@@ -14,11 +14,20 @@ end
 describe PokitDok do
   describe 'Authenticated functions' do
     before do
-      PokitDok::PokitDok.any_instance.stubs(:api_url)
-        .returns(POKITDOK_TEST_URL)
+      PokitDok::PokitDok.any_instance.stubs(:url_base).returns(POKITDOK_TEST_URL)
+
       VCR.use_cassette 'auth' do
         @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
       end
+    end
+
+    it 'should default to the v4 api specification' do
+      @pokitdok.api_url.must_equal 'http://localhost:5002/api/v4'
+    end
+
+    it 'should revert to the v3 api specification if requested' do
+      @pokitdok3 = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET, 'v3')
+      @pokitdok3.api_url.must_equal 'http://localhost:5002/api/v3'
     end
 
     it 'should instantiate with a client id and client secret' do
@@ -45,8 +54,16 @@ describe PokitDok do
     end
 
     describe 'Cash Prices endpoint' do
-      it 'is unimplemented' do
-        proc { @pokitdok.cash_prices }.must_raise(NotImplementedError)
+      it 'should expose the cash prices endpoint' do
+        skip 'in development'
+        query = { cpt_code: '12345', zip_code: '75201' }
+
+        VCR.use_cassette 'cash_prices' do
+          @prices = @pokitdok.cash_prices query
+        end
+
+        check_meta_and_data @prices
+        refute_empty @prices['data']
       end
     end
 
@@ -64,30 +81,22 @@ describe PokitDok do
       end
     end
 
-    describe 'Claims Status endpoint' do
-      it 'is unimplemented' do
-        proc { @pokitdok.claim_status }.must_raise(NotImplementedError)
-      end
-    end
-
-    describe 'Deductible endpoint' do
-      it 'is unimplemented' do
-        proc { @pokitdok.deductible }.must_raise(NotImplementedError)
-      end
-    end
-
     describe 'Eligibility endpoint' do
       it 'should expose the eligibility endpoint' do
         @eligibility_query = {
-          trading_partner_id: 'MOCKPAYER',
-          member_id: 'W34237875729',
-          provider_id: '1467560003',
-          provider_name: 'AYA-AY',
-          provider_first_name: 'JEROME',
-          provider_type: 'Person',
-          member_name: 'JOHN DOE',
-          member_birth_date: '05-21-1975',
-          service_types: ['Health Benefit Plan Coverage']
+          member: {
+              birth_date: '1970-01-01',
+              first_name: 'Jane',
+              last_name: 'Doe',
+              id: 'W000000000'
+          },
+          provider: {
+              first_name: 'JEROME',
+              last_name: 'AYA-AY',
+              npi: '1467560003'
+          },
+          service_types: ['health_benefit_plan_coverage'],
+          trading_partner_id: 'MOCKPAYER'
         }
 
         VCR.use_cassette 'eligibility' do
@@ -124,18 +133,6 @@ describe PokitDok do
         check_meta_and_data @response
         refute_nil @response
         # TODO: should get back an activity id
-      end
-    end
-
-    describe 'Insurance Prices endpoint' do
-      it 'should expose the insurance prices endpoint' do
-        VCR.use_cassette 'insurance_prices' do
-          @prices = @pokitdok.insurance_prices(zip_code: '54321',
-                                               cpt_code: '12345')
-        end
-
-        check_meta_and_data @prices
-        refute_empty @prices['data']
       end
     end
 

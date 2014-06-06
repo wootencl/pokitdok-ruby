@@ -1,116 +1,46 @@
 {
-    "app_transaction_id": "00000000001", 
-    "billing_provider": {
-        "address_line_1": "418 FARMS DR", 
-        "city": "BURLINGTON", 
-        "entity_identifier": "Billing Provider", 
-        "entity_type": "Non-Person", 
-        "id_code": "1730240128", 
-        "id_type": "NPI", 
-        "last_org_name": "KATIE BRADFORD", 
-        "postal_code": "018033744", 
-        "provider_code": "Billing", 
-        "provider_id_code": "133V00000X", 
-        "provider_id_type": "Provider Taxonomy Code", 
-        "ref": [
-            {
-                "id_code": "587654321", 
-                "id_type": "Employee Identification Number"
-            }
-        ], 
-        "state": "MA"
-    }, 
-    "claim": {
-        "assignment_code": "Assigned", 
-        "benefit_assignment_code": "Yes", 
-        "claim_frequency_code": "1", 
-        "claim_total_amount": {
-            "amount": "40.0", 
-            "currency": "USD"
-        }, 
-        "dates": [
-            {
-                "date_qualifier": "Onset of Symptom or Illness", 
-                "date_value": "04/15/2014"
-            }
-        ], 
-        "facility_code_qualifier": "B", 
-        "facility_code_value": "11", 
-        "health_care_codes": [
-            {
-                "health_care_code_1": "BK:0340", 
-                "health_care_code_2": "BF:V7389"
-            }
-        ], 
-        "information_release_code": "Informed Consent", 
-        "patient_control_number": "26462967", 
-        "provider_signature_on_file": "Y", 
-        "ref": [
-            {
-                "id_code": "1234567890", 
-                "id_type": "Claim Number"
-            }
-        ], 
-        "service_lines": [
-            {
-                "dates": [
-                    {
-                        "date_qualifier": "Service Date", 
-                        "date_value": "04/16/2014"
-                    }
-                ], 
-                "medical_charge_amount": {
-                    "amount": "40.0", 
-                    "currency": "USD"
-                }, 
-                "medical_diagnosis_code": "1", 
-                "medical_procedure_identifier": "HC:99213", 
-                "medical_service_quantity": "1.0", 
-                "medical_service_unit": "Unit"
-            }
-        ]
-    }, 
-    "payer": {
-        "entity_identifier": "Payer", 
-        "entity_type": "Non-Person", 
-        "id_code": "HPHC", 
-        "id_type": "Payor Identification", 
-        "last_org_name": "HARVARD PILGRIM HEALTH CARE"
-    }, 
-    "receiver": {
-        "entity_identifier": "Receiver", 
-        "entity_type": "Non-Person", 
-        "id_code": "HPHC", 
-        "id_type": "ETIN", 
-        "last_org_name": "HPHC"
-    }, 
-    "submitter": {
-        "entity_identifier": "Submitter", 
-        "entity_type": "Non-Person", 
-        "id_code": "123456789", 
-        "id_type": "ETIN", 
-        "last_org_name": "ACME, INC."
-    }, 
-    "subscriber": {
-        "address_line_1": "123 MAIN ST", 
-        "birth_date": "Sat May  1 00:00:00 1943", 
-        "city": "BURLINGTON", 
-        "claim_filing_code": "Health Maintenance Organization", 
-        "entity_identifier": "Subscriber", 
-        "entity_type": "Person", 
-        "first_name": "TED", 
-        "gender_code": "Male", 
-        "group_number": "12312-A", 
-        "id_code": "HP123456700", 
-        "id_type": "Member ID", 
-        "is_patient": true, 
-        "last_org_name": "SMITH", 
-        "payer_responsibility": "Primary", 
-        "postal_code": "01803", 
-        "relationship_code": "Self", 
-        "state": "MA"
-    }, 
-    "trading_partner_id": "MOCKPAYER", 
-    "transaction_purpose_code": "Original", 
-    "transaction_type": "Reporting"
+  "transaction_code": "chargeable",
+  "trading_partner_id": "MOCKPAYER",
+  "billing_provider": {
+    "taxonomy_code": "207Q00000X",
+    "first_name": "Jerome",
+    "last_name": "Aya-Ay",
+    "npi": "1467560003",
+    "address": {
+      "address_lines": ["8311 WARREN H ABERNATHY HWY"],
+      "city": "SPARTANBURG",
+      "state": "SC",
+      "zipcode": "29301"
+    },
+    "tax_id": "123456789"
+  },
+  "subscriber": {
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "member_id": "W000000000",
+    "address": {
+      "address_lines": ["123 N MAIN ST"],
+      "city": "SPARTANBURG",
+      "state": "SC",
+      "zipcode": "29301"
+    },
+    "birth_date": "1970-01-01",
+    "gender": "female"
+  },
+  "claim": {
+    "total_charge_amount": 60.0,
+    "service_lines": [
+      {
+        "procedure_code": "99213",
+        "charge_amount": 60.0,
+        "unit_count": 1.0,
+        "diagnosis_codes": ["487.1"],
+        "service_date": "2014-06-01"
+      }
+    ]
+  },
+  "payer": {
+    "organization_name": "Acme Ins Co",
+    "plan_id": "1234567890"
+  }
 }
