@@ -55,7 +55,7 @@ pd.providers(zipcode: '29307', radius: '10mi', specialty: 'RHEUMATOLOGY')
   trading_partner_id: 'MOCKPAYER'
 }
 
-pd.eligibility(params)
+pd.eligibility @eligibility_query
 
 # Retrieve an index of activities
 pd.activities 
