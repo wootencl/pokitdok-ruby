@@ -39,16 +39,20 @@ pd.providers(zipcode: '29307', radius: '10mi')
 pd.providers(zipcode: '29307', radius: '10mi', specialty: 'RHEUMATOLOGY')
 
 # Eligibility
-params = {
-  trading_partner_id: 'MOCKPAYER',
-  member_id: 'W34237875729',
-  provider_id: '1467560003',
-  provider_name: 'AYA-AY',
-  provider_first_name: 'JEROME',
-  provider_type: 'Person',
-  member_name: 'JOHN DOE',
-  member_birth_date: '05-21-1975',
-  service_types: ['Health Benefit Plan Coverage']
+@eligibility_query = {
+  member: {
+      birth_date: '1970-01-01',
+      first_name: 'Jane',
+      last_name: 'Doe',
+      id: 'W000000000'
+  },
+  provider: {
+      first_name: 'JEROME',
+      last_name: 'AYA-AY',
+      npi: '1467560003'
+  },
+  service_types: ['health_benefit_plan_coverage'],
+  trading_partner_id: 'MOCKPAYER'
 }
 
 pd.eligibility(params)
@@ -67,12 +71,23 @@ pd.files('trading_partner_id', 'path/to/a_file.edi')
               
 ```
 
-## Supported Ruby Versions
-This library aims to support and is tested against these Ruby versions:
+This version of pokitdok-ruby supports, and defaults to using, the new
+PokitDok v4 API. If you'd like to continue using the previous v3 API,
+you can pass a third parameter to PokitDok::Pokitdok.new, like this:
 
-* Ruby 1.9.3-p545
-* Ruby 2.0.0-p451
-* Ruby 2.1.1
+```
+@pd = PokitDok::PokitDok.new('my_client_id', 'my_client_secret', 'v3')
+```
+
+## Supported Ruby Versions
+This library aims to support and is tested against these Ruby versions, 
+using travis-ci:
+
+* 2.1.1
+* 2.0.0
+* 1.9.3
+* JRuby in 1.9 mode
+* Rubinius 2.2.7
 
 You may have luck with other interpreters - let us know how it goes.
 
