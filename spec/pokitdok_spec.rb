@@ -26,8 +26,10 @@ describe PokitDok do
     end
 
     it 'should revert to the v3 api specification if requested' do
-      @pokitdok3 = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET, 'v3')
-      @pokitdok3.api_url.must_equal 'http://localhost:5002/api/v3'
+      VCR.use_cassette 'auth' do
+        @pokitdok3 = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET, 'v3')
+        @pokitdok3.api_url.must_equal 'http://localhost:5002/api/v3'
+      end
     end
 
     it 'should instantiate with a client id and client secret' do
