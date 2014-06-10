@@ -98,10 +98,6 @@ pd.eligibility @eligibility_query
         service_date: '2014-06-01'
       }
     ]
-  },
-  payer: {
-    organization_name: 'Acme Ins Co',
-    plan_id: '1234567890'
   }
 }
 
