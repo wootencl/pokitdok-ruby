@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/providers?state=CA
+    uri: http://localhost:5002/api/v4/providers?npi=1467560003
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer wRjqVdn8ezPmx5uviVocwL2u1edtJ8g809Tn4Ob5
+      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,25 +23,25 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '303'
+      - '315'
       Location:
-      - http://localhost:5002/api/v4/providers/?state=CA
+      - http://localhost:5002/api/v4/providers/?npi=1467560003
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Fri, 06 Jun 2014 17:15:36 GMT
+      - Tue, 08 Jul 2014 16:27:13 GMT
     body:
       encoding: UTF-8
       string: |-
         <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
         <title>Redirecting...</title>
         <h1>Redirecting...</h1>
-        <p>You should be redirected automatically to target URL: <a href="http://localhost:5002/api/v4/providers/?state=CA">http://localhost:5002/api/v4/providers/?state=CA</a>.  If not click the link.
+        <p>You should be redirected automatically to target URL: <a href="http://localhost:5002/api/v4/providers/?npi=1467560003">http://localhost:5002/api/v4/providers/?npi=1467560003</a>.  If not click the link.
     http_version: 
-  recorded_at: Fri, 06 Jun 2014 17:15:36 GMT
+  recorded_at: Tue, 08 Jul 2014 16:27:13 GMT
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/providers/?state=CA
+    uri: http://localhost:5002/api/v4/providers/?npi=1467560003
     body:
       encoding: US-ASCII
       string: ''
@@ -49,7 +49,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer wRjqVdn8ezPmx5uviVocwL2u1edtJ8g809Tn4Ob5
+      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -62,7 +62,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '36616'
+      - '1059'
       Mimetype:
       - application/json
       Charset:
@@ -70,468 +70,22 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Fri, 06 Jun 2014 17:15:36 GMT
+      - Tue, 08 Jul 2014 16:27:13 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 31, "rate_limit_reset": 1402077424,
-        "processing_time": 43, "rate_limit_cap": 8434, "credits_remaining": 9940,
-        "credits_billed": 1}, "data": [{"provider": {"first_name": "THOMAS", "last_name":
-        "MOHR", "npi": "1013016781", "gender": "Male", "specialty": ["PEDIATRICS"],
-        "locations": [{"address_lines": ["27699 JEFFERSON AVE STE 300"], "city": "TEMECULA",
-        "country": "US", "zipcode": "92590", "state": "CA", "geo_location": [-117.158998,
-        33.513847], "role": ["mailing"]}, {"address_lines": ["27699 JEFFERSON AVE
-        STE 102"], "city": "TEMECULA", "country": "US", "zipcode": "92590", "state":
-        "CA", "geo_location": [-117.15992, 33.5143], "role": ["practice", "office"]},
-        {"address_lines": ["1285 S STATE ST"], "city": "HEMET", "zipcode": "92543",
-        "state": "CA", "geo_location": [-116.97271, 33.72837], "role": ["mailing",
-        "practice"]}, {"address_lines": ["TEMECULA MEDICAL CTR"], "state": "CA", "role":
-        ["landmark"], "zipcode": "92590", "city": "TEMECULA"}, {"address_lines": ["44274
-        GEORGE CUSHMAN CT STE 106"], "city": "TEMECULA", "zipcode": "92592", "state":
-        "CA", "geo_location": [-117.08836, 33.48285], "role": ["practice"]}, {"address_lines":
-        ["DIAMOND VALLEY SHOPPING CTR I"], "state": "CA", "role": ["landmark"], "zipcode":
-        "92543", "city": "HEMET"}, {"address_lines": ["36320 INLAND VALLEY DR STE
-        203"], "city": "WILDOMAR", "zipcode": "92595", "state": "CA", "geo_location":
-        [-117.23671, 33.5957], "role": ["practice"]}, {"address_lines": ["STONEBRIDGE
-        MEDICAL CTR"], "state": "CA", "role": ["landmark"], "zipcode": "92595", "city":
-        "WILDOMAR"}, {"address_lines": ["26900 NEWPORT RD STE 111"], "city": "MENIFEE",
-        "zipcode": "92584", "state": "CA", "geo_location": [-117.18926, 33.68512],
-        "role": ["practice"]}, {"address_lines": ["NEWPORT PLZ"], "state": "CA", "role":
-        ["landmark"], "zipcode": "92584", "city": "MENIFEE"}, {"address_lines": ["2279
-        EAGLE GLEN PKWY STE 110"], "city": "CORONA", "zipcode": "92883", "state":
-        "CA", "geo_location": [-117.52226, 33.82227], "role": ["practice"]}, {"address_lines":
-        ["THE VILLAGE AT EAGLE GLEN"], "state": "CA", "role": ["landmark"], "zipcode":
-        "92883", "city": "CORONA"}, {"address_lines": ["3989 W STETSON AVE STE 100"],
-        "city": "HEMET", "zipcode": "92545", "state": "CA", "geo_location": [-117.00221,
-        33.72927], "role": ["practice"]}], "licenses": [{"state": "CA", "number":
-        "G61668"}], "birth_date": "1960", "middle_name": "PAUL"}}, {"provider": {"first_name":
-        "RESSIA", "last_name": "LEE", "npi": "1780782938", "gender": "Female", "specialty":
-        ["PEDIATRICS"], "locations": [{"address_lines": ["27699 JEFFERSON AVE STE
-        300"], "city": "TEMECULA", "country": "US", "zipcode": "92590", "state": "CA",
-        "geo_location": [-117.158998, 33.513847], "role": ["mailing"]}, {"address_lines":
-        ["2279 EAGLE GLEN PKWY STE D-110"], "city": "CORONA", "country": "US", "zipcode":
-        "92883", "state": "CA", "geo_location": [-117.158998, 33.513847], "role":
-        ["practice"]}, {"address_lines": ["40690 CALIFORNIA OAKS RD STE A"], "city":
-        "MURRIETA", "zipcode": "92562", "state": "CA", "geo_location": [-117.20289,
-        33.57296], "role": ["mailing"]}, {"address_lines": ["2279 EAGLE GLEN PKWY
-        STE 110"], "city": "CORONA", "zipcode": "92883", "state": "CA", "geo_location":
-        [-117.52226, 33.82227], "role": ["office", "practice"]}, {"address_lines":
-        ["THE VILLAGE AT EAGLE GLEN"], "state": "CA", "role": ["landmark"], "zipcode":
-        "92883", "city": "CORONA"}, {"address_lines": ["41632 MARGARITA RD # 100"],
-        "state": "CA", "role": ["practice"], "zipcode": "92591", "city": "TEMECULA"},
-        {"address_lines": ["26900 NEWPORT RD STE 111"], "city": "MENIFEE", "zipcode":
-        "92584", "state": "CA", "geo_location": [-117.18926, 33.68512], "role": ["practice"]},
-        {"address_lines": ["NEWPORT PLZ"], "state": "CA", "role": ["landmark"], "zipcode":
-        "92584", "city": "MENIFEE"}, {"address_lines": ["44274 GEORGE CUSHMAN CT STE
-        106"], "city": "TEMECULA", "zipcode": "92592", "state": "CA", "geo_location":
-        [-117.08836, 33.48285], "role": ["practice"]}, {"address_lines": ["27699 JEFFERSON
-        AVE STE 102"], "city": "TEMECULA", "zipcode": "92590", "state": "CA", "geo_location":
-        [-117.15992, 33.5143], "role": ["practice"]}, {"address_lines": ["TEMECULA
-        MEDICAL CTR"], "state": "CA", "role": ["landmark"], "zipcode": "92590", "city":
-        "TEMECULA"}, {"address_lines": ["41637 MARGARITA RD STE 100"], "city": "TEMECULA",
-        "zipcode": "92591", "state": "CA", "geo_location": [-117.15204, 33.52105],
-        "role": ["practice"]}], "licenses": [{"state": "CA", "number": "A71070"}],
-        "birth_date": "1971", "middle_name": "Y"}}, {"provider": {"first_name": "JENNIFER",
-        "last_name": "KEITH", "npi": "1710086400", "gender": "Female", "specialty":
-        ["PEDIATRICS"], "locations": [{"address_lines": ["27699 JEFFERSON AVE STE
-        300"], "city": "TEMECULA", "country": "US", "zipcode": "92590", "state": "CA",
-        "geo_location": [-117.158998, 33.513847], "role": ["mailing"]}, {"address_lines":
-        ["3989 W STETSON AVE STE 100"], "city": "HEMET", "country": "US", "zipcode":
-        "92545", "state": "CA", "geo_location": [-117.158998, 33.513847], "role":
-        ["practice", "office"]}, {"address_lines": ["1285 S STATE ST"], "city": "HEMET",
-        "zipcode": "92543", "state": "CA", "geo_location": [-116.97271, 33.72837],
-        "role": ["mailing", "practice"]}, {"address_lines": ["26900 NEWPORT RD STE
-        111"], "city": "MENIFEE", "zipcode": "92584", "state": "CA", "geo_location":
-        [-117.18926, 33.68512], "role": ["practice"]}, {"address_lines": ["NEWPORT
-        PLZ"], "state": "CA", "role": ["landmark"], "zipcode": "92584", "city": "MENIFEE"},
-        {"address_lines": ["2279 EAGLE GLEN PKWY STE 110"], "city": "CORONA", "zipcode":
-        "92883", "state": "CA", "geo_location": [-117.52226, 33.82227], "role": ["practice"]},
-        {"address_lines": ["THE VILLAGE AT EAGLE GLEN"], "state": "CA", "role": ["landmark"],
-        "zipcode": "92883", "city": "CORONA"}, {"address_lines": ["44274 GEORGE CUSHMAN
-        CT STE 106"], "city": "TEMECULA", "zipcode": "92592", "state": "CA", "geo_location":
-        [-117.08836, 33.48285], "role": ["practice"]}, {"address_lines": ["27699 JEFFERSON
-        AVE STE 102"], "city": "TEMECULA", "zipcode": "92590", "state": "CA", "geo_location":
-        [-117.15992, 33.5143], "role": ["practice"]}, {"address_lines": ["TEMECULA
-        MEDICAL CTR"], "state": "CA", "role": ["landmark"], "zipcode": "92590", "city":
-        "TEMECULA"}, {"address_lines": ["DIAMOND VALLEY SHOPPING CTR I"], "state":
-        "CA", "role": ["landmark"], "zipcode": "92543", "city": "HEMET"}], "licenses":
-        [{"state": "CA", "number": "G83301"}], "birth_date": "1967", "middle_name":
-        "CAROLINE"}}, {"provider": {"first_name": "IRVING", "last_name": "FELDKAMP",
-        "npi": "1568553022", "suffix": "IV", "gender": "Male", "specialty": ["GENERAL
-        PRACTICE", "OBSTETRICS & GYNECOLOGY"], "locations": [{"address_lines": ["3050
-        E AIRPORT WAY"], "city": "LONG BEACH", "country": "US", "zipcode": "90806",
-        "state": "CA", "geo_location": [-118.15666, 33.810636], "role": ["mailing"]},
-        {"address_lines": ["2777 LONG BEACH BLVD"], "city": "LONG BEACH", "country":
-        "US", "zipcode": "90806", "state": "CA", "geo_location": [-118.189354, 33.804386],
-        "role": ["practice"]}, {"address_lines": ["2030 COFFEE RD STE A1"], "city":
-        "MODESTO", "zipcode": "95355", "state": "CA", "geo_location": [-120.97563,
-        37.67218], "role": ["mailing", "office"]}, {"address_lines": ["7340 MIRAMAR
-        RD STE 205"], "city": "SAN DIEGO", "zipcode": "92126", "state": "CA", "geo_location":
-        [-117.15575, 32.88235], "role": ["practice"]}, {"address_lines": ["3660 PARK
-        SIERRA DR STE 105"], "city": "RIVERSIDE", "zipcode": "92505", "state": "CA",
-        "geo_location": [-117.47132, 33.90297], "role": ["practice"]}, {"address_lines":
-        ["PARK SIERRA CTR"], "state": "CA", "role": ["landmark"], "zipcode": "92505",
-        "city": "RIVERSIDE"}, {"address_lines": ["3655 LOMITA BLVD STE 400"], "city":
-        "TORRANCE", "zipcode": "90505", "state": "CA", "geo_location": [-118.3487,
-        33.81539], "role": ["practice"]}, {"address_lines": ["1135 S SUNSET AVE STE
-        302"], "city": "WEST COVINA", "zipcode": "91790", "state": "CA", "geo_location":
-        [-117.94584, 34.06125], "role": ["practice"]}, {"address_lines": ["WEST COVINA
-        MEDICAL CLINIC"], "state": "CA", "role": ["landmark"], "zipcode": "91790",
-        "city": "WEST COVINA"}, {"address_lines": ["2500 H ST"], "city": "BAKERSFIELD",
-        "zipcode": "93301", "state": "CA", "geo_location": [-119.02106, 35.38195],
-        "role": ["practice"]}, {"address_lines": ["5050 SAN BERNARDINO ST"], "city":
-        "MONTCLAIR", "zipcode": "91763", "state": "CA", "geo_location": [-117.6945,
-        34.07822], "role": ["practice"]}, {"address_lines": ["2322 BUTANO DR"], "city":
-        "SACRAMENTO", "zipcode": "95825", "state": "CA", "geo_location": [-121.38153,
-        38.60635], "role": ["practice"]}, {"address_lines": ["COUNTRY CLUB MEDICAL
-        CTR"], "state": "CA", "role": ["landmark"], "zipcode": "95825", "city": "SACRAMENTO"},
-        {"address_lines": ["165 N CLARK ST"], "city": "FRESNO", "zipcode": "93701",
-        "state": "CA", "geo_location": [-119.78609, 36.74432], "role": ["practice"]},
-        {"address_lines": ["601 S WESTMORELAND AVE"], "city": "LOS ANGELES", "zipcode":
-        "90005", "state": "CA", "geo_location": [-118.28918, 34.06179], "role": ["practice"]}],
-        "licenses": [{"state": "CA", "number": "A94750"}], "birth_date": "1978", "middle_name":
-        "MOORE"}}, {"provider": {"first_name": "MICHAEL", "last_name": "KEEFE", "npi":
-        "1710999396", "gender": "Male", "specialty": ["OTORHINOLARYNGOLOGY", "OTOLARYNGOLOGY",
-        "FACIAL PLASTIC SURGERY"], "locations": [{"address_lines": ["2929 HEALTH CENTER
-        DR"], "city": "SAN DIEGO", "country": "US", "zipcode": "92123", "state": "CA",
-        "geo_location": [-117.156661, 32.79742], "role": ["mailing", "practice"]},
-        {"address_lines": ["3243 XENOPHON ST"], "city": "SAN DIEGO", "zipcode": "92106",
-        "state": "CA", "geo_location": [-117.2219, 32.73707], "role": ["mailing"]},
-        {"address_lines": ["OTOLARYNGOLOGY DEPARTMENT", "2929 HEALTH CENTER DR"],
-        "city": "SAN DIEGO", "zipcode": "92123", "state": "CA", "geo_location": [-117.15427,
-        32.79677], "role": ["office"]}, {"address_lines": ["2929 HEALTH CENTER DR
-        # 3"], "city": "SAN DIEGO", "zipcode": "92123", "state": "CA", "geo_location":
-        [-117.15427, 32.79677], "role": ["practice"]}, {"address_lines": ["SHARP REES-STEALY
-        MEDICAL CTR"], "state": "CA", "role": ["landmark"], "zipcode": "92123", "city":
-        "SAN DIEGO"}, {"address_lines": ["34520 BOB WILSON DR STE 200"], "city": "SAN
-        DIEGO", "zipcode": "92134", "state": "CA", "geo_location": [-117.14557, 32.72473],
-        "role": ["practice"]}, {"address_lines": ["NAVAL MEDICAL CENTER SAN DIEGO"],
-        "city": "SAN DIEGO", "zipcode": "92134", "state": "CA", "geo_location": [-117.14557,
-        32.72473], "role": ["landmark"]}, {"address_lines": ["10670 WEXFORD ST"],
-        "city": "SAN DIEGO", "zipcode": "92131", "state": "CA", "geo_location": [-117.09937,
-        32.93889], "role": ["practice"]}, {"address_lines": ["SHARP REES STEALY MEDICAL
-        CTR"], "state": "CA", "role": ["landmark"], "zipcode": "92131", "city": "SAN
-        DIEGO"}, {"address_lines": ["7425 MISSION VALLEY RD STE 202"], "city": "SAN
-        DIEGO", "zipcode": "92108", "state": "CA", "geo_location": [-117.1609, 32.77762],
-        "role": ["practice"]}, {"address_lines": ["SCRIPPS CLNC MISSION VLY 7425"],
-        "state": "CA", "role": ["landmark"], "zipcode": "92108", "city": "SAN DIEGO"}],
-        "licenses": [{"state": "CA", "number": "A46089"}], "birth_date": "1957", "middle_name":
-        "ARTHUR"}}, {"provider": {"first_name": "RASHID", "last_name": "IQBAL", "npi":
-        "1942285879", "gender": "Male", "specialty": ["INTERNAL MEDICINE", "GASTROENTEROLOGY"],
-        "locations": [{"address_lines": ["1261 TRAVIS BLVD", "STE 170"], "city": "FAIRFIELD",
-        "country": "US", "zipcode": "945334897", "state": "CA", "geo_location": [-122.242902,
-        37.768453], "role": ["mailing", "practice"]}, {"address_lines": ["1261 TRAVIS
-        BLVD STE 170"], "city": "FAIRFIELD", "zipcode": "94533", "state": "CA", "geo_location":
-        [-122.04931, 38.25761], "role": ["mailing", "practice"]}, {"address_lines":
-        ["2702 LOW CT STE 2A"], "city": "FAIRFIELD", "zipcode": "94534", "state":
-        "CA", "geo_location": [-122.10638, 38.27935], "role": ["office"]}, {"address_lines":
-        ["CORPORATE PLZ"], "state": "CA", "role": ["landmark"], "zipcode": "94533",
-        "city": "FAIRFIELD"}, {"address_lines": ["100 HOSPITAL DR STE 303"], "city":
-        "VALLEJO", "zipcode": "94589", "state": "CA", "geo_location": [-122.2406,
-        38.13093], "role": ["practice"]}, {"address_lines": ["SUTTER SOLANO MEDICAL
-        OFC BLDG"], "state": "CA", "role": ["landmark"], "zipcode": "94589", "city":
-        "VALLEJO"}, {"address_lines": ["480 REDWOOD ST"], "city": "VALLEJO", "zipcode":
-        "94590", "state": "CA", "geo_location": [-122.25988, 38.1238], "role": ["practice"]},
-        {"address_lines": ["REDWOOD SQUARE SHOPPING CTR"], "state": "CA", "role":
-        ["landmark"], "zipcode": "94590", "city": "VALLEJO"}, {"address_lines": ["2702
-        LOW CT # 2A"], "state": "CA", "role": ["practice"], "zipcode": "94534", "city":
-        "FAIRFIELD"}, {"address_lines": ["2450 MARTIN RD"], "city": "FAIRFIELD", "zipcode":
-        "94534", "state": "CA", "geo_location": [-122.05115, 38.27428], "role": ["practice"]},
-        {"address_lines": ["MARTIN PLZ"], "state": "CA", "role": ["landmark"], "zipcode":
-        "94534", "city": "FAIRFIELD"}], "licenses": [{"state": "CA", "number": "A43154"}],
-        "birth_date": "1957"}}, {"provider": {"first_name": "DENNIS", "last_name":
-        "OH", "npi": "1710953047", "gender": "Male", "specialty": ["DERMATOLOGY"],
-        "locations": [{"address_lines": ["PO BOX 942895"], "city": "SACRAMENTO", "country":
-        "US", "zipcode": "94295", "state": "CA", "geo_location": [-121.444429, 38.377411],
-        "role": ["mailing"]}, {"address_lines": ["DERMATOLOGY", "4150 CLEMENT ST DEPT
-        190)"], "city": "SAN FRANCISCO", "country": "US", "zipcode": "94121", "state":
-        "CA", "geo_location": [-122.50416, 37.781127], "role": ["practice"]}, {"address_lines":
-        ["11 BLUE ROCK CT"], "city": "CORTE MADERA", "zipcode": "94925", "state":
-        "CA", "geo_location": [-122.52458, 37.93118], "role": ["mailing"]}, {"address_lines":
-        ["DERMATOLOGY (190)", "4150 CLEMENT ST"], "city": "SAN FRANCISCO", "zipcode":
-        "94121", "state": "CA", "geo_location": [-122.50405, 37.78122], "role": ["office"]},
-        {"address_lines": ["1650 RESPONSE RD"], "city": "SACRAMENTO", "zipcode": "95815",
-        "state": "CA", "geo_location": [-121.43018, 38.59648], "role": ["practice"]},
-        {"address_lines": ["POINT WEST MEDICAL OFFICE BLDG"], "state": "CA", "role":
-        ["landmark"], "zipcode": "95815", "city": "SACRAMENTO"}, {"address_lines":
-        ["2288 AUBURN BLVD STE 205"], "city": "SACRAMENTO", "zipcode": "95821", "state":
-        "CA", "geo_location": [-121.41131, 38.62543], "role": ["practice"]}, {"address_lines":
-        ["2315 STOCKTON BLVD"], "city": "SACRAMENTO", "zipcode": "95817", "state":
-        "CA", "geo_location": [-121.45742, 38.55439], "role": ["practice"]}, {"address_lines":
-        ["UNIVERSITY OF CA DAVIS MED CTR"], "state": "CA", "role": ["landmark"], "zipcode":
-        "95817", "city": "SACRAMENTO"}, {"address_lines": ["4150 CLEMENT ST # 15INC"],
-        "city": "SAN FRANCISCO", "zipcode": "94121", "state": "CA", "geo_location":
-        [-122.50405, 37.78122], "role": ["practice"]}, {"address_lines": ["VETERANS
-        AFFAIRS MEDICAL CTR"], "state": "CA", "role": ["landmark"], "zipcode": "94121",
-        "city": "SAN FRANCISCO"}], "licenses": [{"state": "CA", "number": "G79853"}],
-        "birth_date": "1963", "middle_name": "HYUN"}}, {"provider": {"first_name":
-        "BRIAN", "last_name": "MOFFIT", "npi": "1508817305", "gender": "Male", "specialty":
-        ["DIAGNOSTIC RADIOLOGY"], "locations": [{"address_lines": ["PO BOX 34307"],
-        "city": "SAN DIEGO", "country": "US", "zipcode": "92163", "state": "CA", "geo_location":
-        [-116.846046, 33.016928], "role": ["mailing"]}, {"address_lines": ["501 WASHINGTON
-        ST STE 510"], "city": "SAN DIEGO", "country": "US", "zipcode": "92103", "state":
-        "CA", "geo_location": [-117.160449, 32.749932], "role": ["practice"]}, {"address_lines":
-        ["4077 5TH AVE"], "city": "SAN DIEGO", "zipcode": "92103", "state": "CA",
-        "geo_location": [-117.16114, 32.75132], "role": ["mailing"]}, {"address_lines":
-        ["3366 5TH AVE"], "city": "SAN DIEGO", "zipcode": "92103", "state": "CA",
-        "geo_location": [-117.16045, 32.73994], "role": ["office"]}, {"address_lines":
-        ["675 CAMINO DE LOS MARES STE 101"], "city": "SAN CLEMENTE", "zipcode": "92673",
-        "state": "CA", "geo_location": [-117.64598, 33.45678], "role": ["practice"]},
-        {"address_lines": ["6256 GREENWICH DR STE 150"], "city": "SAN DIEGO", "zipcode":
-        "92122", "state": "CA", "geo_location": [-117.18604, 32.85505], "role": ["practice"]},
-        {"address_lines": ["25150 HANCOCK AVE STE 105"], "city": "MURRIETA", "zipcode":
-        "92562", "state": "CA", "geo_location": [-117.18375, 33.5705], "role": ["practice"]},
-        {"address_lines": ["HANCOCK MEDICAL CTR"], "state": "CA", "role": ["landmark"],
-        "zipcode": "92562", "city": "MURRIETA"}, {"address_lines": ["6386 ALVARADO
-        CT STE 121"], "city": "SAN DIEGO", "zipcode": "92120", "state": "CA", "geo_location":
-        [-117.06217, 32.77795], "role": ["practice"]}, {"address_lines": ["7625 MESA
-        COLLEGE DR STE 103"], "city": "SAN DIEGO", "zipcode": "92111", "state": "CA",
-        "geo_location": [-117.15783, 32.80067], "role": ["practice"]}, {"address_lines":
-        ["477 N EL CAMINO REAL STE A102"], "city": "ENCINITAS", "zipcode": "92024",
-        "state": "CA", "geo_location": [-117.26262, 33.05907], "role": ["practice"]},
-        {"address_lines": ["NORTH COAST HEALTH CTR"], "state": "CA", "role": ["landmark"],
-        "zipcode": "92024", "city": "ENCINITAS"}], "licenses": [{"state": "CA", "number":
-        "G51551"}], "prefix": "DR", "birth_date": "1956", "middle_name": "JAY"}},
-        {"provider": {"first_name": "JULIANNE", "last_name": "TOOHEY", "npi": "1699728691",
-        "gender": "Female", "specialty": ["MATERNAL & FETAL MEDICINE", "NEONATAL PERINATAL
-        MEDICINE"], "locations": [{"address_lines": ["101 CITY DRIVE S", "BUILDING
-        56 SUITE 800"], "city": "ORANGE", "country": "US", "zipcode": "928683201",
-        "state": "CA", "role": ["mailing"]}, {"address_lines": ["200 S MANCHESTER
-        AVE STE 600"], "city": "ORANGE", "country": "US", "zipcode": "92868", "state":
-        "CA", "geo_location": [-117.895812, 33.796129], "role": ["practice"]}, {"address_lines":
-        ["UCIMC DEPT OB/GYN", "101 THE CITY DR S BLDG 56"], "city": "ORANGE", "zipcode":
-        "92868", "state": "CA", "geo_location": [-117.89073, 33.78891], "role": ["mailing"]},
-        {"address_lines": ["200 S MANCHESTER AVE FL 6"], "city": "ORANGE", "zipcode":
-        "92868", "state": "CA", "geo_location": [-117.89574, 33.79618], "role": ["office"]},
-        {"address_lines": ["11190 WARNER AVE STE 402"], "city": "FOUNTAIN VALLEY",
-        "zipcode": "92708", "state": "CA", "geo_location": [-117.93298, 33.71624],
-        "role": ["practice"]}, {"address_lines": ["FOUNTAIN VALLEY MED OFC BLDG 5"],
-        "state": "CA", "role": ["landmark"], "zipcode": "92708", "city": "FOUNTAIN
-        VALLEY"}, {"address_lines": ["24411 HEALTH CENTER DR STE 300"], "city": "LAGUNA
-        HILLS", "zipcode": "92653", "state": "CA", "geo_location": [-117.7077, 33.60871],
-        "role": ["practice"]}, {"address_lines": ["SADDLEBACK MEMORIAL MED TOWER"],
-        "state": "CA", "role": ["landmark"], "zipcode": "92653", "city": "LAGUNA HILLS"},
-        {"address_lines": ["101 THE CITY DR S # 25"], "city": "ORANGE", "zipcode":
-        "92868", "state": "CA", "geo_location": [-117.89073, 33.78891], "role": ["practice"]},
-        {"address_lines": ["101 THE CITY DR S"], "city": "ORANGE", "zipcode": "92868",
-        "state": "CA", "geo_location": [-117.89024, 33.78824], "role": ["landmark"]},
-        {"address_lines": ["UCI MANCHESTER PAVILLION"], "state": "CA", "role": ["landmark"],
-        "zipcode": "92868", "city": "ORANGE"}], "licenses": [{"state": "CA", "number":
-        "G068408"}], "prefix": "DR", "birth_date": "1958", "middle_name": "STOODY"}},
-        {"provider": {"first_name": "SHASHI", "last_name": "SHARMA", "npi": "1619088036",
-        "gender": "Female", "specialty": ["FAMILY PRACTICE", "FAMILY MEDICINE"], "locations":
-        [{"address_lines": ["400 RACE ST"], "city": "SAN JOSE", "country": "US", "zipcode":
-        "95126", "state": "CA", "geo_location": [-121.911205, 37.320866], "role":
-        ["mailing"]}, {"address_lines": ["227 N JACKSON AVE"], "city": "SAN JOSE",
-        "country": "US", "zipcode": "95116", "state": "CA", "geo_location": [-121.911205,
-        37.320866], "role": ["practice"]}, {"address_lines": ["531 SHELLEY CT"], "city":
-        "MILPITAS", "zipcode": "95035", "state": "CA", "geo_location": [-121.8979,
-        37.43941], "role": ["mailing"]}, {"address_lines": ["S J M G", "227 N JACKSON
-        AVE"], "city": "SAN JOSE", "zipcode": "95116", "state": "CA", "geo_location":
-        [-121.84052, 37.35479], "role": ["office"]}, {"address_lines": ["625 LINCOLN
-        AVE"], "city": "SAN JOSE", "zipcode": "95126", "state": "CA", "geo_location":
-        [-121.90816, 37.31764], "role": ["practice"]}, {"address_lines": ["PO BOX
-        351"], "city": "VISALIA", "zipcode": "93279", "state": "CA", "geo_location":
-        [-119.29218, 36.32915], "role": ["mailing"]}, {"address_lines": ["100 WILLOW
-        PLZ STE 200"], "city": "VISALIA", "zipcode": "93291", "state": "CA", "geo_location":
-        [-119.29287, 36.32852], "role": ["practice"]}, {"address_lines": ["WILLOW
-        PLZ"], "state": "CA", "role": ["landmark"], "zipcode": "93291", "city": "VISALIA"}],
-        "licenses": [{"state": "CA", "number": "A44662"}], "birth_date": "1958", "middle_name":
-        "PRABHA"}}, {"provider": {"first_name": "PATRICIA", "last_name": "FONE", "npi":
-        "1700997210", "gender": "Female", "specialty": ["SURGERY", "UROLOGY", "UROLOGICAL
-        SURGERY"], "locations": [{"address_lines": ["10470 OLD PLACERVILLE RD STE
-        100"], "city": "SACRAMENTO", "country": "US", "zipcode": "95827", "state":
-        "CA", "geo_location": [-121.306724, 38.570716], "role": ["mailing"]}, {"address_lines":
-        ["3 MEDICAL PLAZA DR STE 250"], "city": "ROSEVILLE", "country": "US", "zipcode":
-        "95661", "state": "CA", "geo_location": [-121.306724, 38.570716], "role":
-        ["practice"]}, {"address_lines": ["7936 INDIAN SPRINGS WAY"], "city": "ORANGEVALE",
-        "zipcode": "95662", "state": "CA", "geo_location": [-121.24051, 38.70999],
-        "role": ["mailing"]}, {"address_lines": ["SUITE 250", "3 MEDICAL PLAZA DR
-        STE 250"], "city": "ROSEVILLE", "zipcode": "95661", "state": "CA", "geo_location":
-        [-121.24942, 38.7529], "role": ["office"]}, {"address_lines": ["2725 CAPITOL
-        AVE DEPT 300"], "city": "SACRAMENTO", "zipcode": "95816", "state": "CA", "geo_location":
-        [-121.47101, 38.57099], "role": ["practice"]}, {"address_lines": ["3 MEDICAL
-        PLAZA DR"], "city": "ROSEVILLE", "zipcode": "95661", "state": "CA", "geo_location":
-        [-121.24942, 38.7529], "role": ["landmark"]}, {"address_lines": ["3133 PROFESSIONAL
-        DR STE 20"], "city": "AUBURN", "zipcode": "95603", "state": "CA", "geo_location":
-        [-121.10089, 38.94091], "role": ["practice"]}], "licenses": [{"state": "CA",
-        "number": "G74706"}], "birth_date": "1963", "middle_name": "DENISE"}}, {"provider":
-        {"first_name": "LEON", "last_name": "KUJMANIAN", "npi": "1194827782", "gender":
-        "Male", "specialty": ["ENDOCRINOLOGY, DIABETES & METABOLISM", "ENDOCRINOLOGY"],
-        "locations": [{"address_lines": ["PO BOX 432"], "city": "GLENDALE", "country":
-        "US", "zipcode": "91209", "state": "CA", "geo_location": [-118.298662, 33.786594],
-        "role": ["mailing"]}, {"address_lines": ["1146 N CENTRAL AVENUE, #522"], "city":
-        "GLENDALE", "country": "US", "zipcode": "91202", "state": "CA", "role": ["practice"]},
-        {"address_lines": ["1422 N CENTRAL AVE APT 7"], "city": "GLENDALE", "zipcode":
-        "91202", "state": "CA", "geo_location": [-118.25675, 34.16755], "role": ["mailing"]},
-        {"address_lines": ["1146 N CENTRAL AVE # 522"], "city": "GLENDALE", "zipcode":
-        "91202", "state": "CA", "geo_location": [-118.25678, 34.16248], "role": ["office"]},
-        {"address_lines": ["26357 MCBEAN PKWY STE 225"], "city": "VALENCIA", "zipcode":
-        "91355", "state": "CA", "geo_location": [-118.55875, 34.41112], "role": ["practice"]},
-        {"address_lines": ["607 N CENTRAL AVE"], "city": "GLENDALE", "zipcode": "91203",
-        "state": "CA", "geo_location": [-118.25792, 34.15403], "role": ["practice"]},
-        {"address_lines": ["520 E WILSON AVE"], "city": "GLENDALE", "zipcode": "91206",
-        "state": "CA", "geo_location": [-118.24983, 34.14805], "role": ["practice"]}],
-        "licenses": [{"state": "CA", "number": "A64159"}], "birth_date": "1960"}},
-        {"provider": {"first_name": "FREDERICK", "last_name": "ZIEGLER", "npi": "1043312358",
-        "gender": "Male", "specialty": ["PSYCHIATRY"], "locations": [{"address_lines":
-        ["BUSINESS DEVELOPMENT & CONTRACTING", "PO BOX HH"], "city": "MONTEREY", "country":
-        "US", "zipcode": "93942", "state": "CA", "geo_location": [-121.132928, 36.35433],
-        "role": ["mailing"]}, {"address_lines": ["23625 HOLMAN HWY"], "city": "MONTEREY",
-        "country": "US", "zipcode": "93940", "state": "CA", "geo_location": [-121.915121,
-        36.579036], "role": ["practice"]}, {"address_lines": ["HARTNELL PROFESSIONAL
-        CENTER", "576 HARTNELL ST STE 300"], "city": "MONTEREY", "zipcode": "93940",
-        "state": "CA", "geo_location": [-121.89613, 36.59529], "role": ["mailing"]},
-        {"address_lines": ["576 HARTNELL ST STE 100"], "city": "MONTEREY", "zipcode":
-        "93940", "state": "CA", "geo_location": [-121.89613, 36.59529], "role": ["office"]},
-        {"address_lines": ["PO BOX HH"], "city": "MONTEREY", "zipcode": "93942", "state":
-        "CA", "geo_location": [-121.89536, 36.59593], "role": ["practice"]}, {"address_lines":
-        ["576 HARTNELL ST STE 300"], "city": "MONTEREY", "zipcode": "93940", "state":
-        "CA", "geo_location": [-121.89613, 36.59529], "role": ["practice"]}, {"address_lines":
-        ["HARTNELL PROFESSIONAL CTR"], "state": "CA", "role": ["landmark"], "zipcode":
-        "93940", "city": "MONTEREY"}], "licenses": [{"state": "CA", "number": "C19843"}],
-        "birth_date": "1924", "middle_name": "JOS"}}, {"provider": {"first_name":
-        "THOMAS", "last_name": "HAMILTON", "npi": "1356444608", "suffix": "JR", "gender":
-        "Male", "specialty": ["FAMILY MEDICINE"], "locations": [{"address_lines":
-        ["PO BOX 62106"], "city": "SANTA BARBARA", "country": "US", "zipcode": "93160",
-        "state": "CA", "geo_location": [-119.848555, 34.262834], "role": ["mailing"]},
-        {"address_lines": ["215 PESETAS LN"], "city": "SANTA BARBARA", "country":
-        "US", "zipcode": "93110", "state": "CA", "geo_location": [-119.758505, 34.443445],
-        "role": ["practice"]}, {"address_lines": ["122 S PATTERSON AVE STE 232"],
-        "city": "SANTA BARBARA", "zipcode": "93111", "state": "CA", "geo_location":
-        [-119.80688, 34.43763], "role": ["mailing"]}, {"address_lines": ["122 S PATTERSON
-        AVE STE 230B"], "city": "SANTA BARBARA", "zipcode": "93111", "state": "CA",
-        "geo_location": [-119.80688, 34.43763], "role": ["office"]}, {"address_lines":
-        ["PO BOX 1200"], "city": "SANTA BARBARA", "zipcode": "93102", "state": "CA",
-        "geo_location": [-119.69872, 34.42166], "role": ["mailing"]}, {"address_lines":
-        ["122 S PATTERSON AVE # 230A230B"], "city": "SANTA BARBARA", "zipcode": "93111",
-        "state": "CA", "geo_location": [-119.80688, 34.43763], "role": ["practice"]},
-        {"address_lines": ["PATTERSON PROFESSIONAL PLZ"], "state": "CA", "role": ["landmark"],
-        "zipcode": "93111", "city": "SANTA BARBARA"}], "licenses": [{"state": "CA",
-        "number": "C33234"}], "birth_date": "1938", "middle_name": "WM"}}, {"provider":
-        {"first_name": "GLENN", "last_name": "LEDESMA", "npi": "1992808281", "gender":
-        "Male", "specialty": ["PROCEDURAL DERMATOLOGY", "PEDIATRIC DERMATOLOGY", "BARIATRICIAN",
-        "DERMATOLOGY", "MOHSMICROGRAPHIC SURGERY", "DERMATOPATHOLOGY"], "locations":
-        [{"address_lines": ["PO BOX 15807"], "city": "BEVERLY HILLS", "country": "US",
-        "zipcode": "90209", "state": "CA", "geo_location": [-118.39311, 34.06119],
-        "role": ["mailing"]}, {"address_lines": ["414 N CAMDEN DR STE 775"], "city":
-        "BEVERLY HILLS", "country": "US", "zipcode": "90210", "state": "CA", "geo_location":
-        [-118.404135, 34.068833], "role": ["practice"]}, {"address_lines": ["PO BOX
-        15717"], "city": "BEVERLY HILLS", "zipcode": "90209", "state": "CA", "geo_location":
-        [-118.39311, 34.06119], "role": ["mailing"]}, {"address_lines": ["416 N BEDFORD
-        DR STE 306"], "city": "BEVERLY HILLS", "zipcode": "90210", "state": "CA",
-        "geo_location": [-118.40499, 34.06836], "role": ["office", "practice"]}, {"address_lines":
-        ["2601 W ALAMEDA AVE STE 314"], "city": "BURBANK", "zipcode": "91505", "state":
-        "CA", "geo_location": [-118.32917, 34.15795], "role": ["practice"]}, {"address_lines":
-        ["GOLDEN STATE II MEDICAL BLDG"], "state": "CA", "role": ["landmark"], "zipcode":
-        "91505", "city": "BURBANK"}, {"address_lines": ["1200 S DIAMOND BAR BLVD STE
-        201"], "city": "DIAMOND BAR", "zipcode": "91765", "state": "CA", "geo_location":
-        [-117.8108, 34.00045], "role": ["practice"]}, {"address_lines": ["12665 GARDEN
-        GROVE BLVD STE 701"], "city": "GARDEN GROVE", "zipcode": "92843", "state":
-        "CA", "geo_location": [-117.91099, 33.7745], "role": ["practice"]}, {"address_lines":
-        ["GARDEN GROVE MEDICAL ARTS BLDG"], "state": "CA", "role": ["landmark"], "zipcode":
-        "92843", "city": "GARDEN GROVE"}], "licenses": [{"state": "CA", "number":
-        "G044761"}, {"state": "NY", "number": "143411"}, {"state": "FL", "number":
-        "ME 89540"}], "prefix": "DR", "birth_date": "1952", "middle_name": "NEIL"}},
-        {"provider": {"first_name": "ROBERT", "last_name": "WENDEL", "npi": "1235234634",
-        "gender": "Male", "specialty": ["OPHTHALMOLOGY", "OTHER SPECIALTY"], "locations":
-        [{"address_lines": ["3939 J ST STE 104"], "city": "SACRAMENTO", "country":
-        "US", "zipcode": "95819", "state": "CA", "geo_location": [-121.454003, 38.56966],
-        "role": ["mailing"]}, {"address_lines": ["3939 J ST STE 106"], "city": "SACRAMENTO",
-        "country": "US", "zipcode": "95819", "state": "CA", "geo_location": [-121.454003,
-        38.56966], "role": ["practice"]}, {"address_lines": ["3377 BARBERRY LN"],
-        "city": "SACRAMENTO", "zipcode": "95864", "state": "CA", "geo_location": [-121.3853,
-        38.57784], "role": ["mailing"]}, {"address_lines": ["1360 BURTON DR STE 150"],
-        "city": "VACAVILLE", "zipcode": "95687", "state": "CA", "geo_location": [-121.95791,
-        38.36208], "role": ["office", "practice"]}, {"address_lines": ["MERCY MEDICAL
-        PLZ"], "state": "CA", "role": ["landmark"], "zipcode": "95819", "city": "SACRAMENTO"},
-        {"address_lines": ["19 ILAHEE LN"], "city": "CHICO", "zipcode": "95973", "state":
-        "CA", "geo_location": [-121.87036, 39.75216], "role": ["practice"]}, {"address_lines":
-        ["5 MEDICAL PLAZA DR STE 180"], "city": "ROSEVILLE", "zipcode": "95661", "state":
-        "CA", "geo_location": [-121.24661, 38.76636], "role": ["practice"]}, {"address_lines":
-        ["5775 GREENBACK LN"], "city": "SACRAMENTO", "zipcode": "95841", "state":
-        "CA", "geo_location": [-121.33188, 38.68088], "role": ["practice"]}, {"address_lines":
-        ["1401 SPANOS CT STE 223"], "city": "MODESTO", "zipcode": "95355", "state":
-        "CA", "geo_location": [-120.97199, 37.67024], "role": ["practice"]}], "licenses":
-        [{"state": "NV", "number": "6988"}, {"state": "CA", "number": "G43291"}],
-        "prefix": "DR", "birth_date": "1952", "middle_name": "THOMAS"}}, {"provider":
-        {"first_name": "JAMES", "last_name": "ALLISON", "npi": "1265535777", "gender":
-        "Male", "specialty": ["GASTROENTEROLOGY"], "locations": [{"address_lines":
-        ["PO BOX 7464"], "city": "SAN FRANCISCO", "country": "US", "zipcode": "94120",
-        "state": "CA", "geo_location": [-122.727802, 37.784827], "role": ["mailing"]},
-        {"address_lines": ["1001 POTRERO AVE RM 3D5"], "city": "SAN FRANCISCO", "country":
-        "US", "zipcode": "94110", "state": "CA", "geo_location": [-122.406699, 37.756834],
-        "role": ["practice"]}, {"address_lines": ["SF GEN HOSP WARD 3D", "1001 POTRERO
-        AVE RM 10"], "city": "SAN FRANCISCO", "zipcode": "94110", "state": "CA", "geo_location":
-        [-122.4051, 37.75563], "role": ["mailing", "office"]}, {"address_lines": ["280
-        W MACARTHUR BLVD"], "city": "OAKLAND", "zipcode": "94611", "state": "CA",
-        "geo_location": [-122.25715, 37.82485], "role": ["practice"]}, {"address_lines":
-        ["OAKLAND MEDICAL CTR"], "state": "CA", "role": ["landmark"], "zipcode": "94611",
-        "city": "OAKLAND"}, {"address_lines": ["1001 POTRERO AVE # 3D5"], "city":
-        "SAN FRANCISCO", "zipcode": "94110", "state": "CA", "geo_location": [-122.4051,
-        37.75563], "role": ["practice"]}, {"address_lines": ["SAN FRANCISCO GENERAL
-        HOSPITAL"], "state": "CA", "role": ["landmark"], "zipcode": "94110", "city":
-        "SAN FRANCISCO"}], "licenses": [{"state": "CA", "number": "G18968"}], "birth_date":
-        "1942", "middle_name": "EDWARD"}}, {"provider": {"first_name": "RONALD", "last_name":
-        "GASTER", "npi": "1306940325", "gender": "Male", "specialty": ["OPHTHALMOLOGY"],
-        "locations": [{"address_lines": ["5901 E 7TH ST"], "city": "LONG BEACH", "country":
-        "US", "zipcode": "90822", "state": "CA", "geo_location": [-118.118942, 33.775318],
-        "role": ["mailing", "practice"]}, {"address_lines": ["17012 BARUNA LN"], "city":
-        "HUNTINGTON BEACH", "zipcode": "92649", "state": "CA", "geo_location": [-118.05877,
-        33.71474], "role": ["mailing"]}, {"address_lines": ["1 MEDLAR"], "city": "IRVINE",
-        "zipcode": "92618", "state": "CA", "geo_location": [-117.78072, 33.66386],
-        "role": ["office"]}, {"address_lines": ["50 N LA CIENEGA BLVD"], "state":
-        "CA", "role": ["practice"], "zipcode": "90211", "city": "BEVERLY HILLS"},
-        {"address_lines": ["12550 AMARGOSA RD STE B"], "city": "VICTORVILLE", "zipcode":
-        "92392", "state": "CA", "geo_location": [-117.34196, 34.47862], "role": ["practice"]},
-        {"address_lines": ["THE VILLAGE CTR"], "state": "CA", "role": ["landmark"],
-        "zipcode": "92392", "city": "VICTORVILLE"}, {"address_lines": ["8112 MILLIKEN
-        AVE STE 203"], "city": "RANCHO CUCAMONGA", "zipcode": "91730", "state": "CA",
-        "geo_location": [-117.55784, 34.10476], "role": ["practice"]}, {"address_lines":
-        ["2100 MEDICAL PLAZA DR"], "city": "IRVINE", "zipcode": "92697", "state":
-        "CA", "geo_location": [-117.65873, 33.56382], "role": ["practice"]}, {"address_lines":
-        ["GOTTSCHALK MEDICAL PLZ"], "city": "IRVINE", "zipcode": "92697", "state":
-        "CA", "geo_location": [-117.65873, 33.56382], "role": ["landmark"]}, {"address_lines":
-        ["555 N 13TH AVE"], "city": "UPLAND", "zipcode": "91786", "state": "CA", "geo_location":
-        [-117.63387, 34.10046], "role": ["practice"]}], "licenses": [{"state": "CA",
-        "number": "A026039"}], "prefix": "DR", "birth_date": "1947", "middle_name":
-        "NEAL"}}, {"provider": {"first_name": "DARLENE", "last_name": "ELIAS", "npi":
-        "1528167558", "gender": "Female", "specialty": ["PULMONARY DISEASE", "CRITICAL
-        CARE MEDICINE", "PEDIATRIC CRITICAL CARE"], "locations": [{"address_lines":
-        ["FILE 54433"], "city": "LOS ANGELES", "country": "US", "zipcode": "90074",
-        "state": "CA", "geo_location": [-118.268078, 34.092364], "role": ["mailing"]},
-        {"address_lines": ["10666 N TORREY PINES RD"], "city": "LA JOLLA", "country":
-        "US", "zipcode": "92037", "state": "CA", "geo_location": [-117.242825, 32.889338],
-        "role": ["practice", "mailing"]}, {"address_lines": ["15004 INNOVATION DR"],
-        "city": "SAN DIEGO", "zipcode": "92128", "state": "CA", "geo_location": [-117.07647,
-        32.99053], "role": ["office", "practice"]}, {"address_lines": ["1700 WESTWOOD
-        BLVD"], "city": "LOS ANGELES", "zipcode": "90024", "state": "CA", "geo_location":
-        [-118.43783, 34.05092], "role": ["practice"]}, {"address_lines": ["10666 N
-        TORREY PINES RD # 207W"], "city": "LA JOLLA", "zipcode": "92037", "state":
-        "CA", "geo_location": [-117.2428, 32.89557], "role": ["practice"]}, {"address_lines":
-        ["SCRIPPS GREEN HOSPITAL"], "state": "CA", "role": ["landmark"], "zipcode":
-        "92037", "city": "LA JOLLA"}, {"address_lines": ["SCRIPPS CLINIC RANCHO BERNARDO"],
-        "state": "CA", "role": ["landmark"], "zipcode": "92128", "city": "SAN DIEGO"}],
-        "licenses": [{"state": "CA", "number": "G45176"}], "prefix": "DR", "birth_date":
-        "1951", "middle_name": "JOAN"}}, {"provider": {"first_name": "DWAYNE", "last_name":
-        "LOGAN", "npi": "1164520714", "gender": "Male", "specialty": ["OPHTHALMOLOGY"],
-        "locations": [{"address_lines": ["888 S DISNEYLAND DRIVE", "SUITE 100"], "city":
-        "ANAHEIM", "country": "US", "zipcode": "928021828", "state": "CA", "geo_location":
-        [-117.92295, 33.820441], "role": ["mailing"]}, {"address_lines": ["5991 E
-        SPRING ST"], "city": "LONG BEACH", "country": "US", "zipcode": "90808", "state":
-        "CA", "geo_location": [-118.11583, 33.81059], "role": ["practice"]}, {"address_lines":
-        ["734 RANCHO CIR"], "city": "FULLERTON", "zipcode": "92835", "state": "CA",
-        "geo_location": [-117.93856, 33.89478], "role": ["mailing"]}, {"address_lines":
-        ["7777 EDINGER AVE STE 234"], "city": "HUNTINGTON BEACH", "zipcode": "92647",
-        "state": "CA", "geo_location": [-117.9919, 33.73027], "role": ["office", "practice"]},
-        {"address_lines": ["947 S ANAHEIM BLVD STE 120"], "city": "ANAHEIM", "zipcode":
-        "92805", "state": "CA", "geo_location": [-117.90951, 33.82204], "role": ["practice"]},
-        {"address_lines": ["PAVILIONS CTR"], "state": "CA", "role": ["landmark"],
-        "zipcode": "90808", "city": "LONG BEACH"}, {"address_lines": ["BELLA TERRA"],
-        "state": "CA", "role": ["landmark"], "zipcode": "92647", "city": "HUNTINGTON
-        BEACH"}, {"address_lines": ["7677 CENTER AVE STE 301"], "city": "HUNTINGTON
-        BEACH", "zipcode": "92647", "state": "CA", "geo_location": [-117.99672, 33.73404],
-        "role": ["practice"]}], "licenses": [{"state": "CA", "number": "G68583"}],
-        "prefix": "DR", "birth_date": "1958", "middle_name": "KEITH"}}]}'
+      string: '{"meta": {"rate_limit_amount": 17, "rate_limit_reset": 1404840303,
+        "processing_time": 40, "rate_limit_cap": 8434, "credits_remaining": 6645,
+        "credits_billed": 1}, "data": [{"provider": {"first_name": "JEROME", "last_name":
+        "AYA-AY", "middle_name": "BENITEZ", "uuid": "fc44d0e0-ea7f-492e-90f0-0f9148453019",
+        "locations": [{"address_lines": ["8311 WARREN H ABERNATHY HWY"], "city": "SPARTANBURG",
+        "country": "US", "zipcode": "29301", "state": "SC", "geo_location": [-82.014564,
+        34.93627], "role": ["practice", "primary"]}, {"address_lines": ["408 LITCHFIELD
+        DR"], "city": "MOORE", "zipcode": "29369", "state": "SC", "geo_location":
+        [-81.97699, 34.8981], "role": ["mailing"]}], "gender": "Male", "fax": "8645604413",
+        "specialty": ["General & Family Medicine", "Family Practice", "Family Medicine"],
+        "phone": "8645604304", "prefix": "DR", "birth_date": "1972", "npi": "1467560003",
+        "licenses": [{"state": "SC", "number": "27210"}], "education": {"medical_school":
+        "J C EDWARDS SCH MED MARSHALL U, HUNTINGTON WV 2575", "graduation_year": "2004-01-01T00:00:00"}}}]}'
     http_version: 
-  recorded_at: Fri, 06 Jun 2014 17:15:36 GMT
+  recorded_at: Tue, 08 Jul 2014 16:27:13 GMT
 recorded_with: VCR 2.9.2

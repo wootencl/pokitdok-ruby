@@ -74,7 +74,15 @@ module PokitDok
 
     # Invokes the cash prices endpoint, with an optional Hash of parameters.
     def cash_prices(params = {})
-      response = @token.get('price/cash/',
+      response = @token.get('prices/cash',
+                             headers: headers,
+                             params: params)
+      JSON.parse(response.body)
+    end
+
+    # Invokes the insurance prices endpoint, with an optional Hash of parameters.
+    def insurance_prices(params = {})
+      response = @token.get('prices/insurance',
                              headers: headers,
                              params: params)
       JSON.parse(response.body)

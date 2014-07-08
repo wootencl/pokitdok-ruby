@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://4nhMZTpLxBxmiocveVb5:HUIpG9fFf9Qku9mh0lO50SPSDiju3D9Cjx17oeCN@localhost:5002/oauth2/token
+    uri: http://2MBlqahR2xiaBtVSS50n:FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS@localhost:5002/oauth2/token
     body:
       encoding: UTF-8
       string: grant_type=client_credentials
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Fri, 06 Jun 2014 17:15:35 GMT
+      - Tue, 08 Jul 2014 16:27:12 GMT
     body:
       encoding: UTF-8
-      string: '{"access_token": "wRjqVdn8ezPmx5uviVocwL2u1edtJ8g809Tn4Ob5", "token_type":
-        "bearer", "expires": 1402078535, "expires_in": 3600}'
+      string: '{"access_token": "IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0", "token_type":
+        "bearer", "expires": 1404840432, "expires_in": 3600}'
     http_version: 
-  recorded_at: Fri, 06 Jun 2014 17:15:35 GMT
+  recorded_at: Tue, 08 Jul 2014 16:27:12 GMT
 recorded_with: VCR 2.9.2

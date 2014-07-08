@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5002/api/v4/prices/cash?cpt_code=12345&zip_code=75201
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.4 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      Authorization:
+      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '214'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Tue, 08 Jul 2014 16:27:12 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 13, "rate_limit_reset": 1404840303,
+        "processing_time": 11, "rate_limit_cap": 8434, "credits_remaining": 6637,
+        "credits_billed": 1}, "data": {"cpt_code": "12345", "zip_code": "75201"}}'
+    http_version: 
+  recorded_at: Tue, 08 Jul 2014 16:27:12 GMT
+recorded_with: VCR 2.9.2

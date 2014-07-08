@@ -114,6 +114,12 @@ pd.activities(parent_id: '537cd4b240b35755f5128d5c')
 
 # Upload an EDI file
 pd.files('trading_partner_id', 'path/to/a_file.edi')
+
+# Get cash prices
+pd.cash_prices(cpt_code: '87799', zip_code: '75201')
+
+# Get insurance prices
+pd.insurance_prices(cpt_code: '87799', zip_code: '29403')
               
 ```
 

@@ -19,7 +19,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
       Authorization:
-      - Bearer wRjqVdn8ezPmx5uviVocwL2u1edtJ8g809Tn4Ob5
+      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -42,11 +42,11 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Fri, 06 Jun 2014 17:15:35 GMT
+      - Tue, 08 Jul 2014 16:27:13 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 28, "rate_limit_reset": 1402077424,
-        "processing_time": 10, "rate_limit_cap": 8434, "credits_remaining": 9942,
+      string: '{"meta": {"rate_limit_amount": 19, "rate_limit_reset": 1404840303,
+        "processing_time": 11, "rate_limit_cap": 8434, "credits_remaining": 6632,
         "credits_billed": 1}, "data": {"units_of_work": 1, "name": "enrollment", "parameters":
         {"reference_number": "12456", "version": "4.0.0", "payer": {"tax_id": "654456654"},
         "update_dt": "Wed Mar 26 22:18:47 2014", "deleted": false, "major_version":
@@ -67,16 +67,16 @@ http_interactions:
         "123456789", "birth_date": "Fri Aug 16 00:00:00 1940", "middle_name": "P",
         "substance_abuse": false, "address": {"city": "CAMP HILL", "line2": "APT 3G",
         "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line": "100
-        MARKET ST"}}, "correlation_id": "b3648059-40ca-43e5-919b-c0cb22910d80", "insert_dt":
-        "Wed Mar 26 22:18:47 2014", "client_id": "4nhMZTpLxBxmiocveVb5", "purpose":
+        MARKET ST"}}, "correlation_id": "9784237e-112a-4be4-a855-8eed6cee63de", "insert_dt":
+        "Wed Mar 26 22:18:47 2014", "client_id": "2MBlqahR2xiaBtVSS50n", "purpose":
         "Original", "trading_partner_id": "MOCKPAYER", "action": "Change", "dependents":
         [], "sponsor": {"tax_id": "999888777"}}, "remaining_transitions": ["generate",
         "store", "transmit", "wait", "receive", "process", "complete"], "state": {"name":
         "scheduled", "title": "Scheduled for next available transmission to Trading
-        Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5391f73756c02c1338283bb9",
+        Partner"}, "trading_partner_id": "MOCKPAYER", "id": "53bc1be156c02c08ce81ae06",
         "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-06-06T17:15:35.891977",
+        "process", "complete"], "history": [{"record_dt": "2014-07-08T16:27:13.334498",
         "name": "init", "title": "Initializing"}]}}'
     http_version: 
-  recorded_at: Fri, 06 Jun 2014 17:15:35 GMT
+  recorded_at: Tue, 08 Jul 2014 16:27:13 GMT
 recorded_with: VCR 2.9.2

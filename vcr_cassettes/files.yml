@@ -23,7 +23,7 @@ http_interactions:
       Content-Length:
       - '3266'
       Authorization:
-      - Bearer wRjqVdn8ezPmx5uviVocwL2u1edtJ8g809Tn4Ob5
+      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
   response:
     status:
       code: 200
@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '683'
+      - '685'
       Mimetype:
       - application/json
       Charset:
@@ -40,18 +40,18 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Fri, 06 Jun 2014 17:15:35 GMT
+      - Tue, 08 Jul 2014 16:27:13 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 27, "rate_limit_reset": 1402077424,
-        "processing_time": 431, "rate_limit_cap": 8434, "credits_remaining": -28,
+      string: '{"meta": {"rate_limit_amount": 14, "rate_limit_reset": 1404840303,
+        "processing_time": 353, "rate_limit_cap": 8434, "credits_remaining": 10123,
         "credits_billed": 1}, "data": {"units_of_work": 1, "name": "batch file", "remaining_transitions":
         ["process", "complete"], "state": {"name": "queued", "title": "In queue waiting
-        to start"}, "trading_partner_id": "MOCKPAYER", "id": "5391f73756c02c1338283bb8",
+        to start"}, "trading_partner_id": "MOCKPAYER", "id": "53bc1be156c02c08ce81adff",
         "transition_path": ["store", "queue", "process", "complete"], "history": [{"record_dt":
-        "2014-06-06T17:15:35.814205", "name": "init", "title": "Initializing"}, {"record_dt":
-        "2014-06-06T17:15:35.815458", "name": "stored", "title": "Batch transactions
+        "2014-07-08T16:27:13.057540", "name": "init", "title": "Initializing"}, {"record_dt":
+        "2014-07-08T16:27:13.059037", "name": "stored", "title": "Batch transactions
         stored for later processing"}]}}'
     http_version: 
-  recorded_at: Fri, 06 Jun 2014 17:15:35 GMT
+  recorded_at: Tue, 08 Jul 2014 16:27:12 GMT
 recorded_with: VCR 2.9.2

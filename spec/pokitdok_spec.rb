@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-CLIENT_ID = '4nhMZTpLxBxmiocveVb5'
-CLIENT_SECRET = 'HUIpG9fFf9Qku9mh0lO50SPSDiju3D9Cjx17oeCN'
+CLIENT_ID = '2MBlqahR2xiaBtVSS50n'
+CLIENT_SECRET = 'FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS'
 POKITDOK_TEST_URL = 'http://localhost:5002'
 
 def check_meta_and_data(result)
@@ -57,7 +57,6 @@ describe PokitDok do
 
     describe 'Cash Prices endpoint' do
       it 'should expose the cash prices endpoint' do
-        skip 'in development'
         query = { cpt_code: '12345', zip_code: '75201' }
 
         VCR.use_cassette 'cash_prices' do
@@ -68,6 +67,20 @@ describe PokitDok do
         refute_empty @prices['data']
       end
     end
+
+    describe 'Insurance Prices endpoint' do
+      it 'should expose the insurance prices endpoint' do
+        query = { cpt_code: '12345', zip_code: '75201' }
+
+        VCR.use_cassette 'insurance_prices' do
+          @prices = @pokitdok.insurance_prices query
+        end
+
+        check_meta_and_data @prices
+        refute_empty @prices['data']
+      end
+    end
+
 
     describe 'Claims endpoint' do
       it 'should expose the claims endpoint' do
@@ -146,13 +159,13 @@ describe PokitDok do
 
         check_meta_and_data @payers
         refute_nil @payers['data']
-        @payers['data'].size.must_equal 36
+        @payers['data'].size.must_equal 224
       end
     end
 
     describe 'Providers endpoint' do
       it 'should expose the providers endpoint' do
-        query = { state: 'CA' }
+        query = { npi: '1467560003' }
 
         VCR.use_cassette 'providers' do
           @providers = @pokitdok.providers(query)
@@ -160,7 +173,7 @@ describe PokitDok do
 
         check_meta_and_data @providers
         refute_nil @providers['data']
-        @providers['data'].size.must_equal 20
+        @providers['data'].size.must_equal 1
       end
     end
   end

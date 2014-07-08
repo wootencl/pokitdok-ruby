@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
       Authorization:
-      - Bearer wRjqVdn8ezPmx5uviVocwL2u1edtJ8g809Tn4Ob5
+      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '5655'
+      - '5656'
       Mimetype:
       - application/json
       Charset:
@@ -33,17 +33,17 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Fri, 06 Jun 2014 17:15:36 GMT
+      - Tue, 08 Jul 2014 16:27:13 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 30, "rate_limit_reset": 1402077424,
-        "processing_time": 86, "rate_limit_cap": 8434, "credits_remaining": 9961,
+      string: '{"meta": {"rate_limit_amount": 16, "rate_limit_reset": 1404840303,
+        "processing_time": 99, "rate_limit_cap": 8434, "credits_remaining": 10121,
         "credits_billed": 1}, "data": {"service_types": ["professional_physician_visit_office"],
-        "client_id": "4nhMZTpLxBxmiocveVb5", "payer": {"id": "MOCKPAYER", "name":
+        "client_id": "2MBlqahR2xiaBtVSS50n", "payer": {"id": "MOCKPAYER", "name":
         "MOCK PAYER INC"}, "subscriber": {"birth_date": "1970-01-01", "first_name":
         "Jane", "last_name": "Doe", "id": "W000000000", "address": {"city": "SPARTANBURG",
         "state": "SC", "zipcode": "29307", "address_lines": ["123 MAIN ST"]}}, "correlation_id":
-        "39d77716-110e-4c8e-b310-de921d53aef5", "trading_partner_id": "MOCKPAYER",
+        "f38c93b2-08ff-45d5-94cd-b4516a6ee64a", "trading_partner_id": "MOCKPAYER",
         "provider": {"first_name": "JEROME", "last_name": "JEROME AYA-AY", "npi":
         "1467560003"}, "coverage": {"plan_number": "0888188", "service_types": ["professional_physician_visit_office"],
         "group_number": "088818801000013", "out_of_pocket": [{"in_plan_network": "yes",
@@ -107,5 +107,5 @@ http_interactions:
         "MOCK INDIVIDUAL ADVANTAGE PLAN", "service_date": "2013-08-10"}, "valid_request":
         true}}'
     http_version: 
-  recorded_at: Fri, 06 Jun 2014 17:15:36 GMT
+  recorded_at: Tue, 08 Jul 2014 16:27:13 GMT
 recorded_with: VCR 2.9.2

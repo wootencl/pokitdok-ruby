@@ -13,7 +13,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
       Authorization:
-      - Bearer wRjqVdn8ezPmx5uviVocwL2u1edtJ8g809Tn4Ob5
+      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -28,7 +28,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '2075'
+      - '2108'
       Mimetype:
       - application/json
       Charset:
@@ -36,11 +36,11 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Fri, 06 Jun 2014 17:15:36 GMT
+      - Tue, 08 Jul 2014 16:27:13 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 32, "rate_limit_reset": 1402077424,
-        "processing_time": 13, "rate_limit_cap": 8434, "credits_remaining": 9969,
+      string: '{"meta": {"rate_limit_amount": 15, "rate_limit_reset": 1404840303,
+        "processing_time": 9, "rate_limit_cap": 8434, "credits_remaining": 10122,
         "credits_billed": 1}, "data": {"units_of_work": 1, "name": "claims", "parameters":
         {"claim": {"plan_participation": "assigned", "provider_signature": true, "total_charge_amount":
         "60.0", "claim_frequency": "original", "place_of_service": "office", "direct_payment":
@@ -48,23 +48,24 @@ http_interactions:
         "service_lines": [{"diagnosis_codes": ["487.1"], "unit_count": "1.0", "unit_type":
         "units", "charge_amount": "60.0", "service_date": "2014-06-01", "procedure_code":
         "99213"}]}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
-        "Acme Ins Co", "plan_id": "1234567890"}, "subscriber": {"first_name": "Jane",
+        "MOCKPAYER", "plan_id": "MOCKPAYER"}, "subscriber": {"first_name": "Jane",
         "last_name": "Doe", "gender": "female", "member_id": "W000000000", "payer_responsibility":
         "primary", "address": {"address_lines": ["123 N MAIN ST"], "state": "SC",
         "zipcode": "29301", "city": "SPARTANBURG"}, "birth_date": "1970-01-01"}, "correlation_id":
-        "c5b39b6f-741c-425d-a67d-3bc505b3d638", "client_id": "4nhMZTpLxBxmiocveVb5",
-        "receiver": {"organization_name": "PD App", "id": "4nhMZTpLxBxmiocveVb5"},
-        "submitter": {"organization_name": "PokitDok, Inc.", "id": "453504565"}, "billing_provider":
-        {"first_name": "Jerome", "last_name": "Aya-Ay", "npi": "1467560003", "taxonomy_code":
-        "207Q00000X", "address": {"address_lines": ["8311 WARREN H ABERNATHY HWY"],
-        "state": "SC", "zipcode": "29301", "city": "SPARTANBURG"}, "tax_id": "123456789"},
-        "transaction_code": "chargeable"}, "remaining_transitions": ["generate", "store",
-        "transmit", "wait", "receive", "process", "complete"], "state": {"name": "scheduled",
-        "title": "Scheduled for next available transmission to Trading Partner"},
-        "trading_partner_id": "MOCKPAYER", "id": "5391f73856c02c1338283bbd", "transition_path":
-        ["schedule", "generate", "store", "transmit", "wait", "receive", "process",
-        "complete"], "history": [{"record_dt": "2014-06-06T17:15:36.134800", "name":
-        "init", "title": "Initializing"}]}}'
+        "8597327e-a5bb-4878-bf14-a5468ab0236e", "client_id": "2MBlqahR2xiaBtVSS50n",
+        "receiver": {"organization_name": "MOCKRECEIVER", "id": "MOCKRECEIVER"}, "submitter":
+        {"organization_name": "POKITDOK TESTING", "id": "POKITDOKTEST", "email": "support@pokitdok.com"},
+        "billing_provider": {"first_name": "Jerome", "last_name": "Aya-Ay", "npi":
+        "1467560003", "taxonomy_code": "207Q00000X", "address": {"address_lines":
+        ["8311 WARREN H ABERNATHY HWY"], "state": "SC", "zipcode": "29301", "city":
+        "SPARTANBURG"}, "tax_id": "123456789"}, "transaction_code": "chargeable"},
+        "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
+        "process", "complete"], "state": {"name": "scheduled", "title": "Scheduled
+        for next available transmission to Trading Partner"}, "trading_partner_id":
+        "MOCKPAYER", "id": "53bc1be156c02c08ce81ae00", "transition_path": ["schedule",
+        "generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "history": [{"record_dt": "2014-07-08T16:27:13.091449", "name": "init", "title":
+        "Initializing"}]}}'
     http_version: 
-  recorded_at: Fri, 06 Jun 2014 17:15:36 GMT
+  recorded_at: Tue, 08 Jul 2014 16:27:13 GMT
 recorded_with: VCR 2.9.2
