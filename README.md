@@ -13,7 +13,7 @@ PokitDok Platform API Client for Ruby
 * [View Source on GitHub][code]
 * [Report Issues on GitHub][issues]
 
-[apidocs]: https://platform.pokitdok.com/dashboard#/documentation
+[apidocs]: https://platform.pokitdok.com/documentation/v4#/
 [code]: https://github.com/PokitDok/pokitdok-ruby
 [issues]: https://github.com/PokitDok/pokitdok-ruby/issues
 
