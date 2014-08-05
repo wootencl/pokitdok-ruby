@@ -8,9 +8,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4 ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin13.0]
+      - pokitdok-ruby 0.4.1 ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-darwin13.0]
       Authorization:
-      - Bearer IVfoTbbbimnTM3DKVGPCpicTPYThOAazPSbAnLA0
+      - Bearer fKd12YNbilTwVe8D3eF1ReNBkGzoElJuUjyt5ehz
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '214'
+      - '174'
       Mimetype:
       - application/json
       Charset:
@@ -31,12 +31,15 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Tue, 08 Jul 2014 16:27:12 GMT
+      - Tue, 05 Aug 2014 18:15:11 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 13, "rate_limit_reset": 1404840303,
-        "processing_time": 11, "rate_limit_cap": 8434, "credits_remaining": 6637,
-        "credits_billed": 1}, "data": {"cpt_code": "12345", "zip_code": "75201"}}'
+      string: '{"meta": {"rate_limit_amount": 14, "rate_limit_reset":
+        1405482438, "processing_time": 19, "rate_limit_cap": 1000, "credits_remaining":
+        9995, "credits_billed": 1}, "data": [{"high_price": 424.72616491010086, "cpt_code":
+        "95017", "low_price": 60.04033765355346, "average_price": 299.11868972705673,
+        "geo_zip_area": "941", "standard_deviation": 85.05257902012636, "median_price":
+        290.34018519305926}]}'
     http_version: 
-  recorded_at: Tue, 08 Jul 2014 16:27:12 GMT
+  recorded_at: Tue, 05 Aug 2014 18:22:43 GMT
 recorded_with: VCR 2.9.2

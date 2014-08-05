@@ -48,7 +48,7 @@ module PokitDok
     end
 
     def user_agent
-      "pokitdok-ruby 0.4 #{RUBY_DESCRIPTION}"
+      "pokitdok-ruby 0.4.1 #{RUBY_DESCRIPTION}"
     end
 
     # returns a standard set of headers to be passed along with all requests
@@ -97,6 +97,17 @@ module PokitDok
       end
       JSON.parse(response.body)
     end
+
+    # Invokes the claims status endpoint, with an optional Hash of parameters.
+    def claims_status(params = {})
+      response = @token.post('claims/status',
+                             headers: headers,
+                             body: params.to_json) do |request|
+        request.headers['Content-Type'] = 'application/json'
+      end
+      JSON.parse(response.body)
+    end
+
 
     # Invokes the eligibility endpoint, with an optional Hash of parameters.
     def eligibility(params = {})

@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-CLIENT_ID = '2MBlqahR2xiaBtVSS50n'
-CLIENT_SECRET = 'FJaN1fyB1V5q7qPLNrb2F6yV1Xkaui0OB6eXotOS'
+CLIENT_ID = '7x7nRAotGfxHfy7Llfl3'
+CLIENT_SECRET = 'T4JsCjMDJNxVQADl8ip3npmTm9JgEZhqL2xmc3Di'
 POKITDOK_TEST_URL = 'http://localhost:5002'
 
 def check_meta_and_data(result)
@@ -93,6 +93,20 @@ describe PokitDok do
         refute_empty @claim['data']
         @claim['data']['units_of_work'].must_equal 1
         assert_nil @claim['errors']
+      end
+    end
+
+    describe 'Claims status endpoint' do
+      it 'should expose the claims status endpoint' do
+        query = JSON.parse(IO.read('spec/fixtures/claims_status.json'))
+        VCR.use_cassette 'claims_status' do
+          @claims_status = @pokitdok.claims_status(query)
+        end
+
+        check_meta_and_data @claims_status
+        refute_empty @claims_status['data']
+        
+        assert_nil @claims_status['errors']
       end
     end
 
