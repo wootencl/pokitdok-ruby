@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer Eq3FQOOpJsxIALBTkj1JEnrvXSexda4Sbw5opoZH
+      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '24412'
+      - '24485'
       Mimetype:
       - application/json
       Charset:
@@ -31,15 +31,16 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Wed, 06 Aug 2014 18:24:12 GMT
+      - Thu, 07 Aug 2014 14:24:44 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"processing_time": 76, "rate_limit_amount": 48, "rate_limit_reset":
-        1407352944, "test_mode": true, "rate_limit_cap": 1000}, "data": [{"is_enabled":
-        false, "supported_transactions": ["837"], "id": "fidelis_care_ny", "name":
-        "Fidelis Care of New York"}, {"is_enabled": true, "supported_transactions":
-        ["270"], "id": "blue_cross_blue_shield_ia", "name": "Blue Cross and Blue Shield
-        of Iowa"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "blue_cross_blue_shield_nc",
+      string: '{"meta": {"rate_limit_amount": 21, "rate_limit_reset": 1407424701,
+        "application_mode": "test", "processing_time": 36, "rate_limit_cap": 1000,
+        "activity_id": "53e38c2c56c02c25ea7bb462"}, "data": [{"is_enabled": false,
+        "supported_transactions": ["837"], "id": "fidelis_care_ny", "name": "Fidelis
+        Care of New York"}, {"is_enabled": true, "supported_transactions": ["270"],
+        "id": "blue_cross_blue_shield_ia", "name": "Blue Cross and Blue Shield of
+        Iowa"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "blue_cross_blue_shield_nc",
         "name": "Blue Cross and Blue Shield of North Carolina"}, {"is_enabled": false,
         "id": "blue_cross_blue_shield_tx", "name": "Blue Cross and Blue Shield of
         Texas"}, {"is_enabled": false, "id": "blue_cross_blue_shield_vt", "name":
@@ -75,7 +76,7 @@ http_interactions:
         Blue Cross and Blue Shield of Kentucky"}, {"is_enabled": true, "supported_transactions":
         ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_va", "name": "Anthem
         Blue Cross and Blue Shield of Virginia"}, {"is_enabled": false, "supported_transactions":
-        ["270", "837"], "id": "tricare_west", "name": "TRICARE West"}, {"is_enabled":
+        ["270", "276", "837"], "id": "tricare_west", "name": "TRICARE West"}, {"is_enabled":
         false, "supported_transactions": ["270"], "id": "united_health_care_plan_river_valley",
         "name": "United Healthcare Plan of the River Valley"}, {"is_enabled": false,
         "id": "aarp_medicare_supplement", "name": "AARP Medicare Supplement"}, {"is_enabled":
@@ -285,9 +286,7 @@ http_interactions:
         "Windsor Health Plan"}, {"is_enabled": false, "id": "winhealth", "name": "WinHealth"},
         {"is_enabled": false, "supported_transactions": ["834", "835", "837", "270",
         "271", "276", "277", "278"], "id": "MOCKPAYER_COMMERROR", "name": "Mock Payer
-        for Communication Error Testing"}, {"is_enabled": false, "supported_transactions":
-        ["834", "835", "837", "270", "271", "276", "277", "278"], "id": "MOCKPAYER",
-        "name": "Mock Payer for Testing"}, {"is_enabled": true, "supported_transactions":
+        for Communication Error Testing"}, {"is_enabled": true, "supported_transactions":
         ["270", "276"], "id": "blue_cross_blue_shield_kc", "name": "Blue Cross and
         Blue Shield of Kansas City"}, {"is_enabled": true, "supported_transactions":
         ["270", "276"], "id": "blue_cross_blue_shield_ks", "name": "Blue Cross and
@@ -301,17 +300,19 @@ http_interactions:
         {"is_enabled": false, "supported_transactions": ["837"], "id": "amerihealth_de_non_hmo",
         "name": "AmeriHealth DE Non-HMO"}, {"is_enabled": false, "supported_transactions":
         ["837"], "id": "amerihealth_nj_de_hmo", "name": "AmeriHealth NJ/DE HMO"},
-        {"is_enabled": true, "supported_transactions": ["270", "276", "837"], "id":
-        "blue_cross_blue_shield_mo", "name": "Blue Cross and Blue Shield of Missouri"},
-        {"is_enabled": true, "supported_transactions": ["270", "276", "837"], "id":
-        "blue_cross_blue_shield_oh", "name": "Blue Cross and Blue Shield of Ohio"},
-        {"is_enabled": true, "supported_transactions": ["270", "276", "837"], "id":
-        "anthem_blue_cross_blue_shield_nh", "name": "Anthem Blue Cross and Blue Shield
-        of New Hampshire"}, {"is_enabled": true, "supported_transactions": ["270",
-        "276", "837"], "id": "empire_blue_cross_blue_shield", "name": "Empire Blue
-        Cross and Blue Shield"}, {"is_enabled": true, "supported_transactions": ["270",
-        "276", "837"], "id": "anthem_blue_cross_blue_shield_nv", "name": "Anthem Blue
-        Cross and Blue Shield of Nevada"}, {"is_enabled": false, "supported_transactions":
+        {"is_enabled": false, "supported_transactions": ["270", "276", "834", "835",
+        "837", "270", "271", "276", "277", "278"], "id": "MOCKPAYER", "name": "Mock
+        Payer for Testing"}, {"is_enabled": true, "supported_transactions": ["270",
+        "276", "837"], "id": "blue_cross_blue_shield_mo", "name": "Blue Cross and
+        Blue Shield of Missouri"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "blue_cross_blue_shield_oh", "name": "Blue Cross
+        and Blue Shield of Ohio"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_nh", "name": "Anthem
+        Blue Cross and Blue Shield of New Hampshire"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "empire_blue_cross_blue_shield", "name": "Empire
+        Blue Cross and Blue Shield"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_nv", "name": "Anthem
+        Blue Cross and Blue Shield of Nevada"}, {"is_enabled": false, "supported_transactions":
         ["270", "276", "837"], "id": "aetna", "name": "Aetna"}, {"is_enabled": false,
         "supported_transactions": ["837"], "id": "independence_blue_cross", "name":
         "Independence Blue Cross INDEPENDENCE BLUE CROSS"}, {"is_enabled": false,
@@ -332,5 +333,5 @@ http_interactions:
         ["270", "837"], "id": "highmark_blue_cross_blue_shield_pa", "name": "Highmark
         Blue Cross Blue Shield of Pennsylvania"}]}'
     http_version: 
-  recorded_at: Wed, 06 Aug 2014 18:24:12 GMT
+  recorded_at: Thu, 07 Aug 2014 14:24:44 GMT
 recorded_with: VCR 2.9.2

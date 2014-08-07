@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer Eq3FQOOpJsxIALBTkj1JEnrvXSexda4Sbw5opoZH
+      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '300'
+      - '367'
       Mimetype:
       - application/json
       Charset:
@@ -31,13 +31,14 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Wed, 06 Aug 2014 18:24:11 GMT
+      - Thu, 07 Aug 2014 14:24:46 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"processing_time": 9, "rate_limit_amount": 44, "rate_limit_reset":
-        1407352944, "test_mode": true, "rate_limit_cap": 1000}, "data": {"is_enabled":
-        false, "supported_transactions": ["834", "835", "837", "270", "271", "276",
-        "277", "278"], "id": "MOCKPAYER", "name": "Mock Payer for Testing"}}'
+      string: '{"meta": {"rate_limit_amount": 27, "rate_limit_reset": 1407424701,
+        "application_mode": "test", "processing_time": 10, "rate_limit_cap": 1000,
+        "activity_id": "53e38c2e56c02c25f97bb462"}, "data": {"is_enabled": false,
+        "supported_transactions": ["270", "276", "834", "835", "837", "270", "271",
+        "276", "277", "278"], "id": "MOCKPAYER", "name": "Mock Payer for Testing"}}'
     http_version: 
-  recorded_at: Wed, 06 Aug 2014 18:24:11 GMT
+  recorded_at: Thu, 07 Aug 2014 14:24:46 GMT
 recorded_with: VCR 2.9.2

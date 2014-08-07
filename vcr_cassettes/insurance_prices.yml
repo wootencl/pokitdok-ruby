@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer Eq3FQOOpJsxIALBTkj1JEnrvXSexda4Sbw5opoZH
+      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '593'
+      - '644'
       Mimetype:
       - application/json
       Charset:
@@ -31,17 +31,18 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Wed, 06 Aug 2014 18:24:11 GMT
+      - Thu, 07 Aug 2014 14:24:44 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 45, "rate_limit_reset": 1407352944,
-        "test_mode": true, "processing_time": 12, "rate_limit_cap": 1000, "credits_remaining":
-        9982, "credits_billed": 1}, "data": {"amounts": [{"high_price": 23.43, "standard_deviation":
-        2.95, "average_price": 18.43, "payer_type": "insurance", "payment_type": "allowed",
+      string: '{"meta": {"rate_limit_amount": 20, "rate_limit_reset": 1407424701,
+        "application_mode": "test", "processing_time": 9, "rate_limit_cap": 1000,
+        "credits_remaining": 9979, "activity_id": "53e38c2c56c02c25e87bb462", "credits_billed":
+        1}, "data": {"amounts": [{"high_price": 23.43, "standard_deviation": 2.95,
+        "average_price": 18.43, "payer_type": "insurance", "payment_type": "allowed",
         "low_price": 15.42, "median_price": 19.27}, {"high_price": 54.85, "standard_deviation":
         8.42, "average_price": 30.9, "payer_type": "insurance", "payment_type": "submitted",
         "low_price": 24.65, "median_price": 29.74}], "cpt_code": "12345", "geo_zip_area":
         "752"}}'
     http_version: 
-  recorded_at: Wed, 06 Aug 2014 18:24:11 GMT
+  recorded_at: Thu, 07 Aug 2014 14:24:44 GMT
 recorded_with: VCR 2.9.2

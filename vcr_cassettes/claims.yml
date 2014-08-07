@@ -13,7 +13,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer Eq3FQOOpJsxIALBTkj1JEnrvXSexda4Sbw5opoZH
+      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -28,7 +28,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '2144'
+      - '2196'
       Mimetype:
       - application/json
       Charset:
@@ -36,36 +36,37 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Wed, 06 Aug 2014 18:24:11 GMT
+      - Thu, 07 Aug 2014 14:24:44 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 43, "rate_limit_reset": 1407352944,
-        "test_mode": true, "processing_time": 15, "rate_limit_cap": 1000, "credits_remaining":
-        13431, "credits_billed": 1}, "data": {"units_of_work": 1, "name": "claims",
-        "parameters": {"claim": {"plan_participation": "assigned", "provider_signature":
-        true, "total_charge_amount": "60.0", "claim_frequency": "original", "place_of_service":
-        "office", "direct_payment": "y", "patient_signature_on_file": true, "information_release":
-        "informed_consent", "service_lines": [{"diagnosis_codes": ["487.1"], "unit_count":
-        "1.0", "unit_type": "units", "charge_amount": "60.0", "service_date": "2014-06-01",
-        "procedure_code": "99213"}]}, "trading_partner_id": "MOCKPAYER", "payer":
-        {"organization_name": "MOCKPAYER", "plan_id": "MOCKPAYER"}, "subscriber":
-        {"first_name": "Jane", "last_name": "Doe", "gender": "female", "member_id":
-        "W000000000", "payer_responsibility": "primary", "address": {"address_lines":
-        ["123 N MAIN ST"], "state": "SC", "zipcode": "29301", "city": "SPARTANBURG"},
-        "birth_date": "1970-01-01"}, "correlation_id": "7b50561f-0d5d-4663-8a75-0da9bf41983a",
-        "client_id": "oB7rLIqHmdoAXHRAmWtM", "receiver": {"organization_name": "MOCKRECEIVER",
-        "id": "MOCKRECEIVER"}, "submitter": {"organization_name": "POKITDOK TESTING",
-        "id": "POKITDOKTEST", "email": "support@pokitdok.com"}, "async": false, "billing_provider":
-        {"first_name": "Jerome", "last_name": "Aya-Ay", "npi": "1467560003", "taxonomy_code":
-        "207Q00000X", "address": {"address_lines": ["8311 WARREN H ABERNATHY HWY"],
-        "state": "SC", "zipcode": "29301", "city": "SPARTANBURG"}, "tax_id": "123456789"},
-        "transaction_code": "chargeable"}, "remaining_transitions": ["generate", "store",
-        "transmit", "wait", "receive", "process", "complete"], "state": {"name": "scheduled",
-        "title": "Scheduled for next available transmission to Trading Partner"},
-        "trading_partner_id": "MOCKPAYER", "id": "53e272cb56c02c36ce59cfc8", "transition_path":
-        ["schedule", "generate", "store", "transmit", "wait", "receive", "process",
-        "complete"], "history": [{"record_dt": "2014-08-06T18:24:11.518001", "name":
-        "init", "title": "Initializing"}]}}'
+      string: '{"meta": {"rate_limit_amount": 19, "rate_limit_reset": 1407424701,
+        "application_mode": "test", "processing_time": 20, "rate_limit_cap": 1000,
+        "credits_remaining": 13382, "activity_id": "53e38c2c56c02c25e67bb462", "credits_billed":
+        1}, "data": {"units_of_work": 1, "name": "claims", "parameters": {"claim":
+        {"plan_participation": "assigned", "provider_signature": true, "total_charge_amount":
+        "60.0", "claim_frequency": "original", "place_of_service": "office", "direct_payment":
+        "y", "patient_signature_on_file": true, "information_release": "informed_consent",
+        "service_lines": [{"diagnosis_codes": ["487.1"], "unit_count": "1.0", "unit_type":
+        "units", "charge_amount": "60.0", "service_date": "2014-06-01", "procedure_code":
+        "99213"}]}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
+        "MOCKPAYER", "plan_id": "MOCKPAYER"}, "subscriber": {"first_name": "Jane",
+        "last_name": "Doe", "gender": "female", "member_id": "W000000000", "payer_responsibility":
+        "primary", "address": {"address_lines": ["123 N MAIN ST"], "state": "SC",
+        "zipcode": "29301", "city": "SPARTANBURG"}, "birth_date": "1970-01-01"}, "correlation_id":
+        "771d6190-c3c1-4808-ba87-de67e4acd719", "client_id": "oB7rLIqHmdoAXHRAmWtM",
+        "receiver": {"organization_name": "MOCKRECEIVER", "id": "MOCKRECEIVER"}, "submitter":
+        {"organization_name": "POKITDOK TESTING", "id": "POKITDOKTEST", "email": "support@pokitdok.com"},
+        "async": false, "billing_provider": {"first_name": "Jerome", "last_name":
+        "Aya-Ay", "npi": "1467560003", "taxonomy_code": "207Q00000X", "address": {"address_lines":
+        ["8311 WARREN H ABERNATHY HWY"], "state": "SC", "zipcode": "29301", "city":
+        "SPARTANBURG"}, "tax_id": "123456789"}, "transaction_code": "chargeable"},
+        "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
+        "process", "complete"], "state": {"name": "scheduled", "title": "Scheduled
+        for next available transmission to Trading Partner"}, "trading_partner_id":
+        "MOCKPAYER", "id": "53e38c2c56c02c25e67bb462", "transition_path": ["schedule",
+        "generate", "store", "transmit", "wait", "receive", "process", "complete"],
+        "history": [{"record_dt": "2014-08-07T14:24:44.785071", "name": "init", "title":
+        "Initializing"}]}}'
     http_version: 
-  recorded_at: Wed, 06 Aug 2014 18:24:11 GMT
+  recorded_at: Thu, 07 Aug 2014 14:24:44 GMT
 recorded_with: VCR 2.9.2
