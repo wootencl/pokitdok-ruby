@@ -70,7 +70,7 @@ describe PokitDok do
 
     describe 'Insurance Prices endpoint' do
       it 'should expose the insurance prices endpoint' do
-        query = { cpt_code: '12345', zip_code: '75201' }
+        query = { cpt_code: '87799', zip_code: '32218' }
 
         VCR.use_cassette 'insurance_prices' do
           @prices = @pokitdok.insurance_prices query

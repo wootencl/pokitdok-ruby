@@ -23,7 +23,7 @@ http_interactions:
       Content-Length:
       - '3266'
       Authorization:
-      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
+      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
   response:
     status:
       code: 200
@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '713'
+      - '763'
       Mimetype:
       - application/json
       Charset:
@@ -40,18 +40,19 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Thu, 07 Aug 2014 14:24:45 GMT
+      - Tue, 12 Aug 2014 15:19:09 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 25, "rate_limit_reset": 1407424701,
-        "application_mode": "test", "processing_time": 425, "rate_limit_cap": 1000,
-        "credits_remaining": 13381, "credits_billed": 1}, "data": {"units_of_work":
-        1, "name": "batch file", "remaining_transitions": ["process", "complete"],
-        "state": {"name": "queued", "title": "In queue waiting to start"}, "trading_partner_id":
-        "MOCKPAYER", "id": "53e38c2d56c02c25f37bb462", "transition_path": ["store",
-        "queue", "process", "complete"], "history": [{"record_dt": "2014-08-07T14:24:45.504196",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-08-07T14:24:45.505342",
-        "name": "stored", "title": "Batch transactions stored for later processing"}]}}'
+      string: '{"meta": {"rate_limit_amount": 260, "rate_limit_reset": 1407856935,
+        "application_mode": "production", "processing_time": 521, "rate_limit_cap":
+        1000, "credits_remaining": 12974, "activity_id": "53ea306d56c02c23afa3f755",
+        "credits_billed": 1}, "data": {"units_of_work": 1, "name": "batch file", "remaining_transitions":
+        ["process", "complete"], "state": {"name": "queued", "title": "In queue waiting
+        to start"}, "trading_partner_id": "MOCKPAYER", "id": "53ea306d56c02c23afa3f755",
+        "transition_path": ["store", "queue", "process", "complete"], "history": [{"record_dt":
+        "2014-08-12T15:19:09.168442", "name": "init", "title": "Initializing"}, {"record_dt":
+        "2014-08-12T15:19:09.170534", "name": "stored", "title": "Batch transactions
+        stored for later processing"}]}}'
     http_version: 
-  recorded_at: Thu, 07 Aug 2014 14:24:45 GMT
+  recorded_at: Tue, 12 Aug 2014 15:19:09 GMT
 recorded_with: VCR 2.9.2

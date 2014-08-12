@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Thu, 07 Aug 2014 14:24:44 GMT
+      - Tue, 12 Aug 2014 15:19:07 GMT
     body:
       encoding: UTF-8
-      string: '{"access_token": "Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT", "token_type":
-        "bearer", "expires": 1407425085, "expires_in": 3600}'
+      string: '{"access_token": "88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln", "token_type":
+        "bearer", "expires": 1407860348, "expires_in": 3600}'
     http_version: 
-  recorded_at: Thu, 07 Aug 2014 14:24:44 GMT
+  recorded_at: Tue, 12 Aug 2014 15:19:07 GMT
 recorded_with: VCR 2.9.2

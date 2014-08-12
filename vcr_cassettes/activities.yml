@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
+      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '9048'
+      - '9065'
       Mimetype:
       - application/json
       Charset:
@@ -31,57 +31,62 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Thu, 07 Aug 2014 14:24:44 GMT
+      - Tue, 12 Aug 2014 15:19:08 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 22, "rate_limit_reset": 1407424701,
-        "application_mode": "test", "processing_time": 32, "rate_limit_cap": 1000,
-        "result_count": 282, "activity_id": "53e38c2c56c02c25ec7bb462", "next": "http://localhost:5002/api/v4/activities/?offset=20"},
-        "data": [{"units_of_work": 1, "name": "providers", "parameters": {"npi": "1467560003"},
-        "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "53e38c2c56c02c25e47bb462", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-08-07T14:24:44.741000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-08-07T14:24:44.742000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "cash_prices", "parameters": {"cpt_code": "12345", "zip_code":
-        "75201"}, "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "53e2a29356c02c27c461e799", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-08-06T21:48:03.556000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-08-06T21:48:03.557000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "providers", "parameters": {"id": "1467560003"}, "state": {"name":
+      string: '{"meta": {"rate_limit_amount": 257, "rate_limit_reset": 1407856935,
+        "application_mode": "production", "processing_time": 23, "rate_limit_cap":
+        1000, "result_count": 1196, "activity_id": "53ea306c56c02c23a9a3f755", "next":
+        "http://localhost:5002/api/v4/activities/?offset=20"}, "data": [{"units_of_work":
+        1, "name": "providers", "parameters": {"npi": "1467560003"}, "state": {"name":
         "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id":
-        "53e38ab356c02c2505f1d7b1", "transition_path": ["process", "complete"], "history":
-        [{"record_dt": "2014-08-07T14:18:27.506000", "name": "init", "title": "Initializing"},
-        {"record_dt": "2014-08-07T14:18:27.507000", "name": "processing", "title":
-        "Processing transactions"}]}, {"units_of_work": 1, "name": "insurance_prices",
+        "53e38c2c56c02c25e47bb462", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "2014-08-07T14:24:44.741000", "name": "init", "title": "Initializing"},
+        {"record_dt": "2014-08-07T14:24:44.742000", "name": "processing", "title":
+        "Processing transactions"}]}, {"units_of_work": 1, "name": "cash_prices",
         "parameters": {"cpt_code": "12345", "zip_code": "75201"}, "state": {"name":
         "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id":
-        "53e2a29356c02c27bb61e799", "transition_path": ["process", "complete"], "history":
-        [{"record_dt": "2014-08-06T21:48:03.267000", "name": "init", "title": "Initializing"},
-        {"record_dt": "2014-08-06T21:48:03.268000", "name": "processing", "title":
-        "Processing transactions"}]}, {"units_of_work": 1, "name": "tradingpartners",
-        "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "53e2a29356c02c27c261e799", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-08-06T21:48:03.476000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-08-06T21:48:03.507000",
+        "53e2a29356c02c27c461e799", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "2014-08-06T21:48:03.556000", "name": "init", "title": "Initializing"},
+        {"record_dt": "2014-08-06T21:48:03.557000", "name": "processing", "title":
+        "Processing transactions"}]}, {"units_of_work": 1, "name": "providers", "parameters":
+        {"id": "1467560003"}, "state": {"name": "completed", "title": "Completed"},
+        "trading_partner_id": "PokitDok", "id": "53e38ab356c02c2505f1d7b1", "transition_path":
+        ["process", "complete"], "history": [{"record_dt": "2014-08-07T14:18:27.506000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-08-07T14:18:27.507000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "name": "insurance_prices", "parameters": {"cpt_code": "12345", "zip_code":
+        "75201"}, "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+        "PokitDok", "id": "53e2a29356c02c27bb61e799", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-08-06T21:48:03.267000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-08-06T21:48:03.268000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "name": "tradingpartners", "state": {"name": "completed", "title": "Completed"},
+        "trading_partner_id": "PokitDok", "id": "53e2a29356c02c27c261e799", "transition_path":
+        ["process", "complete"], "history": [{"record_dt": "2014-08-06T21:48:03.476000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-08-06T21:48:03.507000",
         "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
         1, "name": "providers", "parameters": {"npi": "1467560003"}, "state": {"name":
         "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id":
         "53e2a29356c02c27b961e799", "transition_path": ["process", "complete"], "history":
         [{"record_dt": "2014-08-06T21:48:03.229000", "name": "init", "title": "Initializing"},
         {"record_dt": "2014-08-06T21:48:03.230000", "name": "processing", "title":
-        "Processing transactions"}]}, {"units_of_work": 1, "name": "insurance_prices",
-        "parameters": {"cpt_code": "12345", "zip_code": "75201"}, "state": {"name":
-        "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id":
-        "53e25d5756c02c2b3d59cfc8", "transition_path": ["process", "complete"], "history":
-        [{"record_dt": "2014-08-06T16:52:39.199000", "name": "init", "title": "Initializing"},
-        {"record_dt": "2014-08-06T16:52:39.201000", "name": "processing", "title":
-        "Processing transactions"}]}, {"units_of_work": 1, "name": "payers", "parameters":
-        {"state": "CA"}, "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "53e2a29256c02c27b161e799", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-08-06T21:48:03.013000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-08-06T21:48:03.036000",
+        "Processing transactions"}]}, {"units_of_work": 1, "name": "providers", "parameters":
+        {"npi": "1467560003"}, "state": {"name": "completed", "title": "Completed"},
+        "trading_partner_id": "PokitDok", "id": "53e3b78656c02c154466a4a0", "transition_path":
+        ["process", "complete"], "history": [{"record_dt": "2014-08-07T17:29:42.142000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-08-07T17:29:42.144000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "name": "insurance_prices", "parameters": {"cpt_code": "12345", "zip_code":
+        "75201"}, "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+        "PokitDok", "id": "53e25d5756c02c2b3d59cfc8", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-08-06T16:52:39.199000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-08-06T16:52:39.201000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "name": "payers", "parameters": {"state": "CA"}, "state": {"name": "completed",
+        "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "53e2a29256c02c27b161e799",
+        "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-08-06T21:48:03.013000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-08-06T21:48:03.036000",
         "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
         1, "name": "providers", "parameters": {"npi": "1467560003"}, "state": {"name":
         "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id":
@@ -140,12 +145,7 @@ http_interactions:
         "53e2726156c02c365259cfc8", "transition_path": ["process", "complete"], "history":
         [{"record_dt": "2014-08-06T18:22:25.364000", "name": "init", "title": "Initializing"},
         {"record_dt": "2014-08-06T18:22:25.365000", "name": "processing", "title":
-        "Processing transactions"}]}, {"units_of_work": 1, "name": "payers", "parameters":
-        {"state": "CA"}, "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "53e2726056c02c364759cfc8", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-08-06T18:22:24.568000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-08-06T18:22:24.583000",
-        "name": "processing", "title": "Processing transactions"}]}]}'
+        "Processing transactions"}]}]}'
     http_version: 
-  recorded_at: Thu, 07 Aug 2014 14:24:44 GMT
+  recorded_at: Tue, 12 Aug 2014 15:19:08 GMT
 recorded_with: VCR 2.9.2

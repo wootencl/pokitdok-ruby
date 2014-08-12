@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/prices/insurance?cpt_code=12345&zip_code=75201
+    uri: http://localhost:5002/api/v4/prices/insurance?cpt_code=87799&zip_code=32218
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
+      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '644'
+      - '959'
       Mimetype:
       - application/json
       Charset:
@@ -31,18 +31,22 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Thu, 07 Aug 2014 14:24:44 GMT
+      - Tue, 12 Aug 2014 15:19:08 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 20, "rate_limit_reset": 1407424701,
-        "application_mode": "test", "processing_time": 9, "rate_limit_cap": 1000,
-        "credits_remaining": 9979, "activity_id": "53e38c2c56c02c25e87bb462", "credits_billed":
-        1}, "data": {"amounts": [{"high_price": 23.43, "standard_deviation": 2.95,
-        "average_price": 18.43, "payer_type": "insurance", "payment_type": "allowed",
-        "low_price": 15.42, "median_price": 19.27}, {"high_price": 54.85, "standard_deviation":
-        8.42, "average_price": 30.9, "payer_type": "insurance", "payment_type": "submitted",
-        "low_price": 24.65, "median_price": 29.74}], "cpt_code": "12345", "geo_zip_area":
-        "752"}}'
+      string: '{"meta": {"rate_limit_amount": 258, "rate_limit_reset": 1407856935,
+        "application_mode": "production", "processing_time": 36, "rate_limit_cap":
+        1000, "credits_remaining": 9904, "activity_id": "53ea306c56c02c23aba3f755",
+        "credits_billed": 1}, "data": {"amounts": [{"high_price": 159.75, "standard_deviation":
+        36.41382675904168, "average_price": 54.5895, "payer_type": "insurance", "payment_type":
+        "allowed", "low_price": 19.98, "median_price": 56.25}, {"high_price": 188.91,
+        "standard_deviation": 26.57623445180863, "average_price": 104.77350000000001,
+        "payer_type": "insurance", "payment_type": "submitted", "low_price": 88.02,
+        "median_price": 97.02}, {"average_price": 82.336343612, "payer_type": "medicare",
+        "payment_type": "allowed"}, {"average_price": 100.28768722, "payer_type":
+        "medicare", "payment_type": "submitted"}, {"average_price": 57.623480175999994,
+        "payer_type": "medicare", "payment_type": "paid"}], "cpt_code": "87799", "geo_zip_area":
+        "322"}}'
     http_version: 
-  recorded_at: Thu, 07 Aug 2014 14:24:44 GMT
+  recorded_at: Tue, 12 Aug 2014 15:19:08 GMT
 recorded_with: VCR 2.9.2

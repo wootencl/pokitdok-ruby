@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer Nh8cm456MqkPChtV4bLiQrd2pFd8YnpWNN17zKkT
+      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '6475'
+      - '6482'
       Mimetype:
       - application/json
       Charset:
@@ -33,27 +33,27 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Thu, 07 Aug 2014 14:24:46 GMT
+      - Tue, 12 Aug 2014 15:19:08 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 26, "rate_limit_reset": 1407424701,
-        "application_mode": "test", "processing_time": 458, "rate_limit_cap": 1000,
-        "credits_remaining": 13380, "activity_id": "53e38c2d56c02c25f77bb462", "credits_billed":
-        1}, "data": {"service_types": ["professional_physician_visit_office"], "client_id":
-        "oB7rLIqHmdoAXHRAmWtM", "payer": {"id": "MOCKPAYER", "name": "MOCK PAYER INC"},
-        "summary": {"deductible": {"individual": {"in_network": {"applied": {"currency":
-        "USD", "amount": "16.43"}, "limit": {"currency": "USD", "amount": "3000"},
-        "remaining": {"currency": "USD", "amount": "2983.57"}}, "out_of_network":
+      string: '{"meta": {"rate_limit_amount": 256, "rate_limit_reset": 1407856935,
+        "application_mode": "production", "processing_time": 405, "rate_limit_cap":
+        1000, "credits_remaining": 12975, "activity_id": "53ea306c56c02c23a7a3f755",
+        "credits_billed": 1}, "data": {"service_types": ["professional_physician_visit_office"],
+        "client_id": "oB7rLIqHmdoAXHRAmWtM", "payer": {"id": "MOCKPAYER", "name":
+        "MOCK PAYER INC"}, "summary": {"deductible": {"individual": {"in_network":
         {"applied": {"currency": "USD", "amount": "16.43"}, "limit": {"currency":
-        "USD", "amount": "6000"}, "remaining": {"currency": "USD", "amount": "5983.57"}}},
-        "family": {"in_network": {"applied": {"currency": "USD", "amount": "43.91"},
-        "limit": {"currency": "USD", "amount": "6000"}, "remaining": {"currency":
+        "USD", "amount": "3000"}, "remaining": {"currency": "USD", "amount": "2983.57"}},
+        "out_of_network": {"applied": {"currency": "USD", "amount": "16.43"}, "limit":
+        {"currency": "USD", "amount": "6000"}, "remaining": {"currency": "USD", "amount":
+        "5983.57"}}}, "family": {"in_network": {"applied": {"currency": "USD", "amount":
+        "43.91"}, "limit": {"currency": "USD", "amount": "6000"}, "remaining": {"currency":
         "USD", "amount": "5956.09"}}, "out_of_network": {"applied": {"currency": "USD",
         "amount": "43.91"}, "limit": {"currency": "USD", "amount": "12000"}, "remaining":
         {"currency": "USD", "amount": "11956.09"}}}}}, "subscriber": {"birth_date":
         "1970-01-01", "first_name": "Jane", "last_name": "Doe", "id": "W000000000",
         "address": {"city": "SPARTANBURG", "state": "SC", "zipcode": "29307", "address_lines":
-        ["123 MAIN ST"]}}, "correlation_id": "3e691035-fc60-4bc8-9d34-c8729390cd93",
+        ["123 MAIN ST"]}}, "correlation_id": "ed490e9a-ad0c-4fc4-b92c-f6cdc1af9388",
         "trading_partner_id": "MOCKPAYER", "provider": {"first_name": "JEROME", "last_name":
         "JEROME AYA-AY", "npi": "1467560003"}, "coverage": {"plan_number": "0888188",
         "service_types": ["professional_physician_visit_office"], "group_number":
@@ -117,5 +117,5 @@ http_interactions:
         "MOCK INDIVIDUAL ADVANTAGE PLAN", "service_date": "2013-08-10"}, "valid_request":
         true}}'
     http_version: 
-  recorded_at: Thu, 07 Aug 2014 14:24:46 GMT
+  recorded_at: Tue, 12 Aug 2014 15:19:08 GMT
 recorded_with: VCR 2.9.2
