@@ -13,7 +13,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
+      - Bearer HdwhF3km7RGrnKxldMSYcWJ7i4aFiWAvM9C11ISH
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -28,7 +28,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '2203'
+      - '2202'
       Mimetype:
       - application/json
       Charset:
@@ -36,12 +36,12 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Tue, 12 Aug 2014 15:19:09 GMT
+      - Wed, 17 Sep 2014 16:36:54 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 262, "rate_limit_reset": 1407856935,
-        "application_mode": "production", "processing_time": 17, "rate_limit_cap":
-        1000, "credits_remaining": 12972, "activity_id": "53ea306d56c02c23b5a3f755",
+      string: '{"meta": {"rate_limit_amount": 87, "rate_limit_reset": 1410972568,
+        "application_mode": "production", "processing_time": 15, "rate_limit_cap":
+        1000, "credits_remaining": 13205, "activity_id": "5419b8a656c02c26bf6b8195",
         "credits_billed": 1}, "data": {"units_of_work": 1, "name": "claims", "parameters":
         {"claim": {"plan_participation": "assigned", "provider_signature": true, "total_charge_amount":
         "60.0", "claim_frequency": "original", "place_of_service": "office", "direct_payment":
@@ -53,7 +53,7 @@ http_interactions:
         "last_name": "Doe", "gender": "female", "member_id": "W000000000", "payer_responsibility":
         "primary", "address": {"address_lines": ["123 N MAIN ST"], "state": "SC",
         "zipcode": "29301", "city": "SPARTANBURG"}, "birth_date": "1970-01-01"}, "correlation_id":
-        "e9c08ce8-f519-4818-b2dd-bf39f3ea5a55", "client_id": "oB7rLIqHmdoAXHRAmWtM",
+        "69986861-4e7e-4a30-ae3d-1f6fef9aa540", "client_id": "JcR2P8SmoIaon4vpN9Q9",
         "receiver": {"organization_name": "MOCKRECEIVER", "id": "MOCKRECEIVER"}, "submitter":
         {"organization_name": "POKITDOK TESTING", "id": "POKITDOKTEST", "email": "support@pokitdok.com"},
         "async": false, "billing_provider": {"first_name": "Jerome", "last_name":
@@ -63,10 +63,10 @@ http_interactions:
         "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
         "process", "complete"], "state": {"name": "scheduled", "title": "Scheduled
         for next available transmission to Trading Partner"}, "trading_partner_id":
-        "MOCKPAYER", "id": "53ea306d56c02c23b5a3f755", "transition_path": ["schedule",
+        "MOCKPAYER", "id": "5419b8a656c02c26bf6b8195", "transition_path": ["schedule",
         "generate", "store", "transmit", "wait", "receive", "process", "complete"],
-        "history": [{"record_dt": "2014-08-12T15:19:09.682930", "name": "init", "title":
+        "history": [{"record_dt": "2014-09-17T16:36:54.256627", "name": "init", "title":
         "Initializing"}]}}'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 15:19:09 GMT
+  recorded_at: Wed, 17 Sep 2014 16:36:54 GMT
 recorded_with: VCR 2.9.2

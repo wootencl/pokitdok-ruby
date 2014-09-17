@@ -179,5 +179,13 @@ module PokitDok
       end
       JSON.parse(response.body)
     end
+
+    # Invokes the plans endpoint, with a hash of parameters
+    def plans(params = {})
+      response = @token.get('plans/', headers: headers, params: params) do |request|
+        request.params = params
+      end
+      JSON.parse(response.body)
+    end
   end
 end
