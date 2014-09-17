@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
+      - Bearer HdwhF3km7RGrnKxldMSYcWJ7i4aFiWAvM9C11ISH
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '2061'
+      - '2060'
       Mimetype:
       - application/json
       Charset:
@@ -33,12 +33,12 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Tue, 12 Aug 2014 15:19:09 GMT
+      - Wed, 17 Sep 2014 16:36:55 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 261, "rate_limit_reset": 1407856935,
-        "application_mode": "production", "processing_time": 435, "rate_limit_cap":
-        1000, "credits_remaining": 12973, "activity_id": "53ea306d56c02c23b3a3f755",
+      string: '{"meta": {"rate_limit_amount": 99, "rate_limit_reset": 1410972568,
+        "application_mode": "production", "processing_time": 134, "rate_limit_cap":
+        1000, "credits_remaining": 13200, "activity_id": "5419b8a756c02c26d96b8195",
         "credits_billed": 1}, "data": {"patient": {"claims": [{"applied_to_deductible":
         false, "total_claim_amount": {"currency": "USD", "amount": "150"}, "service_end_date":
         "2014-01-01", "claim_control_number": "E1TWCYYMF00", "service_date": "2014-01-01",
@@ -57,11 +57,11 @@ http_interactions:
         that exist between the Health Plan and a Provider of Health Care Services)",
         "status_category": "Finalized/Payment-The claim/line has been paid.", "status_effective_date":
         "2014-04-24"}]}], "check_number": "08608-035632423", "remittance_date": "2014-04-09"}]},
-        "client_id": "oB7rLIqHmdoAXHRAmWtM", "payer": {"name": "MOCK PAYER INC", "id":
+        "client_id": "JcR2P8SmoIaon4vpN9Q9", "payer": {"name": "MOCK PAYER INC", "id":
         "MOCKPAYER"}, "providers": [{"first_name": "Jerome", "last_name": "Aya-Ay",
-        "npi": "1467560003"}], "correlation_id": "e24d39c3-bca6-44d8-8054-6575ed224f30",
+        "npi": "1467560003"}], "correlation_id": "34cd88b7-2b1f-4952-8b95-688cb4785e54",
         "trading_partner_id": "MOCKPAYER", "submitter": {"first_name": "Jerome", "last_name":
         "Aya-Ay", "id": "1467560003"}}}'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 15:19:09 GMT
+  recorded_at: Wed, 17 Sep 2014 16:36:55 GMT
 recorded_with: VCR 2.9.2

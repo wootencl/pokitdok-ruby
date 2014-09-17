@@ -23,7 +23,7 @@ http_interactions:
       Content-Length:
       - '3266'
       Authorization:
-      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
+      - Bearer HdwhF3km7RGrnKxldMSYcWJ7i4aFiWAvM9C11ISH
   response:
     status:
       code: 200
@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '763'
+      - '762'
       Mimetype:
       - application/json
       Charset:
@@ -40,19 +40,19 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Tue, 12 Aug 2014 15:19:09 GMT
+      - Wed, 17 Sep 2014 16:36:55 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 260, "rate_limit_reset": 1407856935,
-        "application_mode": "production", "processing_time": 521, "rate_limit_cap":
-        1000, "credits_remaining": 12974, "activity_id": "53ea306d56c02c23afa3f755",
+      string: '{"meta": {"rate_limit_amount": 93, "rate_limit_reset": 1410972568,
+        "application_mode": "production", "processing_time": 414, "rate_limit_cap":
+        1000, "credits_remaining": 13203, "activity_id": "5419b8a656c02c26cb6b8195",
         "credits_billed": 1}, "data": {"units_of_work": 1, "name": "batch file", "remaining_transitions":
         ["process", "complete"], "state": {"name": "queued", "title": "In queue waiting
-        to start"}, "trading_partner_id": "MOCKPAYER", "id": "53ea306d56c02c23afa3f755",
+        to start"}, "trading_partner_id": "MOCKPAYER", "id": "5419b8a656c02c26cb6b8195",
         "transition_path": ["store", "queue", "process", "complete"], "history": [{"record_dt":
-        "2014-08-12T15:19:09.168442", "name": "init", "title": "Initializing"}, {"record_dt":
-        "2014-08-12T15:19:09.170534", "name": "stored", "title": "Batch transactions
+        "2014-09-17T16:36:54.993918", "name": "init", "title": "Initializing"}, {"record_dt":
+        "2014-09-17T16:36:54.995058", "name": "stored", "title": "Batch transactions
         stored for later processing"}]}}'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 15:19:09 GMT
+  recorded_at: Wed, 17 Sep 2014 16:36:55 GMT
 recorded_with: VCR 2.9.2

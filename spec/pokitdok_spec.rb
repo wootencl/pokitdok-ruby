@@ -57,7 +57,7 @@ describe PokitDok do
 
     describe 'Cash Prices endpoint' do
       it 'should expose the cash prices endpoint' do
-        query = { cpt_code: '12345', zip_code: '75201' }
+        query = { cpt_code: '90658', zip_code: '94403' }
 
         VCR.use_cassette 'cash_prices' do
           @prices = @pokitdok.cash_prices query
@@ -173,7 +173,7 @@ describe PokitDok do
 
         check_meta_and_data @payers
         refute_nil @payers['data']
-        @payers['data'].size.must_equal 229
+        @payers['data'].size.must_equal 263
       end
     end
 
@@ -215,6 +215,32 @@ describe PokitDok do
 
         check_meta_and_data @trading_partners
         @trading_partners['data'].must_be_instance_of Hash
+      end
+    end
+
+    describe 'Plans endpoint no args' do
+      it 'should expose the plans endpoint' do
+        query = {}
+
+        VCR.use_cassette 'plans_no_args' do
+          @plans = @pokitdok.plans(query)
+        end
+
+        check_meta_and_data @plans
+        @plans['data'].must_be_instance_of Array
+      end
+    end
+
+    describe 'Plans endpoint' do
+      it 'should expose the plans endpoint' do
+        query = {'state' => 'TX', 'plan_type' => 'PPO'}
+
+        VCR.use_cassette 'plans' do
+          @plans = @pokitdok.plans(query)
+        end
+
+        check_meta_and_data @plans
+        @plans['data'].must_be_instance_of Array
       end
     end
 

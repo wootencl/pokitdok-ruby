@@ -19,7 +19,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
       Authorization:
-      - Bearer 88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln
+      - Bearer HdwhF3km7RGrnKxldMSYcWJ7i4aFiWAvM9C11ISH
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -34,7 +34,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '2613'
+      - '2612'
       Mimetype:
       - application/json
       Charset:
@@ -42,12 +42,12 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Tue, 12 Aug 2014 15:19:07 GMT
+      - Wed, 17 Sep 2014 16:36:54 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 253, "rate_limit_reset": 1407856935,
-        "application_mode": "production", "processing_time": 15, "rate_limit_cap":
-        1000, "credits_remaining": 9970, "activity_id": "53ea306b56c02c23a1a3f755",
+      string: '{"meta": {"rate_limit_amount": 91, "rate_limit_reset": 1410972568,
+        "application_mode": "production", "processing_time": 14, "rate_limit_cap":
+        1000, "credits_remaining": 9993, "activity_id": "5419b8a656c02c26c76b8195",
         "credits_billed": 1}, "data": {"units_of_work": 1, "name": "enrollment", "parameters":
         {"reference_number": "12456", "version": "4.0.0", "payer": {"tax_id": "654456654"},
         "update_dt": "Wed Mar 26 22:18:47 2014", "deleted": false, "major_version":
@@ -68,16 +68,16 @@ http_interactions:
         "123456789", "birth_date": "Fri Aug 16 00:00:00 1940", "middle_name": "P",
         "substance_abuse": false, "address": {"city": "CAMP HILL", "line2": "APT 3G",
         "county": "CUMBERLAND", "state": "PA", "postal_code": "17011", "line": "100
-        MARKET ST"}}, "correlation_id": "13e96862-855e-42ed-8a93-93e607797f85", "insert_dt":
+        MARKET ST"}}, "correlation_id": "77c7d805-cd70-4a93-9fa3-f7f6d1a68e63", "insert_dt":
         "Wed Mar 26 22:18:47 2014", "trading_partner_id": "MOCKPAYER", "purpose":
-        "Original", "client_id": "oB7rLIqHmdoAXHRAmWtM", "action": "Change", "dependents":
+        "Original", "client_id": "JcR2P8SmoIaon4vpN9Q9", "action": "Change", "dependents":
         [], "sponsor": {"tax_id": "999888777"}}, "remaining_transitions": ["generate",
         "store", "transmit", "wait", "receive", "process", "complete"], "state": {"name":
         "scheduled", "title": "Scheduled for next available transmission to Trading
-        Partner"}, "trading_partner_id": "MOCKPAYER", "id": "53ea306b56c02c23a1a3f755",
+        Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5419b8a656c02c26c76b8195",
         "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-08-12T15:19:07.923201",
+        "process", "complete"], "history": [{"record_dt": "2014-09-17T16:36:54.501261",
         "name": "init", "title": "Initializing"}]}}'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 15:19:07 GMT
+  recorded_at: Wed, 17 Sep 2014 16:36:54 GMT
 recorded_with: VCR 2.9.2

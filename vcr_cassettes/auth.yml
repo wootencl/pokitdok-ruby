@@ -31,11 +31,49 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Tue, 12 Aug 2014 15:19:07 GMT
+      - Wed, 17 Sep 2014 16:36:54 GMT
     body:
       encoding: UTF-8
-      string: '{"access_token": "88CVCN9YDDAQdTC3GeQMcrMPyDJPErQZ3PECJcln", "token_type":
-        "bearer", "expires": 1407860348, "expires_in": 3600}'
-    http_version: 
-  recorded_at: Tue, 12 Aug 2014 15:19:07 GMT
+      string: '{"access_token": "HdwhF3km7RGrnKxldMSYcWJ7i4aFiWAvM9C11ISH", "token_type":
+        "bearer", "expires": 1410975414, "expires_in": 3600}'
+    http_version:
+  recorded_at: Wed, 17 Sep 2014 16:36:54 GMT
+- request:
+    method: post
+    uri: http://oB7rLIqHmdoAXHRAmWtM:ZE8xqtUY5kYqmHIhd8lzdjqD1CPa8sRBPvmF9UuG@localhost:5002/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '127'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Wed, 17 Sep 2014 16:42:43 GMT
+    body:
+      encoding: UTF-8
+      string: '{"access_token": "lKM9f7uGo2W9BAsm9xTijLqHLbC2R2QBiEJdkTNt", "token_type":
+        "bearer", "expires": 1410975763, "expires_in": 3600}'
+    http_version:
+  recorded_at: Wed, 17 Sep 2014 16:42:43 GMT
 recorded_with: VCR 2.9.2
