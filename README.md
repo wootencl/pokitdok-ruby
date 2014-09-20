@@ -101,7 +101,7 @@ pd.eligibility @eligibility_query
   }
 }
 
-pd.claim @claim
+pd.claims @claim
 
 # Retrieve an index of activities
 pd.activities 
