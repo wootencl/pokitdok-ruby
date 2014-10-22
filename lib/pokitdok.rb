@@ -48,7 +48,7 @@ module PokitDok
     end
 
     def user_agent
-      "pokitdok-ruby 0.4.1 #{RUBY_DESCRIPTION}"
+      "pokitdok-ruby 0.7.0 #{RUBY_DESCRIPTION}"
     end
 
     # returns a standard set of headers to be passed along with all requests
