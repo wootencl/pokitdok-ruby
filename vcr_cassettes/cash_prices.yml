@@ -8,13 +8,13 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
+      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
       Authorization:
-      - Bearer HdwhF3km7RGrnKxldMSYcWJ7i4aFiWAvM9C11ISH
+      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '463'
+      - '424'
       Mimetype:
       - application/json
       Charset:
@@ -31,15 +31,15 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Wed, 17 Sep 2014 16:36:55 GMT
+      - Wed, 22 Oct 2014 19:18:50 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 97, "rate_limit_reset": 1410972568,
-        "application_mode": "production", "processing_time": 30, "rate_limit_cap":
-        1000, "credits_remaining": 9983, "activity_id": "5419b8a756c02c26d56b8195",
-        "credits_billed": 1}, "data": [{"high_price": 75.08364671031882, "cpt_code":
-        "90658", "low_price": 55.30875, "average_price": 62.15272966703196, "geo_zip_area":
-        "944", "standard_deviation": 6.842960548193715, "median_price": 59.60960003777308}]}'
+      string: '{"meta": {"rate_limit_amount": 13, "rate_limit_reset": 1414009128,
+        "application_mode": "test", "processing_time": 9, "rate_limit_cap": 8434,
+        "credits_remaining": 9997, "activity_id": "5448031a56c02c4491b7da95", "credits_billed":
+        1}, "data": [{"high": 85.0, "cpt_code": "90658", "geo_zip_area": "944", "payment_type":
+        "paid", "standard_deviation": 18.16, "average": 45.58, "payer_type": "cash",
+        "median": 42.0, "low": 25.0}]}'
     http_version: 
-  recorded_at: Wed, 17 Sep 2014 16:36:55 GMT
+  recorded_at: Wed, 22 Oct 2014 19:18:50 GMT
 recorded_with: VCR 2.9.2

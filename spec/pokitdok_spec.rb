@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-CLIENT_ID = 'oB7rLIqHmdoAXHRAmWtM'
-CLIENT_SECRET = 'ZE8xqtUY5kYqmHIhd8lzdjqD1CPa8sRBPvmF9UuG'
+CLIENT_ID = 'WbkhoNbwuJRWdz0w9Ehl'
+CLIENT_SECRET = 'OPA9HSOUMJLYyZrH4VRPZLoL51gGtm7U4OxuYiz6'
 POKITDOK_TEST_URL = 'http://localhost:5002'
 
 def check_meta_and_data(result)
@@ -52,6 +52,19 @@ describe PokitDok do
 
         check_meta_and_data @activities
         refute_empty @activities['data']
+      end
+    end
+
+    describe 'Authorizations endpoint' do
+      it 'should expose the authorizations endpoint' do
+        query = JSON.parse(IO.read('spec/fixtures/authorizations.json'))
+
+        VCR.use_cassette 'authorizations' do
+          @authorizations = @pokitdok.authorizations query
+        end
+
+        check_meta_and_data @authorizations
+        refute_empty @authorizations['data']
       end
     end
 
@@ -173,7 +186,7 @@ describe PokitDok do
 
         check_meta_and_data @payers
         refute_nil @payers['data']
-        @payers['data'].size.must_equal 263
+        @payers['data'].size.must_equal 295
       end
     end
 
@@ -187,7 +200,21 @@ describe PokitDok do
 
         check_meta_and_data @providers
         refute_nil @providers['data']
-        @providers['data'].size.must_equal 1
+        @providers['data'].size.must_equal 4
+      end
+    end
+
+    describe 'Referrals endpoint' do
+      it 'should expose the referrals endpoint' do
+        query = JSON.parse(IO.read('spec/fixtures/referrals.json'))
+
+        VCR.use_cassette 'referrals' do
+          @referrals = @pokitdok.referrals(query)
+        end
+
+        check_meta_and_data @referrals
+        refute_nil @referrals['data']
+        @referrals['data']['valid_request'].must_equal true
       end
     end
 

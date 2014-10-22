@@ -72,6 +72,16 @@ module PokitDok
       JSON.parse(response.body)
     end
 
+    # Invokes the authorizations endpoint, with an optional Hash of parameters.
+    def authorizations(params = {})
+      response = @token.post('authorizations/',
+                             headers: headers,
+                             body: params.to_json) do |request|
+        request.headers['Content-Type'] = 'application/json'
+      end
+      JSON.parse(response.body)
+    end
+
     # Invokes the cash prices endpoint, with an optional Hash of parameters.
     def cash_prices(params = {})
       response = @token.get('prices/cash',
@@ -160,10 +170,26 @@ module PokitDok
       JSON.parse(response.body)
     end
 
+    # Invokes the plans endpoint, with an optional Hash of parameters.
+    def plans(params = {})
+      response = @token.get('plans/', headers: headers, params: params)
+      JSON.parse(response.body)
+    end
+
     # Invokes the providers endpoint, with an optional Hash of parameters.
     def providers(params = {})
       response = @token.get('providers/') do |request|
         request.params = params
+      end
+      JSON.parse(response.body)
+    end
+
+    # Invokes the referrals endpoint, with an optional Hash of parameters.
+    def referrals(params = {})
+      response = @token.post('referrals/',
+                             headers: headers,
+                             body: params.to_json) do |request|
+        request.headers['Content-Type'] = 'application/json'
       end
       JSON.parse(response.body)
     end

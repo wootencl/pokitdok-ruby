@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5002/api/v4/authorizations/
+    body:
+      encoding: UTF-8
+      string: '{"event":{"category":"health_services_review","certification_type":"initial","delivery":{"quantity":1,"quantity_qualifier":"visits"},"diagnoses":[{"code":"789.00","date":"2014-10-01"}],"place_of_service":"office","provider":{"organization_name":"KELLY
+        ULTRASOUND CENTER, LLC","npi":"1760779011","phone":"8642341234"},"services":[{"cpt_code":"76700","measurement":"unit","quantity":1}],"type":"diagnostic_medical"},"patient":{"birth_date":"1970-01-01","first_name":"JANE","last_name":"DOE","id":"1234567890"},"provider":{"first_name":"JEROME","npi":"1467560003","last_name":"AYA-AY"},"trading_partner_id":"MOCKPAYER"}'
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '1171'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Wed, 22 Oct 2014 19:19:14 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 16, "rate_limit_reset": 1414009128,
+        "application_mode": "test", "processing_time": 128, "rate_limit_cap": 8434,
+        "credits_remaining": 13418, "activity_id": "5448033256c02c449eb7da95", "credits_billed":
+        1}, "data": {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"},
+        "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER
+        INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id":
+        "b599292f-cd6f-4df4-a42c-beee7fe42a53", "client_id": "WbkhoNbwuJRWdz0w9Ehl",
+        "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "tax_id": "1467560003"},
+        "async": false, "event": {"category": "health_services_review", "diagnoses":
+        [{"date": "2005-04-30", "code": "410.90"}], "place_of_service": "office",
+        "review": {"certification_number": "AUTH0001", "second_surgical_opinion_required":
+        false, "certification_action": "certified_in_total"}, "delivery": {"quantity_qualifier":
+        "visits", "quantity": 1}, "provider": {"organization_name": "KELLY ULTRASOUND
+        CENTER, LLC", "tax_id": "1760779011"}, "certification_type": "initial", "type":
+        "diagnostic_medical"}, "valid_request": true}}'
+    http_version: 
+  recorded_at: Wed, 22 Oct 2014 19:19:14 GMT
+recorded_with: VCR 2.9.2

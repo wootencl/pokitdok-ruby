@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5002/api/v4/referrals/
+    body:
+      encoding: UTF-8
+      string: '{"event":{"category":"specialty_care_review","certification_type":"initial","delivery":{"quantity":1,"quantity_qualifier":"visits"},"diagnoses":[{"code":"384.20","date":"2014-09-30"}],"place_of_service":"office","provider":{"first_name":"JOHN","npi":"1154387751","last_name":"FOSTER","phone":"8645822900"},"type":"consultation"},"patient":{"birth_date":"1970-01-01","first_name":"JANE","last_name":"DOE","id":"1234567890"},"provider":{"first_name":"CHRISTINA","last_name":"BERTOLAMI","npi":"1619131232"},"trading_partner_id":"MOCKPAYER"}'
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '1162'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.3
+      Date:
+      - Wed, 22 Oct 2014 19:18:50 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 12, "rate_limit_reset": 1414009128,
+        "application_mode": "test", "processing_time": 152, "rate_limit_cap": 8434,
+        "credits_remaining": 13439, "activity_id": "5448031956c02c448fb7da95", "credits_billed":
+        1}, "data": {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"},
+        "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER
+        INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id":
+        "8908e4a1-cd18-4db4-81f8-7c16f95ffb1f", "client_id": "WbkhoNbwuJRWdz0w9Ehl",
+        "provider": {"first_name": "CHRISTINA", "last_name": "BERTOLAMI", "tax_id":
+        "1619131232"}, "async": false, "event": {"category": "specialty_care_review",
+        "diagnoses": [{"date": "2005-04-30", "code": "410.90"}], "place_of_service":
+        "office", "review": {"certification_number": "AUTH0001", "second_surgical_opinion_required":
+        false, "certification_action": "certified_in_total"}, "delivery": {"quantity_qualifier":
+        "visits", "quantity": 1}, "provider": {"first_name": "JOHN", "last_name":
+        "FOSTER", "tax_id": "1154387751"}, "certification_type": "initial", "type":
+        "consultation"}, "valid_request": true}}'
+    http_version: 
+  recorded_at: Wed, 22 Oct 2014 19:18:50 GMT
+recorded_with: VCR 2.9.2

@@ -15,15 +15,15 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin12.5.0]
+      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
       Content-Type:
       - multipart/form-data; boundary=-----------RubyMultipartPost
       Content-Length:
       - '3266'
       Authorization:
-      - Bearer HdwhF3km7RGrnKxldMSYcWJ7i4aFiWAvM9C11ISH
+      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
   response:
     status:
       code: 200
@@ -32,7 +32,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '762'
+      - '755'
       Mimetype:
       - application/json
       Charset:
@@ -40,19 +40,18 @@ http_interactions:
       Server:
       - Werkzeug/0.9.4 Python/2.7.3
       Date:
-      - Wed, 17 Sep 2014 16:36:55 GMT
+      - Wed, 22 Oct 2014 19:18:49 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 93, "rate_limit_reset": 1410972568,
-        "application_mode": "production", "processing_time": 414, "rate_limit_cap":
-        1000, "credits_remaining": 13203, "activity_id": "5419b8a656c02c26cb6b8195",
-        "credits_billed": 1}, "data": {"units_of_work": 1, "name": "batch file", "remaining_transitions":
-        ["process", "complete"], "state": {"name": "queued", "title": "In queue waiting
-        to start"}, "trading_partner_id": "MOCKPAYER", "id": "5419b8a656c02c26cb6b8195",
-        "transition_path": ["store", "queue", "process", "complete"], "history": [{"record_dt":
-        "2014-09-17T16:36:54.993918", "name": "init", "title": "Initializing"}, {"record_dt":
-        "2014-09-17T16:36:54.995058", "name": "stored", "title": "Batch transactions
-        stored for later processing"}]}}'
+      string: '{"meta": {"rate_limit_amount": 5, "rate_limit_reset": 1414009128, "application_mode":
+        "test", "processing_time": 496, "rate_limit_cap": 8434, "credits_remaining":
+        13442, "activity_id": "5448031956c02c4480b7da95", "credits_billed": 1}, "data":
+        {"units_of_work": 1, "name": "batch file", "remaining_transitions": ["process",
+        "complete"], "state": {"name": "queued", "title": "In queue waiting to start"},
+        "trading_partner_id": "MOCKPAYER", "id": "5448031956c02c4480b7da95", "transition_path":
+        ["store", "queue", "process", "complete"], "history": [{"record_dt": "2014-10-22T19:18:49.539517",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-22T19:18:49.540476",
+        "name": "stored", "title": "Batch transactions stored for later processing"}]}}'
     http_version: 
-  recorded_at: Wed, 17 Sep 2014 16:36:55 GMT
+  recorded_at: Wed, 22 Oct 2014 19:18:49 GMT
 recorded_with: VCR 2.9.2
