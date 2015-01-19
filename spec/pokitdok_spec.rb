@@ -190,6 +190,32 @@ describe PokitDok do
       end
     end
 
+    describe 'Plans endpoint no args' do
+      it 'should expose the plans endpoint' do
+        query = {}
+
+        VCR.use_cassette 'plans_no_args' do
+          @plans = @pokitdok.plans(query)
+        end
+
+        check_meta_and_data @plans
+        @plans['data'].must_be_instance_of Array
+      end
+    end
+
+    describe 'Plans endpoint' do
+      it 'should expose the plans endpoint' do
+        query = {'state' => 'TX', 'plan_type' => 'PPO'}
+
+        VCR.use_cassette 'plans' do
+          @plans = @pokitdok.plans(query)
+        end
+
+        check_meta_and_data @plans
+        @plans['data'].must_be_instance_of Array
+      end
+    end
+
     describe 'Providers endpoint' do
       it 'should expose the providers endpoint' do
         query = { npi: '1467560003' }
@@ -218,6 +244,77 @@ describe PokitDok do
       end
     end
 
+    describe 'Scheduling endpoints' do
+      it 'should list the schedulers' do
+        VCR.use_cassette 'scheduling' do
+          @schedulers = @pokitdok.schedulers
+        end
+
+        check_meta_and_data @schedulers
+      end
+
+      it 'should give details on a specific scheduler' do
+        VCR.use_cassette 'scheduling' do
+          @scheduler = @pokitdok.scheduler({ id: '1234567' })
+        end
+
+        check_meta_and_data @scheduler
+      end
+
+      it 'should list appointment types' do
+        VCR.use_cassette 'scheduling' do
+          @appointment_types = @pokitdok.appointment_types
+        end
+
+        check_meta_and_data @appointment_types
+      end
+
+      it 'should give details on a specific appointment type' do
+        VCR.use_cassette 'scheduling' do
+          @appointment_type = @pokitdok.appointment_type({ id: '1234567' })
+        end
+
+        check_meta_and_data @appointment_type
+      end
+
+      it 'should add an open slot' do
+        @query = JSON.parse(IO.read('spec/fixtures/referrals.json'))
+
+        VCR.use_cassette 'scheduling' do
+          @add_slot_response = @pokitdok.slots @query
+        end
+
+        check_meta_and_data @add_slot_response
+      end
+
+      it 'should query for open appointment slots' do
+        VCR.use_cassette 'scheduling' do
+          @pokitdok.get_open_appointment_slots({})
+        end
+      end
+
+      it 'should book appointment for an open slot' do
+        VCR.use_cassette 'scheduling' do
+          @pokitdok.book_appointment({})
+        end
+      end
+
+      it 'should update appointment attributes' do
+        VCR.use_cassette 'scheduling' do
+          @pokitdok.update_appointment({})
+        end
+      end
+
+      it 'should cancel a specified appointment' do
+        VCR.use_cassette 'scheduling' do
+          @cancel_response = @pokitdok.cancel_appointment({ id: '123456' })
+        end
+
+        check_meta_and_data @cancel_response
+      end
+
+    end
+
     describe 'Trading Partners endpoint index' do
       it 'should expose the trading partners endpoint (index call)' do
         query = {}
@@ -244,32 +341,5 @@ describe PokitDok do
         @trading_partners['data'].must_be_instance_of Hash
       end
     end
-
-    describe 'Plans endpoint no args' do
-      it 'should expose the plans endpoint' do
-        query = {}
-
-        VCR.use_cassette 'plans_no_args' do
-          @plans = @pokitdok.plans(query)
-        end
-
-        check_meta_and_data @plans
-        @plans['data'].must_be_instance_of Array
-      end
-    end
-
-    describe 'Plans endpoint' do
-      it 'should expose the plans endpoint' do
-        query = {'state' => 'TX', 'plan_type' => 'PPO'}
-
-        VCR.use_cassette 'plans' do
-          @plans = @pokitdok.plans(query)
-        end
-
-        check_meta_and_data @plans
-        @plans['data'].must_be_instance_of Array
-      end
-    end
-
   end
 end
