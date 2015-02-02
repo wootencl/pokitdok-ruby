@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:5002/api/v4/referrals/
+    uri: https://platform.pokitdok.com/api/v4/referrals/
     body:
       encoding: UTF-8
       string: '{"event":{"category":"specialty_care_review","certification_type":"initial","delivery":{"quantity":1,"quantity_qualifier":"visits"},"diagnoses":[{"code":"384.20","date":"2014-09-30"}],"place_of_service":"office","provider":{"first_name":"JOHN","npi":"1154387751","last_name":"FOSTER","phone":"8645822900"},"type":"consultation"},"patient":{"birth_date":"1970-01-01","first_name":"JANE","last_name":"DOE","id":"1234567890"},"provider":{"first_name":"CHRISTINA","last_name":"BERTOLAMI","npi":"1619131232"},"trading_partner_id":"MOCKPAYER"}'
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -22,27 +22,31 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 16:48:30 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Content-Length:
-      - '1162'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Server:
-      - Werkzeug/0.9.4 Python/2.7.3
-      Date:
-      - Wed, 22 Oct 2014 19:18:50 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 12, "rate_limit_reset": 1414009128,
-        "application_mode": "test", "processing_time": 152, "rate_limit_cap": 8434,
-        "credits_remaining": 13439, "activity_id": "5448031956c02c448fb7da95", "credits_billed":
-        1}, "data": {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"},
+      string: '{"meta": {"rate_limit_amount": 4, "rate_limit_reset": 1422380906, "application_mode":
+        "production", "processing_time": 349, "rate_limit_cap": 1000, "credits_remaining":
+        13495, "activity_id": "54c7c15dfba8eb2b3ce31847", "credits_billed": 1}, "data":
+        {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"},
         "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER
         INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id":
-        "8908e4a1-cd18-4db4-81f8-7c16f95ffb1f", "client_id": "WbkhoNbwuJRWdz0w9Ehl",
+        "58b39af1-0ad7-42b1-9a0e-99ff17b60ac2", "client_id": "7iF1u1XVbkAds9LSz94c",
         "provider": {"first_name": "CHRISTINA", "last_name": "BERTOLAMI", "tax_id":
         "1619131232"}, "async": false, "event": {"category": "specialty_care_review",
         "diagnoses": [{"date": "2005-04-30", "code": "410.90"}], "place_of_service":
@@ -52,5 +56,5 @@ http_interactions:
         "FOSTER", "tax_id": "1154387751"}, "certification_type": "initial", "type":
         "consultation"}, "valid_request": true}}'
     http_version: 
-  recorded_at: Wed, 22 Oct 2014 19:18:50 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 27 Jan 2015 16:48:32 GMT
+recorded_with: VCR 2.9.3

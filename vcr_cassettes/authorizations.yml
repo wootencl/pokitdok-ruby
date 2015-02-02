@@ -2,16 +2,16 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:5002/api/v4/authorizations/
+    uri: https://platform.pokitdok.com/api/v4/authorizations/
     body:
       encoding: UTF-8
       string: '{"event":{"category":"health_services_review","certification_type":"initial","delivery":{"quantity":1,"quantity_qualifier":"visits"},"diagnoses":[{"code":"789.00","date":"2014-10-01"}],"place_of_service":"office","provider":{"organization_name":"KELLY
         ULTRASOUND CENTER, LLC","npi":"1760779011","phone":"8642341234"},"services":[{"cpt_code":"76700","measurement":"unit","quantity":1}],"type":"diagnostic_medical"},"patient":{"birth_date":"1970-01-01","first_name":"JANE","last_name":"DOE","id":"1234567890"},"provider":{"first_name":"JEROME","npi":"1467560003","last_name":"AYA-AY"},"trading_partner_id":"MOCKPAYER"}'
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -23,27 +23,31 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 16:48:36 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Content-Length:
-      - '1171'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Server:
-      - Werkzeug/0.9.4 Python/2.7.3
-      Date:
-      - Wed, 22 Oct 2014 19:19:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 16, "rate_limit_reset": 1414009128,
-        "application_mode": "test", "processing_time": 128, "rate_limit_cap": 8434,
-        "credits_remaining": 13418, "activity_id": "5448033256c02c449eb7da95", "credits_billed":
-        1}, "data": {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"},
-        "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER
-        INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id":
-        "b599292f-cd6f-4df4-a42c-beee7fe42a53", "client_id": "WbkhoNbwuJRWdz0w9Ehl",
+      string: '{"meta": {"rate_limit_amount": 10, "rate_limit_reset": 1422380906,
+        "application_mode": "production", "processing_time": 376, "rate_limit_cap":
+        1000, "credits_remaining": 13493, "activity_id": "54c7c164948303218b7184be",
+        "credits_billed": 1}, "data": {"patient": {"first_name": "JANE", "last_name":
+        "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
+        "MOCK PAYER INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678",
+        "correlation_id": "570ef2f8-2fbf-4b79-aab1-59ebfd2ff909", "client_id": "7iF1u1XVbkAds9LSz94c",
         "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "tax_id": "1467560003"},
         "async": false, "event": {"category": "health_services_review", "diagnoses":
         [{"date": "2005-04-30", "code": "410.90"}], "place_of_service": "office",
@@ -53,5 +57,5 @@ http_interactions:
         CENTER, LLC", "tax_id": "1760779011"}, "certification_type": "initial", "type":
         "diagnostic_medical"}, "valid_request": true}}'
     http_version: 
-  recorded_at: Wed, 22 Oct 2014 19:19:14 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 27 Jan 2015 16:48:38 GMT
+recorded_with: VCR 2.9.3

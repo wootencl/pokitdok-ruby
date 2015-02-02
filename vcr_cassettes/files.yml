@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:5002/api/v4/files/
+    uri: http://platform.pokitdok.com:443/api/v4/files/
     body:
       encoding: UTF-8
       string: "-------------RubyMultipartPost\r\nContent-Disposition: form-data; name=\"file\";
@@ -54,4 +54,4 @@ http_interactions:
         "name": "stored", "title": "Batch transactions stored for later processing"}]}}'
     http_version: 
   recorded_at: Wed, 22 Oct 2014 19:18:49 GMT
-recorded_with: VCR 2.9.2
+recorded_with: VCR 2.9.3

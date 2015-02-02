@@ -1,0 +1,365 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://platform.pokitdok.com/api/v4/schedule/schedulers/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Unauthorized"
+        }
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:43 GMT
+- request:
+    method: get
+    uri: https://platform.pokitdok.com/api/v4/schedule/appointmenttypes/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Unauthorized"
+        }
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:44 GMT
+- request:
+    method: get
+    uri: https://platform.pokitdok.com/api/v4/schedule/appointments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:44 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '325'
+      Connection:
+      - keep-alive
+      Location:
+      - https://platform.pokitdok.com/api/v4/schedule/appointments/
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: |-
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <title>Redirecting...</title>
+        <h1>Redirecting...</h1>
+        <p>You should be redirected automatically to target URL: <a href="https://platform.pokitdok.com/api/v4/schedule/appointments/">https://platform.pokitdok.com/api/v4/schedule/appointments/</a>.  If not click the link.
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:45 GMT
+- request:
+    method: get
+    uri: https://platform.pokitdok.com/api/v4/schedule/appointments/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Unauthorized"
+        }
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:45 GMT
+- request:
+    method: get
+    uri: https://platform.pokitdok.com/api/v4/schedule/appointmenttypes/?id=1234567
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Unauthorized"
+        }
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:46 GMT
+- request:
+    method: get
+    uri: https://platform.pokitdok.com/api/v4/schedule/schedulers/?id=1234567
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '31'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Unauthorized"
+        }
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:46 GMT
+- request:
+    method: put
+    uri: https://platform.pokitdok.com/api/v4/schedule/appointments/
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 405
+      message: METHOD NOT ALLOWED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:47 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '178'
+      Connection:
+      - keep-alive
+      Allow:
+      - HEAD, OPTIONS, GET
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <title>405 Method Not Allowed</title>
+        <h1>Method Not Allowed</h1>
+        <p>The method is not allowed for the requested URL.</p>
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:47 GMT
+- request:
+    method: delete
+    uri: https://platform.pokitdok.com/api/v4/schedule/appointments/
+    body:
+      encoding: UTF-8
+      string: '{"id":"123456"}'
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 405
+      message: METHOD NOT ALLOWED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 23:21:48 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '178'
+      Connection:
+      - keep-alive
+      Allow:
+      - HEAD, OPTIONS, GET
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <title>405 Method Not Allowed</title>
+        <h1>Method Not Allowed</h1>
+        <p>The method is not allowed for the requested URL.</p>
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 23:21:48 GMT
+- request:
+    method: post
+    uri: https://platform.pokitdok.com/api/v4/schedule/appointments/
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 405
+      message: METHOD NOT ALLOWED
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 02 Feb 2015 17:17:45 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '178'
+      Connection:
+      - keep-alive
+      Allow:
+      - HEAD, OPTIONS, GET
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <title>405 Method Not Allowed</title>
+        <h1>Method Not Allowed</h1>
+        <p>The method is not allowed for the requested URL.</p>
+    http_version: 
+  recorded_at: Mon, 02 Feb 2015 17:17:45 GMT
+recorded_with: VCR 2.9.3

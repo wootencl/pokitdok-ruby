@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/plans/
+    uri: https://platform.pokitdok.com/api/v4/plans/
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,114 +20,666 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 16:48:33 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Content-Length:
-      - '7489'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Server:
-      - Werkzeug/0.9.4 Python/2.7.3
-      Date:
-      - Wed, 22 Oct 2014 19:18:48 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 1, "rate_limit_reset": 1414009128, "application_mode":
-        "test", "processing_time": 18, "rate_limit_cap": 8434, "credits_remaining":
-        13445, "activity_id": "5448031856c02c4478b7da95", "credits_billed": 1}, "data":
-        [{"plan_type": "PPO", "county": "APACHE", "trading_partner_id": "aetna", "plan_id":
-        "84251AZ0070001", "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0},
-        "state": "AZ", "customer_service_phone": "1-855-586-6957", "premiums": [{"age":
-        21, "cost": 176.0, "adults": 1, "children": 0}, {"age": 27, "cost": 185.0,
-        "adults": 1, "children": 0}, {"age": 30, "cost": 200.0, "adults": 1, "children":
-        0}, {"age": 40, "cost": 225.0, "adults": 1, "children": 0}, {"age": 50, "cost":
-        314.0, "adults": 1, "children": 0}, {"age": 60, "cost": 478.0, "adults": 1,
-        "children": 0}, {"age": 21, "cost": 288.0, "adults": 1, "children": 1}, {"age":
-        30, "cost": 312.0, "adults": 1, "children": 1}, {"age": 40, "cost": 337.0,
-        "adults": 1, "children": 1}, {"age": 50, "cost": 426.0, "adults": 1, "children":
-        1}, {"age": 21, "cost": 400.0, "adults": 1, "children": 2}, {"age": 30, "cost":
-        424.0, "adults": 1, "children": 2}, {"age": 40, "cost": 449.0, "adults": 1,
-        "children": 2}, {"age": 50, "cost": 538.0, "adults": 1, "children": 2}, {"age":
-        21, "cost": 512.0, "adults": 1, "children": 3}, {"age": 30, "cost": 536.0,
-        "adults": 1, "children": 3}, {"age": 40, "cost": 561.0, "adults": 1, "children":
-        3}, {"age": 50, "cost": 650.0, "adults": 1, "children": 3}, {"age": 21, "cost":
-        352.0, "adults": 2, "children": 0}, {"age": 30, "cost": 400.0, "adults": 2,
-        "children": 0}, {"age": 40, "cost": 450.0, "adults": 2, "children": 0}, {"age":
-        50, "cost": 628.0, "adults": 2, "children": 0}, {"age": 60, "cost": 956.0,
-        "adults": 2, "children": 0}, {"age": 21, "cost": 464.0, "adults": 2, "children":
-        1}, {"age": 30, "cost": 512.0, "adults": 2, "children": 1}, {"age": 40, "cost":
-        562.0, "adults": 2, "children": 1}, {"age": 50, "cost": 740.0, "adults": 2,
-        "children": 1}, {"age": 21, "cost": 576.0, "adults": 2, "children": 1}, {"age":
-        30, "cost": 624.0, "adults": 2, "children": 1}, {"age": 40, "cost": 674.0,
-        "adults": 2, "children": 1}, {"age": 50, "cost": 852.0, "adults": 2, "children":
-        1}, {"age": 21, "cost": 688.0, "adults": 2, "children": 1}, {"age": 30, "cost":
-        736.0, "adults": 2, "children": 1}, {"age": 40, "cost": 786.0, "adults": 2,
-        "children": 1}, {"age": 50, "cost": 964.0, "adults": 2, "children": 1}], "metallic_level":
-        "bronze", "deductible": {"individual": 5750.0, "family": 11500.0}, "plan_name":
-        "Aetna Advantage 5750 PD", "benefits_summary_url": "http://www.aetna.com/individuals-families-health-insurance/buy-insurance/exchange/az.html"},
-        {"plan_type": "PPO", "county": "ALEUTIANS EAST", "trading_partner_id": "premera_blue_cross",
-        "plan_id": "38344AK0570001", "max_out_of_pocket": {"individual": 5250.0, "family":
-        10500.0}, "state": "AK", "customer_service_phone": "1-800-508-4722", "premiums":
-        [{"age": 21, "cost": 280.0, "adults": 1, "children": 0}, {"age": 27, "cost":
-        294.0, "adults": 1, "children": 0}, {"age": 30, "cost": 318.0, "adults": 1,
-        "children": 0}, {"age": 40, "cost": 358.0, "adults": 1, "children": 0}, {"age":
-        50, "cost": 501.0, "adults": 1, "children": 0}, {"age": 60, "cost": 761.0,
-        "adults": 1, "children": 0}, {"age": 21, "cost": 458.0, "adults": 1, "children":
-        1}, {"age": 30, "cost": 496.0, "adults": 1, "children": 1}, {"age": 40, "cost":
-        536.0, "adults": 1, "children": 1}, {"age": 50, "cost": 679.0, "adults": 1,
-        "children": 1}, {"age": 21, "cost": 636.0, "adults": 1, "children": 2}, {"age":
-        30, "cost": 674.0, "adults": 1, "children": 2}, {"age": 40, "cost": 714.0,
-        "adults": 1, "children": 2}, {"age": 50, "cost": 857.0, "adults": 1, "children":
-        2}, {"age": 21, "cost": 814.0, "adults": 1, "children": 3}, {"age": 30, "cost":
-        852.0, "adults": 1, "children": 3}, {"age": 40, "cost": 892.0, "adults": 1,
-        "children": 3}, {"age": 50, "cost": 1035.0, "adults": 1, "children": 3}, {"age":
-        21, "cost": 560.0, "adults": 2, "children": 0}, {"age": 30, "cost": 636.0,
-        "adults": 2, "children": 0}, {"age": 40, "cost": 716.0, "adults": 2, "children":
-        0}, {"age": 50, "cost": 1002.0, "adults": 2, "children": 0}, {"age": 60, "cost":
-        1522.0, "adults": 2, "children": 0}, {"age": 21, "cost": 738.0, "adults":
-        2, "children": 1}, {"age": 30, "cost": 814.0, "adults": 2, "children": 1},
-        {"age": 40, "cost": 894.0, "adults": 2, "children": 1}, {"age": 50, "cost":
-        1180.0, "adults": 2, "children": 1}, {"age": 21, "cost": 916.0, "adults":
-        2, "children": 1}, {"age": 30, "cost": 992.0, "adults": 2, "children": 1},
-        {"age": 40, "cost": 1072.0, "adults": 2, "children": 1}, {"age": 50, "cost":
-        1358.0, "adults": 2, "children": 1}, {"age": 21, "cost": 1094.0, "adults":
-        2, "children": 1}, {"age": 30, "cost": 1170.0, "adults": 2, "children": 1},
-        {"age": 40, "cost": 1250.0, "adults": 2, "children": 1}, {"age": 50, "cost":
-        1536.0, "adults": 2, "children": 1}], "metallic_level": "bronze", "deductible":
-        {"individual": 5250.0, "family": 10500.0}, "plan_name": "Blue Cross Blue Shield
-        Plus 5250 HSA High, a Multi-State Plan", "benefits_summary_url": "https://www.premera.com/documents/028246.pdf"},
-        {"county": "ABBEVILLE", "premiums": [{"age": 21, "cost": 270.82, "adults":
-        1, "children": 0}, {"age": 27, "cost": 283.82, "adults": 1, "children": 0},
-        {"age": 30, "cost": 307.38, "adults": 1, "children": 0}, {"age": 40, "cost":
-        346.1, "adults": 1, "children": 0}, {"age": 50, "cost": 483.68, "adults":
-        1, "children": 0}, {"age": 60, "cost": 735.0, "adults": 1, "children": 0},
-        {"age": 21, "cost": 442.78, "adults": 1, "children": 1}, {"age": 30, "cost":
-        479.35, "adults": 1, "children": 1}, {"age": 40, "cost": 518.07, "adults":
-        1, "children": 1}, {"age": 50, "cost": 655.65, "adults": 1, "children": 1},
-        {"age": 21, "cost": 614.76, "adults": 1, "children": 2}, {"age": 30, "cost":
-        651.31, "adults": 1, "children": 2}, {"age": 40, "cost": 690.04, "adults":
-        1, "children": 2}, {"age": 50, "cost": 827.62, "adults": 1, "children": 2},
-        {"age": 21, "cost": 786.73, "adults": 1, "children": 3}, {"age": 30, "cost":
-        823.29, "adults": 1, "children": 3}, {"age": 40, "cost": 862.01, "adults":
-        1, "children": 3}, {"age": 50, "cost": 999.58, "adults": 1, "children": 3},
-        {"age": 21, "cost": 541.64, "adults": 2, "children": 0}, {"age": 30, "cost":
-        614.76, "adults": 2, "children": 0}, {"age": 40, "cost": 692.2, "adults":
-        2, "children": 0}, {"age": 50, "cost": 967.36, "adults": 2, "children": 0},
-        {"age": 60, "cost": 1470.0, "adults": 2, "children": 0}, {"age": 21, "cost":
-        713.61, "adults": 2, "children": 1}, {"age": 30, "cost": 786.73, "adults":
-        2, "children": 1}, {"age": 40, "cost": 864.17, "adults": 2, "children": 1},
-        {"age": 50, "cost": 1139.33, "adults": 2, "children": 1}, {"age": 21, "cost":
-        885.57, "adults": 2, "children": 1}, {"age": 30, "cost": 958.7, "adults":
-        2, "children": 1}, {"age": 40, "cost": 1036.14, "adults": 2, "children": 1},
-        {"age": 50, "cost": 1311.3, "adults": 2, "children": 1}, {"age": 21, "cost":
-        1057.55, "adults": 2, "children": 1}, {"age": 30, "cost": 1130.67, "adults":
-        2, "children": 1}, {"age": 40, "cost": 1208.11, "adults": 2, "children": 1},
-        {"age": 50, "cost": 1483.27, "adults": 2, "children": 1}], "plan_id": "26065SC0380001",
-        "trading_partner_id": "blue_cross_blue_shield_sc", "state": "SC", "metallic_level":
-        "gold", "customer_service_phone": "1-800-550-6322", "plan_name": "BlueEssentials
-        Gold 1", "plan_type": "EPO", "benefits_summary_url": "https://www.southcarolinablues.com/links/metallic/SBC"}]}'
+      string: '{"meta": {"rate_limit_amount": 7, "rate_limit_reset": 1422380906, "application_mode":
+        "production", "result_count": 78379, "processing_time": 183, "rate_limit_cap":
+        1000, "credits_remaining": 13494, "next": "https://platform.pokitdok.com/api/v4/plans/?offset=20",
+        "activity_id": "54c7c160948303218b7184bd", "credits_billed": 1}, "data": [{"premiums":
+        [{"age": 21, "cost": 447.57, "adults": 1, "children": 0}, {"age": 27, "cost":
+        469.04, "adults": 1, "children": 0}, {"age": 30, "cost": 507.98, "adults":
+        1, "children": 0}, {"age": 40, "cost": 571.98, "adults": 1, "children": 0},
+        {"age": 50, "cost": 799.34, "adults": 1, "children": 0}, {"age": 60, "cost":
+        1214.68, "adults": 1, "children": 0}, {"age": 21, "cost": 731.77, "adults":
+        1, "children": 1}, {"age": 30, "cost": 792.18, "adults": 1, "children": 1},
+        {"age": 40, "cost": 856.18, "adults": 1, "children": 1}, {"age": 50, "cost":
+        1083.54, "adults": 1, "children": 1}, {"age": 21, "cost": 1015.97, "adults":
+        1, "children": 2}, {"age": 30, "cost": 1076.38, "adults": 1, "children": 2},
+        {"age": 40, "cost": 1140.38, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1367.74, "adults": 1, "children": 2}, {"age": 21, "cost": 1300.16, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1360.58, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1424.58, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1651.94, "adults": 1, "children": 3}, {"age": 21, "cost": 895.14, "adults":
+        2, "children": 0}, {"age": 30, "cost": 1015.96, "adults": 2, "children": 0},
+        {"age": 40, "cost": 1143.96, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1598.68, "adults": 2, "children": 0}, {"age": 60, "cost": 2429.36, "adults":
+        2, "children": 0}, {"age": 21, "cost": 1179.33, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1300.16, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1428.16, "adults": 2, "children": 1}, {"age": 50, "cost": 1882.88, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1463.54, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1584.36, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1712.36, "adults": 2, "children": 1}, {"age": 50, "cost": 2167.08, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1747.73, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1868.56, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1996.56, "adults": 2, "children": 1}, {"age": 50, "cost": 2451.27, "adults":
+        2, "children": 1}], "plan_id": "92045AZ0090001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 3500.0, "family": 7000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-755-2700", "county": "COCONINO", "state":
+        "AZ", "trading_partner_id": "meritus_mutual_health_partners", "metallic_level":
+        "silver", "deductible": {"individual": 3500.0, "family": 7000.0}, "plan_name":
+        "Meritus Secure Silver", "benefits_summary_url": "http://www.meritusaz.com/ppo-summary-of-benefits.html"},
+        {"premiums": [{"age": 21, "cost": 500.45, "adults": 1, "children": 0}, {"age":
+        27, "cost": 524.47, "adults": 1, "children": 0}, {"age": 30, "cost": 568.01,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 639.57, "adults": 1, "children":
+        0}, {"age": 50, "cost": 893.8, "adults": 1, "children": 0}, {"age": 60, "cost":
+        1358.22, "adults": 1, "children": 0}, {"age": 21, "cost": 818.23, "adults":
+        1, "children": 1}, {"age": 30, "cost": 885.79, "adults": 1, "children": 1},
+        {"age": 40, "cost": 957.35, "adults": 1, "children": 1}, {"age": 50, "cost":
+        1211.58, "adults": 1, "children": 1}, {"age": 21, "cost": 1136.01, "adults":
+        1, "children": 2}, {"age": 30, "cost": 1203.57, "adults": 1, "children": 2},
+        {"age": 40, "cost": 1275.13, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1529.36, "adults": 1, "children": 2}, {"age": 21, "cost": 1453.79, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1521.35, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1592.9, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1847.13, "adults": 1, "children": 3}, {"age": 21, "cost": 1000.9, "adults":
+        2, "children": 0}, {"age": 30, "cost": 1136.02, "adults": 2, "children": 0},
+        {"age": 40, "cost": 1279.14, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1787.6, "adults": 2, "children": 0}, {"age": 60, "cost": 2716.44, "adults":
+        2, "children": 0}, {"age": 21, "cost": 1318.67, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1453.8, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1596.92, "adults": 2, "children": 1}, {"age": 50, "cost": 2105.38, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1636.46, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1771.58, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1914.7, "adults": 2, "children": 1}, {"age": 50, "cost": 2423.16, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1954.23, "adults": 2, "children": 1},
+        {"age": 30, "cost": 2089.35, "adults": 2, "children": 1}, {"age": 40, "cost":
+        2232.48, "adults": 2, "children": 1}, {"age": 50, "cost": 2740.93, "adults":
+        2, "children": 1}], "plan_id": "92045AZ0130001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 5500.0, "family": 11000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-755-2700", "county": "COCONINO", "state":
+        "AZ", "trading_partner_id": "meritus_mutual_health_partners", "metallic_level":
+        "gold", "deductible": {"individual": 700.0, "family": 3000.0}, "plan_name":
+        "Meritus Clear Choice Gold", "benefits_summary_url": "http://www.meritusaz.com/ppo-summary-of-benefits.html"},
+        {"premiums": [{"age": 21, "cost": 525.37, "adults": 1, "children": 0}, {"age":
+        27, "cost": 550.59, "adults": 1, "children": 0}, {"age": 30, "cost": 596.29,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 671.42, "adults": 1, "children":
+        0}, {"age": 50, "cost": 938.31, "adults": 1, "children": 0}, {"age": 60, "cost":
+        1425.85, "adults": 1, "children": 0}, {"age": 21, "cost": 858.98, "adults":
+        1, "children": 1}, {"age": 30, "cost": 929.9, "adults": 1, "children": 1},
+        {"age": 40, "cost": 1005.03, "adults": 1, "children": 1}, {"age": 50, "cost":
+        1271.92, "adults": 1, "children": 1}, {"age": 21, "cost": 1192.59, "adults":
+        1, "children": 2}, {"age": 30, "cost": 1263.51, "adults": 1, "children": 2},
+        {"age": 40, "cost": 1338.63, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1605.53, "adults": 1, "children": 2}, {"age": 21, "cost": 1526.2, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1597.12, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1672.25, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1939.13, "adults": 1, "children": 3}, {"age": 21, "cost": 1050.74, "adults":
+        2, "children": 0}, {"age": 30, "cost": 1192.58, "adults": 2, "children": 0},
+        {"age": 40, "cost": 1342.84, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1876.62, "adults": 2, "children": 0}, {"age": 60, "cost": 2851.7, "adults":
+        2, "children": 0}, {"age": 21, "cost": 1384.35, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1526.19, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1676.44, "adults": 2, "children": 1}, {"age": 50, "cost": 2210.23, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1717.96, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1859.8, "adults": 2, "children": 1}, {"age": 40, "cost":
+        2010.06, "adults": 2, "children": 1}, {"age": 50, "cost": 2543.84, "adults":
+        2, "children": 1}, {"age": 21, "cost": 2051.57, "adults": 2, "children": 1},
+        {"age": 30, "cost": 2193.41, "adults": 2, "children": 1}, {"age": 40, "cost":
+        2343.67, "adults": 2, "children": 1}, {"age": 50, "cost": 2877.45, "adults":
+        2, "children": 1}], "plan_id": "92045AZ0140001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 2000.0, "family": 4000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-755-2700", "county": "COCONINO", "state":
+        "AZ", "trading_partner_id": "meritus_mutual_health_partners", "metallic_level":
+        "gold", "deductible": {"individual": 2000.0, "family": 4000.0}, "plan_name":
+        "Meritus Smart Choice Gold", "benefits_summary_url": "http://www.meritusaz.com/ppo-summary-of-benefits.html"},
+        {"premiums": [{"age": 21, "cost": 424.76, "adults": 1, "children": 0}, {"age":
+        27, "cost": 445.14, "adults": 1, "children": 0}, {"age": 30, "cost": 482.09,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 542.83, "adults": 1, "children":
+        0}, {"age": 50, "cost": 758.61, "adults": 1, "children": 0}, {"age": 60, "cost":
+        1152.78, "adults": 1, "children": 0}, {"age": 21, "cost": 694.48, "adults":
+        1, "children": 1}, {"age": 30, "cost": 751.81, "adults": 1, "children": 1},
+        {"age": 40, "cost": 812.55, "adults": 1, "children": 1}, {"age": 50, "cost":
+        1028.33, "adults": 1, "children": 1}, {"age": 21, "cost": 964.2, "adults":
+        1, "children": 2}, {"age": 30, "cost": 1021.53, "adults": 1, "children": 2},
+        {"age": 40, "cost": 1082.27, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1298.05, "adults": 1, "children": 2}, {"age": 21, "cost": 1233.92, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1291.25, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1351.99, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1567.77, "adults": 1, "children": 3}, {"age": 21, "cost": 849.52, "adults":
+        2, "children": 0}, {"age": 30, "cost": 964.18, "adults": 2, "children": 0},
+        {"age": 40, "cost": 1085.66, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1517.22, "adults": 2, "children": 0}, {"age": 60, "cost": 2305.56, "adults":
+        2, "children": 0}, {"age": 21, "cost": 1119.24, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1233.9, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1355.38, "adults": 2, "children": 1}, {"age": 50, "cost": 1786.94, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1388.96, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1503.62, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1625.1, "adults": 2, "children": 1}, {"age": 50, "cost": 2056.66, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1658.68, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1773.34, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1894.82, "adults": 2, "children": 1}, {"age": 50, "cost": 2326.38, "adults":
+        2, "children": 1}], "plan_id": "92045AZ0250001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-755-2700", "county": "COCONINO", "state":
+        "AZ", "trading_partner_id": "meritus_mutual_health_partners", "metallic_level":
+        "silver", "deductible": {"individual": 4500.0, "family": 9000.0}, "plan_name":
+        "Meritus Affordable Silver", "benefits_summary_url": "http://www.meritusaz.com/ppo-summary-of-benefits.html"},
+        {"premiums": [{"age": 21, "cost": 258.27, "adults": 1, "children": 0}, {"age":
+        27, "cost": 270.67, "adults": 1, "children": 0}, {"age": 30, "cost": 293.14,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 330.08, "adults": 1, "children":
+        0}, {"age": 50, "cost": 461.28, "adults": 1, "children": 0}, {"age": 60, "cost":
+        700.96, "adults": 1, "children": 0}, {"age": 21, "cost": 422.28, "adults":
+        1, "children": 1}, {"age": 30, "cost": 457.15, "adults": 1, "children": 1},
+        {"age": 40, "cost": 494.09, "adults": 1, "children": 1}, {"age": 50, "cost":
+        625.29, "adults": 1, "children": 1}, {"age": 21, "cost": 586.29, "adults":
+        1, "children": 2}, {"age": 30, "cost": 621.16, "adults": 1, "children": 2},
+        {"age": 40, "cost": 658.09, "adults": 1, "children": 2}, {"age": 50, "cost":
+        789.3, "adults": 1, "children": 2}, {"age": 21, "cost": 750.31, "adults":
+        1, "children": 3}, {"age": 30, "cost": 785.17, "adults": 1, "children": 3},
+        {"age": 40, "cost": 822.1, "adults": 1, "children": 3}, {"age": 50, "cost":
+        953.31, "adults": 1, "children": 3}, {"age": 21, "cost": 516.55, "adults":
+        2, "children": 0}, {"age": 30, "cost": 586.28, "adults": 2, "children": 0},
+        {"age": 40, "cost": 660.16, "adults": 2, "children": 0}, {"age": 50, "cost":
+        922.56, "adults": 2, "children": 0}, {"age": 60, "cost": 1401.92, "adults":
+        2, "children": 0}, {"age": 21, "cost": 680.56, "adults": 2, "children": 1},
+        {"age": 30, "cost": 750.29, "adults": 2, "children": 1}, {"age": 40, "cost":
+        824.17, "adults": 2, "children": 1}, {"age": 50, "cost": 1086.57, "adults":
+        2, "children": 1}, {"age": 21, "cost": 844.57, "adults": 2, "children": 1},
+        {"age": 30, "cost": 914.3, "adults": 2, "children": 1}, {"age": 40, "cost":
+        988.18, "adults": 2, "children": 1}, {"age": 50, "cost": 1250.58, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1008.58, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1078.31, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1152.19, "adults": 2, "children": 1}, {"age": 50, "cost": 1414.59, "adults":
+        2, "children": 1}], "plan_id": "51485AZ0170001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 1500.0, "family": 3000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-288-9085", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "health_net_life_insurance_company", "metallic_level":
+        "platinum", "deductible": {"individual": 1000.0, "family": 2000.0}, "plan_name":
+        "Health Net  PPO Platinum $15/$30/$1000", "benefits_summary_url": "https://www.healthnet.com/static/general/unprotected/pdfs/az/ifp/az_ifp_ppo_platinum_15_30_1000_ped_sbc_iex.pdf"},
+        {"premiums": [{"age": 21, "cost": 255.92, "adults": 1, "children": 0}, {"age":
+        27, "cost": 268.2, "adults": 1, "children": 0}, {"age": 30, "cost": 290.47,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 327.06, "adults": 1, "children":
+        0}, {"age": 50, "cost": 457.07, "adults": 1, "children": 0}, {"age": 60, "cost":
+        694.56, "adults": 1, "children": 0}, {"age": 21, "cost": 418.42, "adults":
+        1, "children": 1}, {"age": 30, "cost": 452.98, "adults": 1, "children": 1},
+        {"age": 40, "cost": 489.57, "adults": 1, "children": 1}, {"age": 50, "cost":
+        619.57, "adults": 1, "children": 1}, {"age": 21, "cost": 580.93, "adults":
+        1, "children": 2}, {"age": 30, "cost": 615.49, "adults": 1, "children": 2},
+        {"age": 40, "cost": 652.07, "adults": 1, "children": 2}, {"age": 50, "cost":
+        782.08, "adults": 1, "children": 2}, {"age": 21, "cost": 743.44, "adults":
+        1, "children": 3}, {"age": 30, "cost": 778.0, "adults": 1, "children": 3},
+        {"age": 40, "cost": 814.58, "adults": 1, "children": 3}, {"age": 50, "cost":
+        944.59, "adults": 1, "children": 3}, {"age": 21, "cost": 511.84, "adults":
+        2, "children": 0}, {"age": 30, "cost": 580.94, "adults": 2, "children": 0},
+        {"age": 40, "cost": 654.12, "adults": 2, "children": 0}, {"age": 50, "cost":
+        914.14, "adults": 2, "children": 0}, {"age": 60, "cost": 1389.12, "adults":
+        2, "children": 0}, {"age": 21, "cost": 674.34, "adults": 2, "children": 1},
+        {"age": 30, "cost": 743.45, "adults": 2, "children": 1}, {"age": 40, "cost":
+        816.63, "adults": 2, "children": 1}, {"age": 50, "cost": 1076.65, "adults":
+        2, "children": 1}, {"age": 21, "cost": 836.85, "adults": 2, "children": 1},
+        {"age": 30, "cost": 905.96, "adults": 2, "children": 1}, {"age": 40, "cost":
+        979.14, "adults": 2, "children": 1}, {"age": 50, "cost": 1239.15, "adults":
+        2, "children": 1}, {"age": 21, "cost": 999.36, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1068.47, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1141.65, "adults": 2, "children": 1}, {"age": 50, "cost": 1401.67, "adults":
+        2, "children": 1}], "plan_id": "51485AZ0170003", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 1750.0, "family": 3500.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-288-9085", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "health_net_life_insurance_company", "metallic_level":
+        "platinum", "deductible": {"individual": 500.0, "family": 1000.0}, "plan_name":
+        "Health Net  PPO Platinum $15/$30/$500", "benefits_summary_url": "https://www.healthnet.com/static/general/unprotected/pdfs/az/ifp/az_ifp_ppo_platinum_15_30_500_ped_sbc_iex.pdf"},
+        {"premiums": [{"age": 21, "cost": 237.25, "adults": 1, "children": 0}, {"age":
+        27, "cost": 248.63, "adults": 1, "children": 0}, {"age": 30, "cost": 269.27,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 303.2, "adults": 1, "children":
+        0}, {"age": 50, "cost": 423.72, "adults": 1, "children": 0}, {"age": 60, "cost":
+        643.89, "adults": 1, "children": 0}, {"age": 21, "cost": 387.9, "adults":
+        1, "children": 1}, {"age": 30, "cost": 419.91, "adults": 1, "children": 1},
+        {"age": 40, "cost": 453.85, "adults": 1, "children": 1}, {"age": 50, "cost":
+        574.37, "adults": 1, "children": 1}, {"age": 21, "cost": 538.54, "adults":
+        1, "children": 2}, {"age": 30, "cost": 570.56, "adults": 1, "children": 2},
+        {"age": 40, "cost": 604.5, "adults": 1, "children": 2}, {"age": 50, "cost":
+        725.02, "adults": 1, "children": 2}, {"age": 21, "cost": 689.2, "adults":
+        1, "children": 3}, {"age": 30, "cost": 721.22, "adults": 1, "children": 3},
+        {"age": 40, "cost": 755.15, "adults": 1, "children": 3}, {"age": 50, "cost":
+        875.67, "adults": 1, "children": 3}, {"age": 21, "cost": 474.5, "adults":
+        2, "children": 0}, {"age": 30, "cost": 538.54, "adults": 2, "children": 0},
+        {"age": 40, "cost": 606.4, "adults": 2, "children": 0}, {"age": 50, "cost":
+        847.44, "adults": 2, "children": 0}, {"age": 60, "cost": 1287.78, "adults":
+        2, "children": 0}, {"age": 21, "cost": 625.15, "adults": 2, "children": 1},
+        {"age": 30, "cost": 689.18, "adults": 2, "children": 1}, {"age": 40, "cost":
+        757.05, "adults": 2, "children": 1}, {"age": 50, "cost": 998.09, "adults":
+        2, "children": 1}, {"age": 21, "cost": 775.8, "adults": 2, "children": 1},
+        {"age": 30, "cost": 839.83, "adults": 2, "children": 1}, {"age": 40, "cost":
+        907.7, "adults": 2, "children": 1}, {"age": 50, "cost": 1148.74, "adults":
+        2, "children": 1}, {"age": 21, "cost": 926.45, "adults": 2, "children": 1},
+        {"age": 30, "cost": 990.49, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1058.34, "adults": 2, "children": 1}, {"age": 50, "cost": 1299.39, "adults":
+        2, "children": 1}], "plan_id": "51485AZ0170008", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 1250.0, "family": 2500.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-288-9085", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "health_net_life_insurance_company", "metallic_level":
+        "platinum", "deductible": {"individual": 750.0, "family": 1500.0}, "plan_name":
+        "Health Net PPO Platinum $15/$30/$750", "benefits_summary_url": "https://www.healthnet.com/static/general/unprotected/pdfs/az/ifp/az_ifp_ppo_platinum_15_30_750_sbc_iex.pdf"},
+        {"premiums": [{"age": 21, "cost": 195.64, "adults": 1, "children": 0}, {"age":
+        27, "cost": 205.03, "adults": 1, "children": 0}, {"age": 30, "cost": 222.05,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 250.03, "adults": 1, "children":
+        0}, {"age": 50, "cost": 349.41, "adults": 1, "children": 0}, {"age": 60, "cost":
+        530.96, "adults": 1, "children": 0}, {"age": 21, "cost": 319.87, "adults":
+        1, "children": 1}, {"age": 30, "cost": 346.28, "adults": 1, "children": 1},
+        {"age": 40, "cost": 374.26, "adults": 1, "children": 1}, {"age": 50, "cost":
+        473.64, "adults": 1, "children": 1}, {"age": 21, "cost": 444.1, "adults":
+        1, "children": 2}, {"age": 30, "cost": 470.51, "adults": 1, "children": 2},
+        {"age": 40, "cost": 498.49, "adults": 1, "children": 2}, {"age": 50, "cost":
+        597.87, "adults": 1, "children": 2}, {"age": 21, "cost": 568.32, "adults":
+        1, "children": 3}, {"age": 30, "cost": 594.74, "adults": 1, "children": 3},
+        {"age": 40, "cost": 622.72, "adults": 1, "children": 3}, {"age": 50, "cost":
+        722.1, "adults": 1, "children": 3}, {"age": 21, "cost": 391.28, "adults":
+        2, "children": 0}, {"age": 30, "cost": 444.1, "adults": 2, "children": 0},
+        {"age": 40, "cost": 500.06, "adults": 2, "children": 0}, {"age": 50, "cost":
+        698.82, "adults": 2, "children": 0}, {"age": 60, "cost": 1061.92, "adults":
+        2, "children": 0}, {"age": 21, "cost": 515.51, "adults": 2, "children": 1},
+        {"age": 30, "cost": 568.33, "adults": 2, "children": 1}, {"age": 40, "cost":
+        624.29, "adults": 2, "children": 1}, {"age": 50, "cost": 823.05, "adults":
+        2, "children": 1}, {"age": 21, "cost": 639.74, "adults": 2, "children": 1},
+        {"age": 30, "cost": 692.56, "adults": 2, "children": 1}, {"age": 40, "cost":
+        748.52, "adults": 2, "children": 1}, {"age": 50, "cost": 947.28, "adults":
+        2, "children": 1}, {"age": 21, "cost": 763.97, "adults": 2, "children": 1},
+        {"age": 30, "cost": 816.79, "adults": 2, "children": 1}, {"age": 40, "cost":
+        872.75, "adults": 2, "children": 1}, {"age": 50, "cost": 1071.51, "adults":
+        2, "children": 1}], "plan_id": "53901AZ0530004", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-475-4771", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "blue_cross_blue_shield_az", "metallic_level":
+        "bronze", "deductible": {"individual": 6000.0, "family": 12000.0}, "plan_name":
+        "EverydayHealth 6000", "benefits_summary_url": "http://www.azblue.com/plans/EverydayHealth6000"},
+        {"premiums": [{"age": 21, "cost": 236.33, "adults": 1, "children": 0}, {"age":
+        27, "cost": 247.67, "adults": 1, "children": 0}, {"age": 30, "cost": 268.23,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 302.02, "adults": 1, "children":
+        0}, {"age": 50, "cost": 422.08, "adults": 1, "children": 0}, {"age": 60, "cost":
+        641.39, "adults": 1, "children": 0}, {"age": 21, "cost": 386.4, "adults":
+        1, "children": 1}, {"age": 30, "cost": 418.3, "adults": 1, "children": 1},
+        {"age": 40, "cost": 452.09, "adults": 1, "children": 1}, {"age": 50, "cost":
+        572.15, "adults": 1, "children": 1}, {"age": 21, "cost": 536.47, "adults":
+        1, "children": 2}, {"age": 30, "cost": 568.37, "adults": 1, "children": 2},
+        {"age": 40, "cost": 602.16, "adults": 1, "children": 2}, {"age": 50, "cost":
+        722.22, "adults": 1, "children": 2}, {"age": 21, "cost": 686.54, "adults":
+        1, "children": 3}, {"age": 30, "cost": 718.44, "adults": 1, "children": 3},
+        {"age": 40, "cost": 752.24, "adults": 1, "children": 3}, {"age": 50, "cost":
+        872.29, "adults": 1, "children": 3}, {"age": 21, "cost": 472.66, "adults":
+        2, "children": 0}, {"age": 30, "cost": 536.46, "adults": 2, "children": 0},
+        {"age": 40, "cost": 604.05, "adults": 2, "children": 0}, {"age": 50, "cost":
+        844.16, "adults": 2, "children": 0}, {"age": 60, "cost": 1282.78, "adults":
+        2, "children": 0}, {"age": 21, "cost": 622.73, "adults": 2, "children": 1},
+        {"age": 30, "cost": 686.53, "adults": 2, "children": 1}, {"age": 40, "cost":
+        754.12, "adults": 2, "children": 1}, {"age": 50, "cost": 994.23, "adults":
+        2, "children": 1}, {"age": 21, "cost": 772.8, "adults": 2, "children": 1},
+        {"age": 30, "cost": 836.6, "adults": 2, "children": 1}, {"age": 40, "cost":
+        904.19, "adults": 2, "children": 1}, {"age": 50, "cost": 1144.3, "adults":
+        2, "children": 1}, {"age": 21, "cost": 922.87, "adults": 2, "children": 1},
+        {"age": 30, "cost": 986.67, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1054.27, "adults": 2, "children": 1}, {"age": 50, "cost": 1294.36, "adults":
+        2, "children": 1}], "plan_id": "53901AZ0550002", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-475-4771", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "blue_cross_blue_shield_az", "metallic_level":
+        "silver", "deductible": {"individual": 3000.0, "family": 6000.0}, "plan_name":
+        "FitRewards 3000", "benefits_summary_url": "http://www.azblue.com/plans/FitRewards3000"},
+        {"premiums": [{"age": 21, "cost": 307.18, "adults": 1, "children": 0}, {"age":
+        27, "cost": 321.93, "adults": 1, "children": 0}, {"age": 30, "cost": 348.65,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 392.58, "adults": 1, "children":
+        0}, {"age": 50, "cost": 548.63, "adults": 1, "children": 0}, {"age": 60, "cost":
+        833.69, "adults": 1, "children": 0}, {"age": 21, "cost": 502.24, "adults":
+        1, "children": 1}, {"age": 30, "cost": 543.71, "adults": 1, "children": 1},
+        {"age": 40, "cost": 587.64, "adults": 1, "children": 1}, {"age": 50, "cost":
+        743.69, "adults": 1, "children": 1}, {"age": 21, "cost": 697.3, "adults":
+        1, "children": 2}, {"age": 30, "cost": 738.77, "adults": 1, "children": 2},
+        {"age": 40, "cost": 782.7, "adults": 1, "children": 2}, {"age": 50, "cost":
+        938.75, "adults": 1, "children": 2}, {"age": 21, "cost": 892.36, "adults":
+        1, "children": 3}, {"age": 30, "cost": 933.83, "adults": 1, "children": 3},
+        {"age": 40, "cost": 977.76, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1133.81, "adults": 1, "children": 3}, {"age": 21, "cost": 614.36, "adults":
+        2, "children": 0}, {"age": 30, "cost": 697.3, "adults": 2, "children": 0},
+        {"age": 40, "cost": 785.16, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1097.26, "adults": 2, "children": 0}, {"age": 60, "cost": 1667.38, "adults":
+        2, "children": 0}, {"age": 21, "cost": 809.42, "adults": 2, "children": 1},
+        {"age": 30, "cost": 892.35, "adults": 2, "children": 1}, {"age": 40, "cost":
+        980.22, "adults": 2, "children": 1}, {"age": 50, "cost": 1292.32, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1004.48, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1087.42, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1175.28, "adults": 2, "children": 1}, {"age": 50, "cost": 1487.38, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1199.54, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1282.48, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1370.34, "adults": 2, "children": 1}, {"age": 50, "cost": 1682.44, "adults":
+        2, "children": 1}], "plan_id": "53901AZ0580001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-475-4771", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "blue_cross_blue_shield_az", "metallic_level":
+        "gold", "deductible": {"individual": 0.0, "family": 0.0}, "plan_name": "CopayComplete
+        20", "benefits_summary_url": "http://www.azblue.com/plans/CopayComplete20"},
+        {"premiums": [{"age": 21, "cost": 192.04, "adults": 1, "children": 0}, {"age":
+        27, "cost": 201.25, "adults": 1, "children": 0}, {"age": 30, "cost": 217.96,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 245.42, "adults": 1, "children":
+        0}, {"age": 50, "cost": 342.97, "adults": 1, "children": 0}, {"age": 60, "cost":
+        521.17, "adults": 1, "children": 0}, {"age": 21, "cost": 313.99, "adults":
+        1, "children": 1}, {"age": 30, "cost": 339.91, "adults": 1, "children": 1},
+        {"age": 40, "cost": 367.37, "adults": 1, "children": 1}, {"age": 50, "cost":
+        464.92, "adults": 1, "children": 1}, {"age": 21, "cost": 435.94, "adults":
+        1, "children": 2}, {"age": 30, "cost": 461.86, "adults": 1, "children": 2},
+        {"age": 40, "cost": 489.32, "adults": 1, "children": 2}, {"age": 50, "cost":
+        586.87, "adults": 1, "children": 2}, {"age": 21, "cost": 557.89, "adults":
+        1, "children": 3}, {"age": 30, "cost": 583.81, "adults": 1, "children": 3},
+        {"age": 40, "cost": 611.27, "adults": 1, "children": 3}, {"age": 50, "cost":
+        708.82, "adults": 1, "children": 3}, {"age": 21, "cost": 384.08, "adults":
+        2, "children": 0}, {"age": 30, "cost": 435.92, "adults": 2, "children": 0},
+        {"age": 40, "cost": 490.84, "adults": 2, "children": 0}, {"age": 50, "cost":
+        685.94, "adults": 2, "children": 0}, {"age": 60, "cost": 1042.35, "adults":
+        2, "children": 0}, {"age": 21, "cost": 506.03, "adults": 2, "children": 1},
+        {"age": 30, "cost": 557.87, "adults": 2, "children": 1}, {"age": 40, "cost":
+        612.79, "adults": 2, "children": 1}, {"age": 50, "cost": 807.89, "adults":
+        2, "children": 1}, {"age": 21, "cost": 627.98, "adults": 2, "children": 1},
+        {"age": 30, "cost": 679.82, "adults": 2, "children": 1}, {"age": 40, "cost":
+        734.74, "adults": 2, "children": 1}, {"age": 50, "cost": 929.84, "adults":
+        2, "children": 1}, {"age": 21, "cost": 749.93, "adults": 2, "children": 1},
+        {"age": 30, "cost": 801.77, "adults": 2, "children": 1}, {"age": 40, "cost":
+        856.69, "adults": 2, "children": 1}, {"age": 50, "cost": 1051.79, "adults":
+        2, "children": 1}], "plan_id": "53901AZ0740003", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-475-4771", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "blue_cross_blue_shield_az", "metallic_level":
+        "silver", "deductible": {"individual": 4000.0, "family": 8000.0}, "plan_name":
+        "EverydayHealth Select (Maricopa) 4000", "benefits_summary_url": "http://www.azblue.com/plans/EverydayHealthSelect4000"},
+        {"premiums": [{"age": 21, "cost": 199.41, "adults": 1, "children": 0}, {"age":
+        27, "cost": 208.98, "adults": 1, "children": 0}, {"age": 30, "cost": 226.33,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 254.84, "adults": 1, "children":
+        0}, {"age": 50, "cost": 356.14, "adults": 1, "children": 0}, {"age": 60, "cost":
+        541.19, "adults": 1, "children": 0}, {"age": 21, "cost": 326.02, "adults":
+        1, "children": 1}, {"age": 30, "cost": 352.95, "adults": 1, "children": 1},
+        {"age": 40, "cost": 381.46, "adults": 1, "children": 1}, {"age": 50, "cost":
+        482.76, "adults": 1, "children": 1}, {"age": 21, "cost": 452.65, "adults":
+        1, "children": 2}, {"age": 30, "cost": 479.57, "adults": 1, "children": 2},
+        {"age": 40, "cost": 508.08, "adults": 1, "children": 2}, {"age": 50, "cost":
+        609.38, "adults": 1, "children": 2}, {"age": 21, "cost": 579.27, "adults":
+        1, "children": 3}, {"age": 30, "cost": 606.19, "adults": 1, "children": 3},
+        {"age": 40, "cost": 634.7, "adults": 1, "children": 3}, {"age": 50, "cost":
+        736.0, "adults": 1, "children": 3}, {"age": 21, "cost": 398.82, "adults":
+        2, "children": 0}, {"age": 30, "cost": 452.66, "adults": 2, "children": 0},
+        {"age": 40, "cost": 509.68, "adults": 2, "children": 0}, {"age": 50, "cost":
+        712.28, "adults": 2, "children": 0}, {"age": 60, "cost": 1082.38, "adults":
+        2, "children": 0}, {"age": 21, "cost": 525.44, "adults": 2, "children": 1},
+        {"age": 30, "cost": 579.28, "adults": 2, "children": 1}, {"age": 40, "cost":
+        636.29, "adults": 2, "children": 1}, {"age": 50, "cost": 838.9, "adults":
+        2, "children": 1}, {"age": 21, "cost": 652.05, "adults": 2, "children": 1},
+        {"age": 30, "cost": 705.9, "adults": 2, "children": 1}, {"age": 40, "cost":
+        762.92, "adults": 2, "children": 1}, {"age": 50, "cost": 965.52, "adults":
+        2, "children": 1}, {"age": 21, "cost": 778.68, "adults": 2, "children": 1},
+        {"age": 30, "cost": 832.52, "adults": 2, "children": 1}, {"age": 40, "cost":
+        889.54, "adults": 2, "children": 1}, {"age": 50, "cost": 1092.13, "adults":
+        2, "children": 1}], "plan_id": "70239AZ0010019", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 5500.0, "family": 11000.0}, "plan_type":
+        "HMO", "customer_service_phone": "1-855-452-4242", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "health_choice_insurance", "metallic_level": "silver",
+        "deductible": {"individual": 1500.0, "family": 3000.0}, "plan_name": "Health
+        Choice Essential Silver", "benefits_summary_url": "http://www.healthchoiceessential.com/members/member_benefits"},
+        {"premiums": [{"age": 21, "cost": 124.0, "adults": 1, "children": 0}, {"age":
+        27, "cost": 130.0, "adults": 1, "children": 0}, {"age": 30, "cost": 140.0,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 158.0, "adults": 1, "children":
+        0}, {"age": 50, "cost": 221.0, "adults": 1, "children": 0}, {"age": 60, "cost":
+        336.0, "adults": 1, "children": 0}, {"age": 21, "cost": 203.0, "adults": 1,
+        "children": 1}, {"age": 30, "cost": 219.0, "adults": 1, "children": 1}, {"age":
+        40, "cost": 237.0, "adults": 1, "children": 1}, {"age": 50, "cost": 300.0,
+        "adults": 1, "children": 1}, {"age": 21, "cost": 282.0, "adults": 1, "children":
+        2}, {"age": 30, "cost": 298.0, "adults": 1, "children": 2}, {"age": 40, "cost":
+        316.0, "adults": 1, "children": 2}, {"age": 50, "cost": 379.0, "adults": 1,
+        "children": 2}, {"age": 21, "cost": 361.0, "adults": 1, "children": 3}, {"age":
+        30, "cost": 377.0, "adults": 1, "children": 3}, {"age": 40, "cost": 395.0,
+        "adults": 1, "children": 3}, {"age": 50, "cost": 458.0, "adults": 1, "children":
+        3}, {"age": 21, "cost": 248.0, "adults": 2, "children": 0}, {"age": 30, "cost":
+        280.0, "adults": 2, "children": 0}, {"age": 40, "cost": 316.0, "adults": 2,
+        "children": 0}, {"age": 50, "cost": 442.0, "adults": 2, "children": 0}, {"age":
+        60, "cost": 672.0, "adults": 2, "children": 0}, {"age": 21, "cost": 327.0,
+        "adults": 2, "children": 1}, {"age": 30, "cost": 359.0, "adults": 2, "children":
+        1}, {"age": 40, "cost": 395.0, "adults": 2, "children": 1}, {"age": 50, "cost":
+        521.0, "adults": 2, "children": 1}, {"age": 21, "cost": 406.0, "adults": 2,
+        "children": 1}, {"age": 30, "cost": 438.0, "adults": 2, "children": 1}, {"age":
+        40, "cost": 474.0, "adults": 2, "children": 1}, {"age": 50, "cost": 600.0,
+        "adults": 2, "children": 1}, {"age": 21, "cost": 485.0, "adults": 2, "children":
+        1}, {"age": 30, "cost": 517.0, "adults": 2, "children": 1}, {"age": 40, "cost":
+        553.0, "adults": 2, "children": 1}, {"age": 50, "cost": 679.0, "adults": 2,
+        "children": 1}], "plan_id": "84251AZ0070005", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 6350.0, "family": 12700.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-855-586-6957", "county": "GILA", "state": "AZ", "trading_partner_id": "aetna",
+        "metallic_level": "catastrophic", "deductible": {"individual": 6350.0, "family":
+        12700.0}, "plan_name": "Aetna Basic", "benefits_summary_url": "http://www.aetna.com/individuals-families-health-insurance/buy-insurance/exchange/az.html"},
+        {"premiums": [{"age": 21, "cost": 284.17, "adults": 1, "children": 0}, {"age":
+        27, "cost": 297.81, "adults": 1, "children": 0}, {"age": 30, "cost": 322.52,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 363.17, "adults": 1, "children":
+        0}, {"age": 50, "cost": 507.53, "adults": 1, "children": 0}, {"age": 60, "cost":
+        771.24, "adults": 1, "children": 0}, {"age": 21, "cost": 464.62, "adults":
+        1, "children": 1}, {"age": 30, "cost": 502.97, "adults": 1, "children": 1},
+        {"age": 40, "cost": 543.62, "adults": 1, "children": 1}, {"age": 50, "cost":
+        687.98, "adults": 1, "children": 1}, {"age": 21, "cost": 645.06, "adults":
+        1, "children": 2}, {"age": 30, "cost": 683.43, "adults": 1, "children": 2},
+        {"age": 40, "cost": 724.06, "adults": 1, "children": 2}, {"age": 50, "cost":
+        868.43, "adults": 1, "children": 2}, {"age": 21, "cost": 825.52, "adults":
+        1, "children": 3}, {"age": 30, "cost": 863.87, "adults": 1, "children": 3},
+        {"age": 40, "cost": 904.52, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1048.87, "adults": 1, "children": 3}, {"age": 21, "cost": 568.34, "adults":
+        2, "children": 0}, {"age": 30, "cost": 645.05, "adults": 2, "children": 0},
+        {"age": 40, "cost": 726.34, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1015.06, "adults": 2, "children": 0}, {"age": 60, "cost": 1542.48, "adults":
+        2, "children": 0}, {"age": 21, "cost": 748.79, "adults": 2, "children": 1},
+        {"age": 30, "cost": 825.51, "adults": 2, "children": 1}, {"age": 40, "cost":
+        906.79, "adults": 2, "children": 1}, {"age": 50, "cost": 1195.51, "adults":
+        2, "children": 1}, {"age": 21, "cost": 929.24, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1005.95, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1087.24, "adults": 2, "children": 1}, {"age": 50, "cost": 1375.96, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1109.69, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1186.4, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1267.69, "adults": 2, "children": 1}, {"age": 50, "cost": 1556.4, "adults":
+        2, "children": 1}], "plan_id": "86830AZ0040005", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-900-1237", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "cigna", "metallic_level": "silver", "deductible":
+        {"individual": 1500.0, "family": 3000.0}, "plan_name": "myCigna Health Flex
+        1500", "benefits_summary_url": "http://www.cigna.com/individuals-families/plans/arizona-health-flex-1500"},
+        {"premiums": [{"age": 21, "cost": 346.98, "adults": 1, "children": 0}, {"age":
+        27, "cost": 363.64, "adults": 1, "children": 0}, {"age": 30, "cost": 393.82,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 443.44, "adults": 1, "children":
+        0}, {"age": 50, "cost": 619.71, "adults": 1, "children": 0}, {"age": 60, "cost":
+        941.7, "adults": 1, "children": 0}, {"age": 21, "cost": 567.31, "adults":
+        1, "children": 1}, {"age": 30, "cost": 614.15, "adults": 1, "children": 1},
+        {"age": 40, "cost": 663.77, "adults": 1, "children": 1}, {"age": 50, "cost":
+        840.04, "adults": 1, "children": 1}, {"age": 21, "cost": 787.64, "adults":
+        1, "children": 2}, {"age": 30, "cost": 834.48, "adults": 1, "children": 2},
+        {"age": 40, "cost": 884.1, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1060.37, "adults": 1, "children": 2}, {"age": 21, "cost": 1007.97, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1054.81, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1104.43, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1280.7, "adults": 1, "children": 3}, {"age": 21, "cost": 693.96, "adults":
+        2, "children": 0}, {"age": 30, "cost": 787.64, "adults": 2, "children": 0},
+        {"age": 40, "cost": 886.88, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1239.42, "adults": 2, "children": 0}, {"age": 60, "cost": 1883.4, "adults":
+        2, "children": 0}, {"age": 21, "cost": 914.29, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1007.97, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1107.21, "adults": 2, "children": 1}, {"age": 50, "cost": 1459.75, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1134.62, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1228.3, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1327.54, "adults": 2, "children": 1}, {"age": 50, "cost": 1680.08, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1354.95, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1448.63, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1547.87, "adults": 2, "children": 1}, {"age": 50, "cost": 1900.41, "adults":
+        2, "children": 1}], "plan_id": "86830AZ0040009", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 2500.0, "family": 5000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-900-1237", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "cigna", "metallic_level": "gold", "deductible":
+        {"individual": 1250.0, "family": 2500.0}, "plan_name": "myCigna Health Flex
+        1250", "benefits_summary_url": "http://www.cigna.com/individuals-families/plans/arizona-health-flex-1250"},
+        {"premiums": [{"age": 21, "cost": 357.14, "adults": 1, "children": 0}, {"age":
+        27, "cost": 374.28, "adults": 1, "children": 0}, {"age": 30, "cost": 405.35,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 456.42, "adults": 1, "children":
+        0}, {"age": 50, "cost": 637.84, "adults": 1, "children": 0}, {"age": 60, "cost":
+        969.26, "adults": 1, "children": 0}, {"age": 21, "cost": 583.91, "adults":
+        1, "children": 1}, {"age": 30, "cost": 632.13, "adults": 1, "children": 1},
+        {"age": 40, "cost": 683.2, "adults": 1, "children": 1}, {"age": 50, "cost":
+        864.62, "adults": 1, "children": 1}, {"age": 21, "cost": 810.7, "adults":
+        1, "children": 2}, {"age": 30, "cost": 858.91, "adults": 1, "children": 2},
+        {"age": 40, "cost": 909.98, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1091.4, "adults": 1, "children": 2}, {"age": 21, "cost": 1037.48, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1085.69, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1136.76, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1318.18, "adults": 1, "children": 3}, {"age": 21, "cost": 714.28, "adults":
+        2, "children": 0}, {"age": 30, "cost": 810.7, "adults": 2, "children": 0},
+        {"age": 40, "cost": 912.84, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1275.68, "adults": 2, "children": 0}, {"age": 60, "cost": 1938.52, "adults":
+        2, "children": 0}, {"age": 21, "cost": 941.06, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1037.48, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1139.62, "adults": 2, "children": 1}, {"age": 50, "cost": 1502.46, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1167.83, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1264.26, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1366.4, "adults": 2, "children": 1}, {"age": 50, "cost": 1729.24, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1394.62, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1491.04, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1593.18, "adults": 2, "children": 1}, {"age": 50, "cost": 1956.02, "adults":
+        2, "children": 1}], "plan_id": "92045AZ0100001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-755-2700", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "meritus_mutual_health_partners", "metallic_level":
+        "bronze", "deductible": {"individual": 5400.0, "family": 10800.0}, "plan_name":
+        "Meritus Saver Choice Bronze", "benefits_summary_url": "http://www.meritusaz.com/ppo-summary-of-benefits.html"},
+        {"premiums": [{"age": 21, "cost": 366.05, "adults": 1, "children": 0}, {"age":
+        27, "cost": 383.61, "adults": 1, "children": 0}, {"age": 30, "cost": 415.46,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 467.8, "adults": 1, "children":
+        0}, {"age": 50, "cost": 653.75, "adults": 1, "children": 0}, {"age": 60, "cost":
+        993.43, "adults": 1, "children": 0}, {"age": 21, "cost": 598.49, "adults":
+        1, "children": 1}, {"age": 30, "cost": 647.9, "adults": 1, "children": 1},
+        {"age": 40, "cost": 700.24, "adults": 1, "children": 1}, {"age": 50, "cost":
+        886.19, "adults": 1, "children": 1}, {"age": 21, "cost": 830.93, "adults":
+        1, "children": 2}, {"age": 30, "cost": 880.33, "adults": 1, "children": 2},
+        {"age": 40, "cost": 932.68, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1118.63, "adults": 1, "children": 2}, {"age": 21, "cost": 1063.36, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1112.78, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1165.11, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1351.07, "adults": 1, "children": 3}, {"age": 21, "cost": 732.1, "adults":
+        2, "children": 0}, {"age": 30, "cost": 830.92, "adults": 2, "children": 0},
+        {"age": 40, "cost": 935.6, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1307.5, "adults": 2, "children": 0}, {"age": 60, "cost": 1986.86, "adults":
+        2, "children": 0}, {"age": 21, "cost": 964.54, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1063.35, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1168.04, "adults": 2, "children": 1}, {"age": 50, "cost": 1539.94, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1196.98, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1295.8, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1400.48, "adults": 2, "children": 1}, {"age": 50, "cost": 1772.38, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1429.42, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1528.23, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1632.92, "adults": 2, "children": 1}, {"age": 50, "cost": 2004.82, "adults":
+        2, "children": 1}], "plan_id": "92045AZ0110001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6000.0, "family": 12000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-755-2700", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "meritus_mutual_health_partners", "metallic_level":
+        "bronze", "deductible": {"individual": 6000.0, "family": 12000.0}, "plan_name":
+        "Meritus Lifestyle Choice Bronze", "benefits_summary_url": "http://www.meritusaz.com/ppo-summary-of-benefits.html"},
+        {"premiums": [{"age": 21, "cost": 406.13, "adults": 1, "children": 0}, {"age":
+        27, "cost": 425.62, "adults": 1, "children": 0}, {"age": 30, "cost": 460.95,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 519.03, "adults": 1, "children":
+        0}, {"age": 50, "cost": 725.34, "adults": 1, "children": 0}, {"age": 60, "cost":
+        1102.23, "adults": 1, "children": 0}, {"age": 21, "cost": 664.02, "adults":
+        1, "children": 1}, {"age": 30, "cost": 718.83, "adults": 1, "children": 1},
+        {"age": 40, "cost": 776.92, "adults": 1, "children": 1}, {"age": 50, "cost":
+        983.23, "adults": 1, "children": 1}, {"age": 21, "cost": 921.91, "adults":
+        1, "children": 2}, {"age": 30, "cost": 976.73, "adults": 1, "children": 2},
+        {"age": 40, "cost": 1034.81, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1241.11, "adults": 1, "children": 2}, {"age": 21, "cost": 1179.8, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1234.61, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1292.69, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1499.01, "adults": 1, "children": 3}, {"age": 21, "cost": 812.26, "adults":
+        2, "children": 0}, {"age": 30, "cost": 921.9, "adults": 2, "children": 0},
+        {"age": 40, "cost": 1038.06, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1450.68, "adults": 2, "children": 0}, {"age": 60, "cost": 2204.46, "adults":
+        2, "children": 0}, {"age": 21, "cost": 1070.15, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1179.79, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1295.94, "adults": 2, "children": 1}, {"age": 50, "cost": 1708.57, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1328.04, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1437.67, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1553.84, "adults": 2, "children": 1}, {"age": 50, "cost": 1966.46, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1585.92, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1695.57, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1811.73, "adults": 2, "children": 1}, {"age": 50, "cost": 2224.35, "adults":
+        2, "children": 1}], "plan_id": "92045AZ0160001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-755-2700", "county": "GILA", "state":
+        "AZ", "trading_partner_id": "meritus_mutual_health_partners", "metallic_level":
+        "silver", "deductible": {"individual": 5500.0, "family": 11000.0}, "plan_name":
+        "Meritus Reliable Silver", "benefits_summary_url": "http://www.meritusaz.com/ppo-summary-of-benefits.html"},
+        {"premiums": [{"age": 21, "cost": 257.3, "adults": 1, "children": 0}, {"age":
+        27, "cost": 269.64, "adults": 1, "children": 0}, {"age": 30, "cost": 292.02,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 328.83, "adults": 1, "children":
+        0}, {"age": 50, "cost": 459.53, "adults": 1, "children": 0}, {"age": 60, "cost":
+        698.31, "adults": 1, "children": 0}, {"age": 21, "cost": 420.68, "adults":
+        1, "children": 1}, {"age": 30, "cost": 455.4, "adults": 1, "children": 1},
+        {"age": 40, "cost": 492.21, "adults": 1, "children": 1}, {"age": 50, "cost":
+        622.91, "adults": 1, "children": 1}, {"age": 21, "cost": 584.05, "adults":
+        1, "children": 2}, {"age": 30, "cost": 618.79, "adults": 1, "children": 2},
+        {"age": 40, "cost": 655.58, "adults": 1, "children": 2}, {"age": 50, "cost":
+        786.29, "adults": 1, "children": 2}, {"age": 21, "cost": 747.44, "adults":
+        1, "children": 3}, {"age": 30, "cost": 782.17, "adults": 1, "children": 3},
+        {"age": 40, "cost": 818.97, "adults": 1, "children": 3}, {"age": 50, "cost":
+        949.67, "adults": 1, "children": 3}, {"age": 21, "cost": 514.6, "adults":
+        2, "children": 0}, {"age": 30, "cost": 584.05, "adults": 2, "children": 0},
+        {"age": 40, "cost": 657.66, "adults": 2, "children": 0}, {"age": 50, "cost":
+        919.06, "adults": 2, "children": 0}, {"age": 60, "cost": 1396.62, "adults":
+        2, "children": 0}, {"age": 21, "cost": 677.98, "adults": 2, "children": 1},
+        {"age": 30, "cost": 747.43, "adults": 2, "children": 1}, {"age": 40, "cost":
+        821.04, "adults": 2, "children": 1}, {"age": 50, "cost": 1082.44, "adults":
+        2, "children": 1}, {"age": 21, "cost": 841.36, "adults": 2, "children": 1},
+        {"age": 30, "cost": 910.81, "adults": 2, "children": 1}, {"age": 40, "cost":
+        984.42, "adults": 2, "children": 1}, {"age": 50, "cost": 1245.82, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1004.74, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1074.19, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1147.8, "adults": 2, "children": 1}, {"age": 50, "cost": 1409.19, "adults":
+        2, "children": 1}], "plan_id": "51485AZ0170002", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 1250.0, "family": 2500.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-288-9085", "county": "GRAHAM", "state":
+        "AZ", "trading_partner_id": "health_net_life_insurance_company", "metallic_level":
+        "platinum", "deductible": {"individual": 750.0, "family": 1500.0}, "plan_name":
+        "Health Net PPO Platinum $15/$30/$750", "benefits_summary_url": "https://www.healthnet.com/static/general/unprotected/pdfs/az/ifp/az_ifp_ppo_platinum_15_30_750_ped_sbc_iex.pdf"},
+        {"premiums": [{"age": 21, "cost": 226.08, "adults": 1, "children": 0}, {"age":
+        27, "cost": 236.93, "adults": 1, "children": 0}, {"age": 30, "cost": 256.6,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 288.93, "adults": 1, "children":
+        0}, {"age": 50, "cost": 403.78, "adults": 1, "children": 0}, {"age": 60, "cost":
+        613.58, "adults": 1, "children": 0}, {"age": 21, "cost": 369.64, "adults":
+        1, "children": 1}, {"age": 30, "cost": 400.16, "adults": 1, "children": 1},
+        {"age": 40, "cost": 432.49, "adults": 1, "children": 1}, {"age": 50, "cost":
+        547.33, "adults": 1, "children": 1}, {"age": 21, "cost": 513.2, "adults":
+        1, "children": 2}, {"age": 30, "cost": 543.72, "adults": 1, "children": 2},
+        {"age": 40, "cost": 576.04, "adults": 1, "children": 2}, {"age": 50, "cost":
+        690.9, "adults": 1, "children": 2}, {"age": 21, "cost": 656.76, "adults":
+        1, "children": 3}, {"age": 30, "cost": 687.28, "adults": 1, "children": 3},
+        {"age": 40, "cost": 719.61, "adults": 1, "children": 3}, {"age": 50, "cost":
+        834.46, "adults": 1, "children": 3}, {"age": 21, "cost": 452.16, "adults":
+        2, "children": 0}, {"age": 30, "cost": 513.2, "adults": 2, "children": 0},
+        {"age": 40, "cost": 577.86, "adults": 2, "children": 0}, {"age": 50, "cost":
+        807.56, "adults": 2, "children": 0}, {"age": 60, "cost": 1227.16, "adults":
+        2, "children": 0}, {"age": 21, "cost": 595.72, "adults": 2, "children": 1},
+        {"age": 30, "cost": 656.76, "adults": 2, "children": 1}, {"age": 40, "cost":
+        721.42, "adults": 2, "children": 1}, {"age": 50, "cost": 951.11, "adults":
+        2, "children": 1}, {"age": 21, "cost": 739.28, "adults": 2, "children": 1},
+        {"age": 30, "cost": 800.32, "adults": 2, "children": 1}, {"age": 40, "cost":
+        864.98, "adults": 2, "children": 1}, {"age": 50, "cost": 1094.67, "adults":
+        2, "children": 1}, {"age": 21, "cost": 882.84, "adults": 2, "children": 1},
+        {"age": 30, "cost": 943.88, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1008.54, "adults": 2, "children": 1}, {"age": 50, "cost": 1238.24, "adults":
+        2, "children": 1}], "plan_id": "51485AZ0170004", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 4000.0, "family": 8000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-288-9085", "county": "GRAHAM", "state":
+        "AZ", "trading_partner_id": "health_net_life_insurance_company", "metallic_level":
+        "gold", "deductible": {"individual": 2500.0, "family": 5000.0}, "plan_name":
+        "Health Net  PPO Gold $25/$50/$2500", "benefits_summary_url": "https://www.healthnet.com/static/general/unprotected/pdfs/az/ifp/az_ifp_ppo_gold_25_50_2500_ped_sbc_iex.pdf"}]}'
     http_version: 
-  recorded_at: Wed, 22 Oct 2014 19:18:48 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 27 Jan 2015 16:48:34 GMT
+recorded_with: VCR 2.9.3

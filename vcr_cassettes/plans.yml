@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/plans/?plan_type=PPO&state=TX
+    uri: https://platform.pokitdok.com/api/v4/plans/?plan_type=PPO&state=TX
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,115 +20,670 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 16:48:39 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Content-Length:
-      - '7489'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Server:
-      - Werkzeug/0.9.4 Python/2.7.3
-      Date:
-      - Wed, 22 Oct 2014 19:18:49 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 11, "rate_limit_reset": 1414009128,
-        "application_mode": "test", "processing_time": 8, "rate_limit_cap": 8434,
-        "credits_remaining": 13440, "activity_id": "5448031956c02c448db7da95", "credits_billed":
-        1}, "data": [{"plan_type": "PPO", "county": "APACHE", "trading_partner_id":
-        "aetna", "plan_id": "84251AZ0070001", "max_out_of_pocket": {"individual":
-        6350.0, "family": 12700.0}, "state": "AZ", "customer_service_phone": "1-855-586-6957",
-        "premiums": [{"age": 21, "cost": 176.0, "adults": 1, "children": 0}, {"age":
-        27, "cost": 185.0, "adults": 1, "children": 0}, {"age": 30, "cost": 200.0,
-        "adults": 1, "children": 0}, {"age": 40, "cost": 225.0, "adults": 1, "children":
-        0}, {"age": 50, "cost": 314.0, "adults": 1, "children": 0}, {"age": 60, "cost":
-        478.0, "adults": 1, "children": 0}, {"age": 21, "cost": 288.0, "adults": 1,
-        "children": 1}, {"age": 30, "cost": 312.0, "adults": 1, "children": 1}, {"age":
-        40, "cost": 337.0, "adults": 1, "children": 1}, {"age": 50, "cost": 426.0,
-        "adults": 1, "children": 1}, {"age": 21, "cost": 400.0, "adults": 1, "children":
-        2}, {"age": 30, "cost": 424.0, "adults": 1, "children": 2}, {"age": 40, "cost":
-        449.0, "adults": 1, "children": 2}, {"age": 50, "cost": 538.0, "adults": 1,
-        "children": 2}, {"age": 21, "cost": 512.0, "adults": 1, "children": 3}, {"age":
-        30, "cost": 536.0, "adults": 1, "children": 3}, {"age": 40, "cost": 561.0,
-        "adults": 1, "children": 3}, {"age": 50, "cost": 650.0, "adults": 1, "children":
-        3}, {"age": 21, "cost": 352.0, "adults": 2, "children": 0}, {"age": 30, "cost":
-        400.0, "adults": 2, "children": 0}, {"age": 40, "cost": 450.0, "adults": 2,
-        "children": 0}, {"age": 50, "cost": 628.0, "adults": 2, "children": 0}, {"age":
-        60, "cost": 956.0, "adults": 2, "children": 0}, {"age": 21, "cost": 464.0,
-        "adults": 2, "children": 1}, {"age": 30, "cost": 512.0, "adults": 2, "children":
-        1}, {"age": 40, "cost": 562.0, "adults": 2, "children": 1}, {"age": 50, "cost":
-        740.0, "adults": 2, "children": 1}, {"age": 21, "cost": 576.0, "adults": 2,
-        "children": 1}, {"age": 30, "cost": 624.0, "adults": 2, "children": 1}, {"age":
-        40, "cost": 674.0, "adults": 2, "children": 1}, {"age": 50, "cost": 852.0,
-        "adults": 2, "children": 1}, {"age": 21, "cost": 688.0, "adults": 2, "children":
-        1}, {"age": 30, "cost": 736.0, "adults": 2, "children": 1}, {"age": 40, "cost":
-        786.0, "adults": 2, "children": 1}, {"age": 50, "cost": 964.0, "adults": 2,
-        "children": 1}], "metallic_level": "bronze", "deductible": {"individual":
-        5750.0, "family": 11500.0}, "plan_name": "Aetna Advantage 5750 PD", "benefits_summary_url":
-        "http://www.aetna.com/individuals-families-health-insurance/buy-insurance/exchange/az.html"},
-        {"plan_type": "PPO", "county": "ALEUTIANS EAST", "trading_partner_id": "premera_blue_cross",
-        "plan_id": "38344AK0570001", "max_out_of_pocket": {"individual": 5250.0, "family":
-        10500.0}, "state": "AK", "customer_service_phone": "1-800-508-4722", "premiums":
-        [{"age": 21, "cost": 280.0, "adults": 1, "children": 0}, {"age": 27, "cost":
-        294.0, "adults": 1, "children": 0}, {"age": 30, "cost": 318.0, "adults": 1,
-        "children": 0}, {"age": 40, "cost": 358.0, "adults": 1, "children": 0}, {"age":
-        50, "cost": 501.0, "adults": 1, "children": 0}, {"age": 60, "cost": 761.0,
-        "adults": 1, "children": 0}, {"age": 21, "cost": 458.0, "adults": 1, "children":
-        1}, {"age": 30, "cost": 496.0, "adults": 1, "children": 1}, {"age": 40, "cost":
-        536.0, "adults": 1, "children": 1}, {"age": 50, "cost": 679.0, "adults": 1,
-        "children": 1}, {"age": 21, "cost": 636.0, "adults": 1, "children": 2}, {"age":
-        30, "cost": 674.0, "adults": 1, "children": 2}, {"age": 40, "cost": 714.0,
-        "adults": 1, "children": 2}, {"age": 50, "cost": 857.0, "adults": 1, "children":
-        2}, {"age": 21, "cost": 814.0, "adults": 1, "children": 3}, {"age": 30, "cost":
-        852.0, "adults": 1, "children": 3}, {"age": 40, "cost": 892.0, "adults": 1,
-        "children": 3}, {"age": 50, "cost": 1035.0, "adults": 1, "children": 3}, {"age":
-        21, "cost": 560.0, "adults": 2, "children": 0}, {"age": 30, "cost": 636.0,
-        "adults": 2, "children": 0}, {"age": 40, "cost": 716.0, "adults": 2, "children":
-        0}, {"age": 50, "cost": 1002.0, "adults": 2, "children": 0}, {"age": 60, "cost":
-        1522.0, "adults": 2, "children": 0}, {"age": 21, "cost": 738.0, "adults":
-        2, "children": 1}, {"age": 30, "cost": 814.0, "adults": 2, "children": 1},
-        {"age": 40, "cost": 894.0, "adults": 2, "children": 1}, {"age": 50, "cost":
-        1180.0, "adults": 2, "children": 1}, {"age": 21, "cost": 916.0, "adults":
-        2, "children": 1}, {"age": 30, "cost": 992.0, "adults": 2, "children": 1},
-        {"age": 40, "cost": 1072.0, "adults": 2, "children": 1}, {"age": 50, "cost":
-        1358.0, "adults": 2, "children": 1}, {"age": 21, "cost": 1094.0, "adults":
-        2, "children": 1}, {"age": 30, "cost": 1170.0, "adults": 2, "children": 1},
-        {"age": 40, "cost": 1250.0, "adults": 2, "children": 1}, {"age": 50, "cost":
-        1536.0, "adults": 2, "children": 1}], "metallic_level": "bronze", "deductible":
-        {"individual": 5250.0, "family": 10500.0}, "plan_name": "Blue Cross Blue Shield
-        Plus 5250 HSA High, a Multi-State Plan", "benefits_summary_url": "https://www.premera.com/documents/028246.pdf"},
-        {"county": "ABBEVILLE", "premiums": [{"age": 21, "cost": 270.82, "adults":
-        1, "children": 0}, {"age": 27, "cost": 283.82, "adults": 1, "children": 0},
-        {"age": 30, "cost": 307.38, "adults": 1, "children": 0}, {"age": 40, "cost":
-        346.1, "adults": 1, "children": 0}, {"age": 50, "cost": 483.68, "adults":
-        1, "children": 0}, {"age": 60, "cost": 735.0, "adults": 1, "children": 0},
-        {"age": 21, "cost": 442.78, "adults": 1, "children": 1}, {"age": 30, "cost":
-        479.35, "adults": 1, "children": 1}, {"age": 40, "cost": 518.07, "adults":
-        1, "children": 1}, {"age": 50, "cost": 655.65, "adults": 1, "children": 1},
-        {"age": 21, "cost": 614.76, "adults": 1, "children": 2}, {"age": 30, "cost":
-        651.31, "adults": 1, "children": 2}, {"age": 40, "cost": 690.04, "adults":
-        1, "children": 2}, {"age": 50, "cost": 827.62, "adults": 1, "children": 2},
-        {"age": 21, "cost": 786.73, "adults": 1, "children": 3}, {"age": 30, "cost":
-        823.29, "adults": 1, "children": 3}, {"age": 40, "cost": 862.01, "adults":
-        1, "children": 3}, {"age": 50, "cost": 999.58, "adults": 1, "children": 3},
-        {"age": 21, "cost": 541.64, "adults": 2, "children": 0}, {"age": 30, "cost":
-        614.76, "adults": 2, "children": 0}, {"age": 40, "cost": 692.2, "adults":
-        2, "children": 0}, {"age": 50, "cost": 967.36, "adults": 2, "children": 0},
-        {"age": 60, "cost": 1470.0, "adults": 2, "children": 0}, {"age": 21, "cost":
-        713.61, "adults": 2, "children": 1}, {"age": 30, "cost": 786.73, "adults":
-        2, "children": 1}, {"age": 40, "cost": 864.17, "adults": 2, "children": 1},
-        {"age": 50, "cost": 1139.33, "adults": 2, "children": 1}, {"age": 21, "cost":
-        885.57, "adults": 2, "children": 1}, {"age": 30, "cost": 958.7, "adults":
-        2, "children": 1}, {"age": 40, "cost": 1036.14, "adults": 2, "children": 1},
-        {"age": 50, "cost": 1311.3, "adults": 2, "children": 1}, {"age": 21, "cost":
-        1057.55, "adults": 2, "children": 1}, {"age": 30, "cost": 1130.67, "adults":
-        2, "children": 1}, {"age": 40, "cost": 1208.11, "adults": 2, "children": 1},
-        {"age": 50, "cost": 1483.27, "adults": 2, "children": 1}], "plan_id": "26065SC0380001",
-        "trading_partner_id": "blue_cross_blue_shield_sc", "state": "SC", "metallic_level":
-        "gold", "customer_service_phone": "1-800-550-6322", "plan_name": "BlueEssentials
-        Gold 1", "plan_type": "EPO", "benefits_summary_url": "https://www.southcarolinablues.com/links/metallic/SBC"}]}'
+      string: '{"meta": {"rate_limit_amount": 14, "rate_limit_reset": 1422380905,
+        "application_mode": "production", "result_count": 3728, "processing_time":
+        295, "rate_limit_cap": 1000, "credits_remaining": 13490, "next": "https://platform.pokitdok.com/api/v4/plans/?state=TX&plan_type=PPO&offset=20",
+        "activity_id": "54c7c167948303218b7184c1", "credits_billed": 1}, "data": [{"premiums":
+        [{"age": 21, "cost": 284.64, "adults": 1, "children": 0}, {"age": 27, "cost":
+        298.3, "adults": 1, "children": 0}, {"age": 30, "cost": 323.07, "adults":
+        1, "children": 0}, {"age": 40, "cost": 363.77, "adults": 1, "children": 0},
+        {"age": 50, "cost": 508.37, "adults": 1, "children": 0}, {"age": 60, "cost":
+        772.52, "adults": 1, "children": 0}, {"age": 21, "cost": 465.39, "adults":
+        1, "children": 1}, {"age": 30, "cost": 503.82, "adults": 1, "children": 1},
+        {"age": 40, "cost": 544.52, "adults": 1, "children": 1}, {"age": 50, "cost":
+        689.12, "adults": 1, "children": 1}, {"age": 21, "cost": 646.14, "adults":
+        1, "children": 2}, {"age": 30, "cost": 684.56, "adults": 1, "children": 2},
+        {"age": 40, "cost": 725.27, "adults": 1, "children": 2}, {"age": 50, "cost":
+        869.87, "adults": 1, "children": 2}, {"age": 21, "cost": 826.89, "adults":
+        1, "children": 3}, {"age": 30, "cost": 865.31, "adults": 1, "children": 3},
+        {"age": 40, "cost": 906.02, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1050.61, "adults": 1, "children": 3}, {"age": 21, "cost": 569.28, "adults":
+        2, "children": 0}, {"age": 30, "cost": 646.14, "adults": 2, "children": 0},
+        {"age": 40, "cost": 727.54, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1016.74, "adults": 2, "children": 0}, {"age": 60, "cost": 1545.04, "adults":
+        2, "children": 0}, {"age": 21, "cost": 750.03, "adults": 2, "children": 1},
+        {"age": 30, "cost": 826.89, "adults": 2, "children": 1}, {"age": 40, "cost":
+        908.29, "adults": 2, "children": 1}, {"age": 50, "cost": 1197.49, "adults":
+        2, "children": 1}, {"age": 21, "cost": 930.78, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1007.64, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1089.04, "adults": 2, "children": 1}, {"age": 50, "cost": 1378.24, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1111.53, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1188.38, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1269.79, "adults": 2, "children": 1}, {"age": 50, "cost": 1558.99, "adults":
+        2, "children": 1}], "plan_id": "33602TX0420002", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 3500.0, "family": 10500.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-888-697-0683", "county": "DAWSON", "state":
+        "TX", "trading_partner_id": "blue_cross_blue_shield_tx", "metallic_level":
+        "gold", "deductible": {"individual": 1500.0, "family": 4500.0}, "plan_name":
+        "Blue Choice Gold PPO 002", "benefits_summary_url": "http://www.bcbstx.com/coverage/individual/on-exchange/"},
+        {"premiums": [{"age": 21, "cost": 230.24, "adults": 1, "children": 0}, {"age":
+        27, "cost": 241.29, "adults": 1, "children": 0}, {"age": 30, "cost": 261.32,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 294.25, "adults": 1, "children":
+        0}, {"age": 50, "cost": 411.21, "adults": 1, "children": 0}, {"age": 60, "cost":
+        624.87, "adults": 1, "children": 0}, {"age": 21, "cost": 376.44, "adults":
+        1, "children": 1}, {"age": 30, "cost": 407.52, "adults": 1, "children": 1},
+        {"age": 40, "cost": 440.45, "adults": 1, "children": 1}, {"age": 50, "cost":
+        557.41, "adults": 1, "children": 1}, {"age": 21, "cost": 522.64, "adults":
+        1, "children": 2}, {"age": 30, "cost": 553.72, "adults": 1, "children": 2},
+        {"age": 40, "cost": 586.65, "adults": 1, "children": 2}, {"age": 50, "cost":
+        703.6, "adults": 1, "children": 2}, {"age": 21, "cost": 668.83, "adults":
+        1, "children": 3}, {"age": 30, "cost": 699.92, "adults": 1, "children": 3},
+        {"age": 40, "cost": 732.84, "adults": 1, "children": 3}, {"age": 50, "cost":
+        849.81, "adults": 1, "children": 3}, {"age": 21, "cost": 460.48, "adults":
+        2, "children": 0}, {"age": 30, "cost": 522.64, "adults": 2, "children": 0},
+        {"age": 40, "cost": 588.5, "adults": 2, "children": 0}, {"age": 50, "cost":
+        822.42, "adults": 2, "children": 0}, {"age": 60, "cost": 1249.74, "adults":
+        2, "children": 0}, {"age": 21, "cost": 606.68, "adults": 2, "children": 1},
+        {"age": 30, "cost": 668.83, "adults": 2, "children": 1}, {"age": 40, "cost":
+        734.7, "adults": 2, "children": 1}, {"age": 50, "cost": 968.61, "adults":
+        2, "children": 1}, {"age": 21, "cost": 752.88, "adults": 2, "children": 1},
+        {"age": 30, "cost": 815.04, "adults": 2, "children": 1}, {"age": 40, "cost":
+        880.9, "adults": 2, "children": 1}, {"age": 50, "cost": 1114.82, "adults":
+        2, "children": 1}, {"age": 21, "cost": 899.07, "adults": 2, "children": 1},
+        {"age": 30, "cost": 961.24, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1027.09, "adults": 2, "children": 1}, {"age": 50, "cost": 1261.02, "adults":
+        2, "children": 1}], "plan_id": "33602TX0420003", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6000.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-888-697-0683", "county": "DAWSON", "state":
+        "TX", "trading_partner_id": "blue_cross_blue_shield_tx", "metallic_level":
+        "silver", "deductible": {"individual": 6000.0, "family": 12700.0}, "plan_name":
+        "Blue Choice Silver PPO 003", "benefits_summary_url": "http://www.bcbstx.com/coverage/individual/on-exchange/"},
+        {"premiums": [{"age": 21, "cost": 296.06, "adults": 1, "children": 0}, {"age":
+        27, "cost": 310.27, "adults": 1, "children": 0}, {"age": 30, "cost": 336.02,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 378.36, "adults": 1, "children":
+        0}, {"age": 50, "cost": 528.75, "adults": 1, "children": 0}, {"age": 60, "cost":
+        803.49, "adults": 1, "children": 0}, {"age": 21, "cost": 484.06, "adults":
+        1, "children": 1}, {"age": 30, "cost": 524.02, "adults": 1, "children": 1},
+        {"age": 40, "cost": 566.36, "adults": 1, "children": 1}, {"age": 50, "cost":
+        716.75, "adults": 1, "children": 1}, {"age": 21, "cost": 672.06, "adults":
+        1, "children": 2}, {"age": 30, "cost": 712.02, "adults": 1, "children": 2},
+        {"age": 40, "cost": 754.36, "adults": 1, "children": 2}, {"age": 50, "cost":
+        904.75, "adults": 1, "children": 2}, {"age": 21, "cost": 860.06, "adults":
+        1, "children": 3}, {"age": 30, "cost": 900.02, "adults": 1, "children": 3},
+        {"age": 40, "cost": 942.36, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1092.75, "adults": 1, "children": 3}, {"age": 21, "cost": 592.12, "adults":
+        2, "children": 0}, {"age": 30, "cost": 672.04, "adults": 2, "children": 0},
+        {"age": 40, "cost": 756.72, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1057.5, "adults": 2, "children": 0}, {"age": 60, "cost": 1606.98, "adults":
+        2, "children": 0}, {"age": 21, "cost": 780.12, "adults": 2, "children": 1},
+        {"age": 30, "cost": 860.04, "adults": 2, "children": 1}, {"age": 40, "cost":
+        944.72, "adults": 2, "children": 1}, {"age": 50, "cost": 1245.5, "adults":
+        2, "children": 1}, {"age": 21, "cost": 968.12, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1048.04, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1132.72, "adults": 2, "children": 1}, {"age": 50, "cost": 1433.5, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1156.11, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1236.04, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1320.72, "adults": 2, "children": 1}, {"age": 50, "cost": 1621.5, "adults":
+        2, "children": 1}], "plan_id": "33602TX0440001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 2750.0, "family": 8250.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-888-697-0683", "county": "DAWSON", "state":
+        "TX", "trading_partner_id": "blue_cross_blue_shield_tx", "metallic_level":
+        "gold", "deductible": {"individual": 1000.0, "family": 3000.0}, "plan_name":
+        "Blue Cross Blue Shield Premier 1, a Multi-State Plan", "benefits_summary_url":
+        "http://www.bcbstx.com/coverage/individual/on-exchange/"}, {"premiums": [{"age":
+        21, "cost": 289.66, "adults": 1, "children": 0}, {"age": 27, "cost": 303.57,
+        "adults": 1, "children": 0}, {"age": 30, "cost": 328.77, "adults": 1, "children":
+        0}, {"age": 40, "cost": 370.19, "adults": 1, "children": 0}, {"age": 50, "cost":
+        517.34, "adults": 1, "children": 0}, {"age": 60, "cost": 786.14, "adults":
+        1, "children": 0}, {"age": 21, "cost": 473.6, "adults": 1, "children": 1},
+        {"age": 30, "cost": 512.71, "adults": 1, "children": 1}, {"age": 40, "cost":
+        554.13, "adults": 1, "children": 1}, {"age": 50, "cost": 701.28, "adults":
+        1, "children": 1}, {"age": 21, "cost": 657.54, "adults": 1, "children": 2},
+        {"age": 30, "cost": 696.65, "adults": 1, "children": 2}, {"age": 40, "cost":
+        738.06, "adults": 1, "children": 2}, {"age": 50, "cost": 885.22, "adults":
+        1, "children": 2}, {"age": 21, "cost": 841.48, "adults": 1, "children": 3},
+        {"age": 30, "cost": 880.58, "adults": 1, "children": 3}, {"age": 40, "cost":
+        922.01, "adults": 1, "children": 3}, {"age": 50, "cost": 1069.15, "adults":
+        1, "children": 3}, {"age": 21, "cost": 579.32, "adults": 2, "children": 0},
+        {"age": 30, "cost": 657.54, "adults": 2, "children": 0}, {"age": 40, "cost":
+        740.38, "adults": 2, "children": 0}, {"age": 50, "cost": 1034.68, "adults":
+        2, "children": 0}, {"age": 60, "cost": 1572.28, "adults": 2, "children": 0},
+        {"age": 21, "cost": 763.26, "adults": 2, "children": 1}, {"age": 30, "cost":
+        841.48, "adults": 2, "children": 1}, {"age": 40, "cost": 924.31, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1218.62, "adults": 2, "children": 1},
+        {"age": 21, "cost": 947.2, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1025.42, "adults": 2, "children": 1}, {"age": 40, "cost": 1108.26, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1402.56, "adults": 2, "children": 1},
+        {"age": 21, "cost": 1131.13, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1209.35, "adults": 2, "children": 1}, {"age": 40, "cost": 1292.19, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1586.5, "adults": 2, "children": 1}],
+        "plan_id": "33602TX0440002", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 4000.0, "family": 12000.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-888-697-0683", "county": "DAWSON", "state": "TX", "trading_partner_id":
+        "blue_cross_blue_shield_tx", "metallic_level": "gold", "deductible": {"individual":
+        500.0, "family": 1500.0}, "plan_name": "Blue Cross Blue Shield Premier 2,
+        a Multi-State Plan", "benefits_summary_url": "http://www.bcbstx.com/coverage/individual/on-exchange/"},
+        {"premiums": [{"age": 21, "cost": 175.46, "adults": 1, "children": 0}, {"age":
+        27, "cost": 183.88, "adults": 1, "children": 0}, {"age": 30, "cost": 199.15,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 224.24, "adults": 1, "children":
+        0}, {"age": 50, "cost": 313.37, "adults": 1, "children": 0}, {"age": 60, "cost":
+        476.2, "adults": 1, "children": 0}, {"age": 21, "cost": 286.88, "adults":
+        1, "children": 1}, {"age": 30, "cost": 310.57, "adults": 1, "children": 1},
+        {"age": 40, "cost": 335.66, "adults": 1, "children": 1}, {"age": 50, "cost":
+        424.79, "adults": 1, "children": 1}, {"age": 21, "cost": 398.3, "adults":
+        1, "children": 2}, {"age": 30, "cost": 421.99, "adults": 1, "children": 2},
+        {"age": 40, "cost": 447.08, "adults": 1, "children": 2}, {"age": 50, "cost":
+        536.21, "adults": 1, "children": 2}, {"age": 21, "cost": 509.72, "adults":
+        1, "children": 3}, {"age": 30, "cost": 533.41, "adults": 1, "children": 3},
+        {"age": 40, "cost": 558.5, "adults": 1, "children": 3}, {"age": 50, "cost":
+        647.63, "adults": 1, "children": 3}, {"age": 21, "cost": 350.92, "adults":
+        2, "children": 0}, {"age": 30, "cost": 398.3, "adults": 2, "children": 0},
+        {"age": 40, "cost": 448.48, "adults": 2, "children": 0}, {"age": 50, "cost":
+        626.74, "adults": 2, "children": 0}, {"age": 60, "cost": 952.4, "adults":
+        2, "children": 0}, {"age": 21, "cost": 462.34, "adults": 2, "children": 1},
+        {"age": 30, "cost": 509.72, "adults": 2, "children": 1}, {"age": 40, "cost":
+        559.9, "adults": 2, "children": 1}, {"age": 50, "cost": 738.16, "adults":
+        2, "children": 1}, {"age": 21, "cost": 573.76, "adults": 2, "children": 1},
+        {"age": 30, "cost": 621.14, "adults": 2, "children": 1}, {"age": 40, "cost":
+        671.32, "adults": 2, "children": 1}, {"age": 50, "cost": 849.58, "adults":
+        2, "children": 1}, {"age": 21, "cost": 685.18, "adults": 2, "children": 1},
+        {"age": 30, "cost": 732.56, "adults": 2, "children": 1}, {"age": 40, "cost":
+        782.74, "adults": 2, "children": 1}, {"age": 50, "cost": 961.0, "adults":
+        2, "children": 1}], "plan_id": "33602TX0440005", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6250.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-888-697-0683", "county": "DAWSON", "state":
+        "TX", "trading_partner_id": "blue_cross_blue_shield_tx", "metallic_level":
+        "bronze", "deductible": {"individual": 3750.0, "family": 11250.0}, "plan_name":
+        "Blue Cross Blue Shield Basic 5, a Multi-State Plan", "benefits_summary_url":
+        "http://www.bcbstx.com/coverage/individual/on-exchange/"}, {"premiums": [{"age":
+        21, "cost": 230.24, "adults": 1, "children": 0}, {"age": 27, "cost": 241.29,
+        "adults": 1, "children": 0}, {"age": 30, "cost": 261.32, "adults": 1, "children":
+        0}, {"age": 40, "cost": 294.25, "adults": 1, "children": 0}, {"age": 50, "cost":
+        411.21, "adults": 1, "children": 0}, {"age": 60, "cost": 624.87, "adults":
+        1, "children": 0}, {"age": 21, "cost": 376.44, "adults": 1, "children": 1},
+        {"age": 30, "cost": 407.52, "adults": 1, "children": 1}, {"age": 40, "cost":
+        440.45, "adults": 1, "children": 1}, {"age": 50, "cost": 557.41, "adults":
+        1, "children": 1}, {"age": 21, "cost": 522.64, "adults": 1, "children": 2},
+        {"age": 30, "cost": 553.72, "adults": 1, "children": 2}, {"age": 40, "cost":
+        586.65, "adults": 1, "children": 2}, {"age": 50, "cost": 703.6, "adults":
+        1, "children": 2}, {"age": 21, "cost": 668.83, "adults": 1, "children": 3},
+        {"age": 30, "cost": 699.92, "adults": 1, "children": 3}, {"age": 40, "cost":
+        732.84, "adults": 1, "children": 3}, {"age": 50, "cost": 849.81, "adults":
+        1, "children": 3}, {"age": 21, "cost": 460.48, "adults": 2, "children": 0},
+        {"age": 30, "cost": 522.64, "adults": 2, "children": 0}, {"age": 40, "cost":
+        588.5, "adults": 2, "children": 0}, {"age": 50, "cost": 822.42, "adults":
+        2, "children": 0}, {"age": 60, "cost": 1249.74, "adults": 2, "children": 0},
+        {"age": 21, "cost": 606.68, "adults": 2, "children": 1}, {"age": 30, "cost":
+        668.83, "adults": 2, "children": 1}, {"age": 40, "cost": 734.7, "adults":
+        2, "children": 1}, {"age": 50, "cost": 968.61, "adults": 2, "children": 1},
+        {"age": 21, "cost": 752.88, "adults": 2, "children": 1}, {"age": 30, "cost":
+        815.04, "adults": 2, "children": 1}, {"age": 40, "cost": 880.9, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1114.82, "adults": 2, "children": 1},
+        {"age": 21, "cost": 899.07, "adults": 2, "children": 1}, {"age": 30, "cost":
+        961.24, "adults": 2, "children": 1}, {"age": 40, "cost": 1027.09, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1261.02, "adults": 2, "children": 1}],
+        "plan_id": "33602TX0420003", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 6000.0, "family": 12700.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-888-697-0683", "county": "DEAF SMITH", "state": "TX", "trading_partner_id":
+        "blue_cross_blue_shield_tx", "metallic_level": "silver", "deductible": {"individual":
+        6000.0, "family": 12700.0}, "plan_name": "Blue Choice Silver PPO 003", "benefits_summary_url":
+        "http://www.bcbstx.com/coverage/individual/on-exchange/"}, {"premiums": [{"age":
+        21, "cost": 323.83, "adults": 1, "children": 0}, {"age": 27, "cost": 339.37,
+        "adults": 1, "children": 0}, {"age": 30, "cost": 367.54, "adults": 1, "children":
+        0}, {"age": 40, "cost": 413.85, "adults": 1, "children": 0}, {"age": 50, "cost":
+        578.35, "adults": 1, "children": 0}, {"age": 60, "cost": 878.86, "adults":
+        1, "children": 0}, {"age": 21, "cost": 529.46, "adults": 1, "children": 1},
+        {"age": 30, "cost": 573.17, "adults": 1, "children": 1}, {"age": 40, "cost":
+        619.48, "adults": 1, "children": 1}, {"age": 50, "cost": 783.98, "adults":
+        1, "children": 1}, {"age": 21, "cost": 735.08, "adults": 1, "children": 2},
+        {"age": 30, "cost": 778.8, "adults": 1, "children": 2}, {"age": 40, "cost":
+        825.11, "adults": 1, "children": 2}, {"age": 50, "cost": 989.61, "adults":
+        1, "children": 2}, {"age": 21, "cost": 940.72, "adults": 1, "children": 3},
+        {"age": 30, "cost": 984.43, "adults": 1, "children": 3}, {"age": 40, "cost":
+        1030.74, "adults": 1, "children": 3}, {"age": 50, "cost": 1195.24, "adults":
+        1, "children": 3}, {"age": 21, "cost": 647.66, "adults": 2, "children": 0},
+        {"age": 30, "cost": 735.08, "adults": 2, "children": 0}, {"age": 40, "cost":
+        827.7, "adults": 2, "children": 0}, {"age": 50, "cost": 1156.7, "adults":
+        2, "children": 0}, {"age": 60, "cost": 1757.72, "adults": 2, "children": 0},
+        {"age": 21, "cost": 853.29, "adults": 2, "children": 1}, {"age": 30, "cost":
+        940.71, "adults": 2, "children": 1}, {"age": 40, "cost": 1033.33, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1362.33, "adults": 2, "children": 1},
+        {"age": 21, "cost": 1058.92, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1146.34, "adults": 2, "children": 1}, {"age": 40, "cost": 1238.96, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1567.96, "adults": 2, "children": 1},
+        {"age": 21, "cost": 1264.55, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1351.97, "adults": 2, "children": 1}, {"age": 40, "cost": 1444.59, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1773.59, "adults": 2, "children": 1}],
+        "plan_id": "33602TX0420002", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 3500.0, "family": 10500.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-888-697-0683", "county": "DELTA", "state": "TX", "trading_partner_id":
+        "blue_cross_blue_shield_tx", "metallic_level": "gold", "deductible": {"individual":
+        1500.0, "family": 4500.0}, "plan_name": "Blue Choice Gold PPO 002", "benefits_summary_url":
+        "http://www.bcbstx.com/coverage/individual/on-exchange/"}, {"premiums": [{"age":
+        21, "cost": 270.18, "adults": 1, "children": 0}, {"age": 27, "cost": 283.14,
+        "adults": 1, "children": 0}, {"age": 30, "cost": 306.64, "adults": 1, "children":
+        0}, {"age": 40, "cost": 345.29, "adults": 1, "children": 0}, {"age": 50, "cost":
+        482.54, "adults": 1, "children": 0}, {"age": 60, "cost": 733.27, "adults":
+        1, "children": 0}, {"age": 21, "cost": 441.74, "adults": 1, "children": 1},
+        {"age": 30, "cost": 478.21, "adults": 1, "children": 1}, {"age": 40, "cost":
+        516.85, "adults": 1, "children": 1}, {"age": 50, "cost": 654.1, "adults":
+        1, "children": 1}, {"age": 21, "cost": 613.29, "adults": 1, "children": 2},
+        {"age": 30, "cost": 649.77, "adults": 1, "children": 2}, {"age": 40, "cost":
+        688.41, "adults": 1, "children": 2}, {"age": 50, "cost": 825.66, "adults":
+        1, "children": 2}, {"age": 21, "cost": 784.86, "adults": 1, "children": 3},
+        {"age": 30, "cost": 821.33, "adults": 1, "children": 3}, {"age": 40, "cost":
+        859.97, "adults": 1, "children": 3}, {"age": 50, "cost": 997.22, "adults":
+        1, "children": 3}, {"age": 21, "cost": 540.36, "adults": 2, "children": 0},
+        {"age": 30, "cost": 613.29, "adults": 2, "children": 0}, {"age": 40, "cost":
+        690.58, "adults": 2, "children": 0}, {"age": 50, "cost": 965.08, "adults":
+        2, "children": 0}, {"age": 60, "cost": 1466.54, "adults": 2, "children": 0},
+        {"age": 21, "cost": 711.92, "adults": 2, "children": 1}, {"age": 30, "cost":
+        784.85, "adults": 2, "children": 1}, {"age": 40, "cost": 862.14, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1136.64, "adults": 2, "children": 1},
+        {"age": 21, "cost": 883.48, "adults": 2, "children": 1}, {"age": 30, "cost":
+        956.42, "adults": 2, "children": 1}, {"age": 40, "cost": 1033.7, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1308.2, "adults": 2, "children": 1},
+        {"age": 21, "cost": 1055.04, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1127.98, "adults": 2, "children": 1}, {"age": 40, "cost": 1205.26, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1479.76, "adults": 2, "children": 1}],
+        "plan_id": "33602TX0420004", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 6350.0, "family": 12700.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-888-697-0683", "county": "DELTA", "state": "TX", "trading_partner_id":
+        "blue_cross_blue_shield_tx", "metallic_level": "silver", "deductible": {"individual":
+        3000.0, "family": 9000.0}, "plan_name": "Blue Choice Silver PPO 004", "benefits_summary_url":
+        "http://www.bcbstx.com/coverage/individual/on-exchange/"}, {"premiums": [{"age":
+        21, "cost": 199.62, "adults": 1, "children": 0}, {"age": 27, "cost": 209.2,
+        "adults": 1, "children": 0}, {"age": 30, "cost": 226.56, "adults": 1, "children":
+        0}, {"age": 40, "cost": 255.11, "adults": 1, "children": 0}, {"age": 50, "cost":
+        356.51, "adults": 1, "children": 0}, {"age": 60, "cost": 541.76, "adults":
+        1, "children": 0}, {"age": 21, "cost": 326.38, "adults": 1, "children": 1},
+        {"age": 30, "cost": 353.32, "adults": 1, "children": 1}, {"age": 40, "cost":
+        381.87, "adults": 1, "children": 1}, {"age": 50, "cost": 483.27, "adults":
+        1, "children": 1}, {"age": 21, "cost": 453.14, "adults": 1, "children": 2},
+        {"age": 30, "cost": 480.08, "adults": 1, "children": 2}, {"age": 40, "cost":
+        508.63, "adults": 1, "children": 2}, {"age": 50, "cost": 610.03, "adults":
+        1, "children": 2}, {"age": 21, "cost": 579.9, "adults": 1, "children": 3},
+        {"age": 30, "cost": 606.84, "adults": 1, "children": 3}, {"age": 40, "cost":
+        635.39, "adults": 1, "children": 3}, {"age": 50, "cost": 736.79, "adults":
+        1, "children": 3}, {"age": 21, "cost": 399.24, "adults": 2, "children": 0},
+        {"age": 30, "cost": 453.12, "adults": 2, "children": 0}, {"age": 40, "cost":
+        510.22, "adults": 2, "children": 0}, {"age": 50, "cost": 713.02, "adults":
+        2, "children": 0}, {"age": 60, "cost": 1083.52, "adults": 2, "children": 0},
+        {"age": 21, "cost": 526.0, "adults": 2, "children": 1}, {"age": 30, "cost":
+        579.88, "adults": 2, "children": 1}, {"age": 40, "cost": 636.98, "adults":
+        2, "children": 1}, {"age": 50, "cost": 839.78, "adults": 2, "children": 1},
+        {"age": 21, "cost": 652.76, "adults": 2, "children": 1}, {"age": 30, "cost":
+        706.64, "adults": 2, "children": 1}, {"age": 40, "cost": 763.74, "adults":
+        2, "children": 1}, {"age": 50, "cost": 966.54, "adults": 2, "children": 1},
+        {"age": 21, "cost": 779.52, "adults": 2, "children": 1}, {"age": 30, "cost":
+        833.4, "adults": 2, "children": 1}, {"age": 40, "cost": 890.5, "adults": 2,
+        "children": 1}, {"age": 50, "cost": 1093.3, "adults": 2, "children": 1}],
+        "plan_id": "33602TX0440005", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 6250.0, "family": 12700.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-888-697-0683", "county": "DELTA", "state": "TX", "trading_partner_id":
+        "blue_cross_blue_shield_tx", "metallic_level": "bronze", "deductible": {"individual":
+        3750.0, "family": 11250.0}, "plan_name": "Blue Cross Blue Shield Basic 5,
+        a Multi-State Plan", "benefits_summary_url": "http://www.bcbstx.com/coverage/individual/on-exchange/"},
+        {"premiums": [{"age": 21, "cost": 189.93, "adults": 1, "children": 0}, {"age":
+        27, "cost": 199.05, "adults": 1, "children": 0}, {"age": 30, "cost": 215.57,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 242.73, "adults": 1, "children":
+        0}, {"age": 50, "cost": 339.22, "adults": 1, "children": 0}, {"age": 60, "cost":
+        515.48, "adults": 1, "children": 0}, {"age": 21, "cost": 310.54, "adults":
+        1, "children": 1}, {"age": 30, "cost": 336.18, "adults": 1, "children": 1},
+        {"age": 40, "cost": 363.34, "adults": 1, "children": 1}, {"age": 50, "cost":
+        459.83, "adults": 1, "children": 1}, {"age": 21, "cost": 431.15, "adults":
+        1, "children": 2}, {"age": 30, "cost": 456.78, "adults": 1, "children": 2},
+        {"age": 40, "cost": 483.95, "adults": 1, "children": 2}, {"age": 50, "cost":
+        580.44, "adults": 1, "children": 2}, {"age": 21, "cost": 551.76, "adults":
+        1, "children": 3}, {"age": 30, "cost": 577.4, "adults": 1, "children": 3},
+        {"age": 40, "cost": 604.55, "adults": 1, "children": 3}, {"age": 50, "cost":
+        701.05, "adults": 1, "children": 3}, {"age": 21, "cost": 379.86, "adults":
+        2, "children": 0}, {"age": 30, "cost": 431.14, "adults": 2, "children": 0},
+        {"age": 40, "cost": 485.46, "adults": 2, "children": 0}, {"age": 50, "cost":
+        678.44, "adults": 2, "children": 0}, {"age": 60, "cost": 1030.96, "adults":
+        2, "children": 0}, {"age": 21, "cost": 500.47, "adults": 2, "children": 1},
+        {"age": 30, "cost": 551.75, "adults": 2, "children": 1}, {"age": 40, "cost":
+        606.06, "adults": 2, "children": 1}, {"age": 50, "cost": 799.05, "adults":
+        2, "children": 1}, {"age": 21, "cost": 621.08, "adults": 2, "children": 1},
+        {"age": 30, "cost": 672.36, "adults": 2, "children": 1}, {"age": 40, "cost":
+        726.68, "adults": 2, "children": 1}, {"age": 50, "cost": 919.66, "adults":
+        2, "children": 1}, {"age": 21, "cost": 741.69, "adults": 2, "children": 1},
+        {"age": 30, "cost": 792.97, "adults": 2, "children": 1}, {"age": 40, "cost":
+        847.29, "adults": 2, "children": 1}, {"age": 50, "cost": 1040.27, "adults":
+        2, "children": 1}], "plan_id": "33602TX0420006", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6000.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-888-697-0683", "county": "DENTON", "state":
+        "TX", "trading_partner_id": "blue_cross_blue_shield_tx", "metallic_level":
+        "bronze", "deductible": {"individual": 6000.0, "family": 12700.0}, "plan_name":
+        "Blue Choice Bronze PPO 006", "benefits_summary_url": "http://www.bcbstx.com/coverage/individual/on-exchange/"},
+        {"premiums": [{"age": 21, "cost": 336.81, "adults": 1, "children": 0}, {"age":
+        27, "cost": 352.98, "adults": 1, "children": 0}, {"age": 30, "cost": 382.28,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 430.44, "adults": 1, "children":
+        0}, {"age": 50, "cost": 601.54, "adults": 1, "children": 0}, {"age": 60, "cost":
+        914.1, "adults": 1, "children": 0}, {"age": 21, "cost": 550.68, "adults":
+        1, "children": 1}, {"age": 30, "cost": 596.15, "adults": 1, "children": 1},
+        {"age": 40, "cost": 644.3, "adults": 1, "children": 1}, {"age": 50, "cost":
+        815.41, "adults": 1, "children": 1}, {"age": 21, "cost": 764.55, "adults":
+        1, "children": 2}, {"age": 30, "cost": 810.02, "adults": 1, "children": 2},
+        {"age": 40, "cost": 858.18, "adults": 1, "children": 2}, {"age": 50, "cost":
+        1029.28, "adults": 1, "children": 2}, {"age": 21, "cost": 978.42, "adults":
+        1, "children": 3}, {"age": 30, "cost": 1023.89, "adults": 1, "children": 3},
+        {"age": 40, "cost": 1072.05, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1243.15, "adults": 1, "children": 3}, {"age": 21, "cost": 673.62, "adults":
+        2, "children": 0}, {"age": 30, "cost": 764.56, "adults": 2, "children": 0},
+        {"age": 40, "cost": 860.88, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1203.08, "adults": 2, "children": 0}, {"age": 60, "cost": 1828.2, "adults":
+        2, "children": 0}, {"age": 21, "cost": 887.49, "adults": 2, "children": 1},
+        {"age": 30, "cost": 978.43, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1074.75, "adults": 2, "children": 1}, {"age": 50, "cost": 1416.94, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1101.36, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1192.3, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1288.61, "adults": 2, "children": 1}, {"age": 50, "cost": 1630.82, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1315.23, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1406.17, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1502.49, "adults": 2, "children": 1}, {"age": 50, "cost": 1844.69, "adults":
+        2, "children": 1}], "plan_id": "33602TX0440001", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 2750.0, "family": 8250.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-888-697-0683", "county": "DENTON", "state":
+        "TX", "trading_partner_id": "blue_cross_blue_shield_tx", "metallic_level":
+        "gold", "deductible": {"individual": 1000.0, "family": 3000.0}, "plan_name":
+        "Blue Cross Blue Shield Premier 1, a Multi-State Plan", "benefits_summary_url":
+        "http://www.bcbstx.com/coverage/individual/on-exchange/"}, {"premiums": [{"age":
+        21, "cost": 264.8, "adults": 1, "children": 0}, {"age": 27, "cost": 277.51,
+        "adults": 1, "children": 0}, {"age": 30, "cost": 300.55, "adults": 1, "children":
+        0}, {"age": 40, "cost": 338.41, "adults": 1, "children": 0}, {"age": 50, "cost":
+        472.93, "adults": 1, "children": 0}, {"age": 60, "cost": 718.66, "adults":
+        1, "children": 0}, {"age": 21, "cost": 432.95, "adults": 1, "children": 1},
+        {"age": 30, "cost": 468.7, "adults": 1, "children": 1}, {"age": 40, "cost":
+        506.56, "adults": 1, "children": 1}, {"age": 50, "cost": 641.08, "adults":
+        1, "children": 1}, {"age": 21, "cost": 601.1, "adults": 1, "children": 2},
+        {"age": 30, "cost": 636.85, "adults": 1, "children": 2}, {"age": 40, "cost":
+        674.71, "adults": 1, "children": 2}, {"age": 50, "cost": 809.23, "adults":
+        1, "children": 2}, {"age": 21, "cost": 769.25, "adults": 1, "children": 3},
+        {"age": 30, "cost": 805.0, "adults": 1, "children": 3}, {"age": 40, "cost":
+        842.86, "adults": 1, "children": 3}, {"age": 50, "cost": 977.38, "adults":
+        1, "children": 3}, {"age": 21, "cost": 529.6, "adults": 2, "children": 0},
+        {"age": 30, "cost": 601.1, "adults": 2, "children": 0}, {"age": 40, "cost":
+        676.82, "adults": 2, "children": 0}, {"age": 50, "cost": 945.86, "adults":
+        2, "children": 0}, {"age": 60, "cost": 1437.32, "adults": 2, "children": 0},
+        {"age": 21, "cost": 697.75, "adults": 2, "children": 1}, {"age": 30, "cost":
+        769.25, "adults": 2, "children": 1}, {"age": 40, "cost": 844.97, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1114.01, "adults": 2, "children": 1},
+        {"age": 21, "cost": 865.9, "adults": 2, "children": 1}, {"age": 30, "cost":
+        937.4, "adults": 2, "children": 1}, {"age": 40, "cost": 1013.12, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1282.16, "adults": 2, "children": 1},
+        {"age": 21, "cost": 1034.05, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1105.55, "adults": 2, "children": 1}, {"age": 40, "cost": 1181.27, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1450.31, "adults": 2, "children": 1}],
+        "plan_id": "33602TX0440003", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 6350.0, "family": 12700.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-888-697-0683", "county": "DENTON", "state": "TX", "trading_partner_id":
+        "blue_cross_blue_shield_tx", "metallic_level": "silver", "deductible": {"individual":
+        4500.0, "family": 12700.0}, "plan_name": "Blue Cross Blue Shield Solution
+        3, a Multi-State Plan", "benefits_summary_url": "http://www.bcbstx.com/coverage/individual/on-exchange/"},
+        {"premiums": [{"age": 21, "cost": 206.1, "adults": 1, "children": 0}, {"age":
+        27, "cost": 215.99, "adults": 1, "children": 0}, {"age": 30, "cost": 233.92,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 263.39, "adults": 1, "children":
+        0}, {"age": 50, "cost": 368.09, "adults": 1, "children": 0}, {"age": 60, "cost":
+        559.36, "adults": 1, "children": 0}, {"age": 21, "cost": 336.97, "adults":
+        1, "children": 1}, {"age": 30, "cost": 364.78, "adults": 1, "children": 1},
+        {"age": 40, "cost": 394.27, "adults": 1, "children": 1}, {"age": 50, "cost":
+        498.96, "adults": 1, "children": 1}, {"age": 21, "cost": 467.84, "adults":
+        1, "children": 2}, {"age": 30, "cost": 495.65, "adults": 1, "children": 2},
+        {"age": 40, "cost": 525.14, "adults": 1, "children": 2}, {"age": 50, "cost":
+        629.82, "adults": 1, "children": 2}, {"age": 21, "cost": 598.71, "adults":
+        1, "children": 3}, {"age": 30, "cost": 626.53, "adults": 1, "children": 3},
+        {"age": 40, "cost": 656.01, "adults": 1, "children": 3}, {"age": 50, "cost":
+        760.7, "adults": 1, "children": 3}, {"age": 21, "cost": 412.2, "adults": 2,
+        "children": 0}, {"age": 30, "cost": 467.84, "adults": 2, "children": 0}, {"age":
+        40, "cost": 526.79, "adults": 2, "children": 0}, {"age": 50, "cost": 736.18,
+        "adults": 2, "children": 0}, {"age": 60, "cost": 1118.72, "adults": 2, "children":
+        0}, {"age": 21, "cost": 543.06, "adults": 2, "children": 1}, {"age": 30, "cost":
+        598.71, "adults": 2, "children": 1}, {"age": 40, "cost": 657.67, "adults":
+        2, "children": 1}, {"age": 50, "cost": 867.05, "adults": 2, "children": 1},
+        {"age": 21, "cost": 673.94, "adults": 2, "children": 1}, {"age": 30, "cost":
+        729.57, "adults": 2, "children": 1}, {"age": 40, "cost": 788.54, "adults":
+        2, "children": 1}, {"age": 50, "cost": 997.92, "adults": 2, "children": 1},
+        {"age": 21, "cost": 804.81, "adults": 2, "children": 1}, {"age": 30, "cost":
+        860.45, "adults": 2, "children": 1}, {"age": 40, "cost": 919.41, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1128.79, "adults": 2, "children": 1}],
+        "plan_id": "55409TX0020002", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 6350.0, "family": 12700.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-877-900-1237", "county": "DENTON", "state": "TX", "trading_partner_id":
+        "cigna", "metallic_level": "bronze", "deductible": {"individual": 5500.0,
+        "family": 11000.0}, "plan_name": "myCigna Health Flex 5500", "benefits_summary_url":
+        "http://www.cigna.com/individuals-families/plans/texas-health-flex-5500"},
+        {"premiums": [{"age": 21, "cost": 218.44, "adults": 1, "children": 0}, {"age":
+        27, "cost": 228.93, "adults": 1, "children": 0}, {"age": 30, "cost": 247.93,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 279.17, "adults": 1, "children":
+        0}, {"age": 50, "cost": 390.13, "adults": 1, "children": 0}, {"age": 60, "cost":
+        592.85, "adults": 1, "children": 0}, {"age": 21, "cost": 357.15, "adults":
+        1, "children": 1}, {"age": 30, "cost": 386.64, "adults": 1, "children": 1},
+        {"age": 40, "cost": 417.88, "adults": 1, "children": 1}, {"age": 50, "cost":
+        528.84, "adults": 1, "children": 1}, {"age": 21, "cost": 495.86, "adults":
+        1, "children": 2}, {"age": 30, "cost": 525.35, "adults": 1, "children": 2},
+        {"age": 40, "cost": 556.59, "adults": 1, "children": 2}, {"age": 50, "cost":
+        667.55, "adults": 1, "children": 2}, {"age": 21, "cost": 634.56, "adults":
+        1, "children": 3}, {"age": 30, "cost": 664.06, "adults": 1, "children": 3},
+        {"age": 40, "cost": 695.3, "adults": 1, "children": 3}, {"age": 50, "cost":
+        806.26, "adults": 1, "children": 3}, {"age": 21, "cost": 436.88, "adults":
+        2, "children": 0}, {"age": 30, "cost": 495.86, "adults": 2, "children": 0},
+        {"age": 40, "cost": 558.34, "adults": 2, "children": 0}, {"age": 50, "cost":
+        780.26, "adults": 2, "children": 0}, {"age": 60, "cost": 1185.7, "adults":
+        2, "children": 0}, {"age": 21, "cost": 575.59, "adults": 2, "children": 1},
+        {"age": 30, "cost": 634.57, "adults": 2, "children": 1}, {"age": 40, "cost":
+        697.05, "adults": 2, "children": 1}, {"age": 50, "cost": 918.97, "adults":
+        2, "children": 1}, {"age": 21, "cost": 714.3, "adults": 2, "children": 1},
+        {"age": 30, "cost": 773.28, "adults": 2, "children": 1}, {"age": 40, "cost":
+        835.76, "adults": 2, "children": 1}, {"age": 50, "cost": 1057.68, "adults":
+        2, "children": 1}, {"age": 21, "cost": 853.01, "adults": 2, "children": 1},
+        {"age": 30, "cost": 911.99, "adults": 2, "children": 1}, {"age": 40, "cost":
+        974.47, "adults": 2, "children": 1}, {"age": 50, "cost": 1196.38, "adults":
+        2, "children": 1}], "plan_id": "55409TX0020003", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-900-1237", "county": "DENTON", "state":
+        "TX", "trading_partner_id": "cigna", "metallic_level": "bronze", "deductible":
+        {"individual": 5100.0, "family": 10200.0}, "plan_name": "myCigna Health Flex
+        5100", "benefits_summary_url": "http://www.cigna.com/individuals-families/plans/texas-health-flex-5100"},
+        {"premiums": [{"age": 21, "cost": 234.8, "adults": 1, "children": 0}, {"age":
+        27, "cost": 246.07, "adults": 1, "children": 0}, {"age": 30, "cost": 266.5,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 300.07, "adults": 1, "children":
+        0}, {"age": 50, "cost": 419.35, "adults": 1, "children": 0}, {"age": 60, "cost":
+        637.25, "adults": 1, "children": 0}, {"age": 21, "cost": 383.9, "adults":
+        1, "children": 1}, {"age": 30, "cost": 415.6, "adults": 1, "children": 1},
+        {"age": 40, "cost": 449.16, "adults": 1, "children": 1}, {"age": 50, "cost":
+        568.45, "adults": 1, "children": 1}, {"age": 21, "cost": 533.0, "adults":
+        1, "children": 2}, {"age": 30, "cost": 564.7, "adults": 1, "children": 2},
+        {"age": 40, "cost": 598.27, "adults": 1, "children": 2}, {"age": 50, "cost":
+        717.55, "adults": 1, "children": 2}, {"age": 21, "cost": 682.09, "adults":
+        1, "children": 3}, {"age": 30, "cost": 713.8, "adults": 1, "children": 3},
+        {"age": 40, "cost": 747.36, "adults": 1, "children": 3}, {"age": 50, "cost":
+        866.65, "adults": 1, "children": 3}, {"age": 21, "cost": 469.6, "adults":
+        2, "children": 0}, {"age": 30, "cost": 533.0, "adults": 2, "children": 0},
+        {"age": 40, "cost": 600.14, "adults": 2, "children": 0}, {"age": 50, "cost":
+        838.7, "adults": 2, "children": 0}, {"age": 60, "cost": 1274.5, "adults":
+        2, "children": 0}, {"age": 21, "cost": 618.7, "adults": 2, "children": 1},
+        {"age": 30, "cost": 682.1, "adults": 2, "children": 1}, {"age": 40, "cost":
+        749.24, "adults": 2, "children": 1}, {"age": 50, "cost": 987.8, "adults":
+        2, "children": 1}, {"age": 21, "cost": 767.8, "adults": 2, "children": 1},
+        {"age": 30, "cost": 831.2, "adults": 2, "children": 1}, {"age": 40, "cost":
+        898.33, "adults": 2, "children": 1}, {"age": 50, "cost": 1136.9, "adults":
+        2, "children": 1}, {"age": 21, "cost": 916.9, "adults": 2, "children": 1},
+        {"age": 30, "cost": 980.3, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1047.44, "adults": 2, "children": 1}, {"age": 50, "cost": 1286.0, "adults":
+        2, "children": 1}], "plan_id": "55409TX0020005", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-900-1237", "county": "DENTON", "state":
+        "TX", "trading_partner_id": "cigna", "metallic_level": "silver", "deductible":
+        {"individual": 1500.0, "family": 3000.0}, "plan_name": "myCigna Health Flex
+        1500", "benefits_summary_url": "http://www.cigna.com/individuals-families/plans/texas-health-flex-1500"},
+        {"premiums": [{"age": 21, "cost": 272.12, "adults": 1, "children": 0}, {"age":
+        27, "cost": 285.18, "adults": 1, "children": 0}, {"age": 30, "cost": 308.86,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 347.77, "adults": 1, "children":
+        0}, {"age": 50, "cost": 486.01, "adults": 1, "children": 0}, {"age": 60, "cost":
+        738.53, "adults": 1, "children": 0}, {"age": 21, "cost": 444.92, "adults":
+        1, "children": 1}, {"age": 30, "cost": 481.66, "adults": 1, "children": 1},
+        {"age": 40, "cost": 520.56, "adults": 1, "children": 1}, {"age": 50, "cost":
+        658.81, "adults": 1, "children": 1}, {"age": 21, "cost": 617.72, "adults":
+        1, "children": 2}, {"age": 30, "cost": 654.46, "adults": 1, "children": 2},
+        {"age": 40, "cost": 693.37, "adults": 1, "children": 2}, {"age": 50, "cost":
+        831.61, "adults": 1, "children": 2}, {"age": 21, "cost": 790.52, "adults":
+        1, "children": 3}, {"age": 30, "cost": 827.26, "adults": 1, "children": 3},
+        {"age": 40, "cost": 866.17, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1004.41, "adults": 1, "children": 3}, {"age": 21, "cost": 544.24, "adults":
+        2, "children": 0}, {"age": 30, "cost": 617.72, "adults": 2, "children": 0},
+        {"age": 40, "cost": 695.54, "adults": 2, "children": 0}, {"age": 50, "cost":
+        972.02, "adults": 2, "children": 0}, {"age": 60, "cost": 1477.06, "adults":
+        2, "children": 0}, {"age": 21, "cost": 717.04, "adults": 2, "children": 1},
+        {"age": 30, "cost": 790.52, "adults": 2, "children": 1}, {"age": 40, "cost":
+        868.33, "adults": 2, "children": 1}, {"age": 50, "cost": 1144.82, "adults":
+        2, "children": 1}, {"age": 21, "cost": 889.84, "adults": 2, "children": 1},
+        {"age": 30, "cost": 963.32, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1041.13, "adults": 2, "children": 1}, {"age": 50, "cost": 1317.62, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1062.64, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1136.12, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1213.94, "adults": 2, "children": 1}, {"age": 50, "cost": 1490.42, "adults":
+        2, "children": 1}], "plan_id": "55409TX0020009", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-900-1237", "county": "DENTON", "state":
+        "TX", "trading_partner_id": "cigna", "metallic_level": "gold", "deductible":
+        {"individual": 1900.0, "family": 4200.0}, "plan_name": "myCigna Health Flex
+        1900", "benefits_summary_url": "http://www.cigna.com/individuals-families/plans/texas-health-flex-1900"},
+        {"premiums": [{"age": 21, "cost": 287.04, "adults": 1, "children": 0}, {"age":
+        27, "cost": 300.82, "adults": 1, "children": 0}, {"age": 30, "cost": 325.79,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 366.84, "adults": 1, "children":
+        0}, {"age": 50, "cost": 512.65, "adults": 1, "children": 0}, {"age": 60, "cost":
+        779.03, "adults": 1, "children": 0}, {"age": 21, "cost": 469.31, "adults":
+        1, "children": 1}, {"age": 30, "cost": 508.06, "adults": 1, "children": 1},
+        {"age": 40, "cost": 549.11, "adults": 1, "children": 1}, {"age": 50, "cost":
+        694.92, "adults": 1, "children": 1}, {"age": 21, "cost": 651.58, "adults":
+        1, "children": 2}, {"age": 30, "cost": 690.33, "adults": 1, "children": 2},
+        {"age": 40, "cost": 731.38, "adults": 1, "children": 2}, {"age": 50, "cost":
+        877.19, "adults": 1, "children": 2}, {"age": 21, "cost": 833.85, "adults":
+        1, "children": 3}, {"age": 30, "cost": 872.6, "adults": 1, "children": 3},
+        {"age": 40, "cost": 913.65, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1059.46, "adults": 1, "children": 3}, {"age": 21, "cost": 574.08, "adults":
+        2, "children": 0}, {"age": 30, "cost": 651.58, "adults": 2, "children": 0},
+        {"age": 40, "cost": 733.68, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1025.3, "adults": 2, "children": 0}, {"age": 60, "cost": 1558.06, "adults":
+        2, "children": 0}, {"age": 21, "cost": 756.35, "adults": 2, "children": 1},
+        {"age": 30, "cost": 833.85, "adults": 2, "children": 1}, {"age": 40, "cost":
+        915.94, "adults": 2, "children": 1}, {"age": 50, "cost": 1207.57, "adults":
+        2, "children": 1}, {"age": 21, "cost": 938.62, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1016.12, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1098.22, "adults": 2, "children": 1}, {"age": 50, "cost": 1389.84, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1120.89, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1198.39, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1280.49, "adults": 2, "children": 1}, {"age": 50, "cost": 1572.11, "adults":
+        2, "children": 1}], "plan_id": "55409TX0020010", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 2500.0, "family": 5000.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-877-900-1237", "county": "DENTON", "state":
+        "TX", "trading_partner_id": "cigna", "metallic_level": "gold", "deductible":
+        {"individual": 1250.0, "family": 2500.0}, "plan_name": "myCigna Health Flex
+        1250", "benefits_summary_url": "http://www.cigna.com/individuals-families/plans/texas-health-flex-1250"},
+        {"premiums": [{"age": 21, "cost": 259.0, "adults": 1, "children": 0}, {"age":
+        27, "cost": 272.0, "adults": 1, "children": 0}, {"age": 30, "cost": 295.0,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 332.0, "adults": 1, "children":
+        0}, {"age": 50, "cost": 463.0, "adults": 1, "children": 0}, {"age": 60, "cost":
+        704.0, "adults": 1, "children": 0}, {"age": 21, "cost": 424.0, "adults": 1,
+        "children": 1}, {"age": 30, "cost": 460.0, "adults": 1, "children": 1}, {"age":
+        40, "cost": 497.0, "adults": 1, "children": 1}, {"age": 50, "cost": 628.0,
+        "adults": 1, "children": 1}, {"age": 21, "cost": 589.0, "adults": 1, "children":
+        2}, {"age": 30, "cost": 625.0, "adults": 1, "children": 2}, {"age": 40, "cost":
+        662.0, "adults": 1, "children": 2}, {"age": 50, "cost": 793.0, "adults": 1,
+        "children": 2}, {"age": 21, "cost": 754.0, "adults": 1, "children": 3}, {"age":
+        30, "cost": 790.0, "adults": 1, "children": 3}, {"age": 40, "cost": 827.0,
+        "adults": 1, "children": 3}, {"age": 50, "cost": 958.0, "adults": 1, "children":
+        3}, {"age": 21, "cost": 518.0, "adults": 2, "children": 0}, {"age": 30, "cost":
+        590.0, "adults": 2, "children": 0}, {"age": 40, "cost": 664.0, "adults": 2,
+        "children": 0}, {"age": 50, "cost": 926.0, "adults": 2, "children": 0}, {"age":
+        60, "cost": 1408.0, "adults": 2, "children": 0}, {"age": 21, "cost": 683.0,
+        "adults": 2, "children": 1}, {"age": 30, "cost": 755.0, "adults": 2, "children":
+        1}, {"age": 40, "cost": 829.0, "adults": 2, "children": 1}, {"age": 50, "cost":
+        1091.0, "adults": 2, "children": 1}, {"age": 21, "cost": 848.0, "adults":
+        2, "children": 1}, {"age": 30, "cost": 920.0, "adults": 2, "children": 1},
+        {"age": 40, "cost": 994.0, "adults": 2, "children": 1}, {"age": 50, "cost":
+        1256.0, "adults": 2, "children": 1}, {"age": 21, "cost": 1013.0, "adults":
+        2, "children": 1}, {"age": 30, "cost": 1085.0, "adults": 2, "children": 1},
+        {"age": 40, "cost": 1159.0, "adults": 2, "children": 1}, {"age": 50, "cost":
+        1421.0, "adults": 2, "children": 1}], "plan_id": "91716TX0080004", "public_exchange":
+        true, "max_out_of_pocket": {"individual": 6350.0, "family": 12700.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-855-632-6274", "county": "DENTON", "state":
+        "TX", "trading_partner_id": "aetna", "metallic_level": "bronze", "deductible":
+        {"individual": 5500.0, "family": 11000.0}, "plan_name": "Aetna AdvantagePlus
+        5500 PD", "benefits_summary_url": "http://www.aetna.com/individuals-families-health-insurance/buy-insurance/exchange/tx.html"},
+        {"premiums": [{"age": 21, "cost": 337.0, "adults": 1, "children": 0}, {"age":
+        27, "cost": 354.0, "adults": 1, "children": 0}, {"age": 30, "cost": 383.0,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 431.0, "adults": 1, "children":
+        0}, {"age": 50, "cost": 602.0, "adults": 1, "children": 0}, {"age": 60, "cost":
+        916.0, "adults": 1, "children": 0}, {"age": 21, "cost": 551.0, "adults": 1,
+        "children": 1}, {"age": 30, "cost": 597.0, "adults": 1, "children": 1}, {"age":
+        40, "cost": 645.0, "adults": 1, "children": 1}, {"age": 50, "cost": 816.0,
+        "adults": 1, "children": 1}, {"age": 21, "cost": 765.0, "adults": 1, "children":
+        2}, {"age": 30, "cost": 811.0, "adults": 1, "children": 2}, {"age": 40, "cost":
+        859.0, "adults": 1, "children": 2}, {"age": 50, "cost": 1030.0, "adults":
+        1, "children": 2}, {"age": 21, "cost": 979.0, "adults": 1, "children": 3},
+        {"age": 30, "cost": 1025.0, "adults": 1, "children": 3}, {"age": 40, "cost":
+        1073.0, "adults": 1, "children": 3}, {"age": 50, "cost": 1244.0, "adults":
+        1, "children": 3}, {"age": 21, "cost": 674.0, "adults": 2, "children": 0},
+        {"age": 30, "cost": 766.0, "adults": 2, "children": 0}, {"age": 40, "cost":
+        862.0, "adults": 2, "children": 0}, {"age": 50, "cost": 1204.0, "adults":
+        2, "children": 0}, {"age": 60, "cost": 1832.0, "adults": 2, "children": 0},
+        {"age": 21, "cost": 888.0, "adults": 2, "children": 1}, {"age": 30, "cost":
+        980.0, "adults": 2, "children": 1}, {"age": 40, "cost": 1076.0, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1418.0, "adults": 2, "children": 1},
+        {"age": 21, "cost": 1102.0, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1194.0, "adults": 2, "children": 1}, {"age": 40, "cost": 1290.0, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1632.0, "adults": 2, "children": 1},
+        {"age": 21, "cost": 1316.0, "adults": 2, "children": 1}, {"age": 30, "cost":
+        1408.0, "adults": 2, "children": 1}, {"age": 40, "cost": 1504.0, "adults":
+        2, "children": 1}, {"age": 50, "cost": 1846.0, "adults": 2, "children": 1}],
+        "plan_id": "91716TX0080008", "public_exchange": true, "max_out_of_pocket":
+        {"individual": 6350.0, "family": 12700.0}, "plan_type": "PPO", "customer_service_phone":
+        "1-855-632-6274", "county": "DENTON", "state": "TX", "trading_partner_id":
+        "aetna", "metallic_level": "silver", "deductible": {"individual": 3500.0,
+        "family": 7000.0}, "plan_name": "Aetna Classic 3500 PD", "benefits_summary_url":
+        "http://www.aetna.com/individuals-families-health-insurance/buy-insurance/exchange/tx.html"},
+        {"premiums": [{"age": 21, "cost": 284.64, "adults": 1, "children": 0}, {"age":
+        27, "cost": 298.3, "adults": 1, "children": 0}, {"age": 30, "cost": 323.07,
+        "adults": 1, "children": 0}, {"age": 40, "cost": 363.77, "adults": 1, "children":
+        0}, {"age": 50, "cost": 508.37, "adults": 1, "children": 0}, {"age": 60, "cost":
+        772.52, "adults": 1, "children": 0}, {"age": 21, "cost": 465.39, "adults":
+        1, "children": 1}, {"age": 30, "cost": 503.82, "adults": 1, "children": 1},
+        {"age": 40, "cost": 544.52, "adults": 1, "children": 1}, {"age": 50, "cost":
+        689.12, "adults": 1, "children": 1}, {"age": 21, "cost": 646.14, "adults":
+        1, "children": 2}, {"age": 30, "cost": 684.56, "adults": 1, "children": 2},
+        {"age": 40, "cost": 725.27, "adults": 1, "children": 2}, {"age": 50, "cost":
+        869.87, "adults": 1, "children": 2}, {"age": 21, "cost": 826.89, "adults":
+        1, "children": 3}, {"age": 30, "cost": 865.31, "adults": 1, "children": 3},
+        {"age": 40, "cost": 906.02, "adults": 1, "children": 3}, {"age": 50, "cost":
+        1050.61, "adults": 1, "children": 3}, {"age": 21, "cost": 569.28, "adults":
+        2, "children": 0}, {"age": 30, "cost": 646.14, "adults": 2, "children": 0},
+        {"age": 40, "cost": 727.54, "adults": 2, "children": 0}, {"age": 50, "cost":
+        1016.74, "adults": 2, "children": 0}, {"age": 60, "cost": 1545.04, "adults":
+        2, "children": 0}, {"age": 21, "cost": 750.03, "adults": 2, "children": 1},
+        {"age": 30, "cost": 826.89, "adults": 2, "children": 1}, {"age": 40, "cost":
+        908.29, "adults": 2, "children": 1}, {"age": 50, "cost": 1197.49, "adults":
+        2, "children": 1}, {"age": 21, "cost": 930.78, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1007.64, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1089.04, "adults": 2, "children": 1}, {"age": 50, "cost": 1378.24, "adults":
+        2, "children": 1}, {"age": 21, "cost": 1111.53, "adults": 2, "children": 1},
+        {"age": 30, "cost": 1188.38, "adults": 2, "children": 1}, {"age": 40, "cost":
+        1269.79, "adults": 2, "children": 1}, {"age": 50, "cost": 1558.99, "adults":
+        2, "children": 1}], "plan_id": "33602TX0420002", "public_exchange": true,
+        "max_out_of_pocket": {"individual": 3500.0, "family": 10500.0}, "plan_type":
+        "PPO", "customer_service_phone": "1-888-697-0683", "county": "DICKENS", "state":
+        "TX", "trading_partner_id": "blue_cross_blue_shield_tx", "metallic_level":
+        "gold", "deductible": {"individual": 1500.0, "family": 4500.0}, "plan_name":
+        "Blue Choice Gold PPO 002", "benefits_summary_url": "http://www.bcbstx.com/coverage/individual/on-exchange/"}]}'
     http_version: 
-  recorded_at: Wed, 22 Oct 2014 19:18:49 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 27 Jan 2015 16:48:41 GMT
+recorded_with: VCR 2.9.3

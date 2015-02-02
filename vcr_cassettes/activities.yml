@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/activities/
+    uri: https://platform.pokitdok.com/api/v4/activities/
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,247 +20,471 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 16:48:31 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Content-Length:
-      - '18351'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Server:
-      - Werkzeug/0.9.4 Python/2.7.3
-      Date:
-      - Wed, 22 Oct 2014 19:18:49 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 9, "rate_limit_reset": 1414009128, "application_mode":
-        "test", "processing_time": 25, "rate_limit_cap": 8434, "result_count": 79,
-        "activity_id": "5448031956c02c4489b7da95", "next": "http://localhost:5002/api/v4/activities/?offset=20"},
-        "data": [{"units_of_work": 1, "name": "payers", "parameters": {"state": "CA"},
+      string: '{"meta": {"rate_limit_amount": 5, "rate_limit_reset": 1422380907, "application_mode":
+        "production", "processing_time": 91, "rate_limit_cap": 1000, "result_count":
+        66, "activity_id": "54c7c15f948303218a04e273", "next": "https://platform.pokitdok.com/api/v4/activities/?offset=20"},
+        "data": [{"units_of_work": 1, "_type": "PlatformActivityModel", "name": "providers",
+        "parameters": {"npi": "1629301601"}, "_uuid": "b33e9a81-3669-4bfa-89f8-ec7490af080e",
         "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "5446e2d356c02c3df3b7da95", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.738000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:51.766000",
+        "PokitDok", "id": "542dae3ffba8eb0614eb8923", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-10-02T19:57:51.038000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-10-02T19:57:51.039000",
         "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "providers", "parameters": {"npi": "1467560003"}, "state": {"name":
+        1, "_type": "PlatformActivityModel", "name": "providers", "parameters": {"npi":
+        "1205881257"}, "_uuid": "5903565d-dd40-48d7-9c96-105312fdd10f", "state": {"name":
         "completed", "title": "Completed"}, "trading_partner_id": "PokitDok", "id":
-        "5446e2d356c02c3de9b7da95", "transition_path": ["process", "complete"], "history":
-        [{"record_dt": "2014-10-21T22:48:51.193000", "name": "init", "title": "Initializing"},
-        {"record_dt": "2014-10-21T22:48:51.196000", "name": "processing", "title":
-        "Processing transactions"}]}, {"units_of_work": 1, "name": "tradingpartners",
-        "parameters": {"id": "MOCKPAYER"}, "state": {"name": "completed", "title":
-        "Completed"}, "trading_partner_id": "PokitDok", "id": "5446e2d256c02c3dddb7da95",
-        "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:50.539000",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:50.542000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "cash_prices", "parameters": {"cpt_code": "90658", "zip_code":
-        "94403"}, "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "5446e2d356c02c3de7b7da95", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.161000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:51.162000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "payers", "parameters": {"state": "CA"}, "state": {"name": "completed",
-        "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "5446e60756c02c3ec0b7da95",
-        "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-10-21T23:02:31.488000",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-21T23:02:31.514000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "activities", "state": {"name": "completed", "title": "Completed"},
-        "trading_partner_id": "PokitDok", "id": "5446e2d356c02c3de5b7da95", "transition_path":
-        ["process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.121000",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:51.130000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "insurance_prices", "parameters": {"cpt_code": "87799", "zip_code":
-        "32218"}, "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "5446e2d256c02c3dd9b7da95", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-10-21T22:48:50.473000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:50.474000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "plans", "parameters": {"state": "TX", "plan_type": "PPO"}, "state":
+        "542daeda94830343584d82bc", "transition_path": ["process", "complete"], "history":
+        [{"record_dt": "2014-10-02T20:00:26.931000", "name": "init", "title": "Initializing"},
+        {"record_dt": "2014-10-02T20:00:26.934000", "name": "processing", "title":
+        "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "payers", "_uuid": "ac347e94-af27-4423-928a-e8a9410fb148", "state":
         {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok",
-        "id": "5446e2d256c02c3ddbb7da95", "transition_path": ["process", "complete"],
-        "history": [{"record_dt": "2014-10-21T22:48:50.508000", "name": "init", "title":
-        "Initializing"}, {"record_dt": "2014-10-21T22:48:50.509000", "name": "processing",
-        "title": "Processing transactions"}]}, {"units_of_work": 1, "name": "tradingpartners",
+        "id": "541e1552fba8eb75173b2d6d", "transition_path": ["process", "complete"],
+        "history": [{"record_dt": "2014-09-21T00:01:22.793000", "name": "init", "title":
+        "Initializing"}, {"record_dt": "2014-09-21T00:01:22.877000", "name": "processing",
+        "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "payers", "_uuid": "3b810876-2757-4e73-9b9f-1fd38259171f", "state":
+        {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok",
+        "id": "541e1438fe60f3387110b8b6", "transition_path": ["process", "complete"],
+        "history": [{"record_dt": "2014-09-20T23:56:40.384000", "name": "init", "title":
+        "Initializing"}, {"record_dt": "2014-09-20T23:56:40.457000", "name": "processing",
+        "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "providers", "parameters": {"state": "CA", "specialty": "dance"},
+        "_uuid": "d968da43-2a60-45e4-b8a1-3d13cb4853d3", "state": {"name": "completed",
+        "title": "Completed"}, "trading_partner_id": "PokitDok", "id": "541e1596fba8eb7515838e95",
+        "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-09-21T00:02:30.781000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-09-21T00:02:30.783000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "_type": "PlatformActivityModel", "name": "providers", "parameters": {"state":
+        "CA", "specialty": "DANCE"}, "_uuid": "cfd5e6a3-395e-4517-b819-23d2a48798e2",
         "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
-        "PokitDok", "id": "5446e2d356c02c3de3b7da95", "transition_path": ["process",
-        "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.032000", "name":
-        "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:51.085000",
+        "PokitDok", "id": "541e15a5fba8eb75173b2d6f", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-09-21T00:02:45.050000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-09-21T00:02:45.052000",
         "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "plans", "state": {"name": "completed", "title": "Completed"},
-        "trading_partner_id": "PokitDok", "id": "5446e60856c02c3ec5b7da95", "transition_path":
-        ["process", "complete"], "history": [{"record_dt": "2014-10-21T23:02:32.028000",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-21T23:02:32.029000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        20, "name": "batch file", "state": {"name": "completed", "title": "Completed"},
-        "trading_partner_id": "MOCKPAYER", "id": "5446e2d256c02c3ddfb7da95", "transition_path":
-        ["store", "queue", "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:50.959000",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:50.961000",
-        "name": "stored", "title": "Batch transactions stored for later processing"},
-        {"record_dt": "2014-10-21T22:48:50.995000", "name": "queued", "title": "In
-        queue waiting to start"}, {"record_dt": "2014-10-21T22:48:51.542000", "name":
-        "processing", "title": "Processing transactions"}]}, {"units_of_work": 1,
-        "name": "eligibility", "parameters": {"service_types": ["health_benefit_plan_coverage"],
-        "client_id": "WbkhoNbwuJRWdz0w9Ehl", "payer": {"id": "MOCKPAYER", "name":
-        "MOCKPAYER"}, "member": {"birth_date": "1996-06-13", "first_name": "Hassan",
-        "last_name": "Walker", "plan_start_date": "2014-03-05", "id": "773415451"},
-        "parent_id": "5446e2d256c02c3ddfb7da95", "correlation_id": "ad6e0a02-0fb2-4332-87d3-9f77efe11db6",
-        "trading_partner_id": "MOCKPAYER", "provider": {"organization_name": "Wuckert
-        Inc", "npi": "581603684"}, "async": true, "transaction_code": "request"},
-        "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "parent_id": "5446e2d256c02c3ddfb7da95", "state":
-        {"name": "scheduled", "title": "Scheduled for next available transmission
-        to Trading Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5446e2d356c02c3d8acd4617",
-        "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.332000",
-        "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "name": "providers",
-        "parameters": {"npi": "1467560003"}, "state": {"name": "completed", "title":
-        "Completed"}, "trading_partner_id": "PokitDok", "id": "5446e60856c02c3ecdb7da95",
-        "transition_path": ["process", "complete"], "history": [{"record_dt": "2014-10-21T23:02:32.293000",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-21T23:02:32.294000",
-        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
-        1, "name": "eligibility", "parameters": {"service_types": ["health_benefit_plan_coverage"],
-        "client_id": "WbkhoNbwuJRWdz0w9Ehl", "payer": {"id": "MOCKPAYER", "name":
-        "MOCKPAYER"}, "member": {"birth_date": "1996-05-07", "first_name": "Jerod",
-        "last_name": "Tromp", "plan_start_date": "2014-03-05", "id": "545943979"},
-        "parent_id": "5446e2d256c02c3ddfb7da95", "correlation_id": "ad6e0a02-0fb2-4332-87d3-9f77efe11db6",
-        "trading_partner_id": "MOCKPAYER", "provider": {"organization_name": "Wuckert
-        Inc", "npi": "581603684"}, "async": true, "transaction_code": "request"},
-        "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "parent_id": "5446e2d256c02c3ddfb7da95", "state":
-        {"name": "scheduled", "title": "Scheduled for next available transmission
-        to Trading Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5446e2d356c02c3d8acd4616",
-        "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.324000",
-        "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "name": "claims",
-        "parameters": {"claim": {"plan_participation": "assigned", "provider_signature":
-        true, "total_charge_amount": "60.0", "claim_frequency": "original", "place_of_service":
-        "office", "direct_payment": "y", "patient_signature_on_file": true, "information_release":
-        "informed_consent", "service_lines": [{"diagnosis_codes": ["487.1"], "unit_count":
-        "1.0", "unit_type": "units", "charge_amount": "60.0", "service_date": "2014-06-01",
-        "procedure_code": "99213"}]}, "trading_partner_id": "MOCKPAYER", "payer":
-        {"organization_name": "MOCKPAYER", "plan_id": "MOCKPAYER"}, "subscriber":
-        {"first_name": "Jane", "last_name": "Doe", "gender": "female", "member_id":
-        "W000000000", "payer_responsibility": "primary", "address": {"address_lines":
-        ["123 N MAIN ST"], "state": "SC", "zipcode": "29301", "city": "SPARTANBURG"},
-        "birth_date": "1970-01-01"}, "correlation_id": "3eab49a5-4e77-4ec5-9ffb-bd8a29adade0",
-        "client_id": "WbkhoNbwuJRWdz0w9Ehl", "receiver": {"organization_name": "MOCKRECEIVER",
-        "id": "MOCKRECEIVER"}, "submitter": {"organization_name": "POKITDOK TESTING",
-        "id": "POKITDOKTEST", "email": "support@pokitdok.com"}, "async": false, "billing_provider":
-        {"first_name": "Jerome", "last_name": "Aya-Ay", "npi": "1467560003", "taxonomy_code":
-        "207Q00000X", "address": {"address_lines": ["8311 WARREN H ABERNATHY HWY"],
-        "state": "SC", "zipcode": "29301", "city": "SPARTANBURG"}, "tax_id": "123456789"},
-        "transaction_code": "chargeable"}, "remaining_transitions": ["generate", "store",
-        "transmit", "wait", "receive", "process", "complete"], "state": {"name": "scheduled",
-        "title": "Scheduled for next available transmission to Trading Partner"},
-        "trading_partner_id": "MOCKPAYER", "id": "5446e2d256c02c3dd5b7da95", "transition_path":
-        ["schedule", "generate", "store", "transmit", "wait", "receive", "process",
-        "complete"], "history": [{"record_dt": "2014-10-21T22:48:50.267000", "name":
-        "init", "title": "Initializing"}]}, {"units_of_work": 1, "name": "referrals",
-        "parameters": {"patient": {"birth_date": "1970-01-01", "first_name": "JANE",
-        "last_name": "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER",
-        "payer": {"organization_name": "Mock Payer for Testing", "id": "MOCKPAYER"},
-        "originating_company_id": "123456789", "correlation_id": "d5b56815-f4b6-43c0-8bbc-68cacf249c4c",
-        "client_id": "WbkhoNbwuJRWdz0w9Ehl", "provider": {"first_name": "CHRISTINA",
-        "last_name": "BERTOLAMI", "npi": "1619131232"}, "async": false, "event": {"category":
-        "specialty_care_review", "diagnoses": [{"date": "2014-09-30", "code": "384.20"}],
-        "place_of_service": "office", "delivery": {"quantity_qualifier": "visits",
-        "quantity": 1}, "provider": {"phone": "8645822900", "first_name": "JOHN",
-        "last_name": "FOSTER", "npi": "1154387751"}, "certification_type": "initial",
-        "type": "consultation"}}, "state": {"name": "completed", "title": "Completed"},
-        "result": {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"},
-        "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER
-        INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id":
-        "d5b56815-f4b6-43c0-8bbc-68cacf249c4c", "client_id": "WbkhoNbwuJRWdz0w9Ehl",
-        "provider": {"first_name": "CHRISTINA", "last_name": "BERTOLAMI", "tax_id":
-        "1619131232"}, "async": false, "event": {"category": "specialty_care_review",
-        "diagnoses": [{"date": "2005-04-30", "code": "410.90"}], "place_of_service":
-        "office", "review": {"certification_number": "AUTH0001", "second_surgical_opinion_required":
-        false, "certification_action": "certified_in_total"}, "delivery": {"quantity_qualifier":
-        "visits", "quantity": 1}, "provider": {"first_name": "JOHN", "last_name":
-        "FOSTER", "tax_id": "1154387751"}, "certification_type": "initial", "type":
-        "consultation"}, "valid_request": true}, "trading_partner_id": "MOCKPAYER",
-        "id": "5446e2d256c02c3dd7b7da95", "transition_path": ["generate", "transmit",
-        "wait", "receive", "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:50.303000",
-        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-21T22:48:50.394000",
-        "name": "generating", "title": "Generating transactions"}, {"record_dt": "2014-10-21T22:48:50.396000",
+        1, "_type": "PlatformActivityModel", "name": "claim_status", "parameters":
+        {"patient": {"birth_date": "2000-01-01", "first_name": "JOHN", "last_name":
+        "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
+        "MOCKPAYER", "id": "MOCKPAYER"}, "provider": {"first_name": "Jerome", "last_name":
+        "Aya-Ay", "npi": "1467560003"}, "subscriber": {"birth_date": "1970-01-01",
+        "first_name": "JANE", "last_name": "DOE", "id": "1234567890"}, "correlation_id":
+        "444951e9-e3ec-4ac9-8b15-72d4c6bda5b7", "client_id": "7iF1u1XVbkAds9LSz94c",
+        "receiver": {"organization_name": "MOCKRECEIVER", "id": "MOCKRECEIVER"}, "async":
+        false, "service_date": "2014-01-01"}, "_uuid": "fbc7e5e0-c735-4dfa-9996-5c0efe8bb99c",
+        "state": {"name": "completed", "title": "Completed"}, "result": {"patient":
+        {"claims": [{"applied_to_deductible": false, "total_claim_amount": {"currency":
+        "USD", "amount": "150"}, "service_end_date": "2014-01-01", "claim_control_number":
+        "E1TWCYYMF00", "check_number": "08608-035632423", "claim_payment_amount":
+        {"currency": "USD", "amount": "125"}, "adjudication_finalized_date": "2014-03-21",
+        "statuses": [{"total_claim_amount": {"currency": "USD", "amount": "150"},
+        "status_category": "Finalized/Payment-The claim/line has been paid.", "status_code":
+        "Processed according to contract provisions (Contract refers to provisions
+        that exist between the Health Plan and a Provider of Health Care Services)",
+        "claim_payment_amount": {"currency": "USD", "amount": "125"}, "adjudication_finalized_date":
+        "2014-03-21", "remittance_date": "2014-04-09", "check_number": "08608-035632423",
+        "status_effective_date": "2014-04-24"}], "tracking_id": "E1TWCYYMF", "services":
+        [{"cpt_code": "99214", "service_end_date": "2014-03-05", "payment_amount":
+        {"currency": "USD", "amount": "125"}, "charge_amount": {"currency": "USD",
+        "amount": "150"}, "service_date": "2014-03-05", "statuses": [{"status_code":
+        "Processed according to contract provisions (Contract refers to provisions
+        that exist between the Health Plan and a Provider of Health Care Services)",
+        "status_category": "Finalized/Payment-The claim/line has been paid.", "status_effective_date":
+        "2014-04-24"}]}], "service_date": "2014-01-01", "remittance_date": "2014-04-09"}]},
+        "client_id": "7iF1u1XVbkAds9LSz94c", "payer": {"name": "MOCK PAYER INC", "id":
+        "MOCKPAYER"}, "providers": [{"first_name": "Jerome", "last_name": "Aya-Ay",
+        "npi": "1467560003"}], "correlation_id": "444951e9-e3ec-4ac9-8b15-72d4c6bda5b7",
+        "trading_partner_id": "MOCKPAYER", "submitter": {"first_name": "Jerome", "last_name":
+        "Aya-Ay", "id": "1467560003"}}, "trading_partner_id": "MOCKPAYER", "id": "541e2c1bfba8eb7516d5730b",
+        "transition_path": ["generate", "transmit", "wait", "receive", "process",
+        "complete"], "history": [{"record_dt": "2014-09-21T01:38:35.639000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-09-21T01:38:35.691000",
+        "name": "generating", "title": "Generating transactions"}, {"record_dt": "2014-09-21T01:38:35.693000",
         "name": "transmitting", "title": "Transmitting transactions to Trading Partner"},
-        {"record_dt": "2014-10-21T22:48:50.397000", "name": "waiting", "title": "Waiting
-        on Trading Partner Response"}, {"record_dt": "2014-10-21T22:48:50.398000",
+        {"record_dt": "2014-09-21T01:38:35.694000", "name": "waiting", "title": "Waiting
+        on Trading Partner Response"}, {"record_dt": "2014-09-21T01:38:35.696000",
         "name": "receiving", "title": "Receiving transactions from Trading Partner"},
-        {"record_dt": "2014-10-21T22:48:50.429000", "name": "processing", "title":
-        "Processing transactions"}]}, {"units_of_work": 1, "name": "enrollment", "parameters":
-        {"reference_number": "12456", "version": "4.0.0", "payer": {"tax_id": "654456654"},
-        "update_dt": "Wed Mar 26 22:18:47 2014", "deleted": false, "major_version":
-        "4", "subscriber": {"maintenance_type": "Addition", "first_name": "JOHN",
-        "last_name": "DOE", "benefits": [{"maintenance_type": "Addition", "late_enrollment":
-        false, "begin_date": "Sat Jun  1 00:00:00 1996", "benefit_type": "Health",
-        "coordination_of_benefits": [{"status": "Unknown", "group_or_policy_number":
-        "890111", "payer_responsibility": "Primary"}]}, {"maintenance_type": "Addition",
-        "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996", "benefit_type":
-        "Dental"}, {"maintenance_type": "Addition", "late_enrollment": false, "begin_date":
-        "Sat Jun  1 00:00:00 1996", "benefit_type": "Vision"}], "relationship": "Self",
-        "contacts": [{"communication_type2": "Work Phone Number", "primary_communication_type":
-        "Home Phone Number", "communication_number2": "7172341240", "primary_communication_number":
-        "7172343334"}], "benefit_status": "Active", "gender": "Male", "employment_status":
-        "Full-time", "subscriber_number": "123456789", "group_or_policy_number": "123456001",
-        "maintenance_reason": "Active", "member_id": "123456789", "handicapped": false,
-        "eligibility_begin_date": "Thu May 23 00:00:00 1996", "ssn": "123456789",
-        "address": {"city": "CAMP HILL", "line2": "APT 3G", "county": "CUMBERLAND",
-        "state": "PA", "postal_code": "17011", "line": "100 MARKET ST"}, "birth_date":
-        "Fri Aug 16 00:00:00 1940", "middle_name": "P", "substance_abuse": false,
-        "tobacco_use": false}, "correlation_id": "11f6e7aa-509a-4181-94c8-ce5395f8f100",
-        "insert_dt": "Wed Mar 26 22:18:47 2014", "trading_partner_id": "MOCKPAYER",
-        "purpose": "Original", "client_id": "WbkhoNbwuJRWdz0w9Ehl", "action": "Change",
-        "dependents": [], "sponsor": {"tax_id": "999888777"}}, "remaining_transitions":
-        ["generate", "store", "transmit", "wait", "receive", "process", "complete"],
-        "state": {"name": "scheduled", "title": "Scheduled for next available transmission
-        to Trading Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5446e2d356c02c3debb7da95",
-        "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.235000",
-        "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "name": "eligibility",
-        "parameters": {"service_types": ["health_benefit_plan_coverage"], "client_id":
-        "WbkhoNbwuJRWdz0w9Ehl", "payer": {"id": "MOCKPAYER", "name": "MOCKPAYER"},
-        "member": {"birth_date": "1992-01-26", "first_name": "Keyon", "last_name":
-        "Ortiz", "plan_start_date": "2014-03-05", "id": "178470414"}, "parent_id":
-        "5446e2d256c02c3ddfb7da95", "correlation_id": "ad6e0a02-0fb2-4332-87d3-9f77efe11db6",
-        "trading_partner_id": "MOCKPAYER", "provider": {"organization_name": "Wuckert
-        Inc", "npi": "581603684"}, "async": true, "transaction_code": "request"},
-        "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "parent_id": "5446e2d256c02c3ddfb7da95", "state":
-        {"name": "scheduled", "title": "Scheduled for next available transmission
-        to Trading Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5446e2d356c02c3d8acd4621",
-        "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.437000",
-        "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "name": "eligibility",
-        "parameters": {"service_types": ["health_benefit_plan_coverage"], "client_id":
-        "WbkhoNbwuJRWdz0w9Ehl", "payer": {"id": "MOCKPAYER", "name": "MOCKPAYER"},
-        "member": {"birth_date": "1995-04-14", "first_name": "Jimmie", "last_name":
-        "Monahan", "plan_start_date": "2014-03-05", "id": "315531994"}, "parent_id":
-        "5446e2d256c02c3ddfb7da95", "correlation_id": "ad6e0a02-0fb2-4332-87d3-9f77efe11db6",
-        "trading_partner_id": "MOCKPAYER", "provider": {"organization_name": "Wuckert
-        Inc", "npi": "581603684"}, "async": true, "transaction_code": "request"},
-        "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "parent_id": "5446e2d256c02c3ddfb7da95", "state":
-        {"name": "scheduled", "title": "Scheduled for next available transmission
-        to Trading Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5446e2d356c02c3d8acd461d",
-        "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.389000",
-        "name": "init", "title": "Initializing"}]}, {"units_of_work": 1, "name": "eligibility",
-        "parameters": {"service_types": ["health_benefit_plan_coverage"], "client_id":
-        "WbkhoNbwuJRWdz0w9Ehl", "payer": {"id": "MOCKPAYER", "name": "MOCKPAYER"},
-        "member": {"birth_date": "1978-01-09", "first_name": "Markus", "last_name":
-        "Bednar", "plan_start_date": "2014-03-05", "id": "674957204"}, "parent_id":
-        "5446e2d256c02c3ddfb7da95", "correlation_id": "ad6e0a02-0fb2-4332-87d3-9f77efe11db6",
-        "trading_partner_id": "MOCKPAYER", "provider": {"organization_name": "Wuckert
-        Inc", "npi": "581603684"}, "async": true, "transaction_code": "request"},
-        "remaining_transitions": ["generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "parent_id": "5446e2d256c02c3ddfb7da95", "state":
-        {"name": "scheduled", "title": "Scheduled for next available transmission
-        to Trading Partner"}, "trading_partner_id": "MOCKPAYER", "id": "5446e2d356c02c3d8acd461e",
-        "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2014-10-21T22:48:51.402000",
-        "name": "init", "title": "Initializing"}]}]}'
+        {"record_dt": "2014-09-21T01:38:35.766000", "name": "processing", "title":
+        "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "eligibility", "parameters": {"member_name": "Jane Doe", "provider_id":
+        "1467560003", "trading_partner_id": "MOCKPAYER", "update_dt": "Thu Oct  2
+        21:11:15 2014", "deleted": false, "payer_name": "Mockpayer For Testing", "major_version":
+        "3", "payer_id": "MOCKPAYER", "control_number": "000008001", "correlation_id":
+        "078fb59d-a573-4f5e-8cb4-304d1130882a", "version": "3.0.0", "member_first_name":
+        "Jane", "service_types": ["Hospital - Outpatient"], "client_id": "7iF1u1XVbkAds9LSz94c",
+        "member_id": "W000000000", "member_last_name": "Doe", "provider_name": "AYA-AY",
+        "insert_dt": "Thu Oct  2 21:11:15 2014", "member_birth_date": "Thu Jan  1
+        00:00:00 1970", "provider_first_name": "JEROME", "provider_type": "Person"},
+        "remaining_transitions": ["receive", "process", "complete"], "_uuid": "e57e6e61-706d-48f9-8307-dec162d4f716",
+        "state": {"name": "failed", "title": "Failed"}, "trading_partner_id": "MOCKPAYER",
+        "id": "542dbf7394830343584d82bd", "transition_path": ["generate", "transmit",
+        "wait", "receive", "process", "complete"], "history": [{"record_dt": "2014-10-02T21:11:15.619000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-10-02T21:11:15.665000",
+        "name": "generating", "title": "Generating transactions"}, {"record_dt": "2014-10-02T21:11:15.667000",
+        "name": "transmitting", "title": "Transmitting transactions to Trading Partner"}]},
+        {"units_of_work": 1, "_type": "PlatformActivityModel", "name": "cash_prices",
+        "parameters": {"cpt_code": "87799", "zip_code": "75201"}, "_uuid": "ca491b9e-0e63-4799-bf55-db38fac6c779",
+        "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+        "PokitDok", "id": "546246e394830357ab394f62", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-11-11T17:26:59.035000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:26:59.038000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "_type": "PlatformActivityModel", "name": "authorizations", "parameters":
+        {"patient": {"birth_date": "1970-01-01", "first_name": "JANE", "last_name":
+        "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
+        "Mock Payer for Testing", "id": "MOCKPAYER"}, "originating_company_id": "123456789",
+        "correlation_id": "1ac04594-7e87-43b2-b04f-4e40a00ab1af", "client_id": "7iF1u1XVbkAds9LSz94c",
+        "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "npi": "1467560003"},
+        "async": false, "event": {"category": "health_services_review", "diagnoses":
+        [{"date": "2014-10-01", "code": "789.00"}], "place_of_service": "office",
+        "delivery": {"quantity_qualifier": "visits", "quantity": 1}, "provider": {"organization_name":
+        "KELLY ULTRASOUND CENTER, LLC", "phone": "8642341234", "npi": "1760779011"},
+        "services": [{"cpt_code": "76700", "measurement": "unit", "quantity": 1}],
+        "certification_type": "initial", "type": "diagnostic_medical"}}, "_uuid":
+        "4ab6368d-e0e1-48b7-81f4-e0bf30032209", "state": {"name": "completed", "title":
+        "Completed"}, "result": {"patient": {"first_name": "JANE", "last_name": "DOE",
+        "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
+        "MOCK PAYER INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678",
+        "correlation_id": "1ac04594-7e87-43b2-b04f-4e40a00ab1af", "client_id": "7iF1u1XVbkAds9LSz94c",
+        "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "tax_id": "1467560003"},
+        "async": false, "event": {"category": "health_services_review", "diagnoses":
+        [{"date": "2005-04-30", "code": "410.90"}], "place_of_service": "office",
+        "review": {"certification_number": "AUTH0001", "second_surgical_opinion_required":
+        false, "certification_action": "certified_in_total"}, "delivery": {"quantity_qualifier":
+        "visits", "quantity": 1}, "provider": {"organization_name": "KELLY ULTRASOUND
+        CENTER, LLC", "tax_id": "1760779011"}, "certification_type": "initial", "type":
+        "diagnostic_medical"}, "valid_request": true}, "trading_partner_id": "MOCKPAYER",
+        "id": "546246e2fba8eb6c40bf4eea", "transition_path": ["generate", "transmit",
+        "wait", "receive", "process", "complete"], "history": [{"record_dt": "2014-11-11T17:26:58.167000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:26:58.358000",
+        "name": "generating", "title": "Generating transactions"}, {"record_dt": "2014-11-11T17:26:58.371000",
+        "name": "transmitting", "title": "Transmitting transactions to Trading Partner"},
+        {"record_dt": "2014-11-11T17:26:58.373000", "name": "waiting", "title": "Waiting
+        on Trading Partner Response"}, {"record_dt": "2014-11-11T17:26:58.379000",
+        "name": "receiving", "title": "Receiving transactions from Trading Partner"},
+        {"record_dt": "2014-11-11T17:26:58.458000", "name": "processing", "title":
+        "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "activities", "_uuid": "28ce99ad-f122-4a49-816f-454e6b7e0818", "state":
+        {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok",
+        "id": "546246e794830357aa9a7542", "transition_path": ["process", "complete"],
+        "history": [{"record_dt": "2014-11-11T17:27:03.474000", "name": "init", "title":
+        "Initializing"}, {"record_dt": "2014-11-11T17:27:03.511000", "name": "processing",
+        "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "payers", "_uuid": "bd511801-7ca6-4358-af99-5b0a3d47a82a", "state":
+        {"name": "completed", "title": "Completed"}, "trading_partner_id": "PokitDok",
+        "id": "546246e8fba8eb6c3c4703be", "transition_path": ["process", "complete"],
+        "history": [{"record_dt": "2014-11-11T17:27:04.234000", "name": "init", "title":
+        "Initializing"}, {"record_dt": "2014-11-11T17:27:04.241000", "name": "processing",
+        "title": "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "eligibility", "parameters": {"service_types": ["health_benefit_plan_coverage"],
+        "trading_partner_id": "MOCKPAYER", "payer": {"id": "MOCKPAYER", "name": "Mockpayer
+        For Testing"}, "member": {"birth_date": "1970-01-01", "first_name": "Jane",
+        "last_name": "Doe", "id": "W000000000"}, "correlation_id": "30e2b1e6-f5c9-41d5-8c01-afa778181228",
+        "client_id": "7iF1u1XVbkAds9LSz94c", "provider": {"first_name": "JEROME",
+        "last_name": "AYA-AY", "npi": "1467560003"}, "async": false, "transaction_code":
+        "request"}, "_uuid": "bb6d45b3-49ee-46db-b0ca-4fed996e4ca1", "state": {"name":
+        "completed", "title": "Completed"}, "result": {"service_types": ["professional_physician_visit_office"],
+        "client_id": "7iF1u1XVbkAds9LSz94c", "payer": {"id": "MOCKPAYER", "name":
+        "MOCK PAYER INC"}, "summary": {"deductible": {"individual": {"in_network":
+        {"applied": {"currency": "USD", "amount": "16.43"}, "limit": {"currency":
+        "USD", "amount": "3000"}, "remaining": {"currency": "USD", "amount": "2983.57"}},
+        "out_of_network": {"applied": {"currency": "USD", "amount": "16.43"}, "limit":
+        {"currency": "USD", "amount": "6000"}, "remaining": {"currency": "USD", "amount":
+        "5983.57"}}}, "family": {"in_network": {"applied": {"currency": "USD", "amount":
+        "43.91"}, "limit": {"currency": "USD", "amount": "6000"}, "remaining": {"currency":
+        "USD", "amount": "5956.09"}}, "out_of_network": {"applied": {"currency": "USD",
+        "amount": "43.91"}, "limit": {"currency": "USD", "amount": "12000"}, "remaining":
+        {"currency": "USD", "amount": "11956.09"}}}}}, "subscriber": {"birth_date":
+        "1970-01-01", "first_name": "Jane", "last_name": "Doe", "id": "W000000000",
+        "address": {"city": "SPARTANBURG", "state": "SC", "zipcode": "29307", "address_lines":
+        ["123 MAIN ST"]}}, "correlation_id": "30e2b1e6-f5c9-41d5-8c01-afa778181228",
+        "trading_partner_id": "MOCKPAYER", "provider": {"first_name": "JEROME", "last_name":
+        "JEROME AYA-AY", "npi": "1467560003"}, "coverage": {"service_types": ["professional_physician_visit_office"],
+        "group_number": "088818801000013", "out_of_pocket": [{"in_plan_network": "yes",
+        "benefit_amount": {"currency": "USD", "amount": "3000"}, "coverage_level":
+        "individual"}, {"in_plan_network": "yes", "benefit_amount": {"currency": "USD",
+        "amount": "2983.57"}, "coverage_level": "individual", "time_period": "remaining"},
+        {"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount":
+        "6000"}, "coverage_level": "family"}, {"in_plan_network": "yes", "benefit_amount":
+        {"currency": "USD", "amount": "5956.09"}, "coverage_level": "family", "time_period":
+        "remaining"}, {"in_plan_network": "no", "benefit_amount": {"currency": "USD",
+        "amount": "12500"}, "coverage_level": "individual"}, {"in_plan_network": "no",
+        "benefit_amount": {"currency": "USD", "amount": "12483.57"}, "coverage_level":
+        "individual", "time_period": "remaining"}, {"in_plan_network": "no", "benefit_amount":
+        {"currency": "USD", "amount": "25000"}, "coverage_level": "family"}, {"in_plan_network":
+        "no", "benefit_amount": {"currency": "USD", "amount": "24956.09"}, "coverage_level":
+        "family", "messages": [{"message": "Unlimited Lifetime Benefits"}], "time_period":
+        "remaining"}], "level": "employee_and_spouse", "copay": [{"in_plan_network":
+        "yes", "service_types": ["professional_physician_visit_office"], "coverage_level":
+        "employee_and_spouse", "messages": [{"message": "PRIMARY OFFICE"}]}, {"in_plan_network":
+        "not_applicable", "service_types": ["professional_physician_visit_office"],
+        "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
+        VS"}, {"message": "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC
+        VISIT"}, {"message": "PRIME CARE VST"}, {"message": "Plan Requires PreCert"},
+        {"message": "Commercial"}, {"message": "Plan includes NAP"}, {"message": "Pre-Existing
+        may apply"}]}], "deductibles": [{"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
+        VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"}], "in_plan_network":
+        "yes", "eligibility_date": "2013-01-01", "time_period": "calendar_year", "coverage_level":
+        "family", "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}],
+        "in_plan_network": "yes", "time_period": "remaining", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "5956.09"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN
+        OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME
+        CARE VST"}], "in_plan_network": "yes", "eligibility_date": "2013-01-01", "time_period":
+        "calendar_year", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "3000"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "yes", "time_period":
+        "remaining", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "2983.57"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
+        VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "no", "eligibility_date":
+        "2013-01-01", "time_period": "calendar_year", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "12000"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}],
+        "in_plan_network": "no", "time_period": "remaining", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "11956.09"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN
+        OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE
+        VST"}], "in_plan_network": "no", "eligibility_date": "2013-01-01", "time_period":
+        "calendar_year", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "6000"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "no", "time_period":
+        "remaining", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "5983.57"}}], "plan_begin_date": "2013-02-15", "eligibility_begin_date":
+        "2012-02-01", "coinsurance": [{"benefit_percent": 0.0, "service_types": ["professional_physician_visit_office"],
+        "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
+        VS"}, {"message": "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC
+        VISIT"}, {"message": "PRIMARY OFFICE"}, {"message": "PRIME CARE VST"}], "in_plan_network":
+        "yes"}, {"benefit_percent": 0.5, "service_types": ["professional_physician_visit_office"],
+        "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
+        VS,COINS APPLIES TO OUT OF POCKET"}, {"message": "GYN VISIT,COINS APPLIES
+        TO OUT OF POCKET"}, {"message": "SPEC OFFICE,COINS APPLIES TO OUT OF POCKET"},
+        {"message": "SPEC VISIT,COINS APPLIES TO OUT OF POCKET"}, {"message": "PRIME
+        CARE VST,COINS APPLIES TO OUT OF POCKET"}], "in_plan_network": "no"}], "group_description":
+        "MOCK INDIVIDUAL ADVANTAGE PLAN", "plan_number": "0888188", "service_date":
+        "2013-08-10"}, "valid_request": true}, "trading_partner_id": "MOCKPAYER",
+        "id": "546246e4fba8eb6c3c4703bb", "transition_path": ["generate", "transmit",
+        "wait", "receive", "process", "complete"], "history": [{"record_dt": "2014-11-11T17:27:00.858000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:27:00.986000",
+        "name": "generating", "title": "Generating transactions"}, {"record_dt": "2014-11-11T17:27:00.988000",
+        "name": "transmitting", "title": "Transmitting transactions to Trading Partner"},
+        {"record_dt": "2014-11-11T17:27:00.989000", "name": "waiting", "title": "Waiting
+        on Trading Partner Response"}, {"record_dt": "2014-11-11T17:27:00.991000",
+        "name": "receiving", "title": "Receiving transactions from Trading Partner"},
+        {"record_dt": "2014-11-11T17:27:01.297000", "name": "processing", "title":
+        "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "tradingpartners", "parameters": {"id": "MOCKPAYER"}, "_uuid": "7040966c-e1e9-484f-a60b-48352d8fe756",
+        "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+        "PokitDok", "id": "546246e9fba8eb6c40bf4eed", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-11-11T17:27:05.370000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:27:05.374000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "_type": "PlatformActivityModel", "name": "plans", "_uuid": "93af0834-e7c6-4415-b882-c0999429aa5e",
+        "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+        "PokitDok", "id": "546246ea94830357a978c290", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-11-11T17:27:06.035000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:27:06.037000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "_type": "PlatformActivityModel", "name": "plans", "parameters": {"state":
+        "TX", "plan_type": "PPO"}, "_uuid": "45507ebf-916f-45ac-9461-b7320b907e63",
+        "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+        "PokitDok", "id": "546246eafba8eb6c3c4703bf", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-11-11T17:27:06.720000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:27:06.721000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "_type": "PlatformActivityModel", "name": "payers", "_uuid": "c3743873-4dd2-43ee-a2d2-b4cfd2c11ac8",
+        "state": {"name": "completed", "title": "Completed"}, "trading_partner_id":
+        "PokitDok", "id": "5462471d94830357ab394f6d", "transition_path": ["process",
+        "complete"], "history": [{"record_dt": "2014-11-11T17:27:57.653000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:27:57.659000",
+        "name": "processing", "title": "Processing transactions"}]}, {"units_of_work":
+        1, "_type": "PlatformActivityModel", "name": "referrals", "parameters": {"patient":
+        {"birth_date": "1970-01-01", "first_name": "JANE", "last_name": "DOE", "id":
+        "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
+        "Mock Payer for Testing", "id": "MOCKPAYER"}, "originating_company_id": "123456789",
+        "correlation_id": "c84a0aa9-34e9-4f4c-b949-eb1030fc53c9", "client_id": "7iF1u1XVbkAds9LSz94c",
+        "provider": {"first_name": "CHRISTINA", "last_name": "BERTOLAMI", "npi": "1619131232"},
+        "async": false, "event": {"category": "specialty_care_review", "diagnoses":
+        [{"date": "2014-09-30", "code": "384.20"}], "place_of_service": "office",
+        "delivery": {"quantity_qualifier": "visits", "quantity": 1}, "provider": {"phone":
+        "8645822900", "first_name": "JOHN", "last_name": "FOSTER", "npi": "1154387751"},
+        "certification_type": "initial", "type": "consultation"}}, "_uuid": "1b327fd5-1819-4508-bb5b-a6e56945a971",
+        "state": {"name": "completed", "title": "Completed"}, "result": {"patient":
+        {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"}, "trading_partner_id":
+        "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER INC", "id": "MOCKPAYER"},
+        "originating_company_id": "9012345678", "correlation_id": "c84a0aa9-34e9-4f4c-b949-eb1030fc53c9",
+        "client_id": "7iF1u1XVbkAds9LSz94c", "provider": {"first_name": "CHRISTINA",
+        "last_name": "BERTOLAMI", "tax_id": "1619131232"}, "async": false, "event":
+        {"category": "specialty_care_review", "diagnoses": [{"date": "2005-04-30",
+        "code": "410.90"}], "place_of_service": "office", "review": {"certification_number":
+        "AUTH0001", "second_surgical_opinion_required": false, "certification_action":
+        "certified_in_total"}, "delivery": {"quantity_qualifier": "visits", "quantity":
+        1}, "provider": {"first_name": "JOHN", "last_name": "FOSTER", "tax_id": "1154387751"},
+        "certification_type": "initial", "type": "consultation"}, "valid_request":
+        true}, "trading_partner_id": "MOCKPAYER", "id": "546246eb94830357ab394f64",
+        "transition_path": ["generate", "transmit", "wait", "receive", "process",
+        "complete"], "history": [{"record_dt": "2014-11-11T17:27:07.277000", "name":
+        "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:27:07.488000",
+        "name": "generating", "title": "Generating transactions"}, {"record_dt": "2014-11-11T17:27:07.491000",
+        "name": "transmitting", "title": "Transmitting transactions to Trading Partner"},
+        {"record_dt": "2014-11-11T17:27:07.493000", "name": "waiting", "title": "Waiting
+        on Trading Partner Response"}, {"record_dt": "2014-11-11T17:27:07.496000",
+        "name": "receiving", "title": "Receiving transactions from Trading Partner"},
+        {"record_dt": "2014-11-11T17:27:07.566000", "name": "processing", "title":
+        "Processing transactions"}]}, {"units_of_work": 1, "_type": "PlatformActivityModel",
+        "name": "authorizations", "parameters": {"patient": {"birth_date": "1970-01-01",
+        "first_name": "JANE", "last_name": "DOE", "id": "1234567890"}, "trading_partner_id":
+        "MOCKPAYER", "payer": {"organization_name": "Mock Payer for Testing", "id":
+        "MOCKPAYER"}, "originating_company_id": "123456789", "correlation_id": "ab0bcca7-257d-4bf3-9fd4-5f3f1472d5a5",
+        "client_id": "7iF1u1XVbkAds9LSz94c", "provider": {"first_name": "JEROME",
+        "last_name": "AYA-AY", "npi": "1467560003"}, "async": false, "event": {"category":
+        "health_services_review", "diagnoses": [{"date": "2014-10-01", "code": "789.00"}],
+        "place_of_service": "office", "delivery": {"quantity_qualifier": "visits",
+        "quantity": 1}, "provider": {"organization_name": "KELLY ULTRASOUND CENTER,
+        LLC", "phone": "8642341234", "npi": "1760779011"}, "services": [{"cpt_code":
+        "76700", "measurement": "unit", "quantity": 1}], "certification_type": "initial",
+        "type": "diagnostic_medical"}}, "_uuid": "92cf23c9-3f8f-4939-973e-4f611d34ef5e",
+        "state": {"name": "completed", "title": "Completed"}, "result": {"patient":
+        {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"}, "trading_partner_id":
+        "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER INC", "id": "MOCKPAYER"},
+        "originating_company_id": "9012345678", "correlation_id": "ab0bcca7-257d-4bf3-9fd4-5f3f1472d5a5",
+        "client_id": "7iF1u1XVbkAds9LSz94c", "provider": {"first_name": "JEROME",
+        "last_name": "AYA-AY", "tax_id": "1467560003"}, "async": false, "event": {"category":
+        "health_services_review", "diagnoses": [{"date": "2005-04-30", "code": "410.90"}],
+        "place_of_service": "office", "review": {"certification_number": "AUTH0001",
+        "second_surgical_opinion_required": false, "certification_action": "certified_in_total"},
+        "delivery": {"quantity_qualifier": "visits", "quantity": 1}, "provider": {"organization_name":
+        "KELLY ULTRASOUND CENTER, LLC", "tax_id": "1760779011"}, "certification_type":
+        "initial", "type": "diagnostic_medical"}, "valid_request": true}, "trading_partner_id":
+        "MOCKPAYER", "id": "5462471894830357ab394f67", "transition_path": ["generate",
+        "transmit", "wait", "receive", "process", "complete"], "history": [{"record_dt":
+        "2014-11-11T17:27:52.340000", "name": "init", "title": "Initializing"}, {"record_dt":
+        "2014-11-11T17:27:52.382000", "name": "generating", "title": "Generating transactions"},
+        {"record_dt": "2014-11-11T17:27:52.385000", "name": "transmitting", "title":
+        "Transmitting transactions to Trading Partner"}, {"record_dt": "2014-11-11T17:27:52.387000",
+        "name": "waiting", "title": "Waiting on Trading Partner Response"}, {"record_dt":
+        "2014-11-11T17:27:52.390000", "name": "receiving", "title": "Receiving transactions
+        from Trading Partner"}, {"record_dt": "2014-11-11T17:27:52.448000", "name":
+        "processing", "title": "Processing transactions"}]}, {"units_of_work": 1,
+        "_type": "PlatformActivityModel", "name": "eligibility", "parameters": {"service_types":
+        ["health_benefit_plan_coverage"], "trading_partner_id": "MOCKPAYER", "payer":
+        {"id": "MOCKPAYER", "name": "Mockpayer For Testing"}, "member": {"birth_date":
+        "1970-01-01", "first_name": "Jane", "last_name": "Doe", "id": "W000000000"},
+        "correlation_id": "89bbe844-c586-4614-ba29-a126d1527c2b", "client_id": "7iF1u1XVbkAds9LSz94c",
+        "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "npi": "1467560003"},
+        "async": false, "transaction_code": "request"}, "_uuid": "92e6bb96-c37b-42df-a57f-9b6e7b0f203f",
+        "state": {"name": "completed", "title": "Completed"}, "result": {"service_types":
+        ["professional_physician_visit_office"], "client_id": "7iF1u1XVbkAds9LSz94c",
+        "payer": {"id": "MOCKPAYER", "name": "MOCK PAYER INC"}, "summary": {"deductible":
+        {"individual": {"in_network": {"applied": {"currency": "USD", "amount": "16.43"},
+        "limit": {"currency": "USD", "amount": "3000"}, "remaining": {"currency":
+        "USD", "amount": "2983.57"}}, "out_of_network": {"applied": {"currency": "USD",
+        "amount": "16.43"}, "limit": {"currency": "USD", "amount": "6000"}, "remaining":
+        {"currency": "USD", "amount": "5983.57"}}}, "family": {"in_network": {"applied":
+        {"currency": "USD", "amount": "43.91"}, "limit": {"currency": "USD", "amount":
+        "6000"}, "remaining": {"currency": "USD", "amount": "5956.09"}}, "out_of_network":
+        {"applied": {"currency": "USD", "amount": "43.91"}, "limit": {"currency":
+        "USD", "amount": "12000"}, "remaining": {"currency": "USD", "amount": "11956.09"}}}}},
+        "subscriber": {"birth_date": "1970-01-01", "first_name": "Jane", "last_name":
+        "Doe", "id": "W000000000", "address": {"city": "SPARTANBURG", "state": "SC",
+        "zipcode": "29307", "address_lines": ["123 MAIN ST"]}}, "correlation_id":
+        "89bbe844-c586-4614-ba29-a126d1527c2b", "trading_partner_id": "MOCKPAYER",
+        "provider": {"first_name": "JEROME", "last_name": "JEROME AYA-AY", "npi":
+        "1467560003"}, "coverage": {"service_types": ["professional_physician_visit_office"],
+        "group_number": "088818801000013", "out_of_pocket": [{"in_plan_network": "yes",
+        "benefit_amount": {"currency": "USD", "amount": "3000"}, "coverage_level":
+        "individual"}, {"in_plan_network": "yes", "benefit_amount": {"currency": "USD",
+        "amount": "2983.57"}, "coverage_level": "individual", "time_period": "remaining"},
+        {"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount":
+        "6000"}, "coverage_level": "family"}, {"in_plan_network": "yes", "benefit_amount":
+        {"currency": "USD", "amount": "5956.09"}, "coverage_level": "family", "time_period":
+        "remaining"}, {"in_plan_network": "no", "benefit_amount": {"currency": "USD",
+        "amount": "12500"}, "coverage_level": "individual"}, {"in_plan_network": "no",
+        "benefit_amount": {"currency": "USD", "amount": "12483.57"}, "coverage_level":
+        "individual", "time_period": "remaining"}, {"in_plan_network": "no", "benefit_amount":
+        {"currency": "USD", "amount": "25000"}, "coverage_level": "family"}, {"in_plan_network":
+        "no", "benefit_amount": {"currency": "USD", "amount": "24956.09"}, "coverage_level":
+        "family", "messages": [{"message": "Unlimited Lifetime Benefits"}], "time_period":
+        "remaining"}], "level": "employee_and_spouse", "copay": [{"in_plan_network":
+        "yes", "service_types": ["professional_physician_visit_office"], "coverage_level":
+        "employee_and_spouse", "messages": [{"message": "PRIMARY OFFICE"}]}, {"in_plan_network":
+        "not_applicable", "service_types": ["professional_physician_visit_office"],
+        "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
+        VS"}, {"message": "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC
+        VISIT"}, {"message": "PRIME CARE VST"}, {"message": "Plan Requires PreCert"},
+        {"message": "Commercial"}, {"message": "Plan includes NAP"}, {"message": "Pre-Existing
+        may apply"}]}], "deductibles": [{"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
+        VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"}], "in_plan_network":
+        "yes", "eligibility_date": "2013-01-01", "time_period": "calendar_year", "coverage_level":
+        "family", "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}],
+        "in_plan_network": "yes", "time_period": "remaining", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "5956.09"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN
+        OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME
+        CARE VST"}], "in_plan_network": "yes", "eligibility_date": "2013-01-01", "time_period":
+        "calendar_year", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "3000"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "yes", "time_period":
+        "remaining", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "2983.57"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
+        VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "no", "eligibility_date":
+        "2013-01-01", "time_period": "calendar_year", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "12000"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}],
+        "in_plan_network": "no", "time_period": "remaining", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "11956.09"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN
+        OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE
+        VST"}], "in_plan_network": "no", "eligibility_date": "2013-01-01", "time_period":
+        "calendar_year", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "6000"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "no", "time_period":
+        "remaining", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "5983.57"}}], "plan_begin_date": "2013-02-15", "eligibility_begin_date":
+        "2012-02-01", "coinsurance": [{"benefit_percent": 0.0, "service_types": ["professional_physician_visit_office"],
+        "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
+        VS"}, {"message": "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC
+        VISIT"}, {"message": "PRIMARY OFFICE"}, {"message": "PRIME CARE VST"}], "in_plan_network":
+        "yes"}, {"benefit_percent": 0.5, "service_types": ["professional_physician_visit_office"],
+        "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
+        VS,COINS APPLIES TO OUT OF POCKET"}, {"message": "GYN VISIT,COINS APPLIES
+        TO OUT OF POCKET"}, {"message": "SPEC OFFICE,COINS APPLIES TO OUT OF POCKET"},
+        {"message": "SPEC VISIT,COINS APPLIES TO OUT OF POCKET"}, {"message": "PRIME
+        CARE VST,COINS APPLIES TO OUT OF POCKET"}], "in_plan_network": "no"}], "group_description":
+        "MOCK INDIVIDUAL ADVANTAGE PLAN", "plan_number": "0888188", "service_date":
+        "2013-08-10"}, "valid_request": true}, "trading_partner_id": "MOCKPAYER",
+        "id": "5462471a94830357ab394f6a", "transition_path": ["generate", "transmit",
+        "wait", "receive", "process", "complete"], "history": [{"record_dt": "2014-11-11T17:27:54.775000",
+        "name": "init", "title": "Initializing"}, {"record_dt": "2014-11-11T17:27:54.881000",
+        "name": "generating", "title": "Generating transactions"}, {"record_dt": "2014-11-11T17:27:54.884000",
+        "name": "transmitting", "title": "Transmitting transactions to Trading Partner"},
+        {"record_dt": "2014-11-11T17:27:54.887000", "name": "waiting", "title": "Waiting
+        on Trading Partner Response"}, {"record_dt": "2014-11-11T17:27:54.889000",
+        "name": "receiving", "title": "Receiving transactions from Trading Partner"},
+        {"record_dt": "2014-11-11T17:27:55.167000", "name": "processing", "title":
+        "Processing transactions"}]}]}'
     http_version: 
-  recorded_at: Wed, 22 Oct 2014 19:18:49 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 27 Jan 2015 16:48:32 GMT
+recorded_with: VCR 2.9.3

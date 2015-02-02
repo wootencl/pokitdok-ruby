@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/prices/cash?cpt_code=90658&zip_code=94403
+    uri: https://platform.pokitdok.com/api/v4/prices/cash?cpt_code=90658&zip_code=94403
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - pokitdok-ruby 0.4.1 ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin14.0]
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,26 +20,31 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 16:48:37 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '424'
+      - '474'
+      Connection:
+      - keep-alive
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Server:
-      - Werkzeug/0.9.4 Python/2.7.3
-      Date:
-      - Wed, 22 Oct 2014 19:18:50 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 13, "rate_limit_reset": 1414009128,
-        "application_mode": "test", "processing_time": 9, "rate_limit_cap": 8434,
-        "credits_remaining": 9997, "activity_id": "5448031a56c02c4491b7da95", "credits_billed":
-        1}, "data": [{"high": 85.0, "cpt_code": "90658", "geo_zip_area": "944", "payment_type":
-        "paid", "standard_deviation": 18.16, "average": 45.58, "payer_type": "cash",
-        "median": 42.0, "low": 25.0}]}'
+      string: '{"meta": {"rate_limit_amount": 11, "rate_limit_reset": 1422380906,
+        "application_mode": "production", "processing_time": 43, "rate_limit_cap":
+        1000, "credits_remaining": 9999, "activity_id": "54c7c165fba8eb2b3ce3184a",
+        "credits_billed": 1}, "data": [{"high_price": 75.10311800523911, "cpt_code":
+        "90658", "low_price": 52.90216216216216, "average_price": 61.545527483658326,
+        "geo_zip_area": "944", "standard_deviation": 7.329669571598287, "median_price":
+        60.229782717498736}]}'
     http_version: 
-  recorded_at: Wed, 22 Oct 2014 19:18:50 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 27 Jan 2015 16:48:38 GMT
+recorded_with: VCR 2.9.3

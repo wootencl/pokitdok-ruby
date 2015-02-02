@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5002/api/v4/tradingpartners/MOCKPAYER
+    uri: https://platform.pokitdok.com/api/v4/tradingpartners/aetna
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer zwHIWGYIyYqGAZgczUzBpsGrhaRZFmd6mQqLaTFR
+      - Bearer iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,25 +20,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 27 Jan 2015 22:43:19 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '352'
+      - '308'
+      Connection:
+      - keep-alive
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Server:
-      - Werkzeug/0.9.4 Python/2.7.3
-      Date:
-      - Wed, 22 Oct 2014 19:18:49 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 8, "rate_limit_reset": 1414009128, "application_mode":
-        "test", "processing_time": 10, "rate_limit_cap": 8434, "activity_id": "5448031956c02c4487b7da95"},
-        "data": {"is_enabled": false, "supported_transactions": ["837", "834", "835",
-        "270", "271", "276", "277", "278"], "id": "MOCKPAYER", "name": "Mock Payer
-        for Testing"}}'
+      string: '{"meta": {"rate_limit_amount": 2, "rate_limit_reset": 1422402047, "application_mode":
+        "production", "processing_time": 35, "rate_limit_cap": 1000, "activity_id":
+        "54c81487fba8eb2b3b39c565"}, "data": {"is_enabled": true, "supported_transactions":
+        ["270", "837", "276", "278"], "id": "aetna", "name": "Aetna"}}'
     http_version: 
-  recorded_at: Wed, 22 Oct 2014 19:18:49 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 27 Jan 2015 22:43:19 GMT
+recorded_with: VCR 2.9.3

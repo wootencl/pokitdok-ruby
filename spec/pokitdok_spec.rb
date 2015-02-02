@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 
-CLIENT_ID = 'WbkhoNbwuJRWdz0w9Ehl'
-CLIENT_SECRET = 'OPA9HSOUMJLYyZrH4VRPZLoL51gGtm7U4OxuYiz6'
-POKITDOK_TEST_URL = 'http://localhost:5002'
+CLIENT_ID = '----'
+CLIENT_SECRET = '----'
+POKITDOK_TEST_URL = 'https://platform.pokitdok.com'
 
 def check_meta_and_data(result)
   refute_empty result['meta']
@@ -22,13 +22,13 @@ describe PokitDok do
     end
 
     it 'should default to the v4 api specification' do
-      @pokitdok.api_url.must_equal 'http://localhost:5002/api/v4'
+      @pokitdok.api_url.must_match /.*v4.*/
     end
 
     it 'should revert to the v3 api specification if requested' do
       VCR.use_cassette 'auth' do
         @pokitdok3 = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET, 'v3')
-        @pokitdok3.api_url.must_equal 'http://localhost:5002/api/v3'
+        @pokitdok3.api_url.must_match /.*v3.*/
       end
     end
 
@@ -186,7 +186,7 @@ describe PokitDok do
 
         check_meta_and_data @payers
         refute_nil @payers['data']
-        @payers['data'].size.must_equal 295
+        @payers['data'].size.must_equal 159
       end
     end
 
@@ -226,7 +226,7 @@ describe PokitDok do
 
         check_meta_and_data @providers
         refute_nil @providers['data']
-        @providers['data'].size.must_equal 4
+        @providers['data'].size.must_equal 1
       end
     end
 
@@ -245,6 +245,10 @@ describe PokitDok do
     end
 
     describe 'Scheduling endpoints' do
+      before do
+        skip 'Implemented but not currently testable in production'
+      end
+
       it 'should list the schedulers' do
         VCR.use_cassette 'scheduling' do
           @schedulers = @pokitdok.schedulers
@@ -289,7 +293,7 @@ describe PokitDok do
 
       it 'should query for open appointment slots' do
         VCR.use_cassette 'scheduling' do
-          @pokitdok.get_open_appointment_slots({})
+          @pokitdok.open_appointment_slots({})
         end
       end
 
@@ -315,7 +319,7 @@ describe PokitDok do
 
     end
 
-    describe 'Trading Partners endpoint index' do
+    describe 'Trading Partners endpoints' do
       it 'should expose the trading partners endpoint (index call)' do
         query = {}
 
@@ -327,18 +331,15 @@ describe PokitDok do
         @trading_partners['data'].must_be_instance_of Array
         @trading_partners['data'].length.must_be :>, 1
       end
-    end
 
-    describe 'Trading Partners endpoint get' do
       it 'should expose the trading partners endpoint (get call)' do
-        query = { trading_partner_id: 'MOCKPAYER' }
-
         VCR.use_cassette 'trading_partners_get' do
-          @trading_partners = @pokitdok.trading_partners(query)
+          @trading_partners = @pokitdok.trading_partners({ trading_partner_id: 'aetna' })
         end
 
         check_meta_and_data @trading_partners
         @trading_partners['data'].must_be_instance_of Hash
+        @trading_partners['data']['name'].must_equal "Aetna"
       end
     end
   end
