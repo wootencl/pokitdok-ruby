@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://platform.pokitdok.com/api/v4/tradingpartners/
+    uri: http://localhost:5002/api/v4/tradingpartners/
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
+      - Bearer EJe5ksfv6vqMctOYzUQtXbS4mNKw6Sr1MYRLnHNF
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,156 +20,199 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 27 Jan 2015 16:48:34 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      Content-Length:
+      - '28624'
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Mon, 02 Mar 2015 22:40:15 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 8, "rate_limit_reset": 1422380906, "application_mode":
+      string: '{"meta": {"rate_limit_amount": 2, "rate_limit_reset": 1425339615, "application_mode":
         "production", "processing_time": 28, "rate_limit_cap": 1000, "activity_id":
-        "54c7c162948303218c6f00b3"}, "data": [{"is_enabled": true, "supported_transactions":
-        ["837"], "id": "aarp_medicare_complete", "name": "AARP Medicare Complete"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "aarp_medicare_supplement",
-        "name": "AARP Medicare Supplement Plan"}, {"is_enabled": true, "supported_transactions":
-        ["276", "837", "270", "278"], "id": "aetna", "name": "Aetna"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "all_savers_insurance", "name":
-        "All Savers Insurance"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "54f4e6cf0640fd11dcb837c2"}, "data": [{"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "aarp_medicare_complete", "name": "AARP Medicare Complete"},
+        {"is_enabled": true, "supported_transactions": ["270", "837"], "id": "aarp_medicare_supplement",
+        "name": "AARP Medicare Supplement Plan (Fixed/Hospital Indemnity)"}, {"is_enabled":
+        true, "supported_transactions": ["276", "278", "270", "837"], "id": "aetna",
+        "name": "Aetna"}, {"is_enabled": true, "supported_transactions": ["270", "837"],
+        "id": "all_savers_insurance", "name": "All Savers Insurance"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "allegeant", "name": "Allegeant
+        (LBA Health Plan)"}, {"is_enabled": true, "supported_transactions": ["837"],
         "id": "altius_health_plans", "name": "Altius Health Plans"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "amerigroup_nj", "name": "AmeriGroup
-        - New Jersey"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "amerihealth_de", "name": "AmeriHealth Delaware"}, {"is_enabled": true, "supported_transactions":
+        true, "supported_transactions": ["837"], "id": "amerihealth_administrators",
+        "name": "AmeriHealth Administrators"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "amerihealth_de", "name": "AmeriHealth Delaware"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "amerihealth_de_hmo", "name":
+        "AmeriHealth HMO of Delaware"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "amerihealth_nj_hmo", "name": "AmeriHealth HMO of New Jersey"},
         {"is_enabled": true, "supported_transactions": ["837"], "id": "amerihealth_nj",
         "name": "AmeriHealth New Jersey"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "amerigroup_fl", "name": "Amerigroup - Florida"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "amerigroup_ga", "name": "Amerigroup
+        ["270"], "id": "american_medical_security", "name": "American Medical Security
+        (AMS)"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "amerigroup",
+        "name": "Amerigroup"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "amerigroup_fl", "name": "Amerigroup - Florida"}, {"is_enabled": true,
+        "supported_transactions": ["837"], "id": "amerigroup_ga", "name": "Amerigroup
         - Georgia"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
         "amerigroup_il", "name": "Amerigroup - Illinois"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "amerigroup_md", "name": "Amerigroup - Maryland"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "amerigroup_oh", "name": "Amerigroup
-        - Ohio"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "amerigroup_wa",
-        "name": "Amerigroup - Washington"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "amerigroup_community_care", "name": "Amerigroup Community
-        Care"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "amerigroup_community_care_nm",
-        "name": "Amerigroup Community Care of New Mexico"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "amerigroup_corporation", "name": "Amerigroup Corporation"},
-        {"is_enabled": true, "supported_transactions": ["270", "276", "837"], "id":
-        "anthem_blue_cross_ca", "name": "Anthem Blue Cross California"}, {"is_enabled":
-        true, "supported_transactions": ["270", "837", "276"], "id": "anthem_blue_cross_blue_shield_co",
-        "name": "Anthem Blue Cross and Blue Shield of Colorado"}, {"is_enabled": true,
-        "supported_transactions": ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_ct",
-        "name": "Anthem Blue Cross and Blue Shield of Connecticut"}, {"is_enabled":
-        true, "supported_transactions": ["837", "270", "276"], "id": "anthem_blue_cross_blue_shield_in",
-        "name": "Anthem Blue Cross and Blue Shield of Indiana"}, {"is_enabled": true,
-        "supported_transactions": ["270", "837", "276"], "id": "anthem_blue_cross_blue_shield_ky",
-        "name": "Anthem Blue Cross and Blue Shield of Kentucky"}, {"is_enabled": true,
-        "supported_transactions": ["270", "837", "276"], "id": "anthem_blue_cross_blue_shield_me",
-        "name": "Anthem Blue Cross and Blue Shield of Maine"}, {"is_enabled": true,
-        "supported_transactions": ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_mo",
-        "name": "Anthem Blue Cross and Blue Shield of Missouri"}, {"is_enabled": true,
-        "supported_transactions": ["270", "837", "276"], "id": "anthem_blue_cross_blue_shield_nv",
-        "name": "Anthem Blue Cross and Blue Shield of Nevada"}, {"is_enabled": true,
-        "supported_transactions": ["837", "270", "276"], "id": "anthem_blue_cross_blue_shield_nh",
-        "name": "Anthem Blue Cross and Blue Shield of New Hampshire"}, {"is_enabled":
-        true, "supported_transactions": ["276", "270", "837"], "id": "anthem_blue_cross_blue_shield_oh",
-        "name": "Anthem Blue Cross and Blue Shield of Ohio"}, {"is_enabled": true,
-        "supported_transactions": ["270", "837", "276"], "id": "anthem_blue_cross_blue_shield_va",
-        "name": "Anthem Blue Cross and Blue Shield of Virginia"}, {"is_enabled": true,
-        "supported_transactions": ["837", "270", "276"], "id": "anthem_blue_cross_blue_shield_wi",
-        "name": "Anthem Blue Cross and Blue Shield of Wisconsin"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "amerigroup_nj", "name": "Amerigroup
+        - New Jersey"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
+        "amerigroup_oh", "name": "Amerigroup - Ohio"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "amerigroup_wa", "name": "Amerigroup - Washington"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "amerigroup_community_care",
+        "name": "Amerigroup Community Care"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "amerigroup_community_care_nm", "name": "Amerigroup Community
+        Care of New Mexico"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "amerigroup_corporation", "name": "Amerigroup Corporation"}, {"is_enabled":
+        true, "supported_transactions": ["276", "270", "837"], "id": "anthem_blue_cross_ca",
+        "name": "Anthem Blue Cross California"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_co", "name": "Anthem
+        Blue Cross and Blue Shield of Colorado"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_ct", "name": "Anthem
+        Blue Cross and Blue Shield of Connecticut"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_in", "name": "Anthem
+        Blue Cross and Blue Shield of Indiana"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_ky", "name": "Anthem
+        Blue Cross and Blue Shield of Kentucky"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_me", "name": "Anthem
+        Blue Cross and Blue Shield of Maine"}, {"is_enabled": true, "supported_transactions":
+        ["276", "270", "837"], "id": "anthem_blue_cross_blue_shield_mo", "name": "Anthem
+        Blue Cross and Blue Shield of Missouri"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_nv", "name": "Anthem
+        Blue Cross and Blue Shield of Nevada"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_nh", "name": "Anthem
+        Blue Cross and Blue Shield of New Hampshire"}, {"is_enabled": true, "supported_transactions":
+        ["276", "270", "837"], "id": "anthem_blue_cross_blue_shield_oh", "name": "Anthem
+        Blue Cross and Blue Shield of Ohio"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_va", "name": "Anthem
+        Blue Cross and Blue Shield of Virginia"}, {"is_enabled": true, "supported_transactions":
+        ["270", "276", "837"], "id": "anthem_blue_cross_blue_shield_wi", "name": "Anthem
+        Blue Cross and Blue Shield of Wisconsin"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "az_physicians_ipa", "name": "Arizona Physicians IPA (United
+        Healthcare Community Plan AZ)"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "arnett_health_plan", "name": "Arnett Health Plan"}, {"is_enabled":
         true, "supported_transactions": ["276", "270"], "id": "assurant_health", "name":
         "Assurant Health"}, {"is_enabled": true, "supported_transactions": ["837"],
         "id": "asuris_northwest_health", "name": "Asuris Northwest Health"}, {"is_enabled":
         true, "supported_transactions": ["837"], "id": "atrio_health_plans", "name":
         "Atrio Health Plans"}, {"is_enabled": true, "supported_transactions": ["837"],
         "id": "avmed_health_plan", "name": "Avmed Health Plan"}, {"is_enabled": true,
-        "supported_transactions": ["270", "837"], "id": "blue_cross_blue_shield_mn",
-        "name": "Blue Cross Blue Shield Minnesota*"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "blue_cross_blue_shield_or", "name": "Blue Cross Blue Shield
-        of Oregon (Regence)"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "blue_cross_blue_shield_az", "name": "Blue Cross and Blue Shield of
-        Arizona"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "blue_cross_blue_shield_fl",
-        "name": "Blue Cross and Blue Shield of Florida"}, {"is_enabled": true, "supported_transactions":
-        ["837", "270"], "id": "blue_cross_blue_shield_ga", "name": "Blue Cross and
-        Blue Shield of Georgia"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "blue_cross_blue_shield_il", "name": "Blue Cross and Blue Shield of
-        Illinois"}, {"is_enabled": true, "supported_transactions": ["270", "276"],
-        "id": "blue_cross_blue_shield_ks", "name": "Blue Cross and Blue Shield of
-        Kansas"}, {"is_enabled": true, "supported_transactions": ["276", "270"], "id":
-        "blue_cross_blue_shield_kc", "name": "Blue Cross and Blue Shield of Kansas
-        City"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "blue_cross_blue_shield_ma",
-        "name": "Blue Cross and Blue Shield of Massachusetts*"}, {"is_enabled": true,
-        "supported_transactions": ["837"], "id": "blue_cross_blue_shield_mt", "name":
-        "Blue Cross and Blue Shield of Montana*"}, {"is_enabled": true, "supported_transactions":
-        ["270"], "id": "blue_cross_blue_shield_ne", "name": "Blue Cross and Blue Shield
-        of Nebraska"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "blue_cross_blue_shield_nm", "name": "Blue Cross and Blue Shield of New Mexico"},
-        {"is_enabled": true, "supported_transactions": ["270"], "id": "blue_cross_blue_shield_nc",
-        "name": "Blue Cross and Blue Shield of North Carolina"}, {"is_enabled": true,
-        "supported_transactions": ["837"], "id": "blue_cross_blue_shield_ok", "name":
-        "Blue Cross and Blue Shield of Oklahoma"}, {"is_enabled": true, "supported_transactions":
-        ["270"], "id": "blue_cross_blue_shield_sc", "name": "Blue Cross and Blue Shield
-        of South Carolina"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "supported_transactions": ["837"], "id": "beech_street", "name": "Beech Street"},
+        {"is_enabled": true, "supported_transactions": ["270"], "id": "better_health_plan",
+        "name": "Better Health Plan (Unison)"}, {"is_enabled": true, "supported_transactions":
+        ["837", "276", "270"], "id": "blue_cross_blue_shield_ma", "name": "Blue Cross
+        Blue Shield Massachusetts"}, {"is_enabled": true, "supported_transactions":
+        ["276", "270", "837"], "id": "blue_cross_blue_shield_mn", "name": "Blue Cross
+        Blue Shield Minnesota*"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "blue_cross_blue_shield_al", "name": "Blue Cross Blue Shield of Alabama"},
+        {"is_enabled": true, "supported_transactions": ["270", "837"], "id": "blue_cross_blue_shield_az",
+        "name": "Blue Cross and Blue Shield of Arizona"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "blue_cross_blue_shield_fl", "name": "Blue Cross and
+        Blue Shield of Florida (Florida Blue)"}, {"is_enabled": true, "supported_transactions":
+        ["276", "270", "837"], "id": "blue_cross_blue_shield_ga", "name": "Blue Cross
+        and Blue Shield of Georgia"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "blue_cross_blue_shield_il", "name": "Blue Cross and
+        Blue Shield of Illinois"}, {"is_enabled": true, "supported_transactions":
+        ["276", "270"], "id": "blue_cross_blue_shield_ks", "name": "Blue Cross and
+        Blue Shield of Kansas"}, {"is_enabled": true, "supported_transactions": ["270",
+        "276"], "id": "blue_cross_blue_shield_kc", "name": "Blue Cross and Blue Shield
+        of Kansas City"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "blue_cross_blue_shield_mi", "name": "Blue Cross and Blue Shield of
+        Michigan"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
+        "blue_cross_blue_shield_ms", "name": "Blue Cross and Blue Shield of Mississippi"},
+        {"is_enabled": true, "supported_transactions": ["837"], "id": "blue_cross_blue_shield_mt",
+        "name": "Blue Cross and Blue Shield of Montana*"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "blue_cross_blue_shield_ne", "name": "Blue Cross and
+        Blue Shield of Nebraska"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "blue_cross_blue_shield_nm", "name": "Blue Cross and
+        Blue Shield of New Mexico"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "blue_cross_blue_shield_nc", "name": "Blue Cross and Blue Shield
+        of North Carolina"}, {"is_enabled": true, "supported_transactions": ["270",
+        "837"], "id": "blue_cross_blue_shield_ok", "name": "Blue Cross and Blue Shield
+        of Oklahoma"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "blue_cross_blue_shield_sc", "name": "Blue Cross and Blue Shield of South
+        Carolina"}, {"is_enabled": true, "supported_transactions": ["270", "837"],
+        "id": "blue_cross_blue_shield_tn", "name": "Blue Cross and Blue Shield of
+        Tennessee"}, {"is_enabled": true, "supported_transactions": ["270", "837"],
         "id": "blue_cross_blue_shield_tx", "name": "Blue Cross and Blue Shield of
         Texas"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "blue_cross_blue_shield_vt",
         "name": "Blue Cross and Blue Shield of Vermont"}, {"is_enabled": true, "supported_transactions":
-        ["837", "276", "270"], "id": "blue_shield_ca", "name": "Blue Shield of California"},
+        ["276", "270", "837"], "id": "blue_shield_ca", "name": "Blue Shield of California"},
         {"is_enabled": true, "supported_transactions": ["837"], "id": "bridgespan",
         "name": "BridgeSpan"}, {"is_enabled": true, "supported_transactions": ["837"],
         "id": "cal_optima_medi_cal", "name": "Cal-Optima (Medi-Cal)"}, {"is_enabled":
-        true, "supported_transactions": ["270", "837"], "id": "blue_cross_blue_shield_md",
-        "name": "CareFirst Blue Cross Blue Shield of Maryland*"}, {"is_enabled": true,
-        "supported_transactions": ["837"], "id": "blue_cross_blue_shield_dc", "name":
-        "CareFirst Blue Cross and Blue Shield of DC"}, {"is_enabled": true, "supported_transactions":
+        true, "supported_transactions": ["270", "837"], "id": "blue_cross_blue_shield_dc",
+        "name": "CareFirst Blue Cross Blue Shield of DC"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "blue_cross_blue_shield_md", "name": "CareFirst Blue
+        Cross Blue Shield of Maryland"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "care_or", "name": "CareOregon"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "care_source_mi", "name": "CareSource of Michigan"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "care_source_oh", "name": "CareSource
-        of Ohio"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "care_source_health_plan_or",
-        "name": "Caresource Health Plan of Oregon"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "care_source_ky", "name": "Caresource of Kentucky"}, {"is_enabled":
-        true, "supported_transactions": ["276", "270", "837", "278"], "id": "cigna",
-        "name": "Cigna"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "columbia_united_providers", "name": "Columbia United Providers"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "community_health_plan_wa",
-        "name": "Community Health Plan of Washington"}, {"is_enabled": true, "supported_transactions":
-        ["270", "276", "837"], "id": "connecticare", "name": "ConnectiCare"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "coordinated_care_cenpatico",
-        "name": "Coordinated Care - Cenpatico"}, {"is_enabled": true, "supported_transactions":
+        true, "supported_transactions": ["270", "837"], "id": "caresource_oh", "name":
+        "CareSource of Ohio"}, {"is_enabled": true, "supported_transactions": ["270"],
+        "id": "carelink_coventry", "name": "Carelink (Coventry)"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "carelink_medicaid_coventry",
+        "name": "Carelink Medicaid (Coventry)"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "care_source_health_plan_or", "name": "Caresource Health Plan
+        of Oregon"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
+        "care_source_ky", "name": "Caresource of Kentucky"}, {"is_enabled": true,
+        "supported_transactions": ["276", "278", "270", "837"], "id": "cigna", "name":
+        "Cigna"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "columbia_united_providers",
+        "name": "Columbia United Providers"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "community_health_plan_wa", "name": "Community Health Plan
+        of Washington"}, {"is_enabled": true, "supported_transactions": ["276", "270",
+        "837"], "id": "connecticare", "name": "ConnectiCare"}, {"is_enabled": true,
+        "supported_transactions": ["837"], "id": "coordinated_care_cenpatico", "name":
+        "Coordinated Care - Cenpatico"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "coordinated_care_medical", "name": "Coordinated Care - Medical"},
         {"is_enabled": true, "supported_transactions": ["837"], "id": "coordinated_medical_specialists",
         "name": "Coordinated Medical Specialists"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "coresource_md_pa_il_nc_in", "name": "CoreSource (MD, PA, IL,
-        NC, IN)"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "coresource_little_rock",
-        "name": "CoreSource Little Rock"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "coresource_oh", "name": "CoreSource Ohio"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "coventry", "name": "Coventry
-        Health & Life"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
-        "coventry_usa", "name": "Coventry USA*"}, {"is_enabled": true, "supported_transactions":
-        ["276", "837", "270"], "id": "empire_blue_cross_blue_shield", "name": "Empire
-        Blue Cross and Blue Shield"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "fallon_community_health", "name": "Fallon Community Health
-        Plan"}, {"is_enabled": true, "supported_transactions": ["270", "837", "276"],
-        "id": "fidelis_care_ny", "name": "Fidelis Care of New York"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "first_choice_health_network",
-        "name": "First Choice Health Network"}, {"is_enabled": true, "supported_transactions":
-        ["270"], "id": "florida_health_care_plan", "name": "Florida Health Care Plan*"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "golden_rule_united",
-        "name": "Golden Rule"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "great_west_health_care", "name": "Great West Healthcare"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "group_health_cooperative",
+        ["270", "837"], "id": "coresource_il_in_md_nc_pa", "name": "CoreSource (IL,
+        IN, MD, NC,PA)"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "coresource_little_rock", "name": "CoreSource Little Rock"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "coresource_oh", "name": "CoreSource
+        Ohio"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "coventry_diamond_plan",
+        "name": "Coventry Diamond Plan (Maryland Medicaid)"}, {"is_enabled": true,
+        "supported_transactions": ["837"], "id": "coventry", "name": "Coventry Health
+        & Life"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "coventry_health_care_de",
+        "name": "Coventry Health Care of Delaware"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "coventry_health_care_ga", "name": "Coventry Health Care of
+        Georgia"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "coventry_health_care_il",
+        "name": "Coventry Health Care of Illinois"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "coventry_health_care_ia", "name": "Coventry Health Care of
+        Iowa"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "coventry_health_care_ks",
+        "name": "Coventry Health Care of Kansas"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "coventry_health_care_la", "name": "Coventry Health Care of
+        Louisiana"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "coventry_health_care_ne", "name": "Coventry Health Care of Nebraska"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "coventry_health_care_tx",
+        "name": "Coventry Health Care of Texas"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "coventry_health_care_va", "name": "Coventry Health Care of
+        Virginia (Southern Health Services)"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "coventry_health_care_carolinas", "name": "Coventry Health
+        Care of the Carolinas (WellPath)"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "definity_health", "name": "Definity Health (United)"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "emblem_health", "name": "Emblem
+        Health"}, {"is_enabled": true, "supported_transactions": ["276", "270", "837"],
+        "id": "empire_blue_cross_blue_shield", "name": "Empire Blue Cross and Blue
+        Shield"}, {"is_enabled": true, "supported_transactions": ["270", "837"], "id":
+        "fallon_community_health", "name": "Fallon Community Health Plan"}, {"is_enabled":
+        true, "supported_transactions": ["270", "837"], "id": "fidelis_care_ny", "name":
+        "Fidelis Care of New York"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "first_choice_health_network", "name": "First Choice Health
+        Network"}, {"is_enabled": true, "supported_transactions": ["270"], "id": "first_health_coventry",
+        "name": "First Health (Coventry)"}, {"is_enabled": true, "supported_transactions":
+        ["837", "270"], "id": "florida_health_care_plan", "name": "Florida Health
+        Care Plan*"}, {"is_enabled": true, "supported_transactions": ["270", "837"],
+        "id": "golden_rule_united", "name": "Golden Rule"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "great_west_health_care", "name": "Great West Healthcare"},
+        {"is_enabled": true, "supported_transactions": ["837"], "id": "group_health_cooperative",
         "name": "Group Health Cooperative"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "group_health_cooperative_eau_claire", "name": "Group Health
         Cooperative of Eau Claire"}, {"is_enabled": true, "supported_transactions":
@@ -178,128 +221,170 @@ http_interactions:
         ["837"], "id": "group_health_plan_care_management_resource", "name": "Group
         Health Plan - CMR"}, {"is_enabled": true, "supported_transactions": ["276",
         "270", "837"], "id": "harvard_pilgrim_health_care", "name": "Harvard Pilgrim
-        Healthcare"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "health_net_ca", "name": "Health Net of California"}, {"is_enabled": true,
-        "supported_transactions": ["837"], "id": "health_partners_mn", "name": "HealthPartners
-        of Minnesota"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "healthscope_benefits", "name": "HealthScope Benefits"}, {"is_enabled": true,
-        "supported_transactions": ["837"], "id": "health_spring", "name": "HealthSpring"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "healthfirst",
-        "name": "Healthfirst"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "highmark_blue_cross_blue_shield_de", "name": "Highmark Blue Cross Blue
-        Shield Delaware"}, {"is_enabled": true, "supported_transactions": ["276",
-        "270"], "id": "highmark_blue_cross_blue_shield_pa", "name": "Highmark Blue
-        Cross Blue Shield Pennsylvania"}, {"is_enabled": true, "supported_transactions":
-        ["270", "276", "837"], "id": "highmark_blue_cross_blue_shield_wv", "name":
-        "Highmark Blue Cross Blue Shield West Virginia"}, {"is_enabled": true, "supported_transactions":
-        ["270"], "id": "highmark_blue_shield_pa", "name": "Highmark Blue Shield Pennsylvania"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "highmark_bs_vision_pa",
-        "name": "Highmark Blue Shield Vision Pennsylvania"}, {"is_enabled": true,
-        "supported_transactions": ["837"], "id": "blue_cross_blue_shield_nj", "name":
-        "Horizon Blue Cross Blue Shield of New Jersey"}, {"is_enabled": true, "supported_transactions":
-        ["270"], "id": "hudson_health_plan", "name": "Hudson Health Plan"}, {"is_enabled":
-        true, "supported_transactions": ["270", "837"], "id": "humana", "name": "Humana*"},
+        Healthcare"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "health_america_coventry", "name": "Health America (Coventry)"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "health_net_az_ct_nj_ny_pa",
+        "name": "Health Net (AZ, CT, NJ, NY, PA)"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "health_net_ca", "name": "Health Net of California"},
+        {"is_enabled": true, "supported_transactions": ["270"], "id": "health_plan_nv",
+        "name": "Health Plan of Nevada (United Healthcare Nevada)"}, {"is_enabled":
+        true, "supported_transactions": ["270", "837"], "id": "health_partners_mn",
+        "name": "HealthPartners Minnesota"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "healthscope_benefits", "name": "HealthScope Benefits"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "health_spring", "name": "HealthSpring"},
+        {"is_enabled": true, "supported_transactions": ["270"], "id": "healthcare_usa_coventry",
+        "name": "Healthcare USA (Coventry)"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "healthfirst_ny", "name": "Healthfirst of New York"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "highmark_blue_cross_blue_shield_de",
+        "name": "Highmark Blue Cross Blue Shield Delaware"}, {"is_enabled": true,
+        "supported_transactions": ["276", "270"], "id": "highmark_blue_cross_blue_shield_pa",
+        "name": "Highmark Blue Cross Blue Shield Pennsylvania"}, {"is_enabled": true,
+        "supported_transactions": ["276", "270", "837"], "id": "highmark_blue_cross_blue_shield_wv",
+        "name": "Highmark Blue Cross Blue Shield West Virginia"}, {"is_enabled": true,
+        "supported_transactions": ["270"], "id": "highmark_blue_shield_pa", "name":
+        "Highmark Blue Shield Pennsylvania"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "highmark_bs_vision_pa", "name": "Highmark Blue Shield Vision
+        Pennsylvania"}, {"is_enabled": true, "supported_transactions": ["270", "837"],
+        "id": "blue_cross_blue_shield_nj", "name": "Horizon Blue Cross Blue Shield
+        of New Jersey"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "hudson_health_plan", "name": "Hudson Health Plan"}, {"is_enabled": true,
+        "supported_transactions": ["270", "837"], "id": "humana", "name": "Humana"},
         {"is_enabled": true, "supported_transactions": ["837"], "id": "independence_blue_cross",
         "name": "Independence Blue Cross"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "kaiser_permanente_colorado", "name": "Kaiser Permanente of
-        Colorado"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "kaiser_permanente_ga", "name": "Kaiser Permanente of Georgia"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "kaiser_permanente_of_northern_ca",
+        ["270", "837"], "id": "kaiser_permanente_co", "name": "Kaiser Permanente of
+        Colorado"}, {"is_enabled": true, "supported_transactions": ["270", "837"],
+        "id": "kaiser_permanente_ga", "name": "Kaiser Permanente of Georgia"}, {"is_enabled":
+        true, "supported_transactions": ["270", "837"], "id": "kaiser_permanente_northern_ca",
         "name": "Kaiser Permanente of Northern CA"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "kaiser_permanente_oh", "name": "Kaiser Permanente of Ohio"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "kaiser_permanente_southern_ca",
-        "name": "Kaiser Permanente of Southern CA"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "kaiser_permanente_mid_atlantic", "name": "Kaiser Permanente
-        of the Mid-Atlantic"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "kaiser_permanente_northwest", "name": "Kaiser Permanente of the Northwest"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "keystone_health_plan_east",
-        "name": "Keystone Health Plan East"}, {"is_enabled": true, "supported_transactions":
-        ["276", "270"], "id": "mvp_health_care", "name": "MVP Health Care"}, {"is_enabled":
-        true, "supported_transactions": ["270", "837"], "id": "magellan_health", "name":
-        "Magellan Behavioral Health"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "managed_care_services", "name": "Managed Care Services"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "medica_health_care",
-        "name": "Medica HealthCare"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "kaiser_permanente_oh", "name": "Kaiser Permanente of
+        Ohio"}, {"is_enabled": true, "supported_transactions": ["270", "837"], "id":
+        "kaiser_permanente_southern_ca", "name": "Kaiser Permanente of Southern CA"},
+        {"is_enabled": true, "supported_transactions": ["270", "837"], "id": "kaiser_permanente_mid_atlantic",
+        "name": "Kaiser Permanente of the Mid-Atlantic"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "kaiser_permanente_northwest", "name": "Kaiser Permanente
+        of the Northwest"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "keystone_health_plan_east", "name": "Keystone Health Plan East"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "lifewise_or", "name": "LifeWise
+        Health Plan of  Oregon"}, {"is_enabled": true, "supported_transactions": ["270"],
+        "id": "lifewise_wa", "name": "LifeWise Health Plan of Washington"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "mahp", "name": "MAHP/MAMSI
+        (United)"}, {"is_enabled": true, "supported_transactions": ["276", "270"],
+        "id": "mvp_health_care", "name": "MVP Health Care"}, {"is_enabled": true,
+        "supported_transactions": ["270", "837"], "id": "magellan_health", "name":
+        "Magellan Health"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "managed_care_services", "name": "Managed Care Services"}, {"is_enabled":
+        true, "supported_transactions": ["270", "837"], "id": "medica_health_plans",
+        "name": "Medica Health Plans"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "medica_healthcare_plans_medicare", "name": "Medica Healthcare
         Plans (Medicare)"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "medica_usa", "name": "Medica2"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "medical_mutual_oh", "name": "Medical Mutual of Ohio"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "meritain_health", "name":
-        "Meritain Health"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "moda_health", "name": "Moda Health"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "molina_health_care_ca", "name": "Molina Healthcare of California*"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "molina_health_care_fl",
-        "name": "Molina Healthcare of Florida*"}, {"is_enabled": true, "supported_transactions":
+        "id": "medica_usa", "name": "Medica USA"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "medical_mutual_oh", "name": "Medical Mutual of Ohio"},
+        {"is_enabled": true, "supported_transactions": ["270"], "id": "medicare_national",
+        "name": "Medicare (all states)"}, {"is_enabled": true, "supported_transactions":
+        ["837"], "id": "meritain_health", "name": "Meritain Health"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "moda_health", "name": "Moda
+        Health"}, {"is_enabled": true, "supported_transactions": ["270", "837"], "id":
+        "molina_health_care_ca", "name": "Molina Healthcare of California"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "molina_health_care_fl", "name":
+        "Molina Healthcare of Florida*"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "molina_health_care_mi", "name": "Molina Healthcare of Michigan*"},
         {"is_enabled": true, "supported_transactions": ["837"], "id": "molina_health_care_nv",
         "name": "Molina Healthcare of Nevada*"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "molina_health_care_nm_salud", "name": "Molina Healthcare of
-        New Mexico - Salud*"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "molina_health_care_nm", "name": "Molina Healthcare of New Mexico*"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "molina_health_care_oh",
-        "name": "Molina Healthcare of Ohio*"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "molina_health_care_sc", "name": "Molina Healthcare of South
-        Carolina"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "molina_health_care_tx", "name": "Molina Healthcare of Texas*"}, {"is_enabled":
-        true, "supported_transactions": ["837"], "id": "molina_health_care_wa", "name":
-        "Molina Healthcare of Washington*"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "molina_health_care_nm", "name": "Molina Healthcare
+        of New Mexico"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
+        "molina_health_care_nm_salud", "name": "Molina Healthcare of New Mexico -
+        Salud*"}, {"is_enabled": true, "supported_transactions": ["270", "837"], "id":
+        "molina_health_care_oh", "name": "Molina Healthcare of Ohio"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "molina_health_care_sc", "name":
+        "Molina Healthcare of South Carolina"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "molina_health_care_tx", "name": "Molina Healthcare
+        of Texas"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "molina_health_care_ut", "name": "Molina Healthcare of Utah"}, {"is_enabled":
+        true, "supported_transactions": ["270", "837"], "id": "molina_health_care_wa",
+        "name": "Molina Healthcare of Washington"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "molina_health_care_wi", "name": "Molina Healthcare of Wisconsin*"},
         {"is_enabled": true, "supported_transactions": ["837"], "id": "molina_health_care_id",
         "name": "Molina Medicaid Solutions - Idaho*"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "neighborhood_health_partnership", "name": "Neighborhood Health
-        Partnership"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "optum_health", "name": "OptumHealth"}, {"is_enabled": true, "supported_transactions":
-        ["276", "270"], "id": "oxford_health_plan_united", "name": "Oxford Health
-        Plan (United Healthcare)"}, {"is_enabled": true, "supported_transactions":
+        Partnership"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "nippon_life_principal", "name": "Nippon Life (Principal Financial Group)"},
+        {"is_enabled": true, "supported_transactions": ["837"], "id": "optum_health",
+        "name": "OptumHealth"}, {"is_enabled": true, "supported_transactions": ["270"],
+        "id": "optum_health_behavioral", "name": "OptumHealth Behavioral Solutions"},
+        {"is_enabled": true, "supported_transactions": ["270", "276"], "id": "oxford_health_plan_united",
+        "name": "Oxford Health Plan"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "pehp_ut", "name": "PEHP Utah"}, {"is_enabled": true, "supported_transactions":
         ["837"], "id": "pacific_source_health_plans", "name": "PacificSource Health
         Plans"}, {"is_enabled": true, "supported_transactions": ["837"], "id": "preferred_care_partners",
         "name": "Preferred Care Partners"}, {"is_enabled": true, "supported_transactions":
-        ["276", "837", "270"], "id": "premera_blue_cross", "name": "Premera Blue Cross"},
-        {"is_enabled": true, "supported_transactions": ["270"], "id": "premera_blue_cross_blue_shield_ak",
-        "name": "Premera Blue Cross Blue Shield Of Alaska"}, {"is_enabled": true,
-        "supported_transactions": ["837"], "id": "qual_choice_ar", "name": "Qual Choice
-        of Arkansas"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "federal_employees_plan_wa", "name": "Regence Blue Shield Federal Employees
+        ["276", "270", "837"], "id": "premera_blue_cross", "name": "Premera Blue Cross"},
+        {"is_enabled": true, "supported_transactions": ["270", "276", "837"], "id":
+        "premera_blue_cross_blue_shield_ak", "name": "Premera Blue Cross Blue Shield
+        Of Alaska"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "principal_financial", "name": "Principal Financial Group"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "qual_choice_ar", "name": "Qual
+        Choice of Arkansas"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "federal_employees_plan_wa", "name": "Regence Blue Shield Federal Employees
         Plan of Washington"}, {"is_enabled": true, "supported_transactions": ["837"],
         "id": "regence_bluecross_blueshield_or", "name": "Regence BlueCross BlueShield
         of Oregon"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
         "bluecross_blueshield_utah", "name": "Regence BlueCross BlueShield of Utah"},
         {"is_enabled": true, "supported_transactions": ["837"], "id": "regence_blueshield_id",
         "name": "Regence BlueShield of Idaho"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "sierra_health_services", "name": "Sierra Health Services"},
-        {"is_enabled": true, "supported_transactions": ["837"], "id": "sunshine_state_health_plan_cenpatico",
-        "name": "Sunshine State Health Plan - Cenpatico"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "sunshine_state_health_plan_medical", "name": "Sunshine State
-        Health Plan - Medical"}, {"is_enabled": true, "supported_transactions": ["270"],
+        ["837"], "id": "regence_blue_shield_wa", "name": "Regence BlueShield of Washington"},
+        {"is_enabled": true, "supported_transactions": ["270"], "id": "secure_horizons",
+        "name": "SecureHorizons Medicare Complete (United)"}, {"is_enabled": true,
+        "supported_transactions": ["270", "837"], "id": "sierra_health_plan", "name":
+        "Sierra Health Plan"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "sunshine_state_health_plan_cenpatico", "name": "Sunshine State Health
+        Plan - Cenpatico"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "sunshine_state_health_plan_medical", "name": "Sunshine State Health
+        Plan - Medical"}, {"is_enabled": true, "supported_transactions": ["270"],
         "id": "tricare", "name": "TRICARE"}, {"is_enabled": true, "supported_transactions":
-        ["276", "270", "837"], "id": "tricare_west", "name": "TRICARE West"}, {"is_enabled":
-        true, "supported_transactions": ["276", "270", "837", "278"], "id": "united_health_care",
-        "name": "United Healthcare"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "united_health_care_community_plan_az", "name": "United Healthcare
-        Community Plan of Arizona"}, {"is_enabled": true, "supported_transactions":
-        ["837", "270"], "id": "united_health_care_community_plan_ia", "name": "United
-        Healthcare Community Plan of Iowa"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "united_health_care_community_plan_ks", "name": "United Healthcare
-        Community Plan of Kansas (Kancare)"}, {"is_enabled": true, "supported_transactions":
-        ["837", "270"], "id": "united_health_care_community_plan_ms", "name": "United
-        Healthcare Community Plan of Mississippi (CHIP)"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "united_health_care_community_plan_nj", "name": "United Healthcare
-        Community Plan of New Jersey"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "united_health_care_community_plan_sc", "name": "United Healthcare
-        Community Plan of South Carolina"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "united_health_care_great_lakes_health_plan", "name": "United
-        Healthcare Great Lakes Health Plan"}, {"is_enabled": true, "supported_transactions":
-        ["837"], "id": "united_health_care_medicare_solutions", "name": "United Healthcare
-        Medicare Solutions"}, {"is_enabled": true, "supported_transactions": ["837"],
-        "id": "united_health_care_plan_river_valley", "name": "United Healthcare Plan
-        of the River Valley"}, {"is_enabled": true, "supported_transactions": ["270"],
-        "id": "united_health_care_river_valley", "name": "United Healthcare of the
-        River Valley"}, {"is_enabled": true, "supported_transactions": ["837"], "id":
-        "wellcare", "name": "Wellcare"}, {"is_enabled": true, "supported_transactions":
-        ["270", "276"], "id": "wellmark_blue_cross_blue_shield_ia", "name": "Wellmark
+        ["276", "837", "270"], "id": "tricare_west", "name": "TRICARE West"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "medicaid_tx", "name": "Texas
+        Medicaid"}, {"is_enabled": true, "supported_transactions": ["270"], "id":
+        "empire_plan", "name": "The Empire Plan (United)"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "uhc_west", "name": "UHC West (PacifiCare)"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "umr", "name": "UMR (Wausau)"},
+        {"is_enabled": true, "supported_transactions": ["276", "270"], "id": "unicare",
+        "name": "UniCare"}, {"is_enabled": true, "supported_transactions": ["276",
+        "278", "837"], "id": "united_health_care", "name": "United Healthcare"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "united_health_care_community_plan",
+        "name": "United Healthcare Community Plan (AmeriChoice)"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "united_health_care_community_plan_pa",
+        "name": "United Healthcare Community Plan PA (AmeriChoice)"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "united_health_care_community_plan_az",
+        "name": "United Healthcare Community Plan of Arizona"}, {"is_enabled": true,
+        "supported_transactions": ["270", "837"], "id": "united_health_care_community_plan_ia",
+        "name": "United Healthcare Community Plan of Iowa"}, {"is_enabled": true,
+        "supported_transactions": ["270", "837"], "id": "united_health_care_community_plan_ks",
+        "name": "United Healthcare Community Plan of Kansas (KanCare)"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "united_health_care_community_plan_mi",
+        "name": "United Healthcare Community Plan of Michigan"}, {"is_enabled": true,
+        "supported_transactions": ["837", "270"], "id": "united_health_care_community_plan_ms",
+        "name": "United Healthcare Community Plan of Mississippi (CHIP)"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "united_health_care_community_plan_nj",
+        "name": "United Healthcare Community Plan of New Jersey (AmeriChoice)"}, {"is_enabled":
+        true, "supported_transactions": ["837"], "id": "united_health_care_community_plan_sc",
+        "name": "United Healthcare Community Plan of South Carolina"}, {"is_enabled":
+        true, "supported_transactions": ["270"], "id": "united_health_care_facets_detroit",
+        "name": "United Healthcare Facets Detroit"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "united_health_care_facets_pittsburgh", "name": "United Healthcare
+        Facets Pittsburgh"}, {"is_enabled": true, "supported_transactions": ["837"],
+        "id": "united_health_care_great_lakes_health_plan", "name": "United Healthcare
+        Great Lakes Health Plan"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "united_health_care_medicare_solutions", "name": "United
+        Healthcare Medicare Solutions (Evercare)"}, {"is_enabled": true, "supported_transactions":
+        ["270"], "id": "united_health_care_student_resources", "name": "United Healthcare
+        Student Resources (Student Insurance)"}, {"is_enabled": true, "supported_transactions":
+        ["270", "837"], "id": "united_health_care_river_valley", "name": "United Healthcare
+        of the River Valley"}, {"is_enabled": true, "supported_transactions": ["270",
+        "837"], "id": "wellcare", "name": "Wellcare"}, {"is_enabled": true, "supported_transactions":
+        ["276", "270"], "id": "wellmark_blue_cross_blue_shield_ia", "name": "Wellmark
         Blue Cross and Blue Shield of Iowa"}, {"is_enabled": true, "supported_transactions":
-        ["270"], "id": "wellmark_blue_cross_blue_shield_sd", "name": "Wellmark Blue
-        Cross and Blue Shield of South Dakota"}]}'
+        ["276", "270"], "id": "wellmark_blue_cross_blue_shield_sd", "name": "Wellmark
+        Blue Cross and Blue Shield of South Dakota"}]}'
     http_version: 
-  recorded_at: Tue, 27 Jan 2015 16:48:36 GMT
+  recorded_at: Mon, 02 Mar 2015 22:40:15 GMT
 recorded_with: VCR 2.9.3

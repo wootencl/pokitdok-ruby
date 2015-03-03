@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://platform.pokitdok.com/api/v4/prices/insurance?cpt_code=87799&zip_code=32218
+    uri: http://localhost:5002/api/v4/prices/insurance?cpt_code=87799&zip_code=32218
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
+      - Bearer EJe5ksfv6vqMctOYzUQtXbS4mNKw6Sr1MYRLnHNF
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,40 +20,29 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 27 Jan 2015 16:48:28 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      Content-Length:
+      - '643'
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Mon, 02 Mar 2015 22:34:21 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 2, "rate_limit_reset": 1422380907, "application_mode":
-        "production", "processing_time": 58, "rate_limit_cap": 1000, "credits_remaining":
-        9999, "activity_id": "54c7c15cfba8eb2b3dd6c23f", "credits_billed": 1}, "data":
-        {"amounts": [{"high_price": 159.75, "standard_deviation": 36.41382675904168,
-        "average_price": 54.5895, "payer_type": "insurance", "payment_type": "allowed",
-        "low_price": 19.98, "median_price": 56.25}, {"high_price": 188.91, "standard_deviation":
-        26.57623445180863, "average_price": 104.77350000000001, "payer_type": "insurance",
-        "payment_type": "submitted", "low_price": 88.02, "median_price": 97.02}, {"high_price":
-        57.623480176, "standard_deviation": 7.105427357601002e-15, "average_price":
-        57.623480175999994, "payer_type": "medicare", "payment_type": "paid", "low_price":
-        57.623480176, "median_price": 57.623480176}, {"high_price": 100.28768722,
-        "standard_deviation": 0.0, "average_price": 100.28768722, "payer_type": "medicare",
-        "payment_type": "submitted", "low_price": 100.28768722, "median_price": 100.28768722},
-        {"high_price": 82.336343612, "standard_deviation": 0.0, "average_price": 82.336343612,
-        "payer_type": "medicare", "payment_type": "allowed", "low_price": 82.336343612,
-        "median_price": 82.336343612}], "cpt_code": "87799", "geo_zip_area": "322"}}'
+      string: '{"meta": {"rate_limit_amount": 18, "rate_limit_reset": 1425339261,
+        "application_mode": "test", "processing_time": 38, "rate_limit_cap": 1000,
+        "credits_remaining": -8, "activity_id": "54f4e56d0640fd11086300c7", "credits_billed":
+        1}, "data": {"amounts": [{"high_price": 23.43, "standard_deviation": 2.95,
+        "average_price": 18.43, "payer_type": "insurance", "payment_type": "allowed",
+        "low_price": 15.42, "median_price": 19.27}, {"high_price": 54.85, "standard_deviation":
+        8.42, "average_price": 30.9, "payer_type": "insurance", "payment_type": "submitted",
+        "low_price": 24.65, "median_price": 29.74}], "cpt_code": "87799", "geo_zip_area":
+        "322"}}'
     http_version: 
-  recorded_at: Tue, 27 Jan 2015 16:48:30 GMT
+  recorded_at: Mon, 02 Mar 2015 22:34:21 GMT
 recorded_with: VCR 2.9.3

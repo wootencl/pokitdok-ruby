@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://platform.pokitdok.com/api/v4/eligibility/
+    uri: http://localhost:5002/api/v4/eligibility/
     body:
       encoding: UTF-8
       string: '{"member":{"birth_date":"1970-01-01","first_name":"Jane","last_name":"Doe","id":"W000000000"},"provider":{"first_name":"JEROME","last_name":"AYA-AY","npi":"1467560003"},"service_types":["health_benefit_plan_coverage"],"trading_partner_id":"MOCKPAYER"}'
@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
+      - Bearer EJe5ksfv6vqMctOYzUQtXbS4mNKw6Sr1MYRLnHNF
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -22,110 +22,123 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 27 Jan 2015 16:48:27 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      Content-Length:
+      - '8219'
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Mon, 02 Mar 2015 22:34:21 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 1, "rate_limit_reset": 1422380907, "application_mode":
-        "production", "processing_time": 283, "rate_limit_cap": 1000, "credits_remaining":
-        13496, "activity_id": "54c7c15b948303218a04e270", "credits_billed": 1}, "data":
-        {"service_types": ["professional_physician_visit_office"], "client_id": "7iF1u1XVbkAds9LSz94c",
-        "payer": {"id": "MOCKPAYER", "name": "MOCK PAYER INC"}, "summary": {"deductible":
-        {"individual": {"in_network": {"applied": {"currency": "USD", "amount": "16.43"},
-        "limit": {"currency": "USD", "amount": "3000"}, "remaining": {"currency":
-        "USD", "amount": "2983.57"}}, "out_of_network": {"applied": {"currency": "USD",
-        "amount": "16.43"}, "limit": {"currency": "USD", "amount": "6000"}, "remaining":
-        {"currency": "USD", "amount": "5983.57"}}}, "family": {"in_network": {"applied":
-        {"currency": "USD", "amount": "43.91"}, "limit": {"currency": "USD", "amount":
-        "6000"}, "remaining": {"currency": "USD", "amount": "5956.09"}}, "out_of_network":
+      string: '{"meta": {"rate_limit_amount": 17, "rate_limit_reset": 1425339261,
+        "application_mode": "test", "processing_time": 234, "rate_limit_cap": 1000,
+        "credits_remaining": -5, "activity_id": "54f4e56d0640fd11086300c4", "credits_billed":
+        1}, "data": {"service_types": ["professional_physician_visit_office"], "client_id":
+        "jlHrMhG8CZudpJXHp0Rr", "payer": {"id": "MOCKPAYER", "name": "MOCK PAYER INC"},
+        "summary": {"deductible": {"individual": {"in_network": {"applied": {"currency":
+        "USD", "amount": "16.43"}, "limit": {"currency": "USD", "amount": "3000"},
+        "remaining": {"currency": "USD", "amount": "2983.57"}}, "out_of_network":
+        {"applied": {"currency": "USD", "amount": "16.43"}, "limit": {"currency":
+        "USD", "amount": "6000"}, "remaining": {"currency": "USD", "amount": "5983.57"}}},
+        "family": {"in_network": {"applied": {"currency": "USD", "amount": "43.91"},
+        "limit": {"currency": "USD", "amount": "6000"}, "remaining": {"currency":
+        "USD", "amount": "5956.09"}}, "out_of_network": {"applied": {"currency": "USD",
+        "amount": "43.91"}, "limit": {"currency": "USD", "amount": "12000"}, "remaining":
+        {"currency": "USD", "amount": "11956.09"}}}}, "out_of_pocket": {"individual":
+        {"in_network": {"applied": {"currency": "USD", "amount": "16.43"}, "limit":
+        {"currency": "USD", "amount": "3000"}, "remaining": {"currency": "USD", "amount":
+        "2983.57"}}, "out_of_network": {"applied": {"currency": "USD", "amount": "16.43"},
+        "limit": {"currency": "USD", "amount": "12500"}, "remaining": {"currency":
+        "USD", "amount": "12483.57"}}}, "family": {"in_network": {"applied": {"currency":
+        "USD", "amount": "43.91"}, "limit": {"currency": "USD", "amount": "6000"},
+        "remaining": {"currency": "USD", "amount": "5956.09"}}, "out_of_network":
         {"applied": {"currency": "USD", "amount": "43.91"}, "limit": {"currency":
-        "USD", "amount": "12000"}, "remaining": {"currency": "USD", "amount": "11956.09"}}}}},
-        "subscriber": {"birth_date": "1970-01-01", "first_name": "Jane", "last_name":
-        "Doe", "id": "W000000000", "address": {"city": "SPARTANBURG", "state": "SC",
-        "zipcode": "29307", "address_lines": ["123 MAIN ST"]}}, "correlation_id":
-        "c5e9801c-9f6a-474b-af95-a0ae27dc496b", "trading_partner_id": "MOCKPAYER",
+        "USD", "amount": "25000"}, "remaining": {"currency": "USD", "amount": "24956.09"}}}}},
+        "subscriber": {"first_name": "Jane", "last_name": "Doe", "gender": "male",
+        "address": {"city": "SPARTANBURG", "state": "SC", "zipcode": "29307", "address_lines":
+        ["123 MAIN ST"]}, "birth_date": "1970-01-01", "id": "W000000000"}, "correlation_id":
+        "bdab8400-8032-4d2d-81b1-136d79b0bd53", "trading_partner_id": "MOCKPAYER",
         "provider": {"first_name": "JEROME", "last_name": "JEROME AYA-AY", "npi":
         "1467560003"}, "coverage": {"plan_number": "0888188", "service_types": ["professional_physician_visit_office"],
         "group_number": "088818801000013", "out_of_pocket": [{"in_plan_network": "yes",
         "benefit_amount": {"currency": "USD", "amount": "3000"}, "coverage_level":
-        "individual"}, {"in_plan_network": "yes", "benefit_amount": {"currency": "USD",
-        "amount": "2983.57"}, "coverage_level": "individual", "time_period": "remaining"},
+        "individual", "service_types": ["health_benefit_plan_coverage"]}, {"in_plan_network":
+        "yes", "benefit_amount": {"currency": "USD", "amount": "2983.57"}, "coverage_level":
+        "individual", "time_period": "remaining", "service_types": ["health_benefit_plan_coverage"]},
         {"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount":
-        "6000"}, "coverage_level": "family"}, {"in_plan_network": "yes", "benefit_amount":
-        {"currency": "USD", "amount": "5956.09"}, "coverage_level": "family", "time_period":
-        "remaining"}, {"in_plan_network": "no", "benefit_amount": {"currency": "USD",
-        "amount": "12500"}, "coverage_level": "individual"}, {"in_plan_network": "no",
-        "benefit_amount": {"currency": "USD", "amount": "12483.57"}, "coverage_level":
-        "individual", "time_period": "remaining"}, {"in_plan_network": "no", "benefit_amount":
-        {"currency": "USD", "amount": "25000"}, "coverage_level": "family"}, {"in_plan_network":
-        "no", "benefit_amount": {"currency": "USD", "amount": "24956.09"}, "coverage_level":
-        "family", "messages": [{"message": "Unlimited Lifetime Benefits"}], "time_period":
-        "remaining"}], "insurance_type": "ppo", "level": "employee_and_spouse", "copay":
+        "6000"}, "coverage_level": "family", "service_types": ["health_benefit_plan_coverage"]},
+        {"in_plan_network": "yes", "benefit_amount": {"currency": "USD", "amount":
+        "5956.09"}, "coverage_level": "family", "time_period": "remaining", "service_types":
+        ["health_benefit_plan_coverage"]}, {"in_plan_network": "no", "benefit_amount":
+        {"currency": "USD", "amount": "12500"}, "coverage_level": "individual", "service_types":
+        ["health_benefit_plan_coverage"]}, {"in_plan_network": "no", "benefit_amount":
+        {"currency": "USD", "amount": "12483.57"}, "coverage_level": "individual",
+        "time_period": "remaining", "service_types": ["health_benefit_plan_coverage"]},
+        {"in_plan_network": "no", "benefit_amount": {"currency": "USD", "amount":
+        "25000"}, "coverage_level": "family", "service_types": ["health_benefit_plan_coverage"]},
+        {"service_types": ["health_benefit_plan_coverage"], "messages": [{"message":
+        "Unlimited Lifetime Benefits"}], "in_plan_network": "no", "time_period": "remaining",
+        "coverage_level": "family", "benefit_amount": {"currency": "USD", "amount":
+        "24956.09"}}], "insurance_type": "ppo", "level": "employee_and_spouse", "copay":
         [{"in_plan_network": "yes", "service_types": ["professional_physician_visit_office"],
         "coverage_level": "employee_and_spouse", "messages": [{"message": "PRIMARY
-        OFFICE"}]}, {"in_plan_network": "not_applicable", "service_types": ["professional_physician_visit_office"],
+        OFFICE"}], "copayment": {"currency": "USD", "amount": "0"}}, {"in_plan_network":
+        "not_applicable", "service_types": ["professional_physician_visit_office"],
         "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
         VS"}, {"message": "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC
         VISIT"}, {"message": "PRIME CARE VST"}, {"message": "Plan Requires PreCert"},
         {"message": "Commercial"}, {"message": "Plan includes NAP"}, {"message": "Pre-Existing
-        may apply"}]}], "plan_description": "Open Choice", "deductibles": [{"service_types":
-        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN
-        OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME
-        CARE VST"}], "in_plan_network": "yes", "eligibility_date": "2013-01-01", "time_period":
-        "calendar_year", "coverage_level": "family", "benefit_amount": {"currency":
-        "USD", "amount": "6000"}}, {"service_types": ["health_benefit_plan_coverage"],
-        "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "yes", "time_period":
-        "remaining", "coverage_level": "family", "benefit_amount": {"currency": "USD",
-        "amount": "5956.09"}}, {"service_types": ["health_benefit_plan_coverage"],
+        may apply"}], "copayment": {"currency": "USD", "amount": "0"}}], "plan_description":
+        "Open Choice", "deductibles": [{"service_types": ["health_benefit_plan_coverage"],
         "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
         VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"}], "in_plan_network":
         "yes", "eligibility_date": "2013-01-01", "time_period": "calendar_year", "coverage_level":
-        "individual", "benefit_amount": {"currency": "USD", "amount": "3000"}}, {"service_types":
+        "family", "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"service_types":
         ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}],
-        "in_plan_network": "yes", "time_period": "remaining", "coverage_level": "individual",
-        "benefit_amount": {"currency": "USD", "amount": "2983.57"}}, {"service_types":
+        "in_plan_network": "yes", "time_period": "remaining", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "5956.09"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN
+        OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME
+        CARE VST"}], "in_plan_network": "yes", "eligibility_date": "2013-01-01", "time_period":
+        "calendar_year", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "3000"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "yes", "time_period":
+        "remaining", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "2983.57"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
+        VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "no", "eligibility_date":
+        "2013-01-01", "time_period": "calendar_year", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "12000"}}, {"service_types":
+        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}],
+        "in_plan_network": "no", "time_period": "remaining", "coverage_level": "family",
+        "benefit_amount": {"currency": "USD", "amount": "11956.09"}}, {"service_types":
         ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX,GYN
         OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE
         VST"}], "in_plan_network": "no", "eligibility_date": "2013-01-01", "time_period":
-        "calendar_year", "coverage_level": "family", "benefit_amount": {"currency":
-        "USD", "amount": "12000"}}, {"service_types": ["health_benefit_plan_coverage"],
+        "calendar_year", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "6000"}}, {"service_types": ["health_benefit_plan_coverage"],
         "messages": [{"message": "INT MED AND RX"}], "in_plan_network": "no", "time_period":
-        "remaining", "coverage_level": "family", "benefit_amount": {"currency": "USD",
-        "amount": "11956.09"}}, {"service_types": ["health_benefit_plan_coverage"],
-        "messages": [{"message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN
-        VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"}], "in_plan_network": "no", "eligibility_date":
-        "2013-01-01", "time_period": "calendar_year", "coverage_level": "individual",
-        "benefit_amount": {"currency": "USD", "amount": "6000"}}, {"service_types":
-        ["health_benefit_plan_coverage"], "messages": [{"message": "INT MED AND RX"}],
-        "in_plan_network": "no", "time_period": "remaining", "coverage_level": "individual",
-        "benefit_amount": {"currency": "USD", "amount": "5983.57"}}], "plan_begin_date":
-        "2013-02-15", "eligibility_begin_date": "2012-02-01", "coinsurance": [{"benefit_percent":
-        0.0, "service_types": ["professional_physician_visit_office"], "coverage_level":
-        "employee_and_spouse", "messages": [{"message": "GYN OFFICE VS"}, {"message":
-        "GYN VISIT"}, {"message": "SPEC OFFICE"}, {"message": "SPEC VISIT"}, {"message":
-        "PRIMARY OFFICE"}, {"message": "PRIME CARE VST"}], "in_plan_network": "yes"},
-        {"benefit_percent": 0.5, "service_types": ["professional_physician_visit_office"],
-        "coverage_level": "employee_and_spouse", "messages": [{"message": "GYN OFFICE
-        VS,COINS APPLIES TO OUT OF POCKET"}, {"message": "GYN VISIT,COINS APPLIES
-        TO OUT OF POCKET"}, {"message": "SPEC OFFICE,COINS APPLIES TO OUT OF POCKET"},
-        {"message": "SPEC VISIT,COINS APPLIES TO OUT OF POCKET"}, {"message": "PRIME
-        CARE VST,COINS APPLIES TO OUT OF POCKET"}], "in_plan_network": "no"}], "group_description":
+        "remaining", "coverage_level": "individual", "benefit_amount": {"currency":
+        "USD", "amount": "5983.57"}}], "plan_begin_date": "2013-02-15", "eligibility_begin_date":
+        "2012-02-01", "active": true, "coinsurance": [{"benefit_percent": 0.0, "service_types":
+        ["professional_physician_visit_office"], "coverage_level": "employee_and_spouse",
+        "messages": [{"message": "GYN OFFICE VS"}, {"message": "GYN VISIT"}, {"message":
+        "SPEC OFFICE"}, {"message": "SPEC VISIT"}, {"message": "PRIMARY OFFICE"},
+        {"message": "PRIME CARE VST"}], "in_plan_network": "yes"}, {"benefit_percent":
+        0.5, "service_types": ["professional_physician_visit_office"], "coverage_level":
+        "employee_and_spouse", "messages": [{"message": "GYN OFFICE VS,COINS APPLIES
+        TO OUT OF POCKET"}, {"message": "GYN VISIT,COINS APPLIES TO OUT OF POCKET"},
+        {"message": "SPEC OFFICE,COINS APPLIES TO OUT OF POCKET"}, {"message": "SPEC
+        VISIT,COINS APPLIES TO OUT OF POCKET"}, {"message": "PRIME CARE VST,COINS
+        APPLIES TO OUT OF POCKET"}], "in_plan_network": "no"}], "group_description":
         "MOCK INDIVIDUAL ADVANTAGE PLAN", "service_date": "2013-08-10"}, "valid_request":
         true}}'
     http_version: 
-  recorded_at: Tue, 27 Jan 2015 16:48:29 GMT
+  recorded_at: Mon, 02 Mar 2015 22:34:21 GMT
 recorded_with: VCR 2.9.3

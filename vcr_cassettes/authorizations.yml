@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://platform.pokitdok.com/api/v4/authorizations/
+    uri: http://localhost:5002/api/v4/authorizations/
     body:
       encoding: UTF-8
       string: '{"event":{"category":"health_services_review","certification_type":"initial","delivery":{"quantity":1,"quantity_qualifier":"visits"},"diagnoses":[{"code":"789.00","date":"2014-10-01"}],"place_of_service":"office","provider":{"organization_name":"KELLY
@@ -11,7 +11,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
+      - Bearer EJe5ksfv6vqMctOYzUQtXbS4mNKw6Sr1MYRLnHNF
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -23,31 +23,27 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 27 Jan 2015 16:48:36 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      Content-Length:
+      - '1168'
       Mimetype:
       - application/json
       Charset:
       - utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Mon, 02 Mar 2015 22:34:21 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 10, "rate_limit_reset": 1422380906,
-        "application_mode": "production", "processing_time": 376, "rate_limit_cap":
-        1000, "credits_remaining": 13493, "activity_id": "54c7c164948303218b7184be",
-        "credits_billed": 1}, "data": {"patient": {"first_name": "JANE", "last_name":
-        "DOE", "id": "1234567890"}, "trading_partner_id": "MOCKPAYER", "payer": {"organization_name":
-        "MOCK PAYER INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678",
-        "correlation_id": "570ef2f8-2fbf-4b79-aab1-59ebfd2ff909", "client_id": "7iF1u1XVbkAds9LSz94c",
+      string: '{"meta": {"rate_limit_amount": 16, "rate_limit_reset": 1425339261,
+        "application_mode": "test", "processing_time": 100, "rate_limit_cap": 1000,
+        "credits_remaining": -4, "activity_id": "54f4e56d0640fd11086300c1", "credits_billed":
+        1}, "data": {"patient": {"first_name": "JANE", "last_name": "DOE", "id": "1234567890"},
+        "trading_partner_id": "MOCKPAYER", "payer": {"organization_name": "MOCK PAYER
+        INC", "id": "MOCKPAYER"}, "originating_company_id": "9012345678", "correlation_id":
+        "d956526b-f5ce-43d6-8c9b-14809bdfde87", "client_id": "jlHrMhG8CZudpJXHp0Rr",
         "provider": {"first_name": "JEROME", "last_name": "AYA-AY", "tax_id": "1467560003"},
         "async": false, "event": {"category": "health_services_review", "diagnoses":
         [{"date": "2005-04-30", "code": "410.90"}], "place_of_service": "office",
@@ -57,5 +53,5 @@ http_interactions:
         CENTER, LLC", "tax_id": "1760779011"}, "certification_type": "initial", "type":
         "diagnostic_medical"}, "valid_request": true}}'
     http_version: 
-  recorded_at: Tue, 27 Jan 2015 16:48:38 GMT
+  recorded_at: Mon, 02 Mar 2015 22:34:21 GMT
 recorded_with: VCR 2.9.3

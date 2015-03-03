@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://----:----@platform.pokitdok.com/oauth2/token
+    uri: http://jlHrMhG8CZudpJXHp0Rr:347iuIN8T7zOzE7wtyk1vQGfjxuTE3yjxb8nlFev@localhost:5002/oauth2/token
     body:
       encoding: UTF-8
       string: grant_type=client_credentials
@@ -20,26 +20,22 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 27 Jan 2015 22:00:16 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
       - '127'
-      Connection:
-      - keep-alive
       Pragma:
       - no-cache
       Cache-Control:
       - no-store
-      Strict-Transport-Security:
-      - max-age=31536000
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Mon, 02 Mar 2015 22:34:20 GMT
     body:
       encoding: UTF-8
-      string: '{"access_token": "iYMdHd0naMh8nPCrdvsJW0ulGyoJavjZiWUMXfRR", "token_type":
-        "bearer", "expires": 1422399617, "expires_in": 3600}'
+      string: '{"access_token": "EJe5ksfv6vqMctOYzUQtXbS4mNKw6Sr1MYRLnHNF", "token_type":
+        "bearer", "expires": 1425339260, "expires_in": 3600}'
     http_version: 
-  recorded_at: Tue, 27 Jan 2015 22:00:18 GMT
+  recorded_at: Mon, 02 Mar 2015 22:34:20 GMT
 recorded_with: VCR 2.9.3

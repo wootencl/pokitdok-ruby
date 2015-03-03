@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 
-CLIENT_ID = '----'
-CLIENT_SECRET = '----'
-POKITDOK_TEST_URL = 'https://platform.pokitdok.com'
+CLIENT_ID = 'jlHrMhG8CZudpJXHp0Rr'
+CLIENT_SECRET = '347iuIN8T7zOzE7wtyk1vQGfjxuTE3yjxb8nlFev'
+POKITDOK_TEST_URL = 'http://localhost:5002'
 
 def check_meta_and_data(result)
   refute_empty result['meta']
@@ -186,7 +186,7 @@ describe PokitDok do
 
         check_meta_and_data @payers
         refute_nil @payers['data']
-        @payers['data'].size.must_equal 159
+        @payers['data'].length.must_be :>, 1
       end
     end
 
@@ -226,7 +226,7 @@ describe PokitDok do
 
         check_meta_and_data @providers
         refute_nil @providers['data']
-        @providers['data'].size.must_equal 1
+        @providers['data'].size.must_equal 4
       end
     end
 
@@ -245,24 +245,23 @@ describe PokitDok do
     end
 
     describe 'Scheduling endpoints' do
-      before do
-        skip 'Implemented but not currently testable in production'
-      end
-
       it 'should list the schedulers' do
         VCR.use_cassette 'scheduling' do
           @schedulers = @pokitdok.schedulers
         end
 
         check_meta_and_data @schedulers
+        @schedulers['data'].length.must_be :>, 1
       end
 
       it 'should give details on a specific scheduler' do
         VCR.use_cassette 'scheduling' do
-          @scheduler = @pokitdok.scheduler({ id: '1234567' })
+          @scheduler = @pokitdok.scheduler({ uuid: '967d207f-b024-41cc-8cac-89575a1f6fef' })
         end
 
         check_meta_and_data @scheduler
+        @scheduler['data'].length.must_equal 1
+        @scheduler['data'].first['name'].must_equal "Greenway"
       end
 
       it 'should list appointment types' do
@@ -271,20 +270,23 @@ describe PokitDok do
         end
 
         check_meta_and_data @appointment_types
+        @appointment_types['data'].length.must_be :>, 1
       end
 
       it 'should give details on a specific appointment type' do
         VCR.use_cassette 'scheduling' do
-          @appointment_type = @pokitdok.appointment_type({ id: '1234567' })
+          @appointment_type = @pokitdok.appointment_type({ uuid: 'ef987695-0a19-447f-814d-f8f3abbf4860' })
         end
 
         check_meta_and_data @appointment_type
+        @appointment_type['data'].length.must_equal 1
+        @appointment_type['data'].first['type'].must_equal "OV1"
       end
 
       it 'should add an open slot' do
         @query = JSON.parse(IO.read('spec/fixtures/referrals.json'))
 
-        VCR.use_cassette 'scheduling' do
+        VCR.use_cassette 'scheduling_scoped' do
           @add_slot_response = @pokitdok.slots @query
         end
 
@@ -292,29 +294,37 @@ describe PokitDok do
       end
 
       it 'should query for open appointment slots' do
-        VCR.use_cassette 'scheduling' do
-          @pokitdok.open_appointment_slots({})
+        VCR.use_cassette 'scheduling_scoped' do
+          @pokitdok.open_appointment_slots({ start_date: "01/01/2015",
+                                             end_date: "04/04/2015",
+                                             appointment_type: "office_visit" })
         end
       end
 
       it 'should book appointment for an open slot' do
-        VCR.use_cassette 'scheduling' do
+        VCR.use_cassette 'scheduling_scoped' do
           @pokitdok.book_appointment({})
         end
       end
 
       it 'should update appointment attributes' do
-        VCR.use_cassette 'scheduling' do
+        VCR.use_cassette 'scheduling_scoped' do
           @pokitdok.update_appointment({})
         end
       end
 
       it 'should cancel a specified appointment' do
-        VCR.use_cassette 'scheduling' do
+        VCR.use_cassette 'scheduling_scoped' do
           @cancel_response = @pokitdok.cancel_appointment({ id: '123456' })
         end
 
         check_meta_and_data @cancel_response
+      end
+
+      it 'should raise an ArgumentError if a scoped method is called without a scope code being set' do
+        assert_raises(ArgumentError) do
+          @pokitdok.cancel_appointment({ id: '123456' })
+        end
       end
 
     end

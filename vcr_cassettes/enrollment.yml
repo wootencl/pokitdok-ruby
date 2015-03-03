@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://platform.pokitdok.com/api/v4/enrollment/
+    uri: http://localhost:5002/api/v4/enrollment/
     body:
       encoding: UTF-8
       string: '{"action":"Change","client_id":"x12parse","correlation_id":"123456789","deleted":false,"dependents":[],"insert_dt":"Wed
@@ -19,7 +19,7 @@ http_interactions:
       User-Agent:
       - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
       Authorization:
-      - Bearer rdb2ZfBxbA2P0Mo8xEa1GEce5BoVXjvOXCvT5ZQp
+      - Bearer EJe5ksfv6vqMctOYzUQtXbS4mNKw6Sr1MYRLnHNF
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -28,61 +28,23 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 402
+      message: PAYMENT REQUIRED
     headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 27 Jan 2015 16:48:40 GMT
       Content-Type:
-      - text/html; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Mimetype:
       - application/json
-      Charset:
-      - utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
+      Content-Length:
+      - '35'
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Mon, 02 Mar 2015 22:34:20 GMT
     body:
       encoding: UTF-8
-      string: '{"meta": {"rate_limit_amount": 15, "rate_limit_reset": 1422380905,
-        "application_mode": "production", "processing_time": 23, "rate_limit_cap":
-        1000, "credits_remaining": 9999, "activity_id": "54c7c168fba8eb2b3ce3184b",
-        "credits_billed": 1}, "data": {"units_of_work": 1, "_type": "PlatformActivityModel",
-        "name": "enrollment", "parameters": {"reference_number": "12456", "version":
-        "4.0.0", "payer": {"tax_id": "654456654"}, "update_dt": "Wed Mar 26 22:18:47
-        2014", "deleted": false, "major_version": "4", "subscriber": {"maintenance_type":
-        "Addition", "first_name": "JOHN", "last_name": "DOE", "benefits": [{"maintenance_type":
-        "Addition", "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996",
-        "benefit_type": "Health", "coordination_of_benefits": [{"status": "Unknown",
-        "group_or_policy_number": "890111", "payer_responsibility": "Primary"}]},
-        {"maintenance_type": "Addition", "late_enrollment": false, "begin_date": "Sat
-        Jun  1 00:00:00 1996", "benefit_type": "Dental"}, {"maintenance_type": "Addition",
-        "late_enrollment": false, "begin_date": "Sat Jun  1 00:00:00 1996", "benefit_type":
-        "Vision"}], "relationship": "Self", "contacts": [{"communication_type2": "Work
-        Phone Number", "primary_communication_type": "Home Phone Number", "communication_number2":
-        "7172341240", "primary_communication_number": "7172343334"}], "benefit_status":
-        "Active", "gender": "Male", "employment_status": "Full-time", "subscriber_number":
-        "123456789", "group_or_policy_number": "123456001", "maintenance_reason":
-        "Active", "handicapped": false, "eligibility_begin_date": "Thu May 23 00:00:00
-        1996", "ssn": "123456789", "tobacco_use": false, "member_id": "123456789",
-        "birth_date": "Fri Aug 16 00:00:00 1940", "middle_name": "P", "substance_abuse":
-        false, "address": {"city": "CAMP HILL", "line2": "APT 3G", "county": "CUMBERLAND",
-        "state": "PA", "postal_code": "17011", "line": "100 MARKET ST"}}, "correlation_id":
-        "06d20ed5-1d79-48b8-b46b-97a1d03e586d", "insert_dt": "Wed Mar 26 22:18:47
-        2014", "trading_partner_id": "MOCKPAYER", "purpose": "Original", "client_id":
-        "7iF1u1XVbkAds9LSz94c", "action": "Change", "dependents": [], "sponsor": {"tax_id":
-        "999888777"}}, "remaining_transitions": ["generate", "store", "transmit",
-        "wait", "receive", "process", "complete"], "_uuid": "fe44fb65-4af6-4192-996a-ff79312aa1f5",
-        "state": {"name": "scheduled", "title": "Scheduled for next available transmission
-        to Trading Partner"}, "trading_partner_id": "MOCKPAYER", "id": "54c7c168fba8eb2b3ce3184b",
-        "transition_path": ["schedule", "generate", "store", "transmit", "wait", "receive",
-        "process", "complete"], "history": [{"record_dt": "2015-01-27T16:48:40.777470",
-        "name": "init", "title": "Initializing"}]}}'
+      string: |-
+        {
+          "message": "Payment Required"
+        }
     http_version: 
-  recorded_at: Tue, 27 Jan 2015 16:48:42 GMT
+  recorded_at: Mon, 02 Mar 2015 22:34:20 GMT
 recorded_with: VCR 2.9.3
