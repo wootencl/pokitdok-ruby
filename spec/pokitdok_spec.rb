@@ -4,6 +4,7 @@ require 'spec_helper'
 
 CLIENT_ID = 'jlHrMhG8CZudpJXHp0Rr'
 CLIENT_SECRET = '347iuIN8T7zOzE7wtyk1vQGfjxuTE3yjxb8nlFev'
+SCHEDULE_AUTH_CODE = 'KmCCkuYkSmPEf7AxaCIUApX1pUFedJx9CrDWPMD8'
 POKITDOK_TEST_URL = 'http://localhost:5002'
 
 def check_meta_and_data(result)
@@ -18,6 +19,7 @@ describe PokitDok do
 
       VCR.use_cassette 'auth' do
         @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+        @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
       end
     end
 
@@ -283,50 +285,75 @@ describe PokitDok do
         @appointment_type['data'].first['type'].must_equal "OV1"
       end
 
-      it 'should add an open slot' do
-        @query = JSON.parse(IO.read('spec/fixtures/referrals.json'))
-
-        VCR.use_cassette 'scheduling_scoped' do
-          @add_slot_response = @pokitdok.slots @query
-        end
-
-        check_meta_and_data @add_slot_response
-      end
-
       it 'should query for open appointment slots' do
         VCR.use_cassette 'scheduling_scoped' do
-          @pokitdok.open_appointment_slots({ start_date: "01/01/2015",
-                                             end_date: "04/04/2015",
-                                             appointment_type: "office_visit" })
+          @slots = @pokitdok.open_appointment_slots({
+            start_date: "2015-01-01T00:00:00",
+            end_date: "2015-02-05T00:00:00",
+            appointment_type: "office_visit",
+            patient_uuid: "8ae236ff-9ccc-44b0-8717-42653cd719d0"
+          })
         end
+
+        check_meta_and_data @slots
+        @slots['data'].length.must_be :>, 1
       end
 
       it 'should book appointment for an open slot' do
+        appt_uuid = "ef987691-0a19-447f-814d-f8f3abbf4859"
+        booking_query = {
+          patient: {
+              _uuid: "500ef469-2767-4901-b705-425e9b6f7f83",
+              email: "john@johndoe.com",
+              phone: "800-555-1212",
+              birth_date: "1970-01-01",
+              first_name: "John",
+              last_name: "Doe",
+              member_id: "M000001"
+          },
+          description: "Welcome to M0d3rN Healthcare"
+        }
+
         VCR.use_cassette 'scheduling_scoped' do
-          @pokitdok.book_appointment({})
+          @response = @pokitdok.book_appointment(appt_uuid, booking_query)
         end
+
+        check_meta_and_data @response
+        @response['data']['booked'].must_equal true
       end
 
       it 'should update appointment attributes' do
+        appt_uuid = "ef987691-0a19-447f-814d-f8f3abbf4859"
+        update_query = {
+          description: "Welcome to M0d3rN Healthcare"
+        }
+
         VCR.use_cassette 'scheduling_scoped' do
-          @pokitdok.update_appointment({})
+          @response = @pokitdok.update_appointment(appt_uuid, update_query)
         end
+
+        check_meta_and_data @response
       end
 
       it 'should cancel a specified appointment' do
         VCR.use_cassette 'scheduling_scoped' do
-          @cancel_response = @pokitdok.cancel_appointment({ id: '123456' })
+          @cancel_response =
+            @pokitdok.cancel_appointment "ef987691-0a19-447f-814d-f8f3abbf4859"
         end
 
-        check_meta_and_data @cancel_response
+        @cancel_response.must_equal true
       end
 
-      it 'should raise an ArgumentError if a scoped method is called without a scope code being set' do
+      it 'should raise an ArgumentError if a scoped method is' \
+         ' called without a scope code being set' do
+        VCR.use_cassette 'auth' do
+          @pd = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+        end
+
         assert_raises(ArgumentError) do
-          @pokitdok.cancel_appointment({ id: '123456' })
+          @pd.cancel_appointment({ id: '123456' })
         end
       end
-
     end
 
     describe 'Trading Partners endpoints' do

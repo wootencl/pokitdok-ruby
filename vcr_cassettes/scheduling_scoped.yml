@@ -1,0 +1,223 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://jlHrMhG8CZudpJXHp0Rr:347iuIN8T7zOzE7wtyk1vQGfjxuTE3yjxb8nlFev@localhost:5002/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '127'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Tue, 03 Mar 2015 21:50:19 GMT
+    body:
+      encoding: UTF-8
+      string: '{"access_token": "TxvrQMZAJmTIxmGefOzGPXVrUL6cGIJW1Id9dg8y", "token_type":
+        "bearer", "expires": 1425423020, "expires_in": 3600}'
+    http_version: 
+  recorded_at: Tue, 03 Mar 2015 21:50:19 GMT
+- request:
+    method: put
+    uri: http://localhost:5002/api/v4/schedule/appointments/ef987691-0a19-447f-814d-f8f3abbf4859
+    body:
+      encoding: UTF-8
+      string: '{"patient":{"_uuid":"500ef469-2767-4901-b705-425e9b6f7f83","email":"john@johndoe.com","phone":"800-555-1212","birth_date":"1970-01-01","first_name":"John","last_name":"Doe","member_id":"M000001"},"description":"Welcome
+        to M0d3rN Healthcare"}'
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer TxvrQMZAJmTIxmGefOzGPXVrUL6cGIJW1Id9dg8y
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '728'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Tue, 03 Mar 2015 21:50:19 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 3, "rate_limit_reset": 1425422742, "application_mode":
+        "test", "processing_time": 16, "rate_limit_cap": 1000, "credits_remaining":
+        -17, "activity_id": "54f62c9b0640fd1f5d4d0708", "credits_billed": 1}, "data":
+        {"booked": true, "patient": {"first_name": "John", "last_name": "Doe", "_uuid":
+        "500ef469-2767-4901-b705-425e9b6f7f83", "phone": "800-555-1212", "member_id":
+        "M000001", "birth_date": "1970-01-01", "email": "john@johndoe.com"}, "description":
+        "Welcome to M0d3rN Healthcare", "end_date": "2015-03-03T22:50:19.933523",
+        "appointment_type": "OV1", "provider_scheduler_uuid": "4950cf18-c1ef-11e4-8e89-08002778b074",
+        "appointment_id": "IPCSYWKMQQPT", "start_date": "2015-03-03T21:50:19.933515"}}'
+    http_version: 
+  recorded_at: Tue, 03 Mar 2015 21:50:19 GMT
+- request:
+    method: get
+    uri: http://localhost:5002/api/v4/schedule/appointments?appointment_type=office_visit&end_date=2015-02-05T00:00:00&patient_uuid=8ae236ff-9ccc-44b0-8717-42653cd719d0&start_date=2015-01-01T00:00:00
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer TxvrQMZAJmTIxmGefOzGPXVrUL6cGIJW1Id9dg8y
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '629'
+      Location:
+      - http://localhost:5002/api/v4/schedule/appointments/?appointment_type=office_visit&end_date=2015-02-05T00%3A00%3A00&patient_uuid=8ae236ff-9ccc-44b0-8717-42653cd719d0&start_date=2015-01-01T00%3A00%3A00
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Tue, 03 Mar 2015 21:50:19 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <title>Redirecting...</title>
+        <h1>Redirecting...</h1>
+        <p>You should be redirected automatically to target URL: <a href="http://localhost:5002/api/v4/schedule/appointments/?appointment_type=office_visit&amp;end_date=2015-02-05T00%3A00%3A00&amp;patient_uuid=8ae236ff-9ccc-44b0-8717-42653cd719d0&amp;start_date=2015-01-01T00%3A00%3A00">http://localhost:5002/api/v4/schedule/appointments/?appointment_type=office_visit&amp;end_date=2015-02-05T00%3A00%3A00&amp;patient_uuid=8ae236ff-9ccc-44b0-8717-42653cd719d0&amp;start_date=2015-01-01T00%3A00%3A00</a>.  If not click the link.
+    http_version: 
+  recorded_at: Tue, 03 Mar 2015 21:50:20 GMT
+- request:
+    method: get
+    uri: http://localhost:5002/api/v4/schedule/appointments/?appointment_type=office_visit&end_date=2015-02-05T00:00:00&patient_uuid=8ae236ff-9ccc-44b0-8717-42653cd719d0&start_date=2015-01-01T00:00:00
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer TxvrQMZAJmTIxmGefOzGPXVrUL6cGIJW1Id9dg8y
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '1657'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Tue, 03 Mar 2015 21:50:20 GMT
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"rate_limit_amount": 4, "rate_limit_reset": 1425422743, "application_mode":
+        "test", "processing_time": 16, "rate_limit_cap": 1000, "credits_remaining":
+        -18, "activity_id": "54f62c9c0640fd1f5d4d0709", "credits_billed": 1}, "data":
+        [{"booked": true, "pd_appointment_uuid": "495cb06c-c1ef-11e4-99a3-08002778b074",
+        "patient": {"first_name": "John", "last_name": "Doe", "_uuid": "8ae236ff-9ccc-44b0-8717-42653cd719d0",
+        "phone": "800-555-1212", "member_id": "M000001", "birth_date": "1970-01-01",
+        "email": "john@johndoe.com"}, "end_date": "2015-02-05T00:00:00.000000", "appointment_type":
+        "office_visit", "provider_scheduler_uuid": "495cb224-c1ef-11e4-99a3-08002778b074",
+        "appointment_id": "PZAXREKDAPVC", "start_date": "2015-01-01T00:00:00.000000"},
+        {"booked": true, "patient": {"first_name": "John", "last_name": "Doe", "_uuid":
+        "8ae236ff-9ccc-44b0-8717-42653cd719d0", "phone": "800-555-1212", "member_id":
+        "M000001", "birth_date": "1970-01-01", "email": "john@johndoe.com"}, "end_date":
+        "2015-02-05T00:00:00.000000", "appointment_type": "office_visit", "provider_scheduler_uuid":
+        "495cbb52-c1ef-11e4-99a3-08002778b074", "appointment_id": "EISOPQKFKVGH",
+        "start_date": "2015-01-01T00:00:00.000000"}, {"booked": true, "patient": {"first_name":
+        "John", "last_name": "Doe", "_uuid": "8ae236ff-9ccc-44b0-8717-42653cd719d0",
+        "phone": "800-555-1212", "member_id": "M000001", "birth_date": "1970-01-01",
+        "email": "john@johndoe.com"}, "end_date": "2015-02-05T00:00:00.000000", "appointment_type":
+        "office_visit", "provider_scheduler_uuid": "495cc278-c1ef-11e4-99a3-08002778b074",
+        "appointment_id": "AUJITMZGHJIR", "start_date": "2015-01-01T00:00:00.000000"}]}'
+    http_version: 
+  recorded_at: Tue, 03 Mar 2015 21:50:20 GMT
+- request:
+    method: delete
+    uri: http://localhost:5002/api/v4/schedule/appointments/ef987691-0a19-447f-814d-f8f3abbf4859
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - pokitdok-ruby 0.8 ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin14.0]
+      Authorization:
+      - Bearer TxvrQMZAJmTIxmGefOzGPXVrUL6cGIJW1Id9dg8y
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: NO CONTENT
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '0'
+      Mimetype:
+      - application/json
+      Charset:
+      - utf-8
+      Server:
+      - Werkzeug/0.9.4 Python/2.7.6
+      Date:
+      - Tue, 03 Mar 2015 21:50:20 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 03 Mar 2015 21:50:20 GMT
+recorded_with: VCR 2.9.3

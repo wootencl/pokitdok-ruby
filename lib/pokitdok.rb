@@ -273,11 +273,10 @@ module PokitDok
     #
     # +params+ an optional hash of parameters that will be sent in the POST body
     #
-    def book_appointment(params = {})
+    def book_appointment(appointment_uuid, params = {})
       scope 'user_schedule'
-      @appointment_id = params.delete :appointment_id
       
-      put_one('schedule/appointments/', @appointment_id, params)
+      put_one("schedule/appointments", appointment_uuid, params)
     end
 
     # Cancels the specified appointment.
@@ -289,11 +288,10 @@ module PokitDok
     #    
     # +params+ an optional Hash of parameters
     #
-    def cancel_appointment(params={})
+    def cancel_appointment(appointment_uuid, params={})
       scope 'user_schedule'
-      @appointment_id = params.delete :appointment_id
 
-      delete_one("schedule/appointments", @appointment_id, params)
+      delete_one("schedule/appointments", appointment_uuid, params)
     end
 
     # Invokes the schedule/appointments endpoint.
@@ -356,11 +354,10 @@ module PokitDok
     #    
     # +params+ an optional Hash of parameters
     #
-    def update_appointment(params={})
+    def update_appointment(appointment_uuid, params={})
       scope 'user_schedule'
-      @appointment_id = params.delete :appointment_id
 
-      put_one("schedule/appointments", @appointment_id, params)
+      put_one("schedule/appointments", appointment_uuid, params)
     end    
 
     private
@@ -413,7 +410,11 @@ module PokitDok
           request.headers['Content-Type'] = 'application/json'
         end
 
-        JSON.parse(response.body)
+        if response.body.empty?
+          response.status == 204
+        else
+          JSON.parse(response.body)
+        end
       end
       
       # Refreshes the client token associated with this PokitDok connection
