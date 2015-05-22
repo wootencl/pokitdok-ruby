@@ -16,6 +16,7 @@ group :development do
 	gem 'webmock', '~> 1.17'
 	gem 'guard', '~> 2.6'
 	gem 'guard-minitest', '~> 2.2'
+	gem 'terminal-notifier'
 	gem 'terminal-notifier-guard', '~> 1.5'
 	gem 'guard-rubocop', '~> 1.0'
 	gem 'coveralls', require: false
