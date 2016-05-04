@@ -345,6 +345,52 @@ module PokitDok
       scope 'user_schedule'
     end
 
+    # Invokes the pharmacy plans endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def pharmacy_plans(params = {})
+      response = default_scope.get('pharmacy/plans') do |request|
+        request.params = params
+      end
+      JSON.parse(response.body)
+    end
+
+    # Invokes the pharmacy formulary endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def pharmacy_formulary(params = {})
+      response = default_scope.get('pharmacy/formulary') do |request|
+        request.params = params
+      end
+      JSON.parse(response.body)
+    end
+
+    # Invokes the pharmacy drug cost endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def pharmacy_drug_cost(params = {})
+      response = default_scope.get('pharmacy/drug/cost') do |request|
+        request.params = params
+      end
+      JSON.parse(response.body)
+    end
+
+    # Invokes the pharmacy network cost endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def pharmacy_network(params = {})
+      npi = params.delete :npi
+      endpoint = npi ? "pharmacy/network/#{npi}" : "pharmacy/network"
+      response = default_scope.get(endpoint) do |request|
+        request.params = params
+      end
+      JSON.parse(response.body)
+    end
+
     # Updates the specified appointment.
     #
     # This endpoint uses the user_schedule OAuth2 scope. You'll need to
