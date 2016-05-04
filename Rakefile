@@ -18,8 +18,8 @@ Jeweler::Tasks.new do |gem|
   gem.license = 'MIT'
   gem.summary = %Q(Gem for easy access to the PokitDok Platform APIs)
   gem.description = %Q(Gem for easy access to the PokitDok Platform APIs.)
-  gem.email = 'john.riney@pokitdok.com'
-  gem.authors = ['John Riney']
+  gem.email = 'platform@pokitdok.com'
+  gem.authors = ['PokitDok, Inc.']
 end
 
 Jeweler::RubygemsDotOrgTasks.new

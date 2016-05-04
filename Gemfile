@@ -1,5 +1,5 @@
-source 'http://rubygems.org'
-gem 'oauth2', '~> 0.9', require: 'oauth2'
+source 'https://rubygems.org'
+gem 'oauth2', '~> 1.0', require: 'oauth2'
 gem 'multipart-post', '~> 2.0'
 
 group :development do
