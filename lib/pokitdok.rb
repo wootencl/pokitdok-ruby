@@ -367,17 +367,6 @@ module PokitDok
       JSON.parse(response.body)
     end
 
-    # Invokes the pharmacy drug cost endpoint.
-    #
-    # +params+ an optional Hash of parameters
-    #
-    def pharmacy_drug_cost(params = {})
-      response = default_scope.get('pharmacy/drug/cost') do |request|
-        request.params = params
-      end
-      JSON.parse(response.body)
-    end
-
     # Invokes the pharmacy network cost endpoint.
     #
     # +params+ an optional Hash of parameters
