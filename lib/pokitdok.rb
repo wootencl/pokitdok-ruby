@@ -35,7 +35,7 @@ module PokitDok
       @client_secret = client_secret
       @version = version
 
-      @api_url = "#{url_base}/api/#{version}"
+      @api_url = "http://localhost:5002/api/v4"
       @client = OAuth2::Client.new(@client_id, @client_secret,
                                    site: @api_url, token_url: '/oauth2/token')
 
