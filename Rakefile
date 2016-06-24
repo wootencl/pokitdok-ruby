@@ -31,6 +31,12 @@ Rake::TestTask.new(:spec) do |spec|
   spec.verbose = true
 end
 
+Rake::TestTask.new(:spec2) do |spec2|
+  spec2.libs << 'lib' << 'spec_v2'
+  spec2.pattern = 'spec_v2/**/*_spec.rb'
+  spec2.verbose = true
+end
+
 require 'coveralls'
 Coveralls.wear!
 

@@ -7,3 +7,4 @@ doc
 pkg
 .DS_Store
 .idea
+*.iml
