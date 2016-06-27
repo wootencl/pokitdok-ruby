@@ -5,14 +5,7 @@ require 'spec_helper'
 CLIENT_ID = 'F7q38MzlwOxUwTHb7jvk'
 CLIENT_SECRET = 'O8DRamKmKMLtSTPjK99eUlbfOQEc44VVmp8ARmcY'
 SCHEDULE_AUTH_CODE = 'KmCCkuYkSmPEf7AxaCIUApX1pUFedJx9CrDWPMD8'
-# BASE_HEADERS = {
-#     'User-Agent': 'python-pokitdok/{0} {1}'.format(pokitdok.__version__, requests.utils.default_user_agent())
-# }
 BASE_URL = 'https://platform.pokitdok.com/v4/api'
-# JSON_HEADERS = {
-#     'User-Agent': 'python-pokitdok/{0} {1}'.format(pokitdok.__version__, requests.utils.default_user_agent()),
-#     'Content-type': 'application/json',
-# }
 MATCH_NETWORK_LOCATION = /(.*\.)?pokitdok\.com/
 MATCH_OAUTH2_PATH = /[\/]oauth2[\/]token/
 TEST_REQUEST_PATH = '/endpoint'
@@ -41,15 +34,10 @@ describe PokitDok do
     end
 
     describe 'Test Connection' do
-      it 'should instantiate the client and have an access token' do
+      it 'should instantiate the client' do
         refute_nil(@pokitdok.client)
-        # refute_nil(@pokitdok.client.token)
       end
     end
-
-    # it 'should default to the v4 api specification' do
-    #   @pokitdok.api_url.must_match /.*v4.*/
-    # end
 
     # TODO: General Request Tests
 
