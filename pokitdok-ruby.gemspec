@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["PokitDok, Inc."]
-  s.date = "2016-05-16"
+  s.date = "2016-06-27"
   s.description = "Gem for easy access to the PokitDok Platform APIs."
   s.email = "platform@pokitdok.com"
   s.extra_rdoc_files = [
@@ -38,7 +38,6 @@ Gem::Specification.new do |s|
     "spec/fixtures/sample.270",
     "spec/pokitdok_spec.rb",
     "spec/spec_helper.rb",
-    "spec/vcr_setup.rb",
     "vcr_cassettes/activities.yml",
     "vcr_cassettes/auth.yml",
     "vcr_cassettes/authorizations.yml",
