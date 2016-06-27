@@ -22,12 +22,12 @@ describe PokitDok do
                   "expires": 1393350569,
                   "expires_in": 3600
               }',
-              :headers => { 'Server': 'nginx',
-                            'Date': Time.now(),
-                            'Content-type': 'application/json;charset=UTF-8',
-                            'Connection': 'keep-alive',
-                            'Pragma': 'no-cache',
-                            'Cache-Control': 'no-store'})
+              :headers => { 'Server'=> 'nginx',
+                            'Date' => Time.now(),
+                            'Content-type' => 'application/json;charset=UTF-8',
+                            'Connection' => 'keep-alive',
+                            'Pragma' => 'no-cache',
+                            'Cache-Control' => 'no-store'})
 
       @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
       @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
@@ -317,9 +317,9 @@ describe PokitDok do
             to_return(status: 200, body: '{ "string" : "" }')
 
         query = {
-            'appointment_type': 'AT1',
-            'start_date': Time.now.strftime("%Y/%m/%d"),
-            'end_date': Time.now.strftime("%Y/%m/%d"),
+            'appointment_type' => 'AT1',
+            'start_date' => Time.now.strftime("%Y/%m/%d"),
+            'end_date' => Time.now.strftime("%Y/%m/%d"),
         }
         @appointments = @pokitdok.appointments(query)
 

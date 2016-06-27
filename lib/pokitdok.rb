@@ -28,7 +28,7 @@ module PokitDok
     #
     # +client_secret+ your client secret, provided by PokitDok
     #
-    def initialize(client_id, client_secret, base='https://platform.pokitdok.com', version='v4')
+    def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com')
       @client_id = client_id
       @client_secret = client_secret
       @version = version
