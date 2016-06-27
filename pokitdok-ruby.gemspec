@@ -37,26 +37,7 @@ Gem::Specification.new do |s|
     "spec/fixtures/referrals.json",
     "spec/fixtures/sample.270",
     "spec/pokitdok_spec.rb",
-    "spec/spec_helper.rb",
-    "vcr_cassettes/activities.yml",
-    "vcr_cassettes/auth.yml",
-    "vcr_cassettes/authorizations.yml",
-    "vcr_cassettes/cash_prices.yml",
-    "vcr_cassettes/claims.yml",
-    "vcr_cassettes/claims_status.yml",
-    "vcr_cassettes/eligibility.yml",
-    "vcr_cassettes/enrollment.yml",
-    "vcr_cassettes/files.yml",
-    "vcr_cassettes/insurance_prices.yml",
-    "vcr_cassettes/payers.yml",
-    "vcr_cassettes/plans.yml",
-    "vcr_cassettes/plans_no_args.yml",
-    "vcr_cassettes/providers.yml",
-    "vcr_cassettes/referrals.yml",
-    "vcr_cassettes/scheduling.yml",
-    "vcr_cassettes/scheduling_scoped.yml",
-    "vcr_cassettes/trading_partners_get.yml",
-    "vcr_cassettes/trading_partners_index.yml"
+    "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/pokitdok/pokitdok-ruby"
   s.licenses = ["MIT"]
