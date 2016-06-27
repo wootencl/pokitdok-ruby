@@ -99,6 +99,15 @@ module PokitDok
       post('claims/status', params)
     end
 
+    # Invokes the ICD convert endpoint.
+    #
+    # +params+ an optional hash of parameters
+    #
+    def icd_convert(params = {})
+      scope 'default'
+      get("icd/convert/#{params[:code]}")
+    end
+
     # Invokes the eligibility endpoint.
     #
     # +params+ an optional hash of parameters that will be sent in the POST body
