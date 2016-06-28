@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["PokitDok, Inc."]
-  s.date = "2016-05-16"
+  s.date = "2016-06-27"
   s.description = "Gem for easy access to the PokitDok Platform APIs."
   s.email = "platform@pokitdok.com"
   s.extra_rdoc_files = [
@@ -37,27 +37,7 @@ Gem::Specification.new do |s|
     "spec/fixtures/referrals.json",
     "spec/fixtures/sample.270",
     "spec/pokitdok_spec.rb",
-    "spec/spec_helper.rb",
-    "spec/vcr_setup.rb",
-    "vcr_cassettes/activities.yml",
-    "vcr_cassettes/auth.yml",
-    "vcr_cassettes/authorizations.yml",
-    "vcr_cassettes/cash_prices.yml",
-    "vcr_cassettes/claims.yml",
-    "vcr_cassettes/claims_status.yml",
-    "vcr_cassettes/eligibility.yml",
-    "vcr_cassettes/enrollment.yml",
-    "vcr_cassettes/files.yml",
-    "vcr_cassettes/insurance_prices.yml",
-    "vcr_cassettes/payers.yml",
-    "vcr_cassettes/plans.yml",
-    "vcr_cassettes/plans_no_args.yml",
-    "vcr_cassettes/providers.yml",
-    "vcr_cassettes/referrals.yml",
-    "vcr_cassettes/scheduling.yml",
-    "vcr_cassettes/scheduling_scoped.yml",
-    "vcr_cassettes/trading_partners_get.yml",
-    "vcr_cassettes/trading_partners_index.yml"
+    "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/pokitdok/pokitdok-ruby"
   s.licenses = ["MIT"]
@@ -79,7 +59,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 2.0"])
       s.add_development_dependency(%q<ansi>, ["~> 1.4"])
       s.add_development_dependency(%q<minitest-reporters>, ["~> 1.0"])
-      s.add_development_dependency(%q<vcr>, ["~> 2.9"])
       s.add_development_dependency(%q<webmock>, ["~> 1.17"])
       s.add_development_dependency(%q<guard>, ["~> 2.6"])
       s.add_development_dependency(%q<guard-minitest>, ["~> 2.2"])
@@ -99,7 +78,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, ["~> 2.0"])
       s.add_dependency(%q<ansi>, ["~> 1.4"])
       s.add_dependency(%q<minitest-reporters>, ["~> 1.0"])
-      s.add_dependency(%q<vcr>, ["~> 2.9"])
       s.add_dependency(%q<webmock>, ["~> 1.17"])
       s.add_dependency(%q<guard>, ["~> 2.6"])
       s.add_dependency(%q<guard-minitest>, ["~> 2.2"])
@@ -120,7 +98,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, ["~> 2.0"])
     s.add_dependency(%q<ansi>, ["~> 1.4"])
     s.add_dependency(%q<minitest-reporters>, ["~> 1.0"])
-    s.add_dependency(%q<vcr>, ["~> 2.9"])
     s.add_dependency(%q<webmock>, ["~> 1.17"])
     s.add_dependency(%q<guard>, ["~> 2.6"])
     s.add_dependency(%q<guard-minitest>, ["~> 2.2"])

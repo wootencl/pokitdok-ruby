@@ -29,6 +29,7 @@ Rake::TestTask.new(:spec) do |spec|
   spec.libs << 'lib' << 'spec'
   spec.pattern = 'spec/**/*_spec.rb'
   spec.verbose = true
+  spec.warning = false
 end
 
 require 'coveralls'

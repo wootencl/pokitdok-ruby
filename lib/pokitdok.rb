@@ -17,8 +17,6 @@ require 'net/http/post/multipart'
 module PokitDok
   # PokitDok API client implementation for Ruby.
   class PokitDok
-    POKITDOK_URL_BASE = 'https://platform.pokitdok.com' # :nodoc:
-
     attr_reader :client # :nodoc:
     attr_reader :api_url
     attr_reader :version
@@ -30,12 +28,12 @@ module PokitDok
     #
     # +client_secret+ your client secret, provided by PokitDok
     #
-    def initialize(client_id, client_secret, version='v4')
+    def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com')
       @client_id = client_id
       @client_secret = client_secret
       @version = version
 
-      @api_url = "#{url_base}/api/#{version}"
+      @api_url = "#{base}/api/#{version}"
       @client = OAuth2::Client.new(@client_id, @client_secret,
                                    site: @api_url, token_url: '/oauth2/token')
 
@@ -43,11 +41,6 @@ module PokitDok
       @scopes = {}
       @scopes['default'] = { scope: refresh_token }
       scope 'default'
-    end
-
-    # Accessor for the PokitDok Platform URL, overridable for testing.
-    def url_base
-      POKITDOK_URL_BASE
     end
 
     # Adds an authorization code for a given OAuth2 scope.

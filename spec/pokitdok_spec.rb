@@ -2,381 +2,412 @@
 
 require 'spec_helper'
 
-CLIENT_ID = 'jlHrMhG8CZudpJXHp0Rr'
-CLIENT_SECRET = '347iuIN8T7zOzE7wtyk1vQGfjxuTE3yjxb8nlFev'
+CLIENT_ID = 'F7q38MzlwOxUwTHb7jvk'
+CLIENT_SECRET = 'O8DRamKmKMLtSTPjK99eUlbfOQEc44VVmp8ARmcY'
 SCHEDULE_AUTH_CODE = 'KmCCkuYkSmPEf7AxaCIUApX1pUFedJx9CrDWPMD8'
-POKITDOK_TEST_URL = 'http://localhost:5002'
-
-def check_meta_and_data(result)
-  refute_empty result['meta']
-  refute_empty result['data']
-end
+BASE_URL = 'https://platform.pokitdok.com/v4/api'
+MATCH_NETWORK_LOCATION = /(.*\.)?pokitdok\.com/
+MATCH_OAUTH2_PATH = /[\/]oauth2[\/]token/
+TEST_REQUEST_PATH = '/endpoint'
 
 describe PokitDok do
   describe 'Authenticated functions' do
     before do
-      PokitDok::PokitDok.any_instance.stubs(:url_base).returns(POKITDOK_TEST_URL)
+      stub_request(:post, /#{MATCH_NETWORK_LOCATION}#{MATCH_OAUTH2_PATH}/).
+          to_return(
+            :status => 200,
+            :body => '{
+              "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
+              "token_type": "bearer",
+              "expires": 1393350569,
+              "expires_in": 3600
+            }',
+            :headers => {
+              'Server'=> 'nginx',
+              'Date' => Time.now(),
+              'Content-type' => 'application/json;charset=UTF-8',
+              'Connection' => 'keep-alive',
+              'Pragma' => 'no-cache',
+              'Cache-Control' => 'no-store'
+            })
 
-      VCR.use_cassette 'auth' do
-        @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-        @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
+      @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+      @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
+    end
+
+    describe 'Test Connection' do
+      it 'should instantiate the client' do
+        refute_nil(@pokitdok.client)
       end
     end
 
-    it 'should default to the v4 api specification' do
-      @pokitdok.api_url.must_match /.*v4.*/
-    end
-
-    it 'should revert to the v3 api specification if requested' do
-      VCR.use_cassette 'auth' do
-        @pokitdok3 = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET, 'v3')
-        @pokitdok3.api_url.must_match /.*v3.*/
-      end
-    end
-
-    it 'should instantiate with a client id and client secret' do
-      refute_nil(@pokitdok, 'New PokitDok was nil.')
-    end
-
-    it 'should authenticate on a new connection' do
-      refute_nil @pokitdok.client
-    end
-
-    it 'should refresh the connection if it expires' do
-      skip 'Not implemented'
-    end
+    # TODO: General Request Tests
 
     describe 'Activities endpoint' do
       it 'should expose the activities endpoint' do
-        VCR.use_cassette 'activities' do
-          @activities = @pokitdok.activities
-        end
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        check_meta_and_data @activities
-        refute_empty @activities['data']
+        @activities = @pokitdok.activities
+        refute_nil(@activities)
       end
-    end
 
-    describe 'Authorizations endpoint' do
-      it 'should expose the authorizations endpoint' do
-        query = JSON.parse(IO.read('spec/fixtures/authorizations.json'))
+      it 'should expose the activities endpoint with an id parameter' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        VCR.use_cassette 'authorizations' do
-          @authorizations = @pokitdok.authorizations query
-        end
-
-        check_meta_and_data @authorizations
-        refute_empty @authorizations['data']
+        @activities = @pokitdok.activities(activity_id: 'activity_id')
+        refute_nil(@activities)
       end
     end
 
     describe 'Cash Prices endpoint' do
       it 'should expose the cash prices endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
         query = { cpt_code: '90658', zip_code: '94403' }
+        @prices = @pokitdok.cash_prices query
 
-        VCR.use_cassette 'cash_prices' do
-          @prices = @pokitdok.cash_prices query
-        end
-
-        check_meta_and_data @prices
-        refute_empty @prices['data']
+        refute_nil(@prices)
       end
     end
-
-    describe 'Insurance Prices endpoint' do
-      it 'should expose the insurance prices endpoint' do
-        query = { cpt_code: '87799', zip_code: '32218' }
-
-        VCR.use_cassette 'insurance_prices' do
-          @prices = @pokitdok.insurance_prices query
-        end
-
-        check_meta_and_data @prices
-        refute_empty @prices['data']
-      end
-    end
-
 
     describe 'Claims endpoint' do
       it 'should expose the claims endpoint' do
-        query = JSON.parse(IO.read('spec/fixtures/claim.json'))
-        VCR.use_cassette 'claims' do
-          @claim = @pokitdok.claims(query)
-        end
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        check_meta_and_data @claim
-        refute_empty @claim['data']
-        @claim['data']['units_of_work'].must_equal 1
-        assert_nil @claim['errors']
+        query = JSON.parse(IO.read('spec/fixtures/claim.json'))
+        @claim = @pokitdok.claims(query)
+
+        refute_nil(@claim)
       end
     end
 
     describe 'Claims status endpoint' do
       it 'should expose the claims status endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
         query = JSON.parse(IO.read('spec/fixtures/claims_status.json'))
-        VCR.use_cassette 'claims_status' do
-          @claims_status = @pokitdok.claims_status(query)
-        end
+        @claims_status = @pokitdok.claims_status(query)
 
-        check_meta_and_data @claims_status
-        refute_empty @claims_status['data']
-
-        assert_nil @claims_status['errors']
+        refute_nil(@claims_status)
       end
     end
 
+    # TODO: MPC Tests
+
+    # TODO: ICD Convert Tests
+
+    # TODO: Claims Convert Tests
+
     describe 'Eligibility endpoint' do
       it 'should expose the eligibility endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
         @eligibility_query = {
           member: {
-              birth_date: '1970-01-01',
-              first_name: 'Jane',
-              last_name: 'Doe',
-              id: 'W000000000'
+            birth_date: '1970-01-01',
+            first_name: 'Jane',
+            last_name: 'Doe',
+            id: 'W000000000'
           },
           provider: {
-              first_name: 'JEROME',
-              last_name: 'AYA-AY',
-              npi: '1467560003'
+            first_name: 'JEROME',
+            last_name: 'AYA-AY',
+            npi: '1467560003'
           },
           service_types: ['health_benefit_plan_coverage'],
           trading_partner_id: 'MOCKPAYER'
         }
+        @eligibility = @pokitdok.eligibility(@eligibility_query)
 
-        VCR.use_cassette 'eligibility' do
-          @eligibility = @pokitdok.eligibility(@eligibility_query)
-        end
-
-        check_meta_and_data @eligibility
-        refute_nil @eligibility['data']
-        assert_nil @eligibility['data']['errors']
+        refute_nil(@eligibility)
       end
     end
 
     describe 'Enrollment endpoint' do
       it 'should expose the enrollment endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
         query = JSON.parse(IO.read('spec/fixtures/enrollment.json'))
+        @enrollment = @pokitdok.enrollment(query)
 
-        VCR.use_cassette 'enrollment' do
-          @enrollment = @pokitdok.enrollment(query)
-        end
-
-        check_meta_and_data @enrollment
-        @enrollment['data']['units_of_work'].must_equal 1
-        assert_nil @enrollment['data']['errors']
+        refute_nil(@enrollment)
       end
     end
 
+    # TODO: Enrollment Snapshot Tests
+
     describe 'Files endpoint' do
       it 'should expose the files endpoint' do
-        VCR.use_cassette 'files' do
-          @response = @pokitdok.files('MOCKPAYER',
-                                      'spec/fixtures/sample.270')
-        end
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        check_meta_and_data @response
-        refute_nil @response
-        # TODO: should get back an activity id
+        @files = @pokitdok.files('MOCKPAYER', 'spec/fixtures/sample.270')
+
+        refute_nil(@files)
+      end
+    end
+
+    describe 'Insurance Prices endpoint' do
+      it 'should expose the insurance prices endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = { cpt_code: '87799', zip_code: '32218' }
+        @prices = @pokitdok.insurance_prices query
+
+        refute_nil(@prices)
       end
     end
 
     describe 'Payers endpoint' do
       it 'should expose the payers endpoint' do
-        VCR.use_cassette 'payers' do
-          @payers = @pokitdok.payers(state: 'CA')
-        end
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        check_meta_and_data @payers
-        refute_nil @payers['data']
-        @payers['data'].length.must_be :>, 1
-      end
-    end
+        @payers = @pokitdok.payers(state: 'CA')
 
-    describe 'Plans endpoint no args' do
-      it 'should expose the plans endpoint' do
-        query = {}
-
-        VCR.use_cassette 'plans_no_args' do
-          @plans = @pokitdok.plans(query)
-        end
-
-        check_meta_and_data @plans
-        @plans['data'].must_be_instance_of Array
+        refute_nil(@payers)
       end
     end
 
     describe 'Plans endpoint' do
       it 'should expose the plans endpoint' do
-        query = {'state' => 'TX', 'plan_type' => 'PPO'}
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        VCR.use_cassette 'plans' do
-          @plans = @pokitdok.plans(query)
-        end
+        @plans = @pokitdok.plans
 
-        check_meta_and_data @plans
-        @plans['data'].must_be_instance_of Array
+        refute_nil(@plans)
+      end
+
+      it 'should expose the plans endpoint withe state and plan type' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {state: 'TX', plan_type: 'PPO'}
+        @plans = @pokitdok.plans(query)
+
+        refute_nil(@plans)
       end
     end
 
     describe 'Providers endpoint' do
       it 'should expose the providers endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
         query = { npi: '1467560003' }
+        @providers = @pokitdok.providers(query)
 
-        VCR.use_cassette 'providers' do
-          @providers = @pokitdok.providers(query)
-        end
-
-        check_meta_and_data @providers
-        refute_nil @providers['data']
-        @providers['data'].size.must_equal 4
-      end
-    end
-
-    describe 'Referrals endpoint' do
-      it 'should expose the referrals endpoint' do
-        query = JSON.parse(IO.read('spec/fixtures/referrals.json'))
-
-        VCR.use_cassette 'referrals' do
-          @referrals = @pokitdok.referrals(query)
-        end
-
-        check_meta_and_data @referrals
-        refute_nil @referrals['data']
-        @referrals['data']['valid_request'].must_equal true
-      end
-    end
-
-    describe 'Scheduling endpoints' do
-      it 'should list the schedulers' do
-        VCR.use_cassette 'scheduling' do
-          @schedulers = @pokitdok.schedulers
-        end
-
-        check_meta_and_data @schedulers
-        @schedulers['data'].length.must_be :>, 1
+        refute_nil(@providers)
       end
 
-      it 'should give details on a specific scheduler' do
-        VCR.use_cassette 'scheduling' do
-          @scheduler = @pokitdok.scheduler({ uuid: '967d207f-b024-41cc-8cac-89575a1f6fef' })
-        end
+      it 'should expose the providers endpoint with args' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        check_meta_and_data @scheduler
-        @scheduler['data'].length.must_equal 1
-        @scheduler['data'].first['name'].must_equal "Greenway"
-      end
-
-      it 'should list appointment types' do
-        VCR.use_cassette 'scheduling' do
-          @appointment_types = @pokitdok.appointment_types
-        end
-
-        check_meta_and_data @appointment_types
-        @appointment_types['data'].length.must_be :>, 1
-      end
-
-      it 'should give details on a specific appointment type' do
-        VCR.use_cassette 'scheduling' do
-          @appointment_type = @pokitdok.appointment_type({ uuid: 'ef987695-0a19-447f-814d-f8f3abbf4860' })
-        end
-
-        check_meta_and_data @appointment_type
-        @appointment_type['data'].length.must_equal 1
-        @appointment_type['data'].first['type'].must_equal "OV1"
-      end
-
-      it 'should query for open appointment slots' do
-        VCR.use_cassette 'scheduling_scoped' do
-          @slots = @pokitdok.open_appointment_slots({
-            start_date: "2015-01-01T00:00:00",
-            end_date: "2015-02-05T00:00:00",
-            appointment_type: "office_visit",
-            patient_uuid: "8ae236ff-9ccc-44b0-8717-42653cd719d0"
-          })
-        end
-
-        check_meta_and_data @slots
-        @slots['data'].length.must_be :>, 1
-      end
-
-      it 'should book appointment for an open slot' do
-        appt_uuid = "ef987691-0a19-447f-814d-f8f3abbf4859"
-        booking_query = {
-          patient: {
-              _uuid: "500ef469-2767-4901-b705-425e9b6f7f83",
-              email: "john@johndoe.com",
-              phone: "800-555-1212",
-              birth_date: "1970-01-01",
-              first_name: "John",
-              last_name: "Doe",
-              member_id: "M000001"
-          },
-          description: "Welcome to M0d3rN Healthcare"
+        query = {
+          zipcode: '29307',
+          specialty: 'rheumatology',
+          radius: '20mi'
         }
+        @providers = @pokitdok.providers(query)
 
-        VCR.use_cassette 'scheduling_scoped' do
-          @response = @pokitdok.book_appointment(appt_uuid, booking_query)
-        end
-
-        check_meta_and_data @response
-        @response['data']['booked'].must_equal true
-      end
-
-      it 'should update appointment attributes' do
-        appt_uuid = "ef987691-0a19-447f-814d-f8f3abbf4859"
-        update_query = {
-          description: "Welcome to M0d3rN Healthcare"
-        }
-
-        VCR.use_cassette 'scheduling_scoped' do
-          @response = @pokitdok.update_appointment(appt_uuid, update_query)
-        end
-
-        check_meta_and_data @response
-      end
-
-      it 'should cancel a specified appointment' do
-        VCR.use_cassette 'scheduling_scoped' do
-          @cancel_response =
-            @pokitdok.cancel_appointment "ef987691-0a19-447f-814d-f8f3abbf4859"
-        end
-
-        @cancel_response.must_equal true
-      end
-
-      it 'should raise an ArgumentError if a scoped method is' \
-         ' called without a scope code being set' do
-        VCR.use_cassette 'auth' do
-          @pd = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-        end
-
-        assert_raises(ArgumentError) do
-          @pd.cancel_appointment({ id: '123456' })
-        end
+        refute_nil(@providers)
       end
     end
 
     describe 'Trading Partners endpoints' do
       it 'should expose the trading partners endpoint (index call)' do
-        query = {}
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        VCR.use_cassette 'trading_partners_index' do
-          @trading_partners = @pokitdok.trading_partners(query)
-        end
+        @trading_partners = @pokitdok.trading_partners
 
-        check_meta_and_data @trading_partners
-        @trading_partners['data'].must_be_instance_of Array
-        @trading_partners['data'].length.must_be :>, 1
+        refute_nil(@trading_partners)
       end
 
       it 'should expose the trading partners endpoint (get call)' do
-        VCR.use_cassette 'trading_partners_get' do
-          @trading_partners = @pokitdok.trading_partners({ trading_partner_id: 'aetna' })
-        end
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
 
-        check_meta_and_data @trading_partners
-        @trading_partners['data'].must_be_instance_of Hash
-        @trading_partners['data']['name'].must_equal "Aetna"
+        @trading_partners = @pokitdok.trading_partners({ trading_partner_id: 'aetna' })
+
+        refute_nil(@trading_partners)
+      end
+    end
+
+    describe 'Referrals endpoint' do
+      it 'should expose the referrals endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = JSON.parse(IO.read('spec/fixtures/referrals.json'))
+        @referrals = @pokitdok.referrals(query)
+
+        refute_nil(@referrals)
+      end
+    end
+
+    describe 'Authorizations endpoint' do
+      it 'should expose the authorizations endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = JSON.parse(IO.read('spec/fixtures/authorizations.json'))
+        @authorizations = @pokitdok.authorizations query
+
+        refute_nil(@authorizations)
+      end
+    end
+
+    describe 'Scheduling endpoints' do
+      it 'should list the schedulers' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        @schedulers = @pokitdok.schedulers
+
+        refute_nil(@schedulers)
+      end
+
+      it 'should give details on a specific scheduler' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        @scheduler = @pokitdok.scheduler({ uuid: '967d207f-b024-41cc-8cac-89575a1f6fef' })
+
+        refute_nil(@scheduler)
+      end
+
+      it 'should list appointment types' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        @appointment_types = @pokitdok.appointment_types
+
+        refute_nil(@appointment_types)
+      end
+
+      it 'should give details on a specific appointment type' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        @appointment_type = @pokitdok.appointment_type({ uuid: 'ef987695-0a19-447f-814d-f8f3abbf4860' })
+
+        refute_nil(@appointment_type)
+      end
+
+      # TODO: /schedule/slots test
+
+      it 'should give details on a specific appointment' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        @appointment = @pokitdok.appointments({ uuid: 'ef987691-0a19-447f-814d-f8f3abbf4859' })
+
+        refute_nil(@appointment)
+      end
+
+      it 'should give details on a searched appointments' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {
+          'appointment_type' => 'AT1',
+          'start_date' => Time.now.strftime("%Y/%m/%d"),
+          'end_date' => Time.now.strftime("%Y/%m/%d"),
+        }
+        @appointments = @pokitdok.appointments(query)
+
+        refute_nil(@appointments)
+      end
+
+      it 'should book appointment for an open slot' do
+        stub_request(:put, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        appt_uuid = "ef987691-0a19-447f-814d-f8f3abbf4859"
+        booking_query = {
+          patient: {
+            uuid: "500ef469-2767-4901-b705-425e9b6f7f83",
+            email: "john@johndoe.com",
+            phone: "800-555-1212",
+            birth_date: "1970-01-01",
+            first_name: "John",
+            last_name: "Doe"
+          },
+          description: "Welcome to M0d3rN Healthcare"
+        }
+        @slot = @pokitdok.book_appointment(appt_uuid, booking_query)
+
+        refute_nil(@slot)
+      end
+
+      it 'should cancel a specified appointment' do
+        stub_request(:delete, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        @cancel_response = @pokitdok.cancel_appointment "ef987691-0a19-447f-814d-f8f3abbf4859"
+
+        refute_nil(@cancel_response)
+      end
+    end
+
+    # TODO: /identity/ tests
+
+    describe 'Pharmacy Plans Endpoint' do
+      it 'should expose the pharmacy plans endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {trading_partner_id: 'MOCKPAYER', plan_number: 'S5820003'}
+        @pharmacy_plans = @pokitdok.pharmacy_plans(query)
+
+        refute_nil(@pharmacy_plans)
+      end
+    end
+
+    describe 'Pharmacy Formulary Endpoint' do
+      it 'should expose the pharmacy formulary endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {trading_partner_id: 'MOCKPAYER', plan_number: 'S5820003',
+          ndc: '59310-579-22'}
+        @pharmacy_formulary = @pokitdok.pharmacy_formulary(query)
+
+        refute_nil(@pharmacy_formulary)
+      end
+    end
+
+    describe 'Pharmacy Network Endpoint' do
+      it 'should expose the pharmacy formulary endpoint by NPI' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {trading_partner_id: 'MOCKPAYER', plan_number: 'S5596033',
+          npi: '1912301953'}
+        @pharmacy_network = @pokitdok.pharmacy_network(query)
+
+        refute_nil(@pharmacy_network)
+      end
+      it 'should expose the pharmacy formulary endpoint by searching' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+          to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {trading_partner_id: 'MOCKPAYER', plan_number: 'S5596033',
+          zipcode: '94401', radius: '10mi'}
+        @pharmacy_network = @pokitdok.pharmacy_network(query)
+
+        refute_nil(@pharmacy_network)
       end
     end
   end
