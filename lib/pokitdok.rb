@@ -399,12 +399,22 @@ module PokitDok
 
     # Invokes the identity endpoint for updating
     #
-    # +identity_id+ unique id of the identity to be updated
+    # +identity_uuid+ unique id of the identity to be updated
     # +params+ an optional hash of parameters that will be sent in the PUT body
     #
-    def update_identity(identity_id, params = {})
+    def update_identity(identity_uuid, params = {})
       scope 'default'
-      put_one("identity", identity_id, params)
+      put_one("identity", identity_uuid, params)
+    end
+
+    # Invokes the identity endpoint for querying
+    #
+    # +identity_uuid+ unique id of the identity to be updated
+    # +params+ an optional hash of parameters that will be sent in the PUT body
+    #
+    def identity(identity_uuid = nil, params = {})
+      scope 'default'
+      get("identity" + (identity_uuid ? "/#{identity_uuid}" : ''), params)
     end
 
     private
