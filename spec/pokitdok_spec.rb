@@ -97,7 +97,26 @@ describe PokitDok do
       end
     end
 
-    # TODO: MPC Tests
+    describe 'Medical Procedure Endpoint endpoint' do
+      it 'should expose the mpc endpoint when a code is specified' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = { code: '99213' }
+        @mpc = @pokitdok.mpc(query)
+
+        refute_nil(@mpc)
+      end
+      it 'should expose the mpc endpoint when name is specified' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = { name: 'office' }
+        @mpc = @pokitdok.mpc(query)
+
+        refute_nil(@mpc)
+      end
+    end
 
     # TODO: ICD Convert Tests
 
