@@ -139,7 +139,32 @@ describe PokitDok do
       end
     end
 
-    # TODO: Enrollment Snapshot Tests
+    describe 'Enrollment Snapshot endpoint' do
+      it 'should expose the enrollment snapshot endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot_activity = @pokitdok.enrollment_snapshot('MOCKPAYER', 'spec/fixtures/acme_inc_supplemental_identifiers.834')
+
+        refute_nil(@enrollment_snapshot_activity)
+      end
+      it 'should expose the enrollment snapshots endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot = @pokitdok.enrollment_snapshots({snapshot_id: '577294e00640fd5ce02d493f'})
+
+        refute_nil(@enrollment_snapshot)
+      end
+      it 'should expose the enrollment snapshot data endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot_data = @pokitdok.enrollment_snapshot_data({snapshot_id: '577294e00640fd5ce02d493f'})
+
+        refute_nil(@enrollment_snapshot_data)
+      end
+    end
 
     describe 'Files endpoint' do
       it 'should expose the files endpoint' do
