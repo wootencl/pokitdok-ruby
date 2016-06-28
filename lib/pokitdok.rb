@@ -99,6 +99,29 @@ module PokitDok
       post('claims/status', params)
     end
 
+    # Uploads an .837 file to the claims convert endpoint.
+    # Uses the multipart-post gem, since oauth2 doesn't support multipart.
+    #
+    # +filename+ the path to the file to transmit
+    #
+    def claims_convert(x12_claims_file)
+      scope 'default'
+      url = URI.parse(@api_url + '/claims/convert')
+
+      File.open(x12_claims_file) do |f|
+        req = Net::HTTP::Post::Multipart.new url.path,
+                                             'file' => UploadIO.new(f, 'application/EDI-X12', x12_claims_file)
+        req['Authorization'] = "Bearer #{default_scope.token}"
+        req['User-Agent'] = user_agent
+
+        @response = Net::HTTP.start(url.host, url.port) do |http|
+          http.request(req)
+        end
+      end
+
+      JSON.parse(@response.body)
+    end
+
     # Invokes the eligibility endpoint.
     #
     # +params+ an optional hash of parameters that will be sent in the POST body
