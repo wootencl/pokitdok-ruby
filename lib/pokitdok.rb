@@ -386,7 +386,26 @@ module PokitDok
       scope 'user_schedule'
 
       put_one("schedule/appointments", appointment_uuid, params)
-    end    
+    end
+
+    # Invokes the identity endpoint for creation
+    #
+    # +params+ an optional hash of parameters that will be sent in the POST body
+    #
+    def create_identity(params = {})
+      scope 'default'
+      post('identity/', params)
+    end
+
+    # Invokes the identity endpoint for updating
+    #
+    # +identity_id+ unique id of the identity to be updated
+    # +params+ an optional hash of parameters that will be sent in the PUT body
+    #
+    def update_identity(identity_id, params = {})
+      scope 'default'
+      put_one("identity", identity_id, params)
+    end
 
     private
       # Returns a standard User-Agent string to be passed along with all requests
