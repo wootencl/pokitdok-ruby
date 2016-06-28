@@ -108,6 +108,15 @@ module PokitDok
       get("icd/convert/#{params[:code]}")
     end
 
+    # Invokes the mpc endpoint.
+    #
+    # +params+ an optional hash of parameters
+    #
+    def mpc(params = {})
+      scope 'default'
+      get('mpc/', params)
+    end
+
     # Invokes the eligibility endpoint.
     #
     # +params+ an optional hash of parameters that will be sent in the POST body
