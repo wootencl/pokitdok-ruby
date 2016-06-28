@@ -118,7 +118,15 @@ describe PokitDok do
       end
     end
 
-    # TODO: ICD Convert Tests
+    describe 'ICD Convert endpoint' do
+      it 'should expose the icd convert endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @icd = @pokitdok.icd_convert({code: '250.12'})
+        refute_nil(@icd)
+      end
+    end
 
     # TODO: Claims Convert Tests
 
