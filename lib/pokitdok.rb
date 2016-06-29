@@ -99,10 +99,28 @@ module PokitDok
       post('claims/status', params)
     end
 
+    # Invokes the ICD convert endpoint.
+    #
+    # +params+ an optional hash of parameters
+    #
+    def icd_convert(params = {})
+      scope 'default'
+      get("icd/convert/#{params[:code]}")
+    end
+
+    # Invokes the mpc endpoint.
+    #
+    # +params+ an optional hash of parameters
+    #
+    def mpc(params = {})
+      scope 'default'
+      get('mpc/', params)
+    end
+
     # Uploads an .837 file to the claims convert endpoint.
     # Uses the multipart-post gem, since oauth2 doesn't support multipart.
     #
-    # +filename+ the path to the file to transmit
+    # +x12_claims_file+ the path to the file to transmit
     #
     def claims_convert(x12_claims_file)
       scope 'default'
