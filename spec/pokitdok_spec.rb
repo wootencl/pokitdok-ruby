@@ -332,7 +332,21 @@ describe PokitDok do
         refute_nil(@appointment_type)
       end
 
-      # TODO: /schedule/slots test
+      it 'should create an open schedule slot' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {
+            pd_provider_uuid: "b691b7f9-bfa8-486d-a689-214ae47ea6f8",
+            location: [32.788110, -79.932364],
+            appointment_type: "AT1",
+            start_date: "2014-12-25T15:09:34.197709",
+            end_date: "2014-12-25T16:09:34.197717"
+        }
+        @slot = @pokitdok.schedule_slots(query)
+
+        refute_nil(@slot)
+      end
 
       it 'should give details on a specific appointment' do
         stub_request(:get, MATCH_NETWORK_LOCATION).

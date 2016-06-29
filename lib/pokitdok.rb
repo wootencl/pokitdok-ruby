@@ -352,8 +352,9 @@ module PokitDok
     #    
     # +params+ an optional Hash of parameters
     #
-    def slots(params = {})
+    def schedule_slots(params = {})
       scope 'user_schedule'
+      post('/schedule/slots/', params)
     end
 
     # Invokes the pharmacy plans endpoint.
