@@ -13,7 +13,6 @@ require 'base64'
 require 'json'
 require 'oauth2'
 require 'net/http/post/multipart'
-require 'uri'
 
 module PokitDok
   # PokitDok API client implementation for Ruby.
