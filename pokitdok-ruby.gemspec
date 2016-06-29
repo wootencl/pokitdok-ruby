@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["PokitDok, Inc."]
-  s.date = "2016-06-28"
+  s.date = "2016-06-29"
   s.description = "Gem for easy access to the PokitDok Platform APIs."
   s.email = "platform@pokitdok.com"
   s.extra_rdoc_files = [
