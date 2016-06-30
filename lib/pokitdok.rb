@@ -52,6 +52,12 @@ module PokitDok
       @scopes[name] = { code: code }
     end
 
+    # Returns a standard User-Agent string to be passed along with all requests
+    def user_agent
+      "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
+    end
+
+
     # Invokes the appointments endpoint, to query for open appointment slots
     # (using pd_provider_uuid and location) or booked appointments (using
     # patient_uuid).
@@ -403,15 +409,47 @@ module PokitDok
     def update_appointment(appointment_uuid, params={})
       scope 'user_schedule'
 
-      put_one("schedule/appointments", appointment_uuid, params)
-    end    
+      put_one("/schedule/appointments", appointment_uuid, params)
+    end
+
+    # Invokes the the general request method for submitting API request.
+    #
+    # +endpoint+ the API request path
+    # +method+ the http request method that should be used
+    # +file+ file when the API accepts file uploads as input
+    # +params+ an optional Hash of parameters
+    #
+    def request(endpoint, method='get', file=nil, params={})
+      scope 'default'
+      method = method.downcase
+      if file
+        url = URI.parse(@api_url + endpoint)
+
+        File.open(file) do |f|
+          sub_params = params.merge({'file' => UploadIO.new(f, 'application/EDI-X12', file)})
+          req = Net::HTTP::Post::Multipart.new(url.path, sub_params)
+
+          req['Authorization'] = "Bearer #{default_scope.token}"
+          req['User-Agent'] = user_agent
+
+          @response = Net::HTTP.start(url.host, url.port) do |http|
+            http.request(req)
+          end
+          JSON.parse(@response.body)
+        end
+      else
+        # Work around to delete the leading slash on the request endpoint
+        # Currently the module we're using appends a slash to the base url
+        # so an additional url will break the request.
+        # Refer to ...faraday/connection.rb L#404
+        if endpoint[0] == '/'
+          endpoint[0] = ''
+        end
+        self.send(method, endpoint, params)
+      end
+    end
 
     private
-      # Returns a standard User-Agent string to be passed along with all requests
-      def user_agent
-        "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
-      end
-
       # Returns a standard set of headers to be passed along with all requests
       def headers
         { 'User-Agent' => user_agent }
@@ -441,6 +479,15 @@ module PokitDok
         JSON.parse(response.body)
       end
 
+      def put(endpoint, params = {})
+        response = current_scope.put(endpoint, headers: headers,
+                                     body: params.to_json) do |request|
+          request.headers['Content-Type'] = 'application/json'
+        end
+
+        JSON.parse(response.body)
+      end
+
       def put_one(endpoint, id, params = {})
         response = current_scope.put("#{endpoint}/#{id}", headers: headers,
                                  body: params.to_json) do |request|
@@ -453,6 +500,19 @@ module PokitDok
       def delete_one(endpoint, id, params = {})
         response = current_scope.delete("#{endpoint}/#{id}", headers: headers,
                                  body: params.to_json) do |request|
+          request.headers['Content-Type'] = 'application/json'
+        end
+
+        if response.body.empty?
+          response.status == 204
+        else
+          JSON.parse(response.body)
+        end
+      end
+
+      def delete(endpoint, params = {})
+        response = current_scope.delete(endpoint, headers: headers,
+                                        body: params.to_json) do |request|
           request.headers['Content-Type'] = 'application/json'
         end
 
