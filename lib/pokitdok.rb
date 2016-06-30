@@ -409,7 +409,7 @@ module PokitDok
     def update_appointment(appointment_uuid, params={})
       scope 'user_schedule'
 
-      put_one("/schedule/appointments", appointment_uuid, params)
+      put_one("schedule/appointments", appointment_uuid, params)
     end
 
     # Invokes the the general request method for submitting API request.
