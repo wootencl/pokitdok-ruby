@@ -14,22 +14,22 @@ describe PokitDok do
   describe 'Authenticated functions' do
     before do
       stub_request(:post, /#{MATCH_NETWORK_LOCATION}#{MATCH_OAUTH2_PATH}/).
-          to_return(
-              :status => 200,
-              :body => '{
-              "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
-              "token_type": "bearer",
-              "expires": 1393350569,
-              "expires_in": 3600
-            }',
-              :headers => {
-                  'Server'=> 'nginx',
-                  'Date' => Time.now(),
-                  'Content-type' => 'application/json;charset=UTF-8',
-                  'Connection' => 'keep-alive',
-                  'Pragma' => 'no-cache',
-                  'Cache-Control' => 'no-store'
-              })
+        to_return(
+          :status => 200,
+          :body => '{
+            "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
+            "token_type": "bearer",
+            "expires": 1393350569,
+            "expires_in": 3600
+          }',
+          :headers => {
+            'Server'=> 'nginx',
+            'Date' => Time.now(),
+            'Content-type' => 'application/json;charset=UTF-8',
+            'Connection' => 'keep-alive',
+            'Pragma' => 'no-cache',
+            'Cache-Control' => 'no-store'
+          })
 
       @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
       @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
