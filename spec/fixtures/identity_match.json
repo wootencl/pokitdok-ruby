@@ -1,0 +1,29 @@
+{
+  "data_filters": ["filter_a", "filter_b"],
+  "match_configuration": [
+    {
+      "source_field": "first_name",
+      "match_algorithm": "levenshtein",
+      "search_fields": ["nickname"],
+      "weight": 30
+    },
+    {
+      "source_field": "middle_name",
+      "match_algorithm": "stemming",
+      "weight": 30
+    },
+    {
+      "source_field": "last_name",
+      "match_algorithm": "soundex",
+      "weight": 30
+    },
+    {
+      "source_field": "birth_date",
+      "match_algorithm": "exact",
+      "search_fields": ["dob", "date_of_birth"],
+      "weight": 10
+    }
+  ],
+  "threshold": 80,
+  "callback_url": "https://platform.pokidok.com/callme?handler=thething"
+}

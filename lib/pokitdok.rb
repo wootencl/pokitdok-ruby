@@ -25,8 +25,9 @@ module PokitDok
     # Secret.
     #
     # +client_id+     your client ID, provided by PokitDok
-    #
     # +client_secret+ your client secret, provided by PokitDok
+    # +version+ The API version that should be used for requests.  Defaults to the latest version.
+    # +base+ The base URL to use for API requests.  Defaults to https://platform.pokitdok.com
     #
     def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com')
       @client_id = client_id
@@ -476,7 +477,55 @@ module PokitDok
       scope 'user_schedule'
 
       put_one("schedule/appointments", appointment_uuid, params)
-    end    
+    end
+
+    # Invokes the identity endpoint for creation
+    #
+    # +params+ a hash of parameters that will be sent in the POST body
+    #
+    def create_identity(params = {})
+      scope 'default'
+      post('identity/', params)
+    end
+
+    # Invokes the identity endpoint for updating
+    #
+    # +identity_uuid+ unique id of the identity to be updated
+    # +params+ a hash of parameters that will be sent in the PUT body
+    #
+    def update_identity(identity_uuid, params = {})
+      scope 'default'
+      put_one("identity", identity_uuid, params)
+    end
+
+    # Invokes the identity endpoint for querying
+    #
+    # +params+ an optional hash of parameters that will be sent in the GET body
+    #
+    def identity(params = {})
+      identity_uuid = params.delete :identity_uuid
+      scope 'default'
+      get("identity" + (identity_uuid ? "/#{identity_uuid}" : ''), params)
+    end
+
+    # Invokes the identity history endpoint
+    #
+    # +identity_uuid+ unique id of the identity to be updated
+    # +historical_version+ historical version of the identity being requested
+    #
+    def identity_history(identity_uuid, historical_version=nil)
+      scope 'default'
+      get("identity/#{identity_uuid}/history" + (historical_version ? "/#{historical_version}" : ''))
+    end
+
+    # Invokes the identity endpoint for querying
+    #
+    # +params+ hash of parameters that will be sent in the POST body
+    #
+    def identity_match(params = {})
+      scope 'default'
+      post("identity/match", params)
+    end
 
     private
       # Returns a standard User-Agent string to be passed along with all requests

@@ -440,7 +440,90 @@ describe PokitDok do
       end
     end
 
-    # TODO: /identity/ tests
+    describe 'Identity Endpoint' do
+      it 'should expose the identity endpoint for creation' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {
+          prefix: "Mr.",
+          first_name: "Gerald",
+          middle_name: "Harold",
+          last_name: "Whitmire",
+          suffix: "IV",
+          birth_date: "2000-05-25",
+          gender: "male",
+          email: "oscar@pokitdok.com",
+          phone: "555-555-5555",
+          secondary_phone: "333-333-4444",
+          address: {
+            address_lines: ["1400 Anyhoo Avenue"],
+            city: "Springfield",
+            state: "IL",
+            zipcode: "90210"
+          }
+        }
+        @identity = @pokitdok.create_identity(query)
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity endpoint for querying via id' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.identity(identity_uuid: '1a0a60b2-3e07-11e6-94c0-08002778b074')
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity endpoint for querying via params' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {first_name: 'Gerald', last_name: 'Whitmire'}
+        @identities = @pokitdok.identity(query)
+
+        refute_nil(@identities)
+      end
+
+      it 'should expose the identity endpoint for updating' do
+        stub_request(:put, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.update_identity('1a0a60b2-3e07-11e6-94c0-08002778b074', { first_name: 'John' })
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity history endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.identity_history('1a0a60b2-3e07-11e6-94c0-08002778b074')
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity history endpoint with version number' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.identity_history('1a0a60b2-3e07-11e6-94c0-08002778b074', 1)
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity match endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = JSON.parse(IO.read('spec/fixtures/identity_match.json'))
+        @identity = @pokitdok.identity_match(query)
+
+        refute_nil(@identity)
+      end
+    end
 
     describe 'Pharmacy Plans Endpoint' do
       it 'should expose the pharmacy plans endpoint' do
