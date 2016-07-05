@@ -143,6 +143,30 @@ using travis-ci:
 
 You may have luck with other interpreters - let us know how it goes.
 
+## Development/Debugging
+
+##### Prerequisite: Make sure to have the RubyMine plugin installed with IntelliJ.
+
+#### Steps to getting it setup in IDE (IntelliJ IDE):
+1. Fork and/or clone the `pokitdok-ruby` github repository onto your local machine.
+2. Open IntelliJ IDE.
+3. Select `File > New > Project From Existing Sources` and select the directory of the cloned `pokitdok-ruby` project.
+4. In the pop-up GUI select `Create project from existing sources` and continue selecting next/finish with the default settings.
+5. Next you want to make sure ruby has selected the correct ruby SDK. We recommend using rvm for ruby version management.
+  * Select `File > Project Structure`. Then under the Project -> SDK settings select the ruby version you wish to use with the project (i.e.- `RVM: ruby-1.9.3-p551 [global]`).
+6. You will probably prompted to install the project dependencies with bundler which you should do.
+7. Now to debug tests you need to create a `run configuration`.
+  * Select `Run > Edit Configurations`. 
+  * We use `rake` to run our project tasks. So select the `+` button and add a new `Rake` configuration.
+  * A few properties you need to set: 
+    * Task Name: `spec`
+    * Ruby SDK -> Use other SDK and 'rake' gem: `Whichever ruby version you chose in step 5`
+    * Bundler Tab: Check the box labeled `Run the script in the context of the bundle (bundle exec)
+8. You can now run/debug the project tests in the IntelliJ IDE.
+  * NOTE: Currently the tests will not complete though all are completed. This is a known issue with RubyMine.
+
+NOTE: If you would just like to run the test framework outside of the IDE make sure to have all the dependencies installed via bundle in the project directory then run the following command: `bundle exec rake spec`.
+
 ## License
 Copyright (c) 2014 PokitDok Inc. See [LICENSE][] for details.
 
