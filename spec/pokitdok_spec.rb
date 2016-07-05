@@ -14,22 +14,22 @@ describe PokitDok do
   describe 'Authenticated functions' do
     before do
       stub_request(:post, /#{MATCH_NETWORK_LOCATION}#{MATCH_OAUTH2_PATH}/).
-          to_return(
-            :status => 200,
-            :body => '{
-              "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
-              "token_type": "bearer",
-              "expires": 1393350569,
-              "expires_in": 3600
-            }',
-            :headers => {
-              'Server'=> 'nginx',
-              'Date' => Time.now(),
-              'Content-type' => 'application/json;charset=UTF-8',
-              'Connection' => 'keep-alive',
-              'Pragma' => 'no-cache',
-              'Cache-Control' => 'no-store'
-            })
+        to_return(
+          :status => 200,
+          :body => '{
+            "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
+            "token_type": "bearer",
+            "expires": 1393350569,
+            "expires_in": 3600
+          }',
+          :headers => {
+            'Server'=> 'nginx',
+            'Date' => Time.now(),
+            'Content-type' => 'application/json;charset=UTF-8',
+            'Connection' => 'keep-alive',
+            'Pragma' => 'no-cache',
+            'Cache-Control' => 'no-store'
+          })
 
       @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
       @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
@@ -128,7 +128,16 @@ describe PokitDok do
       end
     end
 
-    # TODO: Claims Convert Tests
+    describe 'Claims convert endpoint' do
+      it 'should expose the claims convert endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @converted_claim = @pokitdok.claims_convert('spec/fixtures/chiropractic_example.837')
+
+        refute_nil(@converted_claim)
+      end
+    end
 
     describe 'Eligibility endpoint' do
       it 'should expose the eligibility endpoint' do
@@ -168,7 +177,32 @@ describe PokitDok do
       end
     end
 
-    # TODO: Enrollment Snapshot Tests
+    describe 'Enrollment Snapshot endpoint' do
+      it 'should expose the enrollment snapshot endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot_activity = @pokitdok.enrollment_snapshot('MOCKPAYER', 'spec/fixtures/acme_inc_supplemental_identifiers.834')
+
+        refute_nil(@enrollment_snapshot_activity)
+      end
+      it 'should expose the enrollment snapshots endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot = @pokitdok.enrollment_snapshots({snapshot_id: '577294e00640fd5ce02d493f'})
+
+        refute_nil(@enrollment_snapshot)
+      end
+      it 'should expose the enrollment snapshot data endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot_data = @pokitdok.enrollment_snapshot_data({snapshot_id: '577294e00640fd5ce02d493f'})
+
+        refute_nil(@enrollment_snapshot_data)
+      end
+    end
 
     describe 'Files endpoint' do
       it 'should expose the files endpoint' do
@@ -332,7 +366,25 @@ describe PokitDok do
         refute_nil(@appointment_type)
       end
 
-      # TODO: /schedule/slots test
+      it 'should create an open schedule slot' do
+        # Special Case: The scheduling endpoint reauthenticates for the scope (user_schedule),
+        # which would be caught by the below 'stub_request'. This would cause the OAuth module
+        # to fail because of an empty return body (to see what is required on an OAuth) POST
+        # refer to the 'before' code block above. This 'stub_request' will only catch the /schedule/slots/ request.
+        stub_request(:post,/#{MATCH_NETWORK_LOCATION}\/schedule\/slots/).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {
+            pd_provider_uuid: "b691b7f9-bfa8-486d-a689-214ae47ea6f8",
+            location: [32.788110, -79.932364],
+            appointment_type: "AT1",
+            start_date: "2014-12-25T15:09:34.197709",
+            end_date: "2014-12-25T16:09:34.197717"
+        }
+        @slot = @pokitdok.schedule_slots(query)
+
+        refute_nil(@slot)
+      end
 
       it 'should give details on a specific appointment' do
         stub_request(:get, MATCH_NETWORK_LOCATION).
