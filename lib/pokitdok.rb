@@ -158,6 +158,54 @@ module PokitDok
       post('enrollment/', params)
     end
 
+    # Uploads an .834 file to the enrollment snapshot endpoint.
+    # Uses the multipart-post gem, since oauth2 doesn't support multipart.
+    #
+    # +trading_partner_id+ the trading partner to transmit to
+    # +x12_file+ the path to the file to transmit
+    #
+    def enrollment_snapshot(trading_partner_id, x12_file)
+      scope 'default'
+      url = URI.parse(@api_url + '/enrollment/snapshot')
+
+      File.open(x12_file) do |f|
+        req = Net::HTTP::Post::Multipart.new url.path,
+                                             'file' => UploadIO.new(f, 'application/EDI-X12', x12_file),
+                                             'trading_partner_id' => trading_partner_id
+        req['Authorization'] = "Bearer #{default_scope.token}"
+        req['User-Agent'] = user_agent
+
+        @response = Net::HTTP.start(url.host, url.port) do |http|
+          http.request(req)
+        end
+      end
+
+      JSON.parse(@response.body)
+    end
+
+    # Invokes the enrollment snapshots endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def enrollment_snapshots(params = {})
+      snapshot_id = params.delete :snapshot_id
+
+      response =
+          default_scope.get("enrollment/snapshot" + (snapshot_id ? "/#{snapshot_id}" : '')) do |request|
+            request.params = params
+          end
+      JSON.parse(response.body)
+    end
+
+    # Invokes the enrollment snapshots data endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def enrollment_snapshot_data(params = {})
+      scope 'default'
+      get("enrollment/snapshot/#{params[:snapshot_id]}/data")
+    end
+
     # Uploads an EDI file to the files endpoint.
     # Uses the multipart-post gem, since oauth2 doesn't support multipart.
     #
