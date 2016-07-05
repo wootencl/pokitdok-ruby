@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["PokitDok, Inc."]
-  s.date = "2016-06-30"
+  s.date = "2016-07-05"
   s.description = "Gem for easy access to the PokitDok Platform APIs."
   s.email = "platform@pokitdok.com"
   s.extra_rdoc_files = [
@@ -30,10 +30,13 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/pokitdok.rb",
     "pokitdok-ruby.gemspec",
+    "spec/fixtures/acme_inc_supplemental_identifiers.834",
     "spec/fixtures/authorizations.json",
+    "spec/fixtures/chiropractic_example.837",
     "spec/fixtures/claim.json",
     "spec/fixtures/claims_status.json",
     "spec/fixtures/enrollment.json",
+    "spec/fixtures/identity_match.json",
     "spec/fixtures/referrals.json",
     "spec/fixtures/sample.270",
     "spec/pokitdok_spec.rb",
@@ -41,7 +44,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/pokitdok/pokitdok-ruby"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.4.8"
+  s.rubygems_version = "2.5.1"
   s.summary = "Gem for easy access to the PokitDok Platform APIs"
 
   if s.respond_to? :specification_version then

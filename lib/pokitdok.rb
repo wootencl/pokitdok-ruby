@@ -25,8 +25,9 @@ module PokitDok
     # Secret.
     #
     # +client_id+     your client ID, provided by PokitDok
-    #
     # +client_secret+ your client secret, provided by PokitDok
+    # +version+ The API version that should be used for requests.  Defaults to the latest version.
+    # +base+ The base URL to use for API requests.  Defaults to https://platform.pokitdok.com
     #
     def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com')
       @client_id = client_id
@@ -123,6 +124,29 @@ module PokitDok
       get('mpc/', params)
     end
 
+    # Uploads an .837 file to the claims convert endpoint.
+    # Uses the multipart-post gem, since oauth2 doesn't support multipart.
+    #
+    # +x12_claims_file+ the path to the file to transmit
+    #
+    def claims_convert(x12_claims_file)
+      scope 'default'
+      url = URI.parse(@api_url + '/claims/convert')
+
+      File.open(x12_claims_file) do |f|
+        req = Net::HTTP::Post::Multipart.new url.path,
+                                             'file' => UploadIO.new(f, 'application/EDI-X12', x12_claims_file)
+        req['Authorization'] = "Bearer #{default_scope.token}"
+        req['User-Agent'] = user_agent
+
+        @response = Net::HTTP.start(url.host, url.port) do |http|
+          http.request(req)
+        end
+      end
+
+      JSON.parse(@response.body)
+    end
+
     # Invokes the eligibility endpoint.
     #
     # +params+ an optional hash of parameters that will be sent in the POST body
@@ -139,6 +163,54 @@ module PokitDok
     def enrollment(params = {})
       scope 'default'
       post('enrollment/', params)
+    end
+
+    # Uploads an .834 file to the enrollment snapshot endpoint.
+    # Uses the multipart-post gem, since oauth2 doesn't support multipart.
+    #
+    # +trading_partner_id+ the trading partner to transmit to
+    # +x12_file+ the path to the file to transmit
+    #
+    def enrollment_snapshot(trading_partner_id, x12_file)
+      scope 'default'
+      url = URI.parse(@api_url + '/enrollment/snapshot')
+
+      File.open(x12_file) do |f|
+        req = Net::HTTP::Post::Multipart.new url.path,
+                                             'file' => UploadIO.new(f, 'application/EDI-X12', x12_file),
+                                             'trading_partner_id' => trading_partner_id
+        req['Authorization'] = "Bearer #{default_scope.token}"
+        req['User-Agent'] = user_agent
+
+        @response = Net::HTTP.start(url.host, url.port) do |http|
+          http.request(req)
+        end
+      end
+
+      JSON.parse(@response.body)
+    end
+
+    # Invokes the enrollment snapshots endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def enrollment_snapshots(params = {})
+      snapshot_id = params.delete :snapshot_id
+
+      response =
+          default_scope.get("enrollment/snapshot" + (snapshot_id ? "/#{snapshot_id}" : '')) do |request|
+            request.params = params
+          end
+      JSON.parse(response.body)
+    end
+
+    # Invokes the enrollment snapshots data endpoint.
+    #
+    # +params+ an optional Hash of parameters
+    #
+    def enrollment_snapshot_data(params = {})
+      scope 'default'
+      get("enrollment/snapshot/#{params[:snapshot_id]}/data")
     end
 
     # Uploads an EDI file to the files endpoint.
@@ -358,8 +430,9 @@ module PokitDok
     #    
     # +params+ an optional Hash of parameters
     #
-    def slots(params = {})
+    def schedule_slots(params = {})
       scope 'user_schedule'
+      post('/schedule/slots/', params)
     end
 
     # Invokes the pharmacy plans endpoint.
@@ -412,6 +485,54 @@ module PokitDok
       put_one("schedule/appointments", appointment_uuid, params)
     end
 
+    # Invokes the identity endpoint for creation
+    #
+    # +params+ a hash of parameters that will be sent in the POST body
+    #
+    def create_identity(params = {})
+      scope 'default'
+      post('identity/', params)
+    end
+
+    # Invokes the identity endpoint for updating
+    #
+    # +identity_uuid+ unique id of the identity to be updated
+    # +params+ a hash of parameters that will be sent in the PUT body
+    #
+    def update_identity(identity_uuid, params = {})
+      scope 'default'
+      put_one("identity", identity_uuid, params)
+    end
+
+    # Invokes the identity endpoint for querying
+    #
+    # +params+ an optional hash of parameters that will be sent in the GET body
+    #
+    def identity(params = {})
+      identity_uuid = params.delete :identity_uuid
+      scope 'default'
+      get("identity" + (identity_uuid ? "/#{identity_uuid}" : ''), params)
+    end
+
+    # Invokes the identity history endpoint
+    #
+    # +identity_uuid+ unique id of the identity to be updated
+    # +historical_version+ historical version of the identity being requested
+    #
+    def identity_history(identity_uuid, historical_version=nil)
+      scope 'default'
+      get("identity/#{identity_uuid}/history" + (historical_version ? "/#{historical_version}" : ''))
+    end
+
+    # Invokes the identity endpoint for querying
+    #
+    # +params+ hash of parameters that will be sent in the POST body
+    #
+    def identity_match(params = {})
+      scope 'default'
+      post("identity/match", params)
+    end
+
     # Invokes the the general request method for submitting API request.
     #
     # +endpoint+ the API request path
@@ -426,8 +547,8 @@ module PokitDok
         url = URI.parse(@api_url + endpoint)
 
         File.open(file) do |f|
-          sub_params = params.merge({'file' => UploadIO.new(f, 'application/EDI-X12', file)})
-          req = Net::HTTP::Post::Multipart.new(url.path, sub_params)
+          additional_params = params.merge({'file' => UploadIO.new(f, 'application/EDI-X12', file)})
+          req = Net::HTTP::Post::Multipart.new(url.path, additional_params)
 
           req['Authorization'] = "Bearer #{default_scope.token}"
           req['User-Agent'] = user_agent

@@ -27,22 +27,22 @@ describe PokitDok do
 
     before do
       stub_request(:post, /#{MATCH_NETWORK_LOCATION}#{MATCH_OAUTH2_PATH}/).
-          to_return(
-            :status => 200,
-            :body => '{
-              "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
-              "token_type": "bearer",
-              "expires": 1393350569,
-              "expires_in": 3600
-            }',
-            :headers => {
-              'Server'=> 'nginx',
-              'Date' => Time.now(),
-              'Content-type' => 'application/json;charset=UTF-8',
-              'Connection' => 'keep-alive',
-              'Pragma' => 'no-cache',
-              'Cache-Control' => 'no-store'
-            })
+        to_return(
+          :status => 200,
+          :body => '{
+            "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
+            "token_type": "bearer",
+            "expires": 1393350569,
+            "expires_in": 3600
+          }',
+          :headers => {
+            'Server'=> 'nginx',
+            'Date' => Time.now(),
+            'Content-type' => 'application/json;charset=UTF-8',
+            'Connection' => 'keep-alive',
+            'Pragma' => 'no-cache',
+            'Cache-Control' => 'no-store'
+          })
 
       @current_request = nil
       @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
@@ -219,7 +219,16 @@ describe PokitDok do
       end
     end
 
-    # TODO: Claims Convert Tests
+    describe 'Claims convert endpoint' do
+      it 'should expose the claims convert endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @converted_claim = @pokitdok.claims_convert('spec/fixtures/chiropractic_example.837')
+
+        refute_nil(@converted_claim)
+      end
+    end
 
     describe 'Eligibility endpoint' do
       it 'should expose the eligibility endpoint' do
@@ -259,7 +268,32 @@ describe PokitDok do
       end
     end
 
-    # TODO: Enrollment Snapshot Tests
+    describe 'Enrollment Snapshot endpoint' do
+      it 'should expose the enrollment snapshot endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot_activity = @pokitdok.enrollment_snapshot('MOCKPAYER', 'spec/fixtures/acme_inc_supplemental_identifiers.834')
+
+        refute_nil(@enrollment_snapshot_activity)
+      end
+      it 'should expose the enrollment snapshots endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot = @pokitdok.enrollment_snapshots({snapshot_id: '577294e00640fd5ce02d493f'})
+
+        refute_nil(@enrollment_snapshot)
+      end
+      it 'should expose the enrollment snapshot data endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @enrollment_snapshot_data = @pokitdok.enrollment_snapshot_data({snapshot_id: '577294e00640fd5ce02d493f'})
+
+        refute_nil(@enrollment_snapshot_data)
+      end
+    end
 
     describe 'Files endpoint' do
       it 'should expose the files endpoint' do
@@ -423,7 +457,25 @@ describe PokitDok do
         refute_nil(@appointment_type)
       end
 
-      # TODO: /schedule/slots test
+      it 'should create an open schedule slot' do
+        # Special Case: The scheduling endpoint reauthenticates for the scope (user_schedule),
+        # which would be caught by the below 'stub_request'. This would cause the OAuth module
+        # to fail because of an empty return body (to see what is required on an OAuth) POST
+        # refer to the 'before' code block above. This 'stub_request' will only catch the /schedule/slots/ request.
+        stub_request(:post,/#{MATCH_NETWORK_LOCATION}\/schedule\/slots/).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {
+            pd_provider_uuid: "b691b7f9-bfa8-486d-a689-214ae47ea6f8",
+            location: [32.788110, -79.932364],
+            appointment_type: "AT1",
+            start_date: "2014-12-25T15:09:34.197709",
+            end_date: "2014-12-25T16:09:34.197717"
+        }
+        @slot = @pokitdok.schedule_slots(query)
+
+        refute_nil(@slot)
+      end
 
       it 'should give details on a specific appointment' do
         stub_request(:get, MATCH_NETWORK_LOCATION).
@@ -479,7 +531,90 @@ describe PokitDok do
       end
     end
 
-    # TODO: /identity/ tests
+    describe 'Identity Endpoint' do
+      it 'should expose the identity endpoint for creation' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {
+          prefix: "Mr.",
+          first_name: "Gerald",
+          middle_name: "Harold",
+          last_name: "Whitmire",
+          suffix: "IV",
+          birth_date: "2000-05-25",
+          gender: "male",
+          email: "oscar@pokitdok.com",
+          phone: "555-555-5555",
+          secondary_phone: "333-333-4444",
+          address: {
+            address_lines: ["1400 Anyhoo Avenue"],
+            city: "Springfield",
+            state: "IL",
+            zipcode: "90210"
+          }
+        }
+        @identity = @pokitdok.create_identity(query)
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity endpoint for querying via id' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.identity(identity_uuid: '1a0a60b2-3e07-11e6-94c0-08002778b074')
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity endpoint for querying via params' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = {first_name: 'Gerald', last_name: 'Whitmire'}
+        @identities = @pokitdok.identity(query)
+
+        refute_nil(@identities)
+      end
+
+      it 'should expose the identity endpoint for updating' do
+        stub_request(:put, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.update_identity('1a0a60b2-3e07-11e6-94c0-08002778b074', { first_name: 'John' })
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity history endpoint' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.identity_history('1a0a60b2-3e07-11e6-94c0-08002778b074')
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity history endpoint with version number' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @identity = @pokitdok.identity_history('1a0a60b2-3e07-11e6-94c0-08002778b074', 1)
+
+        refute_nil(@identity)
+      end
+
+      it 'should expose the identity match endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        query = JSON.parse(IO.read('spec/fixtures/identity_match.json'))
+        @identity = @pokitdok.identity_match(query)
+
+        refute_nil(@identity)
+      end
+    end
 
     describe 'Pharmacy Plans Endpoint' do
       it 'should expose the pharmacy plans endpoint' do
