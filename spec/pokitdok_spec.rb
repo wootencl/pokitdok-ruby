@@ -12,6 +12,19 @@ TEST_REQUEST_PATH = '/endpoint'
 
 describe PokitDok do
   describe 'Authenticated functions' do
+
+    let(:base_headers) {
+      {
+        :'User-Agent' => "#{@pokitdok.user_agent}"
+      }
+    }
+    let(:json_headers) {
+      {
+        :'User-Agent' => "#{@pokitdok.user_agent}",
+        :'Content-Type'=> 'application/json'
+      }
+    }
+
     before do
       stub_request(:post, /#{MATCH_NETWORK_LOCATION}#{MATCH_OAUTH2_PATH}/).
         to_return(
@@ -31,6 +44,7 @@ describe PokitDok do
             'Cache-Control' => 'no-store'
           })
 
+      @current_request = nil
       @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
       @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
     end
@@ -41,7 +55,84 @@ describe PokitDok do
       end
     end
 
-    # TODO: General Request Tests
+    describe 'General Request method' do
+      it 'should test request post' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(lambda { |request|
+              @current_request = request
+              {
+                  status: 200,
+                  body: '{ "string" : "" }'
+              }
+            })
+
+        @pokitdok.request(TEST_REQUEST_PATH, 'POST', nil, {param: 'value'})
+        json_headers.each do |key, value|
+          assert_equal(value, @current_request.headers["#{key}"])
+        end
+
+        # NOTE: Currently this shows as an error in an IDE. I believe this is because it's
+        # a reserved property in Ruby
+        assert_equal('post', "#{@current_request.method}")
+      end
+      it 'should test request put' do
+        stub_request(:put, MATCH_NETWORK_LOCATION).
+            to_return(lambda { |request|
+              @current_request = request
+              {
+                  status: 200,
+                  body: '{ "string" : "" }'
+              }
+            })
+
+        @pokitdok.request(TEST_REQUEST_PATH, 'PUT', nil, {param: 'value'})
+        json_headers.each do |key, value|
+          assert_equal(value, @current_request.headers["#{key}"])
+        end
+
+        # NOTE: Currently this shows as an error in an IDE. I believe this is because it's
+        # a reserved property in Ruby
+        assert_equal('put', "#{@current_request.method}")
+      end
+      it 'should test request get' do
+        stub_request(:get, MATCH_NETWORK_LOCATION).
+            to_return(lambda { |request|
+              @current_request = request
+              {
+                  status: 200,
+                  body: '{ "string" : "" }'
+              }
+            })
+
+        @pokitdok.request(TEST_REQUEST_PATH, 'GET', nil, {param: 'value'})
+        base_headers.each do |key, value|
+          assert_equal(value, @current_request.headers["#{key}"])
+        end
+
+        # NOTE: Currently this shows as an error in an IDE. I believe this is because it's
+        # a reserved property in Ruby
+        assert_equal('get', "#{@current_request.method}")
+      end
+      it 'should test request delete' do
+        stub_request(:delete, MATCH_NETWORK_LOCATION).
+            to_return(lambda { |request|
+              @current_request = request
+              {
+                  status: 200,
+                  body: '{ "string" : "" }'
+              }
+            })
+
+        @pokitdok.request(TEST_REQUEST_PATH, 'DELETE', nil, {param: 'value'})
+        base_headers.each do |key, value|
+          assert_equal(value, @current_request.headers["#{key}"])
+        end
+
+        # NOTE: Currently this shows as an error in an IDE. I believe this is because it's
+        # a reserved property in Ruby
+        assert_equal('delete', "#{@current_request.method}")
+      end
+    end
 
     describe 'Activities endpoint' do
       it 'should expose the activities endpoint' do
