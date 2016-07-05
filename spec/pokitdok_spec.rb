@@ -128,7 +128,16 @@ describe PokitDok do
       end
     end
 
-    # TODO: Claims Convert Tests
+    describe 'Claims convert endpoint' do
+      it 'should expose the claims convert endpoint' do
+        stub_request(:post, MATCH_NETWORK_LOCATION).
+            to_return(status: 200, body: '{ "string" : "" }')
+
+        @converted_claim = @pokitdok.claims_convert('spec/fixtures/chiropractic_example.837')
+
+        refute_nil(@converted_claim)
+      end
+    end
 
     describe 'Eligibility endpoint' do
       it 'should expose the eligibility endpoint' do
