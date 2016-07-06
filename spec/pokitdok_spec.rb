@@ -58,7 +58,6 @@ describe PokitDok do
 
       @current_request = nil
       @pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
-      @pokitdok.scope_code('user_schedule', SCHEDULE_AUTH_CODE)
     end
 
     describe 'Test Connection' do
