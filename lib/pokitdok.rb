@@ -11,7 +11,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'base64'
 require 'json'
-require 'oauth2'
+require 'OAuthApplicationClient'
 require 'net/http/post/multipart'
 
 module PokitDok
@@ -35,8 +35,8 @@ module PokitDok
       @version = version
 
       @api_url = "#{base}/api/#{version}"
-      @client = OAuth2::Client.new(@client_id, @client_secret,
-                                   site: @api_url, token_url: '/oauth2/token')
+      @client = OAuthApplicationClient.new(@client_id, @client_secret,
+                                   @api_url, '/oauth2/token')
 
 
       @scopes = {}
@@ -66,7 +66,6 @@ module PokitDok
     # +params+ an optional Hash of parameters
     #
     def activities(params = {})
-      scope 'default'
       get('activities/', params)
     end
 
@@ -541,7 +540,6 @@ module PokitDok
     # +params+ an optional Hash of parameters
     #
     def request(endpoint, method='get', file=nil, params={})
-      scope 'default'
       method = method.downcase
       if file
         url = URI.parse(@api_url + endpoint)
@@ -566,7 +564,7 @@ module PokitDok
         if endpoint[0] == '/'
           endpoint[0] = ''
         end
-        self.send(method, endpoint, params)
+        @client.send(method, endpoint, params)
       end
     end
 
@@ -577,7 +575,7 @@ module PokitDok
       end
 
       def get(endpoint, params = {})
-        response = current_scope.get(endpoint, headers: headers, params: params)
+        response = request(endpoint, 'GET', nil, params)
 
         JSON.parse(response.body)
       end
@@ -652,7 +650,7 @@ module PokitDok
         body = {}
         body[:code] = code unless code.nil?
 
-        @client.client_credentials.get_token(
+        @client.token = @client.client_credentials.get_token(
           headers: { 'Authorization' => 'Basic' })
       end
 

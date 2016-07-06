@@ -11,6 +11,18 @@ MATCH_OAUTH2_PATH = /[\/]oauth2[\/]token/
 TEST_REQUEST_PATH = '/endpoint'
 
 describe PokitDok do
+  describe 'real request' do
+    it 'should make a real request' do
+      WebMock.allow_net_connect!
+
+      @pokitdok = PokitDok::PokitDok.new("9P10N4H2F7ZbaAU6RYct", "gOFzgJiIUoqnUhjaZezDxUf7ugPF6FsRAPy2tWDT", version='v4', base='http://localhost:5002')
+
+      @activities = @pokitdok.activities
+
+      refute_nil(@activities)
+    end
+  end
+
   describe 'Authenticated functions' do
 
     let(:base_headers) {
