@@ -1,7 +1,10 @@
 require 'oauth2'
 
+# Constants
+REFRESH_TOKEN_DURATION = 55;
+
 class OAuthApplicationClient < OAuth2::Client
-  attr_accessor :token
+  attr_accessor :token, :user_agent
 
   def initialize(client_id, client_secret, site, token_url, code)
     @client_id = client_id
@@ -10,7 +13,7 @@ class OAuthApplicationClient < OAuth2::Client
     @token_url = token_url
     @auth_code = code
     @token = nil
-    @api_client = nil
+    @user_agent = nil
 
     super(@client_id, @client_secret, site: @site, token_url: @token_url)
   end
@@ -19,23 +22,23 @@ class OAuthApplicationClient < OAuth2::Client
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    @token.get(path, params: params, &block)
+    @token.get(path, params: params, headers: headers, &block)
   end
 
   def put(path, params = {}, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    # opts.merge({ headers: { :'Content-Type' => 'application/json'}})
-    @token.put(path, params: params, &block)
+    headers.merge({ headers: { :'Content-Type' => 'application/json'}})
+    @token.put(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
   def post(path, params = {}, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    # opts.merge({ headers: { :'Content-Type' => 'application/json'}})
-    @token.post(path, params: params, &block)
+    headers.merge({ headers: { :'Content-Type' => 'application/json'}})
+    @token.post(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
   def post_file(endpoint, file=nil, params={})
@@ -49,7 +52,7 @@ class OAuthApplicationClient < OAuth2::Client
       req = Net::HTTP::Post::Multipart.new(url.path, additional_params)
 
       req['Authorization'] = "Bearer #{self.token.token}"
-      req['User-Agent'] = user_agent
+      req['User-Agent'] = @user_agent
 
       @response = Net::HTTP.start(url.host, url.port) do |http|
         http.request(req)
@@ -62,21 +65,16 @@ class OAuthApplicationClient < OAuth2::Client
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    # opts.merge({ headers: { :'Content-Type' => 'application/json'}})
-    @token.delete(path, params: params, &block)
-  end
-
-  # Returns a standard set of headers to be passed along with all requests
-  def headers
-    { 'User-Agent' => user_agent }
-  end
-
-  def user_agent
-    "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
+    @token.delete(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
   def fetch_access_token()
     @token = self.client_credentials.get_token(headers: { 'Authorization' => 'Basic' })
+  end
+
+  # Returns a standard set of headers to be passed along with all requests
+  def headers(additional_headers = {})
+    { 'User-Agent' => @user_agent }.merge(additional_headers)
   end
 
   def isAccessTokenExpired?

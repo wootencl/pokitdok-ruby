@@ -37,13 +37,8 @@ module PokitDok
       @api_url = "#{base}/api/#{version}"
       @client = OAuthApplicationClient.new(@client_id, @client_secret,
                                    @api_url, '/oauth2/token', code)
+      @client.user_agent = "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
     end
-
-    # Returns a standard User-Agent string to be passed along with all requests
-    def user_agent
-      "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
-    end
-
 
     # Invokes the appointments endpoint, to query for open appointment slots
     # (using pd_provider_uuid and location) or booked appointments (using
@@ -422,11 +417,6 @@ module PokitDok
     end
 
     private
-      # Returns a standard set of headers to be passed along with all requests
-      def headers
-        { 'User-Agent' => user_agent }
-      end
-
       def get(endpoint, params = {})
         response = request(endpoint, 'GET', nil, params)
 
@@ -453,39 +443,6 @@ module PokitDok
         else
           JSON.parse(response.body)
         end
-      end
-      
-      # Refreshes the client token associated with this PokitDok connection
-      #
-      # FIXME: automatic refresh on expiration
-      #
-      def refresh_token(code=nil)
-        body = {}
-        body[:code] = code unless code.nil?
-
-        @client.token = @client.client_credentials.get_token(
-          headers: { 'Authorization' => 'Basic' })
-      end
-
-      def scope(name)
-        raise ArgumentError, "You need to provide an authorization code for " \
-          "the scope #{name} with the scope_code method" if @scopes[name].nil?
-
-        @current_scope = name
-
-        if @scopes[name][:scope].nil?
-          @scopes[name][:scope] = refresh_token(@scopes[name][:code])
-        end
-
-        @scopes[name][:scope]
-      end
-
-      def current_scope
-        @scopes[@current_scope][:scope]
-      end
-
-      def default_scope
-        @scopes['default'][:scope]
       end
   end
 end
