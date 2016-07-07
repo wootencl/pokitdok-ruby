@@ -36,7 +36,7 @@ module PokitDok
 
       @api_url = "#{base}/api/#{version}"
       @client = OAuthApplicationClient.new(@client_id, @client_secret,
-                                   @api_url, '/oauth2/token', code).api_client
+                                   @api_url, '/oauth2/token', code)
     end
 
     # Returns a standard User-Agent string to be passed along with all requests
@@ -310,7 +310,7 @@ module PokitDok
     # +params+ an optional hash of parameters that will be sent in the POST body
     #
     def book_appointment(appointment_uuid, params = {})
-      put_one("schedule/appointments", appointment_uuid, params)
+      put("schedule/appointments/#{appointment_uuid}", params)
     end
 
     # Cancels the specified appointment.
@@ -321,7 +321,7 @@ module PokitDok
     # +params+ an optional Hash of parameters
     #
     def cancel_appointment(appointment_uuid, params={})
-      delete_one("schedule/appointments", appointment_uuid, params)
+      delete("schedule/appointments/#{appointment_uuid}", params)
     end
 
     # Invokes the schedule/appointments endpoint.
@@ -398,8 +398,7 @@ module PokitDok
     # +params+ an optional Hash of parameters
     #
     def update_appointment(appointment_uuid, params={})
-
-      put_one("schedule/appointments", appointment_uuid, params)
+      put("schedule/appointments/#{appointment_uuid}", params)
     end
 
     # Invokes the identity endpoint for creation
@@ -416,7 +415,7 @@ module PokitDok
     # +params+ a hash of parameters that will be sent in the PUT body
     #
     def update_identity(identity_uuid, params = {})
-      put_one("identity", identity_uuid, params)
+      put("identity/#{identity_uuid}", params)
     end
 
     # Invokes the identity endpoint for querying
@@ -493,60 +492,20 @@ module PokitDok
         JSON.parse(response.body)
       end
 
-      def get_one(endpoint, id, params = {})
-        response = current_scope.get("#{endpoint}/#{id}", headers: headers,
-                                 body: params.to_json) do |request|
-          request.headers['Content-Type'] = 'application/json'
-        end
-
-        JSON.parse(response.body)
-      end
-
       def post(endpoint, params = {})
-        response = current_scope.post(endpoint, headers: headers,
-                               body: params.to_json) do |request|
-          request.headers['Content-Type'] = 'application/json'
-        end
+        response = request(endpoint, 'POST', nil, params)
 
         JSON.parse(response.body)
       end
 
       def put(endpoint, params = {})
-        response = current_scope.put(endpoint, headers: headers,
-                                     body: params.to_json) do |request|
-          request.headers['Content-Type'] = 'application/json'
-        end
+        response = current_scope.put(endpoint, 'PUT', nil, params)
 
         JSON.parse(response.body)
-      end
-
-      def put_one(endpoint, id, params = {})
-        response = current_scope.put("#{endpoint}/#{id}", headers: headers,
-                                 body: params.to_json) do |request|
-          request.headers['Content-Type'] = 'application/json'
-        end
-
-        JSON.parse(response.body)
-      end
-
-      def delete_one(endpoint, id, params = {})
-        response = current_scope.delete("#{endpoint}/#{id}", headers: headers,
-                                 body: params.to_json) do |request|
-          request.headers['Content-Type'] = 'application/json'
-        end
-
-        if response.body.empty?
-          response.status == 204
-        else
-          JSON.parse(response.body)
-        end
       end
 
       def delete(endpoint, params = {})
-        response = current_scope.delete(endpoint, headers: headers,
-                                        body: params.to_json) do |request|
-          request.headers['Content-Type'] = 'application/json'
-        end
+        response = request(endpoint, 'DELETE', nil, params)
 
         if response.body.empty?
           response.status == 204

@@ -8,46 +8,46 @@ class OAuthApplicationClient < OAuth2::Client
     @client_secret = client_secret
     @site = site
     @token_url = token_url
-    @code = code
+    @auth_code = code
     @token = nil
     @api_client = nil
 
-    if code
-    #   authorization grant flow
-    else
-      @api_client = super(@client_id, @client_secret, site: @site, token_url: @token_url)
-      if @token.nil?
-        @token = @api_client.client_credentials.fetch_token(headers: { 'Authorization' => 'Basic' })
-      end
-    end
+    super(@client_id, @client_secret, site: @site, token_url: @token_url)
   end
 
   def get(path, opts, &block)
     if isAccessTokenExpired?
-      print 'EXPIRED!'
+      fetch_access_token()
     end
     @token.get(path, opts = opts, &block)
   end
 
-  def put(path, opts, &block)
+  def put(path, opts = {}, &block)
     if isAccessTokenExpired?
-      print 'EXPIRED!'
+      fetch_access_token()
     end
+    opts.merger({ headers: { :'Content-Type' => 'application/json'}})
     @token.put(path, opts = opts, &block)
   end
 
-  def post(path, opts, &block)
+  def post(path, opts = {}, &block)
     if isAccessTokenExpired?
-      print 'EXPIRED!'
+      fetch_access_token()
     end
-    @token.post(path, opts = opts, &block)
+    opts.merge({ headers: { :'Content-Type' => 'application/json'}})
+    @token.post(path, opts, &block)
   end
 
-  def delete(path, opts, &block)
+  def delete(path, opts = {}, &block)
     if isAccessTokenExpired?
-      print 'EXPIRED!'
+      fetch_access_token()
     end
+    opts.merge({ headers: { :'Content-Type' => 'application/json'}})
     @token.delete(path, opts = opts, &block)
+  end
+
+  def fetch_access_token()
+    @token = self.client_credentials.get_token(headers: { 'Authorization' => 'Basic' })
   end
 
   def isAccessTokenExpired?
