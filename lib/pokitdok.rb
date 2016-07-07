@@ -109,20 +109,7 @@ module PokitDok
     # +x12_claims_file+ the path to the file to transmit
     #
     def claims_convert(x12_claims_file)
-      url = URI.parse(@api_url + '/claims/convert')
-
-      File.open(x12_claims_file) do |f|
-        req = Net::HTTP::Post::Multipart.new url.path,
-                                             'file' => UploadIO.new(f, 'application/EDI-X12', x12_claims_file)
-        req['Authorization'] = "Bearer #{@client.token}"
-        req['User-Agent'] = user_agent
-
-        @response = Net::HTTP.start(url.host, url.port) do |http|
-          http.request(req)
-        end
-      end
-
-      JSON.parse(@response.body)
+      request('/claims/convert', 'POST', x12_claims_file)
     end
 
     # Invokes the eligibility endpoint.
@@ -148,21 +135,7 @@ module PokitDok
     # +x12_file+ the path to the file to transmit
     #
     def enrollment_snapshot(trading_partner_id, x12_file)
-      url = URI.parse(@api_url + '/enrollment/snapshot')
-
-      File.open(x12_file) do |f|
-        req = Net::HTTP::Post::Multipart.new url.path,
-                                             'file' => UploadIO.new(f, 'application/EDI-X12', x12_file),
-                                             'trading_partner_id' => trading_partner_id
-        req['Authorization'] = "Bearer #{default_scope.token}"
-        req['User-Agent'] = user_agent
-
-        @response = Net::HTTP.start(url.host, url.port) do |http|
-          http.request(req)
-        end
-      end
-
-      JSON.parse(@response.body)
+      request("/enrollment/snapshot/#{trading_partner_id}", "POST", x12_file)
     end
 
     # Invokes the enrollment snapshots endpoint.
@@ -171,12 +144,7 @@ module PokitDok
     #
     def enrollment_snapshots(params = {})
       snapshot_id = params.delete :snapshot_id
-
-      response =
-          default_scope.get("enrollment/snapshot" + (snapshot_id ? "/#{snapshot_id}" : '')) do |request|
-            request.params = params
-          end
-      JSON.parse(response.body)
+      get("enrollment/snapshot" + (snapshot_id ? "/#{snapshot_id}" : ''), params)
     end
 
     # Invokes the enrollment snapshots data endpoint.
@@ -194,21 +162,7 @@ module PokitDok
     # +filename+ the path to the file to transmit
     #
     def files(trading_partner_id, filename)
-      url = URI.parse(@api_url + '/files/')
-
-      File.open(filename) do |f|
-        req = Net::HTTP::Post::Multipart.new url.path,
-          'file' => UploadIO.new(f, 'application/EDI-X12', filename),
-          'trading_partner_id' => trading_partner_id
-        req['Authorization'] = "Bearer #{default_scope.token}"
-        req['User-Agent'] = user_agent
-
-        @response = Net::HTTP.start(url.host, url.port) do |http|
-          http.request(req)
-        end
-      end
-
-      JSON.parse(@response.body)
+      request('/files/', 'POST', filename, { trading_partner_id: trading_partner_id})
     end
 
     # Invokes the insurance prices endpoint.
@@ -454,20 +408,7 @@ module PokitDok
     def request(endpoint, method='get', file=nil, params={})
       method = method.downcase
       if file
-        url = URI.parse(@api_url + endpoint)
-
-        File.open(file) do |f|
-          additional_params = params.merge({'file' => UploadIO.new(f, 'application/EDI-X12', file)})
-          req = Net::HTTP::Post::Multipart.new(url.path, additional_params)
-
-          req['Authorization'] = "Bearer #{default_scope.token}"
-          req['User-Agent'] = user_agent
-
-          @response = Net::HTTP.start(url.host, url.port) do |http|
-            http.request(req)
-          end
-          JSON.parse(@response.body)
-        end
+        @client.post_file(endpoint, file, params)
       else
         # Work around to delete the leading slash on the request endpoint
         # Currently the module we're using appends a slash to the base url
@@ -499,7 +440,7 @@ module PokitDok
       end
 
       def put(endpoint, params = {})
-        response = current_scope.put(endpoint, 'PUT', nil, params)
+        response = request(endpoint, 'PUT', nil, params)
 
         JSON.parse(response.body)
       end

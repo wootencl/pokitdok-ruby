@@ -15,35 +15,64 @@ class OAuthApplicationClient < OAuth2::Client
     super(@client_id, @client_secret, site: @site, token_url: @token_url)
   end
 
-  def get(path, opts, &block)
+  def get(path, params, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    @token.get(path, opts = opts, &block)
+    @token.get(path, params: params, &block)
   end
 
-  def put(path, opts = {}, &block)
+  def put(path, params = {}, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    opts.merger({ headers: { :'Content-Type' => 'application/json'}})
-    @token.put(path, opts = opts, &block)
+    # opts.merge({ headers: { :'Content-Type' => 'application/json'}})
+    @token.put(path, params: params, &block)
   end
 
-  def post(path, opts = {}, &block)
+  def post(path, params = {}, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    opts.merge({ headers: { :'Content-Type' => 'application/json'}})
-    @token.post(path, opts, &block)
+    # opts.merge({ headers: { :'Content-Type' => 'application/json'}})
+    @token.post(path, params: params, &block)
   end
 
-  def delete(path, opts = {}, &block)
+  def post_file(endpoint, file=nil, params={})
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    opts.merge({ headers: { :'Content-Type' => 'application/json'}})
-    @token.delete(path, opts = opts, &block)
+    url = URI.parse(@site + endpoint)
+
+    File.open(file) do |f|
+      additional_params = params.merge({'file' => UploadIO.new(f, 'application/EDI-X12', file)})
+      req = Net::HTTP::Post::Multipart.new(url.path, additional_params)
+
+      req['Authorization'] = "Bearer #{self.token.token}"
+      req['User-Agent'] = user_agent
+
+      @response = Net::HTTP.start(url.host, url.port) do |http|
+        http.request(req)
+      end
+      JSON.parse(@response.body)
+    end
+  end
+
+  def delete(path, params = {}, &block)
+    if isAccessTokenExpired?
+      fetch_access_token()
+    end
+    # opts.merge({ headers: { :'Content-Type' => 'application/json'}})
+    @token.delete(path, params: params, &block)
+  end
+
+  # Returns a standard set of headers to be passed along with all requests
+  def headers
+    { 'User-Agent' => user_agent }
+  end
+
+  def user_agent
+    "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
   end
 
   def fetch_access_token()
