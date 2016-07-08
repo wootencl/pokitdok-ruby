@@ -6,16 +6,19 @@ REFRESH_TOKEN_DURATION = 55;
 class OAuthApplicationClient
   attr_accessor :token, :user_agent
 
-  def initialize(client_id, client_secret, site, token_url, code, user_agent)
+  def initialize(client_id, client_secret, site, token_url, redirect_uri, scope, code, token, user_agent)
     @client_id = client_id
     @client_secret = client_secret
     @site = site
     @token_url = token_url
-    @auth_code = code
+    @redirect_uri = redirect_uri
+    @scope = scope
+    @code = code
     @user_agent = user_agent
+    @token  = nil
 
     @api_client = OAuth2::Client.new(@client_id, @client_secret, site: @api_url, token_url: '/oauth2/token')
-    @token = fetch_access_token()
+    fetch_access_token(@code)
   end
 
   def get_request(path, params, &block)
@@ -68,9 +71,28 @@ class OAuthApplicationClient
     @token.delete(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
-  def fetch_access_token()
-    @api_client.client_credentials.get_token(headers: { 'Authorization' => 'Basic' })
+  def authorization_url()
+    if @redirect_uri.nil? || @scope.nil?
+      raise 'A redirect_uri and scope must be specified when the client is instantiated in order to get a working authorization URL'
+    end
+    @api_client.auth_code.authorize_url(redirect_uri: @redirect_uri, scope: @scope)
   end
+
+  def fetch_access_token(code = nil)
+    if code
+      # Currently non functioning as our OAuth2 authorization_code grant type is not implemented on the server
+      params =  {
+        headers: { 'Authorization' => 'Basic' },
+        scope: @scope,
+        redirect_uri: @redirect_uri
+      }
+      @token = @api_client.auth_code.get_token(code, params)
+    else
+      @token = @api_client.client_credentials.get_token(headers: { 'Authorization' => 'Basic' })
+    end
+  end
+
+  ### PRIVATE METHODS ###
 
   # Returns a standard set of headers to be passed along with all requests
   def headers(additional_headers = {})
@@ -84,5 +106,5 @@ class OAuthApplicationClient
     @token.expired?
   end
 
-  private :fetch_access_token, :headers, :isAccessTokenExpired?
+  private :headers, :isAccessTokenExpired?
 end
