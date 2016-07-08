@@ -1,10 +1,9 @@
 require 'oauth2'
 
-# Constants
-REFRESH_TOKEN_DURATION = 55;
-
 class OAuthApplicationClient
   attr_accessor :token, :user_agent
+
+  # TODO: Figure out how to pass in a refreshToken method to be used by the authorization grant flow
 
   def initialize(client_id, client_secret, site, token_url, redirect_uri, scope, code, token, user_agent)
     @client_id = client_id
@@ -15,10 +14,12 @@ class OAuthApplicationClient
     @scope = scope
     @code = code
     @user_agent = user_agent
-    @token  = nil
+    @token  = token
 
     @api_client = OAuth2::Client.new(@client_id, @client_secret, site: @api_url, token_url: '/oauth2/token')
-    fetch_access_token(@code)
+    if @token.nil?
+      fetch_access_token(@code)
+    end
   end
 
   def get_request(path, params, &block)

@@ -30,27 +30,54 @@ class PokitDokTest < MiniTest::Test
         }
       }
 
-      before do
-        if @@pokitdok.nil?
-          stub_request(:post, /#{MATCH_NETWORK_LOCATION}#{MATCH_OAUTH2_PATH}/).
-              to_return(
-                  :status => 200,
-                  :body => '{
+      let(:snub_auth) {
+        stub_request(:post, /#{MATCH_NETWORK_LOCATION}#{MATCH_OAUTH2_PATH}/).
+            to_return(
+                :status => 200,
+                :body => '{
             "access_token": "s8KYRJGTO0rWMy0zz1CCSCwsSesDyDlbNdZoRqVR",
             "token_type": "bearer",
             "expires": 1393350569,
             "expires_in": 3600
           }',
-                  :headers => {
-                      'Server'=> 'nginx',
-                      'Date' => Time.now(),
-                      'Content-type' => 'application/json;charset=UTF-8',
-                      'Connection' => 'keep-alive',
-                      'Pragma' => 'no-cache',
-                      'Cache-Control' => 'no-store'
-                  }).times(2)
+                :headers => {
+                    'Server'=> 'nginx',
+                    'Date' => Time.now(),
+                    'Content-type' => 'application/json;charset=UTF-8',
+                    'Connection' => 'keep-alive',
+                    'Pragma' => 'no-cache',
+                    'Cache-Control' => 'no-store'
+                }).times(2)
+      }
+
+      before do
+        if @@pokitdok.nil?
+          snub_auth
 
           @@pokitdok = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+        end
+      end
+
+      describe 'Test token reuse' do
+        it 'should work with existing token' do
+          snub_auth
+          pokitdok_for_token = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+          first_token = pokitdok_for_token.token
+
+          snub_auth
+          pokitdok_with_old_token = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET, nil, nil, nil, nil, nil, token=first_token)
+          second_token = pokitdok_with_old_token.token
+
+          stub_request(:get, MATCH_NETWORK_LOCATION).
+              to_return(status: 200, body: '{ "string" : "" }')
+          assert first_token == second_token
+          results = pokitdok_with_old_token.activities
+          refute_nil(results)
+
+          snub_auth
+          pokitdok_for_new_token = PokitDok::PokitDok.new(CLIENT_ID, CLIENT_SECRET)
+          third_token = pokitdok_for_new_token.token
+          assert (first_token != third_token) && (second_token != third_token)
         end
       end
 
@@ -169,17 +196,17 @@ class PokitDokTest < MiniTest::Test
         end
       end
 
-      describe 'Claims endpoint' do
-        it 'should expose the claims endpoint' do
-          stub_request(:post, MATCH_NETWORK_LOCATION).
-              to_return(status: 200, body: '{ "string" : "" }')
-
-          query = JSON.parse(IO.read('spec/fixtures/claim.json'))
-          @claim = @@pokitdok.claims(query)
-
-          refute_nil(@claim)
-        end
-      end
+      # describe 'Claims endpoint' do
+      #   it 'should expose the claims endpoint' do
+      #     stub_request(:post, MATCH_NETWORK_LOCATION).
+      #         to_return(status: 200, body: '{ "string" : "" }')
+      #
+      #     query = JSON.parse(IO.read('spec/fixtures/claim.json'))
+      #     @claim = @@pokitdok.claims(query)
+      #
+      #     refute_nil(@claim)
+      #   end
+      # end
 
       describe 'Claims status endpoint' do
         it 'should expose the claims status endpoint' do
@@ -261,17 +288,17 @@ class PokitDokTest < MiniTest::Test
         end
       end
 
-      describe 'Enrollment endpoint' do
-        it 'should expose the enrollment endpoint' do
-          stub_request(:post, MATCH_NETWORK_LOCATION).
-              to_return(status: 200, body: '{ "string" : "" }')
-
-          query = JSON.parse(IO.read('spec/fixtures/enrollment.json'))
-          @enrollment = @@pokitdok.enrollment(query)
-
-          refute_nil(@enrollment)
-        end
-      end
+      # describe 'Enrollment endpoint' do
+      #   it 'should expose the enrollment endpoint' do
+      #     stub_request(:post, MATCH_NETWORK_LOCATION).
+      #         to_return(status: 200, body: '{ "string" : "" }')
+      #
+      #     query = JSON.parse(IO.read('spec/fixtures/enrollment.json'))
+      #     @enrollment = @@pokitdok.enrollment(query)
+      #
+      #     refute_nil(@enrollment)
+      #   end
+      # end
 
       describe 'Enrollment Snapshot endpoint' do
         it 'should expose the enrollment snapshot endpoint' do
@@ -610,15 +637,15 @@ class PokitDokTest < MiniTest::Test
           refute_nil(@identity)
         end
 
-        it 'should expose the identity match endpoint' do
-          stub_request(:post, MATCH_NETWORK_LOCATION).
-              to_return(status: 200, body: '{ "string" : "" }')
-
-          query = JSON.parse(IO.read('spec/fixtures/identity_match.json'))
-          @identity = @@pokitdok.identity_match(query)
-
-          refute_nil(@identity)
-        end
+        # it 'should expose the identity match endpoint' do
+        #   stub_request(:post, MATCH_NETWORK_LOCATION).
+        #       to_return(status: 200, body: '{ "string" : "" }')
+        #
+        #   query = JSON.parse(IO.read('spec/fixtures/identity_match.json'))
+        #   @identity = @@pokitdok.identity_match(query)
+        #
+        #   refute_nil(@identity)
+        # end
       end
 
       describe 'Pharmacy Plans Endpoint' do

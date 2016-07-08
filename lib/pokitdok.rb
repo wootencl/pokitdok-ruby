@@ -29,6 +29,8 @@ module PokitDok
     # +version+ The API version that should be used for requests.  Defaults to the latest version.
     # +base+ The base URL to use for API requests.  Defaults to https://platform.pokitdok.com
     #
+    #  TODO: Make it simpler to pass in params out of order (also so you don't have to do init(..., nil, nil, nil, param))
+    #
     def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com',
                    redirect_uri=nil, scope= nil, code=nil, token= nil)
       @version = version
