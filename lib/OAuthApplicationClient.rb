@@ -3,29 +3,29 @@ require 'oauth2'
 # Constants
 REFRESH_TOKEN_DURATION = 55;
 
-class OAuthApplicationClient < OAuth2::Client
+class OAuthApplicationClient
   attr_accessor :token, :user_agent
 
-  def initialize(client_id, client_secret, site, token_url, code)
+  def initialize(client_id, client_secret, site, token_url, code, user_agent)
     @client_id = client_id
     @client_secret = client_secret
     @site = site
     @token_url = token_url
     @auth_code = code
-    @token = nil
-    @user_agent = nil
+    @user_agent = user_agent
 
-    super(@client_id, @client_secret, site: @site, token_url: @token_url)
+    @api_client = OAuth2::Client.new(@client_id, @client_secret, site: @api_url, token_url: '/oauth2/token')
+    @token = fetch_access_token()
   end
 
-  def get(path, params, &block)
+  def get_request(path, params, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
     @token.get(path, params: params, headers: headers, &block)
   end
 
-  def put(path, params = {}, &block)
+  def put_request(path, params = {}, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
@@ -33,7 +33,7 @@ class OAuthApplicationClient < OAuth2::Client
     @token.put(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
-  def post(path, params = {}, &block)
+  def post_request(path, params = {}, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
@@ -61,7 +61,7 @@ class OAuthApplicationClient < OAuth2::Client
     end
   end
 
-  def delete(path, params = {}, &block)
+  def delete_request(path, params = {}, &block)
     if isAccessTokenExpired?
       fetch_access_token()
     end
@@ -69,7 +69,7 @@ class OAuthApplicationClient < OAuth2::Client
   end
 
   def fetch_access_token()
-    @token = self.client_credentials.get_token(headers: { 'Authorization' => 'Basic' })
+    @api_client.client_credentials.get_token(headers: { 'Authorization' => 'Basic' })
   end
 
   # Returns a standard set of headers to be passed along with all requests
@@ -83,4 +83,6 @@ class OAuthApplicationClient < OAuth2::Client
     end
     @token.expired?
   end
+
+  private :fetch_access_token, :headers, :isAccessTokenExpired?
 end

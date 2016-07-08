@@ -16,8 +16,8 @@ require 'net/http/post/multipart'
 
 module PokitDok
   # PokitDok API client implementation for Ruby.
-  class PokitDok
-    attr_reader :client # :nodoc:
+  class PokitDok < OAuthApplicationClient
+    attr_reader :api_client # :nodoc:
     attr_reader :api_url
     attr_reader :version
 
@@ -30,14 +30,11 @@ module PokitDok
     # +base+ The base URL to use for API requests.  Defaults to https://platform.pokitdok.com
     #
     def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com', code=nil)
-      @client_id = client_id
-      @client_secret = client_secret
       @version = version
-
       @api_url = "#{base}/api/#{version}"
-      @client = OAuthApplicationClient.new(@client_id, @client_secret,
-                                   @api_url, '/oauth2/token', code)
-      @client.user_agent = "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
+      @user_agent = "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
+
+      super(client_id, client_secret, @api_url, '/oauth2/token', code, user_agent)
     end
 
     # Invokes the appointments endpoint, to query for open appointment slots
@@ -400,10 +397,13 @@ module PokitDok
     # +file+ file when the API accepts file uploads as input
     # +params+ an optional Hash of parameters
     #
+    # NOTE: There might be a better way of achieving the seperation of get/get_request
+    # but currently using the "send" method will go down the ancestor chain until the correct
+    # method is found. In this case the 'httpMethod'_request
     def request(endpoint, method='get', file=nil, params={})
       method = method.downcase
       if file
-        @client.post_file(endpoint, file, params)
+        self.send('post_file', endpoint, file, params)
       else
         # Work around to delete the leading slash on the request endpoint
         # Currently the module we're using appends a slash to the base url
@@ -412,7 +412,7 @@ module PokitDok
         if endpoint[0] == '/'
           endpoint[0] = ''
         end
-        @client.send(method, endpoint, params)
+        self.send("#{method}_request", endpoint, params)
       end
     end
 
