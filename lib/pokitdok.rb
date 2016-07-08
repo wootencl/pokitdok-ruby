@@ -189,7 +189,7 @@ module PokitDok
     # +params+ an optional Hash of parameters
     #
     def providers(params = {})
-      get('provider/', params)
+      get('providers/', params)
     end
 
     # Invokes the referrals endpoint.

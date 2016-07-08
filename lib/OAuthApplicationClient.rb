@@ -34,7 +34,7 @@ class OAuthApplicationClient
       fetch_access_token()
     end
     headers.merge({ headers: { :'Content-Type' => 'application/json'}})
-    @token.put(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
+    @token.put(path, body: params.to_json, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
   def post_request(path, params = {}, &block)
@@ -42,7 +42,7 @@ class OAuthApplicationClient
       fetch_access_token()
     end
     headers.merge({ headers: { :'Content-Type' => 'application/json'}})
-    @token.post(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
+    @token.post(path, body: params.to_json, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
   def post_file(endpoint, file=nil, params={})
@@ -69,7 +69,7 @@ class OAuthApplicationClient
     if isAccessTokenExpired?
       fetch_access_token()
     end
-    @token.delete(path, params: params, headers: headers({:'Content-Type' => 'application/json'}), &block)
+    @token.delete(path, body: params.to_json, headers: headers({:'Content-Type' => 'application/json'}), &block)
   end
 
   def authorization_url()

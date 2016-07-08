@@ -196,17 +196,17 @@ class PokitDokTest < MiniTest::Test
         end
       end
 
-      # describe 'Claims endpoint' do
-      #   it 'should expose the claims endpoint' do
-      #     stub_request(:post, MATCH_NETWORK_LOCATION).
-      #         to_return(status: 200, body: '{ "string" : "" }')
-      #
-      #     query = JSON.parse(IO.read('spec/fixtures/claim.json'))
-      #     @claim = @@pokitdok.claims(query)
-      #
-      #     refute_nil(@claim)
-      #   end
-      # end
+      describe 'Claims endpoint' do
+        it 'should expose the claims endpoint' do
+          stub_request(:post, MATCH_NETWORK_LOCATION).
+              to_return(status: 200, body: '{ "string" : "" }')
+
+          query = JSON.parse(IO.read('spec/fixtures/claim.json'))
+          @claim = @@pokitdok.claims(query)
+
+          refute_nil(@claim)
+        end
+      end
 
       describe 'Claims status endpoint' do
         it 'should expose the claims status endpoint' do
@@ -288,17 +288,17 @@ class PokitDokTest < MiniTest::Test
         end
       end
 
-      # describe 'Enrollment endpoint' do
-      #   it 'should expose the enrollment endpoint' do
-      #     stub_request(:post, MATCH_NETWORK_LOCATION).
-      #         to_return(status: 200, body: '{ "string" : "" }')
-      #
-      #     query = JSON.parse(IO.read('spec/fixtures/enrollment.json'))
-      #     @enrollment = @@pokitdok.enrollment(query)
-      #
-      #     refute_nil(@enrollment)
-      #   end
-      # end
+      describe 'Enrollment endpoint' do
+        it 'should expose the enrollment endpoint' do
+          stub_request(:post, MATCH_NETWORK_LOCATION).
+              to_return(status: 200, body: '{ "string" : "" }')
+
+          query = JSON.parse(IO.read('spec/fixtures/enrollment.json'))
+          @enrollment = @@pokitdok.enrollment(query)
+
+          refute_nil(@enrollment)
+        end
+      end
 
       describe 'Enrollment Snapshot endpoint' do
         it 'should expose the enrollment snapshot endpoint' do
@@ -637,15 +637,15 @@ class PokitDokTest < MiniTest::Test
           refute_nil(@identity)
         end
 
-        # it 'should expose the identity match endpoint' do
-        #   stub_request(:post, MATCH_NETWORK_LOCATION).
-        #       to_return(status: 200, body: '{ "string" : "" }')
-        #
-        #   query = JSON.parse(IO.read('spec/fixtures/identity_match.json'))
-        #   @identity = @@pokitdok.identity_match(query)
-        #
-        #   refute_nil(@identity)
-        # end
+        it 'should expose the identity match endpoint' do
+          stub_request(:post, MATCH_NETWORK_LOCATION).
+              to_return(status: 200, body: '{ "string" : "" }')
+
+          query = JSON.parse(IO.read('spec/fixtures/identity_match.json'))
+          @identity = @@pokitdok.identity_match(query)
+
+          refute_nil(@identity)
+        end
       end
 
       describe 'Pharmacy Plans Endpoint' do
