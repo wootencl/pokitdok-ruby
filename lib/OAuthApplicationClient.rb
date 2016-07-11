@@ -16,7 +16,7 @@ class OAuthApplicationClient
     @user_agent = user_agent
     @token  = token
 
-    @api_client = OAuth2::Client.new(@client_id, @client_secret, site: @api_url, token_url: '/oauth2/token')
+    @api_client = OAuth2::Client.new(@client_id, @client_secret, site: @api_url, token_url: '/oauth2/token', raise_errors: false)
     if @token.nil?
       fetch_access_token(@code)
     end
