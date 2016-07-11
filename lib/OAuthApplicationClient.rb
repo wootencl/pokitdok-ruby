@@ -5,16 +5,16 @@ class OAuthApplicationClient
 
   # TODO: Figure out how to pass in a refreshToken method to be used by the authorization grant flow
 
-  def initialize(client_id, client_secret, site, token_url, redirect_uri, scope, code, token, user_agent)
+  def initialize(client_id, client_secret, site, token_url, params)
     @client_id = client_id
     @client_secret = client_secret
     @site = site
     @token_url = token_url
-    @redirect_uri = redirect_uri
-    @scope = scope
-    @code = code
-    @user_agent = user_agent
-    @token  = token
+    @redirect_uri = params[:redirect_uri] || nil
+    @scope = params[:scope] || nil
+    @code = params[:code] || nil
+    @user_agent = params[:user_agent]
+    @token  = params[:token] || nil
 
     @api_client = OAuth2::Client.new(@client_id, @client_secret, site: @api_url, token_url: '/oauth2/token')
     if @token.nil?

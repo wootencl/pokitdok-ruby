@@ -31,13 +31,12 @@ module PokitDok
     #
     #  TODO: Make it simpler to pass in params out of order (also so you don't have to do init(..., nil, nil, nil, param))
     #
-    def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com',
-                   redirect_uri=nil, scope= nil, code=nil, token= nil)
+    def initialize(client_id, client_secret, version='v4', base='https://platform.pokitdok.com', params = {})
       @version = version
       @api_url = "#{base}/api/#{version}"
-      @user_agent = "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
+      params.merge({user_agent: "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"})
 
-      super(client_id, client_secret, @api_url, '/oauth2/token', redirect_uri, scope, code, token, user_agent)
+      super(client_id, client_secret, @api_url, '/oauth2/token', params)
     end
 
     # Invokes the appointments endpoint, to query for open appointment slots
