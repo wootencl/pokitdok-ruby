@@ -37,7 +37,7 @@ module PokitDok
       @api_url = "#{base}/api/#{version}"
       @user_agent = "pokitdok-ruby 0.8 #{RUBY_DESCRIPTION}"
 
-      super(client_id, client_secret, @api_url, '/oauth2/token', redirect_uri, scope, code, token, user_agent)
+      super(client_id, client_secret, '/oauth2/token', redirect_uri, scope, code, token, user_agent)
     end
 
     # Invokes the appointments endpoint, to query for open appointment slots
